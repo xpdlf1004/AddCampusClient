@@ -1,0 +1,22 @@
+{
+  "name": "AddCampusClient",
+  "version": "0.0.0",
+  "homepage": "https://github.com/xpdlf1004/AddCampusClient",
+  "authors": [
+    "Gilyoung Kim <xpdlf1004@gmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
