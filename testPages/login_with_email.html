@@ -9,7 +9,7 @@
         var pw = $('#pw').val();
 
         $.ajax({
-          url: "/account/makeUserAccount",
+          url: "/account/loginWithEmail",
           method: "POST",
           dataType: "JSON",
           data: JSON.stringify({
