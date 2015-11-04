@@ -2,30 +2,32 @@
 	<head>
     <meta charset="utf-8" />
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/crypto-js/crypto-js.js"></script>
+    <script src="./lib/request_helper.js"></script>
+    <script src="./lib/local_storage.js"></script>
     <script>
-      function submitForm(event) {
+      function submitLoginForm(event) {
         event.preventDefault();
         var email = $('#email').val();
         var pw = $('#pw').val();
 
-        $.ajax({
-          url: "/account/loginWithEmail",
-          method: "POST",
-          dataType: "JSON",
-          data: JSON.stringify({
-            email: email,
-            password: pw
-          }),
-          contentType: "application/json; charset=UTF-8"
-        }).success(function(data) {
+        RequestHelper.post('/account/loginWithEmail', {
+          email: email,
+          password: pw
+        }, {
+          // Option is not needed.
+        }, function(data) {
           alert(JSON.stringify(data));
-        }).fail(function(data) {
+          LocalStorage.put('sessionKey', data.result[0].sessionKey);
+          LocalStorage.put('accessKey', data.result[0].accessKey);
+          LocalStorage.put('accountSequence', data.result[0].accountSequence);
+        }, function(data) {
           alert(JSON.stringify(data));
         });
       }
 
       $(document).ready(function() {
-        $("#form").submit(submitForm);
+        $("#form").submit(submitLoginForm);
       });
     </script>
   </head>
