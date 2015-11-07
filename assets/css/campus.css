@@ -1,0 +1,300 @@
+
+	#campus_image {
+		width: 100%;
+		height: 550px;
+
+		text-align: center;
+		color: #FFFFFF;
+
+		background-image: url("/assets/img/common/background.png");
+	    background-size: 100% 100%;
+		-webkit-background-size: 100% 100%;
+	    -moz-background-size: 100% 100%;
+	    -o-background-size: 100% 100%;
+	}
+
+	.head_title {
+		font-size: 3.4rem;
+		font-family: 'NanumMyeongjo';
+		font-weight: normal;
+		vertical-align: middle;
+
+		margin: 0px;
+		padding: 0px;
+
+		padding-top: 74px;
+	}
+
+	.head_title span {
+		font-size: 6rem;
+		font-family: 'NanumPen';
+		font-weight: normal;
+		vertical-align: middle;
+		color: #FFD432;
+	}
+
+	.head_subtitle {
+		font-size: 1.64rem;
+		font-weight: normal;
+		margin-top: 8px;
+		padding-top: 0px;
+	}
+
+	.search_box { 
+		width: 572px;
+		border-radius: 17px;
+		background: #FFFFFF;
+		margin: 0px auto;
+		vertical-align: middle;
+		padding-left: 25px;
+		height: 49px;
+	}
+
+	.search_box input[type=text] {
+		display: inline-block;
+		font-size: 1.2rem;
+		width: 87%;
+		height: 100%;
+		background: transparent;
+		border: none;
+		outline: none;
+		float: left;
+	}
+
+	.search_box img {
+		display: inline-block;
+		position: relative;
+		right: -1%;
+		width: 65px;
+	}
+
+	#campus_content {
+		text-align: center;
+		padding-top: 55px;
+		width: 1000px;
+		margin: 0px auto;
+	}
+
+	#campus_content .title {
+		font-size: 2.5rem;
+		margin: 0px;
+	}
+
+	#campus_content .subtitle {
+		font-size: 1.22rem;
+		margin: 0px;
+		margin-bottom: 42px;
+	}
+
+	.campus_category {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 0px;
+		padding: 0px;
+		margin-bottom: 20px;
+		border: 1px solid #BCBEC0;
+		text-align: left;
+	}
+	
+	.campus_category td {
+		margin: 0px;
+		padding: 0px;
+		vertical-align: middle;
+		padding: 18px 0px 0px 18px;
+		border-right: 1px solid #BCBEC0;
+		color: #808083;
+		font-size:1.125rem;
+	}
+
+	.review_list {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 0px;
+		padding: 0px;
+		margin-bottom: 20px;
+		border: 1px solid #BCBEC0;
+	}
+
+	.review_list * {
+		vertical-align: middle;
+	}
+
+	.review_list td {
+		margin: 0px;
+		padding: 0px;
+		vertical-align: middle;
+	}
+
+	.review_list p {
+		margin: 0px;
+		padding: 0px;
+		vertical-align: middle;
+		display: inline-block;
+		font-size: 1.2rem;
+	}
+
+	.campus_left { width: 675px;margin: 0px auto;float: left;text-align:left; }
+	.campus_grade { width: 99.8%;height:240px;border: 1px solid #BCBEC0;margin-bottom:10px;text-align:center; }
+	
+	.campus_list_title,
+	.campus_list_title li,
+	.campus_list_subtitle,
+	.campus_list_subtitle li {
+		margin: 0px;
+		padding: 0px;
+		list-style: none;
+		display: inline-block;
+	}
+
+	.campus_list_title {
+		width: 52%;
+		padding-top: 20px;
+		float: left;
+	}
+
+	.campus_list_subtitle {
+		width: 48%;
+		margin-top: -10px;
+		float: right;
+	}
+
+	.campus_left h1 { 
+		margin: 15px 0px 0px 18px;
+		text-align: left;
+		font-size: 1.5rem;
+		color: #1C75BA;
+		font-weight: bold;
+	}
+
+	/* 캠퍼스 보기 > 대학종합순위 > 1위 */
+	.campus_list_title .li_class {
+		margin: 0px 10px 0px 0px;
+		font-size: 1.2125rem;
+	}
+
+	.campus_list_title .li_about {
+		font-size: 1.5rem;
+	}
+
+	.campus_list_title .li_message {
+		font-size: 1.5rem;
+		color: #58595B;
+		text-align: center;
+		font-family: 'NanumPen';
+
+	}
+
+	.campus_list_title .li_about .rank_img {
+		width: 60px;
+		height: 60px;
+		margin: 0px 6px 0px 0px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.campus_list_title .li_about .rank_star {
+		height: 1.3rem;
+	}
+
+	.campus_list_title .li_about p {
+		color: #58595B;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+
+	/* 캠퍼스 보기 > 대학종합순위 > 2위, 3위, 4위 */
+	.campus_list_subtitle .li_class {
+		font-size: 1.1125rem;
+		margin: 0px 15px 0px 0px;
+	}
+
+	.campus_list_subtitle .li_about {
+		font-size: 1.2125rem;
+		margin-bottom: -25px;
+	}
+
+	.campus_list_subtitle .li_about .rank_img {
+		width: 55px;
+		height: 55px;
+		margin: 0px 13px 0px 0px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.campus_list_subtitle .li_about .rank_star {
+		height: 1.22rem;
+	}
+
+	.campus_list_subtitle .li_about p {
+		color: #58595B;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.campus_grade_service {
+		width: 100%; 
+	}
+
+	.campus_grade_etc {
+		margin-top: 5px;
+	}
+
+	.grade_table {
+		width: 215px;
+		border-collapse: collapse;
+		border: 1px solid #CCCCCC;
+		display: inline-block;
+		margin-right: 5px;
+	}
+
+	.grade_title {
+		font-size: 1.1rem;
+		color: #1C75BA;
+		width: 100%;
+		height: 45px;
+		text-align: center;
+		background: #F4F4F4;
+		padding: 0px 41.5px;
+		border-bottom: 1px solid #E6E7E8;
+	}
+
+	.grade_about {
+		font-size: 1.06rem;
+		color: #58595B;
+		font-weight: bold;
+		padding-left: 20px;
+		margin-top: 15px;
+	}
+
+	.grade_about span {
+		font-size: 0.8125rem;
+		color: #808083;
+	}
+
+	.grade_class {
+		padding-left: 35px;
+		margin-top: -15px;
+		margin-bottom: -5px;
+	}
+
+	.grade_class img {
+		width: 1.2rem;
+		height: 1.2rem;
+	}
+
+	.grade_class span {
+		font-size: 1.06rem;
+		color: #808083;
+		margin-left: 5px;
+	}
+
+	.grade_more {
+		border-top: 1px solid #E6E7E8;
+		font-size: 0.93rem;
+		color: #808083;
+		text-align: right;
+		height: 35px;
+		vertical-align: middle;
+		padding-right: 18px;
+	}

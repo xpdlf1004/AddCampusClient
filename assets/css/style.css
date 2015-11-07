@@ -1,0 +1,78 @@
+
+	/**********************************************
+	* 웹 기본 세팅
+	**********************************************/
+	@font-face {
+		font-family: 'NanumBarunGothicLight';
+		font-style: normal;
+		/*src: url('/assets/fonts/NanumBarunGothic.eot');
+		src: url('/assets/fonts/NanumBarunGothic.eot') format('embedded-opentype'),
+		url('/assets/fonts/NanumBarunGothic.woff') format('woff'),*/
+		src: url('/assets/fonts/NanumBarunGothicLight.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'NanumMyeongjo';
+		font-style: normal;
+		/*src: url('/assets/fonts/NanumBrush.eot');
+		src: url('/assets/fonts/NanumBrush.eot') format('embedded-opentype'),
+		url('/assets/fonts/NanumBrush.woff') format('woff'),*/
+		src: url('/assets/fonts/NanumMyeongjo.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'NanumPen';
+		font-style: normal;
+		/*src: url('/assets/fonts/NanumPen.eot');
+		src: url('/assets/fonts/NanumPen.eot') format('embedded-opentype'),
+		url('/assets/fonts/NanumPen.woff') format('woff'),*/
+		src: url('/assets/fonts/NanumPen.ttf') format('truetype');
+	}
+
+	* { font-family: 'NanumBarunGothic'; font-weight: normal; }
+	
+	html, head, body { font-size: 100%; }
+	body { margin: 0px; padding: 0px; }
+	button, a { cursor: pointer; }
+	textarea, button, img { outline: none; border: none; }
+
+	header {
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+		height: 36px;
+		margin: 0px auto;
+	}
+
+	header * {
+		vertical-align: middle;
+		color: #FFFFFF;
+	}
+
+	.header_menu {
+		width: 1000px;
+		margin: 0px auto;
+	}
+
+	header ul,
+	header li {
+		margin: 0px;
+		padding: 0px;
+		height: 36px;
+		list-style: none;
+		display: inline-block;
+		font-size: 0.93rem;
+		line-height: 36px;
+	}
+
+	.header_left {
+		width: 60%;
+	}
+
+	.header_right {
+		width: 39%;
+	}
+
+	#wrapper {
+		width: 100%;
+	}

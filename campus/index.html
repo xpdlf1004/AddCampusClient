@@ -1,0 +1,702 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<!-- Meta tag for Old Version -->
+	<title>AddCampus</title>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge, chrome=1'>
+	<!-- <meta name="keywords" content="키워드"/> -->
+	<!-- <meta name="description" content="소개글"/> -->
+	<meta name="robots" content="ALL"/>
+	<!-- <meta name="reply-to" content="이메일"/> -->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<!-- Meta tag for Cross Browsing, Old Version -->
+
+	<!-- Assets -->
+	<link rel='stylesheet' href='/assets/css/style.css'>
+	<link rel='stylesheet' href='/assets/css/campus.css'>
+	<!-- Assets -->
+</head>
+<body>
+
+	<header style='background-color:#FFD432;'>
+		<div class='header_menu'>
+			<ul class='header_left'>
+				<li style='margin:0px 28px 0px 14px;'><a href='/' style='text-decoration:none;color:#FFFFFF;'><img src='/assets/img/header/logo.png'/></a></li>
+				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/campus/' style='text-decoration:none;color:#FFFFFF;'>캠퍼스 보기</a></li>
+				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/review/' style='text-decoration:none;color:#FFFFFF;'>캠퍼스 리뷰</a></li>
+				<li style='width:65px;margin:0px 28px 0px 0px;'>대외활동</li>
+				<li style='width:65px;margin:0px 28px 0px 0px;'>합격꿀팁</li>
+			</ul>
+			<ul class='header_right'>
+				<li><input type='text' name='search_header' placeholder='더 많은 대학정보를 찾아보세요!' style='height:30%;padding:5px;width:200px;vertical-align:middle;border-radius:6px;border:none;color:#000000;'/></li>
+				<li style='margin:0px 14px;'>로그인/회원가입</li>
+			</ul>
+		</div>
+	</header>
+
+	<div id='wrapper'>
+
+		<div id='campus_image'>
+			<h1 class='head_title'>캠퍼스는 [ <span>더하기</span> ]다!</h1>
+			<h3 class='head_subtitle'>캠퍼스에 이야기를 더하다. 애드캠퍼스가 함께합니다</h3>
+			<div class='search_box'>
+				<input type='text' name='search_school' placeholder='합격하고 싶은 대학을 검색해보세요!'/>
+				<img src='/assets/img/common/search_button.png'/>
+			</div>
+		</div>
+
+		<div id='campus_content'>
+			<h2 class='title'>재학생이 알려주는 생생한 캠퍼스 리뷰</h2>
+			<h3 class='subtitle'>니들 선배가 될 사람들이 직접 작성한 리뷰를 봐라</h3>
+
+			<div class='campus_left'>
+
+				<div class='campus_grade'>
+
+					<h1>대학종합순위</h1>
+
+					<!-- 대학종합순위 > 1위  -->
+					<ul class='campus_list_title'>
+						<li class='li_class'>1위</li>
+						<li class='li_about'>
+							<img src='/assets/img/common/rank_logo.png' class='rank_img'/>
+							<p>연세대학교 <span style='font-size:1rem;color:#808083;'>(신촌캠퍼스)</span><br/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<span style='font-size:1.15rem;color:#80803;'>9.98</span>
+							</p>
+						</li>
+						<li class='li_message'>
+							"없는게 없는 신촌 게다가 편리한 교통! 와우!"
+						</li>
+					</ul>
+
+					<!-- 대학종합순위 > 2위, 3위, 4위 -->
+					<ul class='campus_list_subtitle'>
+						<li class='li_class'>2위</li>
+						<li class='li_about'>
+							<img src='/assets/img/common/rank_logo.png' class='rank_img'/>
+							<p>연세대학교 <span style='font-size:0.9rem;color:#808083;'>(신촌캠퍼스)</span><br/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<span style='font-size:1.05rem;color:#80803;'>9.98</span>
+							</p>
+						</li>
+						<br/>
+						<li class='li_class'>3위</li>
+						<li class='li_about'>
+							<img src='/assets/img/common/rank_logo.png' class='rank_img'/>
+							<p>연세대학교 <span style='font-size:0.9rem;color:#808083;'>(신촌캠퍼스)</span><br/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<span style='font-size:1.05rem;color:#80803;'>9.98</span>
+							</p>
+						</li>
+						<br/>
+						<li class='li_class'>4위</li>
+						<li class='li_about' style='margin-bottom:0px;'>
+							<img src='/assets/img/common/rank_logo.png' class='rank_img'/>
+							<p>연세대학교 <span style='font-size:0.9rem;color:#808083;'>(신촌캠퍼스)</span><br/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<span style='font-size:1.05rem;color:#80803;'>9.98</span>
+							</p>
+						</li>
+						<br/>
+					</ul>
+
+				</div>
+
+				<div class='campus_grade_etc'>
+
+					<table class='grade_table'>
+						<tr>
+							<td class='grade_title'>캠퍼스 시설 만족도</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class' style='margin-bottom:10px;'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class='grade_more'>전체순위보기</td>
+						</tr>
+					</table>
+
+					<table class='grade_table'>
+						<tr>
+							<td class='grade_title'>캠퍼스 시설 만족도</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class' style='margin-bottom:10px;'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class='grade_more'>전체순위보기</td>
+						</tr>
+					</table>
+
+					<table class='grade_table'>
+						<tr>
+							<td class='grade_title'>캠퍼스 시설 만족도</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class' style='margin-bottom:10px;'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class='grade_more'>전체순위보기</td>
+						</tr>
+					</table>
+
+				</div>
+				
+				<div class='campus_grade_etc'>
+
+					<table class='grade_table'>
+						<tr>
+							<td class='grade_title'>캠퍼스 시설 만족도</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class' style='margin-bottom:10px;'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class='grade_more'>전체순위보기</td>
+						</tr>
+					</table>
+
+					<table class='grade_table'>
+						<tr>
+							<td class='grade_title'>캠퍼스 시설 만족도</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class' style='margin-bottom:10px;'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class='grade_more'>전체순위보기</td>
+						</tr>
+					</table>
+
+					<table class='grade_table'>
+						<tr>
+							<td class='grade_title'>캠퍼스 시설 만족도</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class='grade_about'>1. 건국대학교 <span>(서울캠퍼스)</span></p>
+								<p class='grade_class' style='margin-bottom:10px;'>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/>
+									<span>9.9</span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class='grade_more'>전체순위보기</td>
+						</tr>
+					</table>
+
+				</div>
+
+			</div>
+
+			<!-- 캠퍼스 오른쪽 리뷰 -->
+			<div class='campus_right' style='width: 310px;margin: 0px auto;float: right;'>
+
+				<table class='campus_category'>
+					<tr>
+						<td style='font-size:1.3125rem;font-weight:bold;color:#58595B;'>학과군</td>
+					</tr>
+					<tr>
+						<td>자연계열</td>
+					</tr>
+					<tr>
+						<td>인문계열</td>
+					</tr>
+					<tr>
+						<td>사회계열</td>
+					</tr>
+					<tr>
+						<td>교육계열</td>
+					</tr>
+					<tr>
+						<td>의약계열</td>
+					</tr>
+					<tr>
+						<td>공학계열</td>
+					</tr>
+					<tr>
+						<td>예체능계열</td>
+					</tr>
+					<tr>
+						<td></td>
+					</tr>
+				</table>
+
+				<table class='review_list'>
+					<tr>
+						<td colspan='2' style='font-size:1.375rem;font-weight:normal;text-align:left;padding:15px 0px 14px 15px;color:#58595B;'>가장 활발한 대학</td>
+						<td style='font-size:0.8rem;text-align:right;padding:18px 10px 14px 0px;color:#1C75BA;'>더보기</td>
+					</tr>
+					<tr>
+						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+					</tr>
+					<tr>
+						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+					</tr>
+					<tr>
+						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+					</tr>
+					<tr>
+						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+					</tr>
+					<tr>
+						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+					</tr>
+					<tr>
+						<td colspan='3'>&nbsp;</td>
+					</tr>
+				</table>
+
+				<table class='review_list'>
+					<tr>
+						<td colspan='2' style='font-size:1.375rem;font-weight:normal;text-align:left;padding:15px 0px 14px 15px;color:#58595B;'>가장 활발한 대학</td>
+						<td style='font-size:0.8rem;text-align:right;padding:18px 10px 14px 0px;color:#1C75BA;'>더보기</td>
+					</tr>
+					<tr>
+						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+					</tr>
+					<tr>
+						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+					</tr>
+					<tr>
+						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+					</tr>
+					<tr>
+						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+					</tr>
+					<tr>
+						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+					</tr>
+					<tr>
+						<td colspan='3'>&nbsp;</td>
+					</tr>
+				</table>
+
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Support for HTML5, CSS3 -->
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+	<![endif]-->
+
+	<!--[if lt IE 8]>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+	<![endif]-->
+
+	<!--[if lt IE 7]>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script>
+	<![endif]-->
+	<!-- Support for HTML5, CSS3 -->
+
+	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+</body>
+</html>

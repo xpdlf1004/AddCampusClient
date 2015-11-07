@@ -1,7 +1,326 @@
+<!DOCTYPE HTML>
 <html>
-	<head>
-  </head>
-  <body>
-    Welcome addcampus.
-  </body>
+<head>
+	<!-- Meta tag for Old Version -->
+	<title>AddCampus</title>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge, chrome=1'>
+	<!-- <meta name="keywords" content="키워드"/> -->
+	<!-- <meta name="description" content="소개글"/> -->
+	<meta name="robots" content="ALL"/>
+	<!-- <meta name="reply-to" content="이메일"/> -->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<!-- Meta tag for Cross Browsing, Old Version -->
+
+	<!-- Assets -->
+	<link rel='stylesheet' href='/assets/css/style.css'>
+	<link rel='stylesheet' href='/assets/css/index.css'>
+	<!-- Assets -->
+</head>
+<body>
+
+	<header>
+		<div class='header_menu'>
+			<ul class='header_left'>
+				<li style='margin:0px 28px 0px 14px;'><a href='/' style='text-decoration:none;color:#FFFFFF;'><img src='/assets/img/header/logo.png'/></a></li>
+				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/campus/' style='text-decoration:none;color:#FFFFFF;'>캠퍼스 보기</a></li>
+				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/review/' style='text-decoration:none;color:#FFFFFF;'>캠퍼스 리뷰</a></li>
+				<li style='width:65px;margin:0px 28px 0px 0px;'>대외활동</li>
+				<li style='width:65px;margin:0px 28px 0px 0px;'>합격꿀팁</li>
+			</ul>
+			<ul class='header_right'>
+				<li><input type='text' name='search_header' placeholder='더 많은 대학정보를 찾아보세요!' style='height:30%;padding:5px;width:200px;vertical-align:middle;border-radius:6px;border:none;color:#000000;'/></li>
+				<li style='margin:0px 14px;'>로그인/회원가입</li>
+			</ul>
+		</div>
+	</header>
+
+	<div id='wrapper'>
+
+		<div id='box_1_main_image'>
+			<h1 class='head_title'>캠퍼스는 [ <span>더하기</span> ]다!</h1>
+			<h3 class='head_subtitle'>캠퍼스에 이야기를 더하다. 애드캠퍼스가 함께합니다</h3>
+			<div class='search_box'>
+				<input type='text' name='search_school' placeholder='합격하고 싶은 대학을 검색해보세요!'/>
+				<img src='/assets/img/common/search_button.png'/>
+			</div>
+			<ul class='campus_menu'>
+				<li style='margin-right:10px;'>
+					<img src='/assets/img/common/main_campus.png' id='campus_button_img1' onmouseover='src="/assets/img/common/main_campus_overall.png";document.getElementById("campus_s_button_img1").src="/assets/img/common/main_go_overall.png";' onmouseout='src="/assets/img/common/main_campus.png";document.getElementById("campus_s_button_img1").src="/assets/img/common/main_go.png";'/>
+					<h4>캠퍼스 보기</h4>
+					<p>실제 재학생들이<br/>말해주는 학교 이야기들과<br/>비하인드 스토리들!</p>
+					<img src='/assets/img/common/main_go.png' id='campus_s_button_img1' onmouseover='src="/assets/img/common/main_go_overall.png";document.getElementById("campus_button_img1").src="/assets/img/common/main_campus_overall.png";' onmouseout='src="/assets/img/common/main_go.png";document.getElementById("campus_button_img1").src="/assets/img/common/main_campus.png";'/>
+				</li>
+				<li style='margin-right:10px;'>
+					<img src='/assets/img/common/main_club.png' id='campus_button_img2' onmouseover='src="/assets/img/common/main_club_overall.png";document.getElementById("campus_s_button_img2").src="/assets/img/common/main_go_overall.png";' onmouseout='src="/assets/img/common/main_club.png";document.getElementById("campus_s_button_img2").src="/assets/img/common/main_go.png";'/>
+					<h4>캠퍼스 리뷰</h4>
+					<p>실제 재학생들이<br/>말해주는 학교 이야기들과<br/>비하인드 스토리들!</p>
+					<img src='/assets/img/common/main_go.png' id='campus_s_button_img2' onmouseover='src="/assets/img/common/main_go_overall.png";document.getElementById("campus_button_img2").src="/assets/img/common/main_club_overall.png";' onmouseout='src="/assets/img/common/main_go.png";document.getElementById("campus_button_img2").src="/assets/img/common/main_club.png";'/>
+				</li>
+				<li style='margin-right:10px;'>
+					<img src='/assets/img/common/main_tip.png' id='campus_button_img3' onmouseover='src="/assets/img/common/main_tip_overall.png";document.getElementById("campus_s_button_img3").src="/assets/img/common/main_go_overall.png";' onmouseout='src="/assets/img/common/main_tip.png";document.getElementById("campus_s_button_img3").src="/assets/img/common/main_go.png";'/>
+					<h4>합격꿀팁</h4>
+					<p>실제 재학생들이<br/>말해주는 학교 이야기들과<br/>비하인드 스토리들!</p>
+					<img src='/assets/img/common/main_go.png' id='campus_s_button_img3' onmouseover='src="/assets/img/common/main_go_overall.png";document.getElementById("campus_button_img3").src="/assets/img/common/main_tip_overall.png";' onmouseout='src="/assets/img/common/main_go.png";document.getElementById("campus_button_img3").src="/assets/img/common/main_tip.png";'/>
+				</li>
+				<li>
+					<img src='/assets/img/common/main_review.png' id='campus_button_img4' onmouseover='src="/assets/img/common/main_review_overall.png";document.getElementById("campus_s_button_img4").src="/assets/img/common/main_go_overall.png";' onmouseout='src="/assets/img/common/main_review.png";document.getElementById("campus_s_button_img4").src="/assets/img/common/main_go.png";'/>
+					<h4>대외활동</h4>
+					<p>실제 재학생들이<br/>말해주는 학교 이야기들과<br/>비하인드 스토리들!</p>
+					<img src='/assets/img/common/main_go.png' id='campus_s_button_img4' onmouseover='src="/assets/img/common/main_go_overall.png";document.getElementById("campus_button_img4").src="/assets/img/common/main_review_overall.png";' onmouseout='src="/assets/img/common/main_go.png";document.getElementById("campus_button_img4").src="/assets/img/common/main_review.png";'/>
+				</li>
+			</ul>
+		</div>
+
+		<div id='box_2_main_banner'>
+			<h2 class='title'>진짜 대학생의 캠퍼스 라이프는 어떨까?</h2>
+			<h3 class='subtitle'>니들 선배가 될 사람들이 직접 작성한 리뷰를 봐라</h3>
+			<img src='/assets/img/common/campus_backward.png' style='padding-bottom:45px;'/>
+			<div class='banner_box' style='margin-left:25px;'>
+				<p>베스트 리뷰</p>
+				<h3>서울대학교</h3>
+				<h5>내가 고3 때로 돌아갈 수 있다면 여기는 안온다 왜냐하면...</h5>
+			</div>
+			<div class='banner_box' style='margin:0px 25px 0px 25px;'>
+				<p>베스트 리뷰</p>
+				<h3>서울대학교</h3>
+				<h5>내가 고3 때로 돌아갈 수 있다면 여기는 안온다 왜냐하면...</h5>
+			</div>
+			<div class='banner_box' style='margin-right:25px;'>
+				<p>베스트 리뷰</p>
+				<h3>서울대학교</h3>
+				<h5>내가 고3 때로 돌아갈 수 있다면 여기는 안온다 왜냐하면...</h5>
+			</div>
+			<img src='/assets/img/common/campus_foward.png' style='padding-bottom:45px;'/>
+		</div>
+
+		<div id='box_2_main_review' style='width:1000px;margin:0px auto;'>
+			<h2 class='title'>재학생이 알려주는 생생한 캠퍼스 리뷰</h2>
+			<h3 class='subtitle'>니들 선배가 될 사람들이 직접 작성한 리뷰를 봐라</h3>
+
+				<!-- 캠퍼스 왼쪽 리뷰 -->
+				<div class='review_left'>
+
+					<div class='review'>
+						<img src='/assets/img/common/review_logo.png' class='about_img'/>
+						<div class='review_about_'>
+							<h3>00대 000대학 0000학과</h3>
+							<p style='margin-bottom:10px;'>
+								<img src='/assets/img/common/review_star_full.png'/>
+								<img src='/assets/img/common/review_star_full.png'/>
+								<img src='/assets/img/common/review_star_full.png'/>
+								<img src='/assets/img/common/review_star_full.png'/>
+								<img src='/assets/img/common/review_star_full.png'/>
+								<span style='margin:0px 5px;'>2.5</span> 53명의 평가
+							</p>
+							<p style='display:inline-block;'>평가 종합순위 00위</p>
+						</div>
+						<div class='review_evaluation'>
+							<h6 class='h6_title'>작성자한줄평</h6>
+							<img src='/assets/img/common/review_user.png' style='position:absolute;margin-top:-11px;margin-left:25px;width:48px;height:48px;'/>
+							<h6 class='h6_content' style='margin-left:98px'>"좋은 학과다. 허나 고민은 하고 들어왔으면 좋겠다"</h6>
+						</div>
+						<div class='pros'>
+							<h3>장점</h3>
+							<h4>대한민국 3대 산업디자인과의 이름이 아깝지 않은 동문선배들 다양한 행사에 초청되어 다양한 강연을 들을 기회가 많으며 여러 기업들과의 협약으로 직무체험, 제품지원 등 국민대학교 내에서는 최고의 혜택을 받는다.</h4>
+						</div>
+						<div class='cons'>
+							<h3>단점</h3>
+							<h4>빡세다, 과제가 많다. 오죽하면 매년 1학년 들이 미팅할 시간도 없다 라는 말을 한다. 덕분에 학교에서 먹고 자고 하면서 폐인이 되어간다, 또 교수들의 입김이 쌔다.</h4>
+						</div>
+						<p style='vertical-align:top;margin:40px 10px 10px 0px;padding:0px;font-size:1.05rem;position:relative;right:0%;text-align:right;color: #808083;'>대학리뷰 자세히 보기 <img src='/assets/img/common/review_more.png' style='vertical-align:top;margin-top:0.5px;'/></p>
+					</div>
+
+					<div class='review'>
+						<img src='/assets/img/common/review_logo.png' class='about_img'/>
+						<div class='review_about_'>
+							<h3>00대 000대학 0000학과</h3>
+							<p style='margin-bottom:10px;'>
+								<img src='/assets/img/common/review_star_full.png'/>
+								<img src='/assets/img/common/review_star_full.png'/>
+								<img src='/assets/img/common/review_star_full.png'/>
+								<img src='/assets/img/common/review_star_full.png'/>
+								<img src='/assets/img/common/review_star_full.png'/>
+								<span style='margin:0px 5px;'>2.5</span> 53명의 평가
+							</p>
+							<p style='display:inline-block;'>평가 종합순위 00위</p>
+						</div>
+						<div class='review_evaluation'>
+							<h6 class='h6_title'>작성자한줄평</h6>
+							<img src='/assets/img/common/review_user.png' style='position:absolute;margin-top:-11px;margin-left:25px;width:48px;height:48px;'/>
+							<h6 class='h6_content' style='margin-left:98px'>"좋은 학과다. 허나 고민은 하고 들어왔으면 좋겠다"</h6>
+						</div>
+						<div class='pros'>
+							<h3>장점</h3>
+							<h4>대한민국 3대 산업디자인과의 이름이 아깝지 않은 동문선배들 다양한 행사에 초청되어 다양한 강연을 들을 기회가 많으며 여러 기업들과의 협약으로 직무체험, 제품지원 등 국민대학교 내에서는 최고의 혜택을 받는다.</h4>
+						</div>
+						<div class='cons'>
+							<h3>단점</h3>
+							<h4>빡세다, 과제가 많다. 오죽하면 매년 1학년 들이 미팅할 시간도 없다 라는 말을 한다. 덕분에 학교에서 먹고 자고 하면서 폐인이 되어간다, 또 교수들의 입김이 쌔다.</h4>
+						</div>
+						<p style='vertical-align:top;margin:40px 10px 10px 0px;padding:0px;font-size:1.05rem;position:relative;right:0%;text-align:right;color: #808083;'>대학리뷰 자세히 보기 <img src='/assets/img/common/review_more.png' style='vertical-align:top;margin-top:0.5px;'/></p>
+					</div>
+
+					<div class='review'>
+						<img src='/assets/img/common/review_logo.png' class='about_img'/>
+						<div class='review_about_'>
+							<h3>00대 000대학 0000학과</h3>
+							<p style='margin-bottom:10px;'>
+								<img src='/assets/img/common/review_star_full.png'/>
+								<img src='/assets/img/common/review_star_full.png'/>
+								<img src='/assets/img/common/review_star_full.png'/>
+								<img src='/assets/img/common/review_star_full.png'/>
+								<img src='/assets/img/common/review_star_full.png'/>
+								<span style='margin:0px 5px;'>2.5</span> 53명의 평가
+							</p>
+							<p style='display:inline-block;'>평가 종합순위 00위</p>
+						</div>
+						<div class='review_evaluation'>
+							<h6 class='h6_title'>작성자한줄평</h6>
+							<img src='/assets/img/common/review_user.png' style='position:absolute;margin-top:-11px;margin-left:25px;width:48px;height:48px;'/>
+							<h6 class='h6_content' style='margin-left:98px'>"좋은 학과다. 허나 고민은 하고 들어왔으면 좋겠다"</h6>
+						</div>
+						<div class='pros'>
+							<h3>장점</h3>
+							<h4>대한민국 3대 산업디자인과의 이름이 아깝지 않은 동문선배들 다양한 행사에 초청되어 다양한 강연을 들을 기회가 많으며 여러 기업들과의 협약으로 직무체험, 제품지원 등 국민대학교 내에서는 최고의 혜택을 받는다.</h4>
+						</div>
+						<div class='cons'>
+							<h3>단점</h3>
+							<h4>빡세다, 과제가 많다. 오죽하면 매년 1학년 들이 미팅할 시간도 없다 라는 말을 한다. 덕분에 학교에서 먹고 자고 하면서 폐인이 되어간다, 또 교수들의 입김이 쌔다.</h4>
+						</div>
+						<p style='vertical-align:top;margin:40px 10px 10px 0px;padding:0px;font-size:1.05rem;position:relative;right:0%;text-align:right;color: #808083;'>대학리뷰 자세히 보기 <img src='/assets/img/common/review_more.png' style='vertical-align:top;margin-top:0.5px;'/></p>
+					</div>
+
+					<div class='review_more'>
+						리뷰 더보기
+					</div>
+
+				</div>
+				<!-- 캠퍼스 왼쪽 리뷰 -->
+
+				<!-- 캠퍼스 오른쪽 리뷰 --> 
+				<div class='review_right'>
+
+					<table class='review_list'>
+						<tr>
+							<td colspan='2' style='font-size:1.375rem;font-weight:normal;text-align:left;padding:15px 0px 14px 15px;color:#58595B;'>가장 활발한 대학</td>
+							<td style='font-size:0.8rem;text-align:right;padding:18px 10px 14px 0px;color:#1C75BA;'>더보기</td>
+						</tr>
+						<tr>
+							<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+							<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+							<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						</tr>
+						<tr>
+							<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+							<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+							<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						</tr>
+						<tr>
+							<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+							<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+							<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						</tr>
+						<tr>
+							<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+							<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+							<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						</tr>
+						<tr>
+							<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+							<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+							<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						</tr>
+						<tr>
+							<td colspan='3'>&nbsp;</td>
+						</tr>
+					</table>
+
+					<table class='review_list'>
+						<tr>
+							<td colspan='2' style='font-size:1.375rem;font-weight:normal;text-align:left;padding:15px 0px 14px 15px;color:#58595B;'>가장 활발한 대학</td>
+							<td style='font-size:0.8rem;text-align:right;padding:18px 10px 14px 0px;color:#1C75BA;'>더보기</td>
+						</tr>
+						<tr>
+							<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+							<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+							<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						</tr>
+						<tr>
+							<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+							<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+							<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						</tr>
+						<tr>
+							<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+							<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+							<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						</tr>
+						<tr>
+							<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+							<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+							<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						</tr>
+						<tr>
+							<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+							<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+							<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						</tr>
+					</table>
+
+					<table class='review_list'>
+						<tr>
+							<td colspan='2' style='font-size:1.375rem;font-weight:normal;text-align:left;padding:15px 0px 14px 15px;color:#58595B;'>가장 활발한 대학</td>
+							<td style='font-size:0.8rem;text-align:right;padding:18px 10px 14px 0px;color:#1C75BA;'>더보기</td>
+						</tr>
+						<tr>
+							<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+							<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+							<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						</tr>
+						<tr>
+							<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+							<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+							<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						</tr>
+						<tr>
+							<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+							<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+							<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						</tr>
+						<tr>
+							<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+							<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+							<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						</tr>
+						<tr>
+							<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+							<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+							<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						</tr>
+					</table>
+
+				</div>
+				<!-- 캠퍼스 오른쪽 리뷰 -->
+
+		</div>
+	</div>
+
+	<!-- Support for HTML5, CSS3 -->
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+	<![endif]-->
+
+	<!--[if lt IE 8]>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+	<![endif]-->
+
+	<!--[if lt IE 7]>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script>
+	<![endif]-->
+	<!-- Support for HTML5, CSS3 -->
+
+	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+</body>
 </html>
