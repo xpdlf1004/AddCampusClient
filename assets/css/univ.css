@@ -1,0 +1,270 @@
+
+
+	.head_title {
+		font-size: 3.4rem;
+		font-family: 'NanumMyeongjo';
+		font-weight: normal;
+		vertical-align: middle;
+
+		margin: 0px;
+		padding: 0px;
+
+		padding-top: 74px;
+	}
+
+	.head_title span {
+		font-size: 6rem;
+		font-family: 'NanumPen';
+		font-weight: normal;
+		vertical-align: middle;
+		color: #FFD432;
+	}
+
+	#univ_content {
+		width: 100%;
+		text-align: center;
+		padding: 30px 0px;
+	}
+
+	#univ_content .title {
+		font-size: 2.5rem;
+		margin: 0px;
+	}
+
+	#univ_content .subtitle {
+		font-size: 1.22rem;
+		margin: 0px;
+	}
+
+	.banner_box { 
+		width: 287px;
+		height: 167px;
+		margin: 0px;
+		padding: 0px;
+		list-style: none;
+		border: 1px solid #CCCCCC;
+		display: inline-block;
+		margin-top: 20px;
+	}
+
+	.banner_box p { 
+		width: 20%;
+		background: #FFD432;
+		color: #000000;
+		font-size: 0.65rem;
+		padding: 5px;
+		position: relative;
+		right: 0%;
+	}
+
+	.banner_box h3 { 
+		width: 90%;
+		margin: 0px auto;
+		text-align: left;
+		font-size: 1.18rem;
+		margin-top: 23%;
+	}
+
+	.banner_box h5 { 
+		width: 90%;
+		margin: 0px auto;
+		text-align: left;
+		font-size: 0.85rem;
+		margin-top: 2%;
+	}
+
+	.univ_table {
+		margin: 0px auto;
+		width: 100%;
+		height: 175px;
+		border-collapse: collapse;
+		border: 1px solid #BCBEC0;
+		margin-bottom: 10px;
+	}
+
+	.univ_table tr,
+	.univ_table td {
+		margin: 0px;
+		padding: 0px;
+	}
+
+	.univ_pic {
+		margin: 0px auto;
+		width: 100%;
+		border-collapse: collapse;
+		border: 1px solid #BCBEC0;
+		margin-bottom: 10px;
+	}
+
+	.univ {
+		margin: 0px auto;
+		display: inline-block;
+		width: 100%;
+		padding: 0px 0px 0px 0px;
+		border: 1px solid #BCBEC0;
+		margin-bottom: 10px;
+	}
+
+	.about_img { 
+		width: 96px;
+		height: 96px;
+		vertical-align: top;
+		display: inline-block;
+	}
+
+	.univ_about_ { 
+		display: inline-block;
+		width: 80%;
+		text-align: left;
+		padding: 8px 0px 0px 18px;
+	}
+
+	.univ_about_ h3 { 
+		font-size: 1.5rem;
+		margin: 0px;
+		margin-bottom: 5px;
+		color: #58595B
+	}
+
+	.univ_about_ p { 
+		margin: 0px;
+		font-size: 1.05rem;
+		color: #808083;
+	}
+
+	.univ_evaluation { 
+		background: rgba(255, 211, 66, 0.3);
+		text-align: left;
+		color: #3366CC;
+		padding: 5px 0px 5px 15px;
+		margin: 15px 0px 30px 0px;
+		vertical-align: middle;
+	}
+
+	.univ_evaluation .h6_title {
+		height: 100%;
+		margin: 0px;
+		padding: 0px;
+		display: inline-block;
+		font-size: 0.9rem;
+		margin-left: 8px;
+		vertical-align: middle;
+		color: #808083;
+	}
+
+	.univ_evaluation .h6_content { 
+		height: 100%;
+		margin: 0px;
+		padding: 0px;
+		display: inline-block;
+		color: #3366CC;
+		font-size: 1.3rem;
+		vertical-align: middle;
+	}
+
+	.pros {
+		width: 85%;
+		margin: 0px auto;
+	}
+
+	.pros h3 {
+		display: inline-block;
+		text-align: left;
+		vertical-align: top;
+		margin: 0px;
+		margin-right: 28px;
+		padding: 0px;
+		font-size: 1rem;
+		color: #00B74A;
+		font-weight: bold;
+	}
+
+	.pros h4 { 
+		display: inline-block;
+		width: 80%;
+		text-align: left;
+		vertical-align: top;
+		margin: 0px;
+		padding: 0px;
+		font-size: 0.9rem;
+		color: #58595B;
+		line-height: 1.2rem;
+	}
+
+	.cons { 
+		width: 85%; 
+		margin: 0px auto;
+		margin-top: 20px;
+	}
+
+	.cons h3 { 
+		display: inline-block;
+		text-align: left;
+		vertical-align: top;
+		margin: 0px;
+		margin-right: 28px;
+		padding: 0px;
+		font-size: 1rem;
+		color: #FF6666;
+		font-weight: bold;
+
+	}
+
+	.cons h4 { 
+		display: inline-block;
+		width: 80%;
+		text-align: left;
+		vertical-align: top;
+		margin: 0px;
+		padding: 0px;
+		font-size: 0.9rem;
+		color: #58595B;
+		line-height: 1.2rem;
+	}
+
+	.campus_category {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 0px;
+		padding: 0px;
+		margin-bottom: 20px;
+		border: 1px solid #BCBEC0;
+		text-align: left;
+	}
+	
+	.campus_category td {
+		margin: 0px;
+		padding: 0px;
+		vertical-align: middle;
+		padding: 18px 0px 0px 18px;
+		border-right: 1px solid #BCBEC0;
+		color: #808083;
+		font-size:1.125rem;
+	}
+
+	.univ_list {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 0px;
+		padding: 0px;
+		margin-bottom: 20px;
+		border: 1px solid #BCBEC0;
+	}
+
+	.univ_list * {
+		vertical-align: middle;
+	}
+
+	.univ_list td {
+		margin: 0px;
+		padding: 0px;
+		vertical-align: middle;
+	}
+
+	.univ_list p {
+		margin: 0px;
+		padding: 0px;
+		vertical-align: middle;
+		display: inline-block;
+		font-size: 1.2rem;
+	}
