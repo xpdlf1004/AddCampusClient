@@ -1,0 +1,427 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<!-- Meta tag for Old Version -->
+	<title>AddCampus</title>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge, chrome=1'>
+	<!-- <meta name="keywords" content="키워드"/> -->
+	<!-- <meta name="description" content="소개글"/> -->
+	<meta name="robots" content="ALL"/>
+	<!-- <meta name="reply-to" content="이메일"/> -->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<!-- Meta tag for Cross Browsing -->
+
+	<!-- Assets -->
+	<link rel='stylesheet' href='../../assets/css/style.css'>
+	<link rel='stylesheet' href='../../assets/css/campus.css'>
+	<!-- Assets -->
+</head>
+<body>
+
+	<header style='background-color:#FFD432;'>
+		<div class='header_menu'>
+			<ul class='header_left'>
+				<li style='margin:0px 28px 0px 14px;'><a href='/' style='text-decoration:none;color:#FFFFFF;'><img src='/assets/img/header/logo.png'/></a></li>
+				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/campus/' style='text-decoration:none;color:#FFFFFF;'>캠퍼스 보기</a></li>
+				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/review/' style='text-decoration:none;color:#FFFFFF;'>캠퍼스 리뷰</a></li>
+				<li style='width:65px;margin:0px 28px 0px 0px;'>대외활동</li>
+				<li style='width:65px;margin:0px 28px 0px 0px;'>합격꿀팁</li>
+			</ul>
+			<ul class='header_right'>
+				<li><input type='text' name='search_header' placeholder='더 많은 대학정보를 찾아보세요!' style='height:30%;padding:5px;width:200px;vertical-align:middle;border-radius:6px;border:none;color:#000000;'/></li>
+				<li style='margin:0px 14px;'>로그인/회원가입</li>
+			</ul>
+		</div>
+	</header>
+
+	<div id='wrapper'>
+
+		<div id='campus_image'>
+			<h1 class='head_title'>캠퍼스는 [ <span>더하기</span> ]다!</h1>
+			<h3 class='head_subtitle'>캠퍼스에 이야기를 더하다. 애드캠퍼스가 함께합니다</h3>
+			<div class='search_box'>
+				<input type='text' name='search_school' placeholder='합격하고 싶은 대학을 검색해보세요!'/>
+				<img src='/assets/img/common/search_button.png'/>
+			</div>
+		</div>
+
+		<style>
+
+			.campus_univ_list {
+				border: 1px solid #BABCBE;
+				border-bottom: none;
+				width: 100%;
+			}
+
+			.campus_univ_list,
+			.campus_univ_list li {
+				margin: 0px;
+				padding: 0px;
+				list-style: none;
+				display: inline-block;
+			}
+
+			.campus_univ_list .univ_class {
+				padding: 0px 20px;
+				font-size: 1.2125rem;
+				color: #FF6666;
+			}
+
+			.campus_univ_list .univ_about {
+				font-size: 1.6875rem;
+				width: 60%;
+			}
+
+			.campus_univ_list .univ_comment {
+				font-size: 1.5rem;
+				color: #58595B;
+				text-align: left;
+				font-family: 'NanumPen';
+			}
+
+			.campus_univ_list .univ_about .univ_img {
+				width: 60px;
+				height: 60px;
+				margin: 0px 6px 0px 0px;
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.campus_univ_list .univ_about .rank_star {
+				height: 1.3rem;
+				vertical-align: middle;
+			}
+
+			.campus_univ_list .univ_about p {
+				color: #58595B;
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.campus_univ_list .univ_comment p {
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+		</style>
+
+		<div id='campus_content'>
+			<h2 class='title'>재학생이 알려주는 생생한 캠퍼스 리뷰</h2>
+			<h3 class='subtitle'>니들 선배가 될 사람들이 직접 작성한 리뷰를 봐라</h3>
+
+			<div class='campus_left'>
+
+				<select name='' style='margin-top:10px;margin-bottom:25px;width:240px;height:40px;border-radius:15px;border:2px solid #808083;font-size:1rem;color:#58595B;'>
+					<option>자연과학 계열</option>
+					<option>인문/사회 계열</option>
+					<option>사범계열</option>
+					<option>의학계열</option>
+					<option>공학계열</option>
+					<option>예체능계열</option>
+					<option>기타</option>
+				</select>
+
+				<ul class='campus_univ_list'>
+					<li class='univ_class'>1.</li>
+					<li class='univ_about'>
+						<img src='/assets/img/common/rank_logo.png' class='univ_img'/>
+						<p>연세대학교 <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
+							<span style='font-size:1rem;color:#808083;padding-top:2px;padding-right:7px;border-right:2px solid #BABCBE;'>국제통상학과</span><span style='font-size:1rem;color:#808083;padding-top:2px;padding-left:7px;'>00개의 리뷰</span>
+						</p>
+					</li>
+					<li class='univ_comment'>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<p style='font-size:1.3125rem;color:#80803;margin-left:5px;margin-top:17px;'>9.98</span>
+					</li>
+				</ul>
+				<ul class='campus_univ_list'>
+					<li class='univ_class'>1.</li>
+					<li class='univ_about'>
+						<img src='/assets/img/common/rank_logo.png' class='univ_img'/>
+						<p>연세대학교 <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
+							<span style='font-size:1rem;color:#808083;padding-top:2px;padding-right:7px;border-right:2px solid #BABCBE;'>국제통상학과</span><span style='font-size:1rem;color:#808083;padding-top:2px;padding-left:7px;'>00개의 리뷰</span>
+						</p>
+					</li>
+					<li class='univ_comment'>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<p style='font-size:1.3125rem;color:#80803;margin-left:5px;margin-top:17px;'>9.98</span>
+					</li>
+				</ul>
+				<ul class='campus_univ_list'>
+					<li class='univ_class'>1.</li>
+					<li class='univ_about'>
+						<img src='/assets/img/common/rank_logo.png' class='univ_img'/>
+						<p>연세대학교 <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
+							<span style='font-size:1rem;color:#808083;padding-top:2px;padding-right:7px;border-right:2px solid #BABCBE;'>국제통상학과</span><span style='font-size:1rem;color:#808083;padding-top:2px;padding-left:7px;'>00개의 리뷰</span>
+						</p>
+					</li>
+					<li class='univ_comment'>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<p style='font-size:1.3125rem;color:#80803;margin-left:5px;margin-top:17px;'>9.98</span>
+					</li>
+				</ul>
+				<ul class='campus_univ_list'>
+					<li class='univ_class'>1.</li>
+					<li class='univ_about'>
+						<img src='/assets/img/common/rank_logo.png' class='univ_img'/>
+						<p>연세대학교 <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
+							<span style='font-size:1rem;color:#808083;padding-top:2px;padding-right:7px;border-right:2px solid #BABCBE;'>국제통상학과</span><span style='font-size:1rem;color:#808083;padding-top:2px;padding-left:7px;'>00개의 리뷰</span>
+						</p>
+					</li>
+					<li class='univ_comment'>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<p style='font-size:1.3125rem;color:#80803;margin-left:5px;margin-top:17px;'>9.98</span>
+					</li>
+				</ul>
+				<ul class='campus_univ_list'>
+					<li class='univ_class'>1.</li>
+					<li class='univ_about'>
+						<img src='/assets/img/common/rank_logo.png' class='univ_img'/>
+						<p>연세대학교 <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
+							<span style='font-size:1rem;color:#808083;padding-top:2px;padding-right:7px;border-right:2px solid #BABCBE;'>국제통상학과</span><span style='font-size:1rem;color:#808083;padding-top:2px;padding-left:7px;'>00개의 리뷰</span>
+						</p>
+					</li>
+					<li class='univ_comment'>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<p style='font-size:1.3125rem;color:#80803;margin-left:5px;margin-top:17px;'>9.98</span>
+					</li>
+				</ul>
+				<ul class='campus_univ_list'>
+					<li class='univ_class'>1.</li>
+					<li class='univ_about'>
+						<img src='/assets/img/common/rank_logo.png' class='univ_img'/>
+						<p>연세대학교 <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
+							<span style='font-size:1rem;color:#808083;padding-top:2px;padding-right:7px;border-right:2px solid #BABCBE;'>국제통상학과</span><span style='font-size:1rem;color:#808083;padding-top:2px;padding-left:7px;'>00개의 리뷰</span>
+						</p>
+					</li>
+					<li class='univ_comment'>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<p style='font-size:1.3125rem;color:#80803;margin-left:5px;margin-top:17px;'>9.98</span>
+					</li>
+				</ul>
+				<ul class='campus_univ_list'>
+					<li class='univ_class'>1.</li>
+					<li class='univ_about'>
+						<img src='/assets/img/common/rank_logo.png' class='univ_img'/>
+						<p>연세대학교 <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
+							<span style='font-size:1rem;color:#808083;padding-top:2px;padding-right:7px;border-right:2px solid #BABCBE;'>국제통상학과</span><span style='font-size:1rem;color:#808083;padding-top:2px;padding-left:7px;'>00개의 리뷰</span>
+						</p>
+					</li>
+					<li class='univ_comment'>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<p style='font-size:1.3125rem;color:#80803;margin-left:5px;margin-top:17px;'>9.98</span>
+					</li>
+				</ul>
+				<ul class='campus_univ_list'>
+					<li class='univ_class'>1.</li>
+					<li class='univ_about'>
+						<img src='/assets/img/common/rank_logo.png' class='univ_img'/>
+						<p>연세대학교 <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
+							<span style='font-size:1rem;color:#808083;padding-top:2px;padding-right:7px;border-right:2px solid #BABCBE;'>국제통상학과</span><span style='font-size:1rem;color:#808083;padding-top:2px;padding-left:7px;'>00개의 리뷰</span>
+						</p>
+					</li>
+					<li class='univ_comment'>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<p style='font-size:1.3125rem;color:#80803;margin-left:5px;margin-top:17px;'>9.98</span>
+					</li>
+				</ul>
+				<ul class='campus_univ_list'>
+					<li class='univ_class'>1.</li>
+					<li class='univ_about'>
+						<img src='/assets/img/common/rank_logo.png' class='univ_img'/>
+						<p>연세대학교 <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
+							<span style='font-size:1rem;color:#808083;padding-top:2px;padding-right:7px;border-right:2px solid #BABCBE;'>국제통상학과</span><span style='font-size:1rem;color:#808083;padding-top:2px;padding-left:7px;'>00개의 리뷰</span>
+						</p>
+					</li>
+					<li class='univ_comment'>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<p style='font-size:1.3125rem;color:#80803;margin-left:5px;margin-top:17px;'>9.98</span>
+					</li>
+				</ul>
+				<ul class='campus_univ_list' style='border-bottom: 1px solid #BABCBE;'>
+					<li class='univ_class'>1.</li>
+					<li class='univ_about'>
+						<img src='/assets/img/common/rank_logo.png' class='univ_img'/>
+						<p>연세대학교 <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
+							<span style='font-size:1rem;color:#808083;padding-top:2px;padding-right:7px;border-right:2px solid #BABCBE;'>국제통상학과</span><span style='font-size:1rem;color:#808083;padding-top:2px;padding-left:7px;'>00개의 리뷰</span>
+						</p>
+					</li>
+					<li class='univ_comment'>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+						<p style='font-size:1.3125rem;color:#80803;margin-left:5px;margin-top:17px;'>9.98</span>
+					</li>
+				</ul>
+
+				<div class='univ_list' style='width:100%;padding:22px 0px;font-size:0.93rem;color:#808083;margin:0px auto;text-align:center;border: 1px solid #BABCBE;margin-top:10px;'>
+					<span style='margin-right:18px;'>첫 페이지</span><span style='margin-right:18px;'>이전</span> <span>|</span> <span style='margin:0px 8px;'>1</span> <span>|</span> <span style='margin:0px 8px;'>2</span> <span>|</span> <span style='margin:0px 8px;'>3</span> <span>|</span> <span style='margin:0px 8px;'>4</span> <span>|</span> <span style='margin:0px 8px;'>5</span> <span>|</span></span> <span style='margin-left:18px;'>다음</span> <span style='margin-left:18px;'>막 페이지</span>
+				</div>
+
+			</div>
+
+			<!-- 캠퍼스 오른쪽 리뷰 -->
+			<div class='campus_right' style='width: 310px;margin: 0px auto;float: right;'>
+
+				<table class='campus_category'>
+					<tr>
+						<td style='font-size:1.3125rem;font-weight:bold;color:#58595B;'>학과군</td>
+					</tr>
+					<tr>
+						<td>자연계열</td>
+					</tr>
+					<tr>
+						<td>인문계열</td>
+					</tr>
+					<tr>
+						<td>사회계열</td>
+					</tr>
+					<tr>
+						<td>교육계열</td>
+					</tr>
+					<tr>
+						<td>의약계열</td>
+					</tr>
+					<tr>
+						<td>공학계열</td>
+					</tr>
+					<tr>
+						<td>예체능계열</td>
+					</tr>
+					<tr>
+						<td></td>
+					</tr>
+				</table>
+
+				<table class='review_list'>
+					<tr>
+						<td colspan='2' style='font-size:1.375rem;font-weight:normal;text-align:left;padding:15px 0px 14px 15px;color:#58595B;'>가장 활발한 대학</td>
+						<td style='font-size:0.8rem;text-align:right;padding:18px 10px 14px 0px;color:#1C75BA;'>더보기</td>
+					</tr>
+					<tr>
+						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+					</tr>
+					<tr>
+						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+					</tr>
+					<tr>
+						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+					</tr>
+					<tr>
+						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+					</tr>
+					<tr>
+						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+					</tr>
+					<tr>
+						<td colspan='3'>&nbsp;</td>
+					</tr>
+				</table>
+
+				<table class='review_list'>
+					<tr>
+						<td colspan='2' style='font-size:1.375rem;font-weight:normal;text-align:left;padding:15px 0px 14px 15px;color:#58595B;'>가장 활발한 대학</td>
+						<td style='font-size:0.8rem;text-align:right;padding:18px 10px 14px 0px;color:#1C75BA;'>더보기</td>
+					</tr>
+					<tr>
+						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+					</tr>
+					<tr>
+						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+					</tr>
+					<tr>
+						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+					</tr>
+					<tr>
+						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+					</tr>
+					<tr>
+						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
+						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
+						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+					</tr>
+					<tr>
+						<td colspan='3'>&nbsp;</td>
+					</tr>
+				</table>
+
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Support for HTML5, CSS3 -->
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+	<![endif]-->
+
+	<!--[if lt IE 8]>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+	<![endif]-->
+
+	<!--[if lt IE 7]>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script>
+	<![endif]-->
+	<!-- Support for HTML5, CSS3 -->
+
+	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+</body>
+</html>
