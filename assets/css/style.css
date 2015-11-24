@@ -67,6 +67,7 @@
 
 	.header_left {
 		width: 60%;
+		text-align: left;
 	}
 
 	.header_right {
