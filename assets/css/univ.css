@@ -248,3 +248,14 @@
 		display: inline-block;
 		font-size: 1.2rem;
 	}
+	
+	.layer2s { display:none; /*position:fixed;*/ top:0; left:0; width:100%; height:100%; z-index:100; }
+	.layer2s .bg2 { position: fixed; top:0; left:0; width: 100%; height:100%; background:#000; opacity:.5; filter:alpha(opacity=50); }
+	.layer2s .pop-layer { display:block; }
+
+	.review_write {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 0px;
+		padding: 0px;
+	}
