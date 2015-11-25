@@ -433,5 +433,249 @@
 	<!-- Support for HTML5, CSS3 -->
 
 	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+	
+	<script>	
+
+		function layer_open(el){
+
+			var temp = $('#' + el);
+			var bg = temp.prev().hasClass('bg');
+			//dimmed 레이어를 감지하기 위한 boolean 변수
+
+			if(bg){
+				$('.layer').fadeIn();
+				//'bg' 클래스가 존재하면 레이어가 나타나고 배경은 dimmed 된다. 
+			}else{
+				temp.fadeIn();
+			}
+
+			// 화면의 중앙에 레이어를 띄운다.
+			if (temp.outerHeight() < $(document).height() ) temp.css('margin-top', '-'+temp.outerHeight()/2+'px');
+			else temp.css('top', '0px');
+			if (true ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
+			// if (temp.outerWidth() < $(document).width() ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
+			// else temp.css('left', '0px');
+
+			temp.find('a.cbtn').click(function(e){
+				if(bg){
+					$('.layer').fadeOut(); 
+					//'bg' 클래스가 존재하면 레이어를 사라지게 한다. 
+				}else{
+					temp.fadeOut();
+				}
+				e.preventDefault();
+			});
+
+			$('.layer .bg').click(function(e){	
+			//배경을 클릭하면 레이어를 사라지게 하는 이벤트 핸들러
+				$('.layer').fadeOut();
+				e.preventDefault();
+			});
+
+		}
+
+		$(document).ready(function(){
+
+			$("#sign_b_s").click(function(){
+				$("#sign_in_table").hide();
+				$("#sign_up_table_1").show();
+			});
+
+			$("#sign_back_1").click(function(){
+				$("#sign_in_table").show();
+				$("#sign_up_table_1").hide();
+			});
+
+			$("#sign_next_1").click(function(){
+				$("#sign_in_table").hide();
+				$("#sign_up_table_1").hide();
+				$("#sign_up_table_2").show();
+			});
+
+			$("#sign_back_2").click(function(){
+				$("#sign_in_table").hide();
+				$("#sign_up_table_1").show();
+				$("#sign_up_table_2").hide();
+				$("#sign_up_table_3").hide();
+			});
+
+			$("#sign_next_2").click(function(){
+				$("#sign_in_table").hide();
+				$("#sign_up_table_1").hide();
+				$("#sign_up_table_2").hide();
+				$("#sign_up_table_3").show();
+			});
+
+			$("#sign_back_3").click(function(){
+				$("#sign_in_table").show();
+				$("#sign_up_table_1").hide();
+				$("#sign_up_table_2").hide();
+				$("#sign_up_table_3").hide();
+
+				$('.layer').fadeOut();
+				// e.preventDefault();
+
+			});
+
+		});
+
+	</script>
+
+	<div class="layer">
+		<div class="bg"></div>
+		<div id="layer2" class="pop-layer" style='z-index:3;'>
+			<div class="pop-container">
+				<div class="pop-conts">
+					<table class='sign_in_table' id='sign_in_table'>
+						<tr>
+							<td>
+								<h1 style='font-size:1.5rem;margin:0px;padding:0px;margin-bottom:20px;'>로그인</h1>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type='text' name='id' class='id' placeholder='이메일'/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type='password' name='pw' class='pw' placeholder='비밀번호'/>
+							</td>
+						</tr>
+						<tr>
+							<td style='text-align:center;'>
+								<button class='sign_b'>시작하기</button><br/>
+								<span style='font-size:0.8rem;color:#58595B;'>이메일/비밀번호가 기억하지 않으시면 <a href='#' style='color:#58595B;'>여기</a>를 눌러주세요.</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<br/><br/>
+								<span style='font-size:1.2rem;color:#58595B;'>아직도 회원이 아니시라구요??</span>
+								<button class='sign_b_s' id='sign_b_s'>이메일로 회원가입하기</button>
+							</td>
+						</tr>
+					</table>
+					<table class='sign_up_table_1' id='sign_up_table_1' style='display:none;'>
+						<tr>
+							<td>
+								<h1 style='font-size:1.5rem;margin:0px;padding:0px;margin-bottom:20px;'>회원가입</h1>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type='text' name='id' class='id' placeholder='이메일'/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type='password' name='pw' class='pw' placeholder='비밀번호'/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type='password' name='pw' class='pw' placeholder='비밀번호 확인'/>
+							</td>
+						</tr>
+						<tr>
+							<td style='text-align:center;'>
+								<button class='sign_b' id='sign_next_1'>가입완료</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<br/><br/><button class='sign_back' id='sign_back_1'>처음으로</button>
+							</td>
+						</tr>
+					</table>
+					<table class='sign_up_table_2' id='sign_up_table_2' style='display:none;'>
+						<tr>
+							<td>
+								<h1 style='font-size:1.5rem;margin:0px;padding:0px;margin-bottom:20px;'>회원가입</h1>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span style='color:#58595B;font-size:1.15rem;'>직업</span>
+									<select name='job' style='margin-left:80px;width:150px;font-size:1.15rem;'>
+										<option value=''>선택해주세요</option>
+										<option value='고등학생'>고등학생</option>
+										<option value='중학생'>중학생</option>
+										<option value='대학생'>대학생</option>
+										<option value='학부모'>학부모</option>
+										<option value='교직원'>교직원</option>
+										<option value='기타'>기타</option>
+									</select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<br/>
+								<span style='color:#58595B;font-size:1.15rem;'>성별</span>
+									<input type='radio' name='sex' value='남' style='margin-left:80px;'>&nbsp;&nbsp;남
+									&nbsp;&nbsp;&nbsp;&nbsp;
+									<input type='radio' name='sex' value='여'>&nbsp;&nbsp;여
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<br/>
+								<span style='color:#58595B;font-size:1.15rem;'>태어난 년도</span>
+									<select name='job' style='margin-left:28px;width:150px;font-size:1.15rem;'>
+										<option value=''>선택해주세요</option>
+										<option value='고등학생'>고등학생</option>
+										<option value='중학생'>중학생</option>
+										<option value='대학생'>대학생</option>
+										<option value='학부모'>학부모</option>
+										<option value='교직원'>교직원</option>
+										<option value='기타'>기타</option>
+									</select>
+							</td>
+						</tr>
+						<tr>
+							<td style='text-align:center;'>
+								<br/><br/><br/>
+								<button class='sign_b' id='sign_next_2'>가입하기</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<br/><br/><button class='sign_back' id='sign_back_2'>뒤로가기</button>
+							</td>
+						</tr>
+					</table>
+					<table class='sign_up_table_3' id='sign_up_table_3' style='display:none;'>
+						<tr>
+							<td>
+								<h1 style='font-size:1.5rem;margin:0px;padding:0px;margin-bottom:20px;'>회원가입 완료</h1>
+							</td>
+						</tr>
+						<tr>
+							<td style='font-size:1.1rem;color:#58595B;'>
+								AddCampus에 가입해 주셔서 감사합니다.<br/>
+								회원님께서 입력해주신
+							</td>
+						</tr>
+						<tr>
+							<td style='text-align:center;color:#1C75BA;font-size:1.5rem;padding:50px 0px;'>
+								addcampus@addcampus.com
+							</td>
+						</tr>
+						<tr>
+							<td style='font-size:1.1rem;color:#58595B;'>
+								해당 이메일을 통해 인증 절차를 완료해 주시면<br/>
+								AddCampus의 서비스를 이용하실 수 있습니다.
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<br/><br/><button class='sign_back' id='sign_back_3'>닫기</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div> 
+		</div>
+	</div>
 </body>
 </html>
