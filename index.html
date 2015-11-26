@@ -324,8 +324,37 @@
 	<!-- Support for HTML5, CSS3 -->
 
 	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/crypto-js/crypto-js.js"></script>
+    <script src="./lib/request_helper.js"></script>
+    <script src="./lib/local_storage.js"></script>
 
-	<script>	
+	<script>
+
+		function submitLoginForm(event) {
+			event.preventDefault();
+			
+			var email = $('#sign_id').val();
+			var pw = $('#sign_pw').val();
+
+			RequestHelper.post('/account/loginWithEmail', {
+				email: email,
+				password: pw
+			}, {
+				// Option is not needed.
+			}, function(data) {
+				alert(JSON.stringify(data));
+				LocalStorage.put('sessionKey', data.result[0].sessionKey);
+				LocalStorage.put('accessKey', data.result[0].accessKey);
+				LocalStorage.put('accountSequence', data.result[0].accountSequence);
+			}, function(data) {
+				alert(JSON.stringify(data));
+			});
+		}
+
+		$(document).ready(function() {
+			$("#form").submit(submitLoginForm);
+		});
 
 		function layer_open(el){
 
@@ -417,36 +446,38 @@
 		<div id="layer2" class="pop-layer" style='z-index:3;'>
 			<div class="pop-container">
 				<div class="pop-conts">
-					<table class='sign_in_table' id='sign_in_table'>
-						<tr>
-							<td>
-								<h1 style='font-size:1.5rem;margin:0px;padding:0px;margin-bottom:20px;'>로그인</h1>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type='text' name='id' class='id' placeholder='이메일'/>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type='password' name='pw' class='pw' placeholder='비밀번호'/>
-							</td>
-						</tr>
-						<tr>
-							<td style='text-align:center;'>
-								<button class='sign_b'>시작하기</button><br/>
-								<span style='font-size:0.8rem;color:#58595B;'>이메일/비밀번호가 기억하지 않으시면 <a href='#' style='color:#58595B;'>여기</a>를 눌러주세요.</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<br/><br/>
-								<span style='font-size:1.2rem;color:#58595B;'>아직도 회원이 아니시라구요??</span>
-								<button class='sign_b_s' id='sign_b_s'>이메일로 회원가입하기</button>
-							</td>
-						</tr>
-					</table>
+					<form id='sign_in'>
+						<table class='sign_in_table' id='sign_in_table'>
+							<tr>
+								<td>
+									<h1 style='font-size:1.5rem;margin:0px;padding:0px;margin-bottom:20px;'>로그인</h1>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type='email' name='sign_id' class='id' placeholder='이메일'/>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type='password' name='sign_pw' class='pw' placeholder='비밀번호'/>
+								</td>
+							</tr>
+							<tr>
+								<td style='text-align:center;'>
+									<button class='sign_b'>시작하기</button><br/>
+									<span style='font-size:0.8rem;color:#58595B;'>이메일/비밀번호가 기억하지 않으시면 <a href='#' style='color:#58595B;'>여기</a>를 눌러주세요.</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<br/><br/>
+									<span style='font-size:1.2rem;color:#58595B;'>아직도 회원이 아니시라구요??</span>
+									<button class='sign_b_s' id='sign_b_s'>이메일로 회원가입하기</button>
+								</td>
+							</tr>
+						</table>
+					</form>
 					<table class='sign_up_table_1' id='sign_up_table_1' style='display:none;'>
 						<tr>
 							<td>
