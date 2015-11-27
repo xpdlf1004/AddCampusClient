@@ -3,9 +3,8 @@
     <meta charset="utf-8" />
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/crypto-js/crypto-js.js"></script>
-    <script src="./lib/request_helper.js"></script>
-    <script src="./lib/local_storage.js"></script>
-    
+    <script src="../lib/request_helper.js"></script>
+    <script src="../lib/local_storage.js"></script>
     <script>
       function submitLoginForm(event) {
         event.preventDefault();
@@ -27,11 +26,29 @@
         });
       }
 
+      function logout(event) {
+        event.preventDefault();
+        var accountSequence = LocalStorage.get('accountSequence');
+        RequestHelper.post('/account/logoutUserAccount', {
+          accountSequence: accountSequence
+        }, {
+          sessionKey: LocalStorage.get('sessionKey'),
+          accessKey: LocalStorage.get('accessKey')
+        }, function(data) {
+          alert(JSON.stringify(data));
+          LocalStorage.clear('sessionKey');
+          LocalStorage.clear('accessKey');
+          LocalStorage.clear('accountSequence');
+        }, function(data) {
+          alert(JSON.stringify(data));
+        });
+      }
+
       $(document).ready(function() {
         $("#form").submit(submitLoginForm);
+        $("#logout").click(logout);
       });
     </script>
-
   </head>
   <body>
     <form id="form">
@@ -41,5 +58,6 @@
       <input type="password" id="pw" />
       <input type="submit" />
     </form>
+    <button id="logout">logout</button>
   </body>
 </html>
