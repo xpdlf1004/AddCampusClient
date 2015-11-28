@@ -1,0 +1,55 @@
+<html>
+	<head>
+    <meta charset="utf-8" />
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/crypto-js/crypto-js.js"></script>
+    <script src="../lib/request_helper.js"></script>
+
+    <script>
+      function submitForm(event) {
+        event.preventDefault();
+        var selectedCollegeID = $('#collegeList').val();
+        RequestHelper.post('/college/getCollegeInfo', {
+          collegeID: selectedCollegeID
+        },
+        {
+          // Option is not needed.
+        }, function(data) {
+          alert(JSON.stringify(data));
+        }, function(data) {
+          alert(JSON.stringify(data));
+        });
+      }
+
+      function getAllColleges() {
+        RequestHelper.post('/college/getAllColleges', {},
+        {
+          // Option is not needed.
+        }, function(data) {
+          var colleges = data.result[0].colleges;
+          var collegeList = $('#collegeList');
+          for (var i in colleges) {
+            var optionStr = '<option value="' + colleges[i].collegeID + '">' + colleges[i].collegeName + '</option>';
+            $(optionStr).appendTo(collegeList);
+          }
+        }, function(data) {
+          alert(JSON.stringify(data));
+        });
+      }
+
+      $(document).ready(function() {
+        $("#form").submit(submitForm);
+        getAllColleges();
+      });
+    </script>
+
+  </head>
+  <body>
+    <form id="form">
+      대학 리스트
+      <select name="selection" id="collegeList">
+      </select><br />
+      <input type="submit" />
+    </form>
+  </body>
+</html>
