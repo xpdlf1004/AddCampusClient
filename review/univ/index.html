@@ -19,7 +19,7 @@
 </head>
 <body>
 
-	<header style='background-color:#FFD432;'>
+	<header style='background-color:#FFD432;' id='header'>
 		<div class='header_menu'>
 			<ul class='header_left'>
 				<li style='margin:0px 28px 0px 14px;'><a href='/' style='text-decoration:none;color:#FFFFFF;'><img src='/assets/img/header/logo.png'/></a></li>
@@ -28,71 +28,17 @@
 				<li style='width:70px;margin:0px 8px 0px 0px;'>대외활동</li>
 				<li style='width:70px;margin:0px 23px 0px 0px;'>합격꿀팁</li>
 			</ul>
-			<ul class='header_right'>
+			<ul class='header_right' id='header_right_in' style='display:none;'>
 				<li style='margin:0px 14px;'>리뷰작성</li>
 				<li style='margin:0px 14px;'>마이페이지</li>
-				<li style='margin:0px 14px;'><a class='btn-example' onclick="layer_open('layer2');return false;">로그인</a></li>
+				<li style='margin:0px 14px;'><a class='btn-example' id='tab_sign_out'>로그아웃</a></li>
+			</ul>
+			<ul class='header_right' id='header_right_out' style='display:none;'>
+				<li style='margin:0px 14px;'>리뷰작성</li>
+				<li style='margin:0px 14px;'><a class='btn-example' id='tab_sign_in'>로그인</a></li>
 			</ul>
 		</div>
 	</header>
-
-	<style>
-
-		#univ_main_image {
-			width: 100%;
-			height: 200px;
-
-			text-align: center;
-			color: #FFFFFF;
-
-			background-image: url("/assets/img/common/background.png");
-		    background-size: 100% 100%;
-			-webkit-background-size: 100% 100%;
-		    -moz-background-size: 100% 100%;
-		    -o-background-size: 100% 100%;
-		}
-
-		.univ_about {
-			width: 1000px;
-			height: auto;
-			text-align: left;
-			margin: 0px auto;
-			padding-top: 80px;
-			/*padding-left: 30px;*/
-		}
-
-		#univ_category {
-			height: 84px;
-			width: 100%;
-			margin: 0px auto;
-			background: #FFFFFF;
-			border-bottom: 3px solid #C9C9C9;
-		}
-
-		.category {
-			margin: 0px auto;
-			padding: 0px;
-			list-style: none;
-			width: 1000px;
-		}
-
-		.category li {
-			margin: 0px;
-			padding: 0px;
-			list-style: none;
-			display: inline-block;
-			text-align: center;
-			vertical-align: middle;
-			width: 100px;
-		}
-
-		.category h3 {
-			font-size: 1.38rem;
-			font-weight: 600;
-			margin: 10px 0px 10px 0px;
-		}
-
-	</style>
 
 	<div id='wrapper'>
 
@@ -281,70 +227,67 @@
 					</tr>
 				</table>
 
-				<table class='univ_list'>
+				<table class='review_list'>
 					<tr>
-						<td colspan='2' style='font-size:1.375rem;font-weight:normal;text-align:left;padding:15px 0px 14px 15px;color:#58595B;'>가장 활발한 대학</td>
-						<td style='font-size:0.8rem;text-align:right;padding:18px 10px 14px 0px;color:#1C75BA;'>더보기</td>
+						<td colspan='2' class='review_list_title'>가장 활발한 대학</td>
+						<td class='review_more_b'><a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a></td>
 					</tr>
 					<tr>
-						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
-						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
-						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						<td class='of_rank'>1.</td>
+						<td class='of_college'><img src='/assets/img/common/rank_logo.png'/> <p>연세대학교<br/><span>인문사회 - 정치</span></p></td>
+						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
 					</tr>
 					<tr>
-						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
-						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
-						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						<td class='of_rank'>1.</td>
+						<td class='of_college'><img src='/assets/img/common/rank_logo.png'/> <p>연세대학교<br/><span>인문사회 - 정치</span></p></td>
+						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
 					</tr>
 					<tr>
-						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
-						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
-						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						<td class='of_rank'>1.</td>
+						<td class='of_college'><img src='/assets/img/common/rank_logo.png'/> <p>연세대학교<br/><span>인문사회 - 정치</span></p></td>
+						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
 					</tr>
 					<tr>
-						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
-						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
-						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						<td class='of_rank'>1.</td>
+						<td class='of_college'><img src='/assets/img/common/rank_logo.png'/> <p>연세대학교<br/><span>인문사회 - 정치</span></p></td>
+						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
 					</tr>
 					<tr>
-						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
-						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
-						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
-					</tr>
-					<tr>
-						<td colspan='3'>&nbsp;</td>
+						<td class='of_rank'>1.</td>
+						<td class='of_college'><img src='/assets/img/common/rank_logo.png'/> <p>연세대학교<br/><span>인문사회 - 정치</span></p></td>
+						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
 					</tr>
 				</table>
 
-				<table class='univ_list'>
+				<table class='review_list'>
 					<tr>
-						<td colspan='2' style='font-size:1.375rem;font-weight:normal;text-align:left;padding:15px 0px 14px 15px;color:#58595B;'>가장 활발한 대학</td>
-						<td style='font-size:0.8rem;text-align:right;padding:18px 10px 14px 0px;color:#1C75BA;'>더보기</td>
+						<td colspan='2' class='review_list_title'>가장 활발한 대학</td>
+						<td class='review_more_b'><a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a></td>
 					</tr>
 					<tr>
-						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
-						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
-						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						<td class='of_rank'>1.</td>
+						<td class='of_college'><img src='/assets/img/common/rank_logo.png'/> <p>연세대학교<br/><span>인문사회 - 정치</span></p></td>
+						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
 					</tr>
 					<tr>
-						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
-						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
-						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						<td class='of_rank'>1.</td>
+						<td class='of_college'><img src='/assets/img/common/rank_logo.png'/> <p>연세대학교<br/><span>인문사회 - 정치</span></p></td>
+						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
 					</tr>
 					<tr>
-						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
-						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
-						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						<td class='of_rank'>1.</td>
+						<td class='of_college'><img src='/assets/img/common/rank_logo.png'/> <p>연세대학교<br/><span>인문사회 - 정치</span></p></td>
+						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
 					</tr>
 					<tr>
-						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
-						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
-						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						<td class='of_rank'>1.</td>
+						<td class='of_college'><img src='/assets/img/common/rank_logo.png'/> <p>연세대학교<br/><span>인문사회 - 정치</span></p></td>
+						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
 					</tr>
 					<tr>
-						<td style='width:10%;padding:0px 10px;color:#58595B;'>1.</td>
-						<td style='width:65%;padding:7px 10px 8px 0px;text-align:left;'><img src='/assets/img/common/rank_logo.png' style='display: inline-block;margin: 0px 10px 0px 7px;'/> <p style='color:#58595B;'>연세대학교<br/><span style='font-size:0.9rem;color:#808083;'>인문사회 - 정치</span></p></td>
-						<td style='width:20%;padding:0px 10px 0px 0px;font-size:1rem;color:#58595B'><img src='/assets/img/common/rank_up.png' style='vertical-align:middle;'/> 21</td>
+						<td class='of_rank'>1.</td>
+						<td class='of_college'><img src='/assets/img/common/rank_logo.png'/> <p>연세대학교<br/><span>인문사회 - 정치</span></p></td>
+						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
 					</tr>
 				</table>
 
@@ -369,7 +312,117 @@
 	<![endif]-->
 	<!-- Support for HTML5, CSS3 -->
 	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-	<script>	
+    
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/crypto-js/crypto-js.js"></script>
+    <script src="../../assets/lib/request_helper.js"></script>
+    <script src="../../assets/lib/local_storage.js"></script>
+
+	<script>
+
+		/*************************
+		* For Header
+		*************************/
+		$(document).ready(function(){
+
+			if (LocalStorage.get('sessionKey') == undefined) {
+				$("#header_right_out").css("display", "inline-block");
+				$("#header_right_in").css("display", "none");
+			} else {
+				$("#header_right_out").css("display", "none");
+				$("#header_right_in").css("display", "inline-block");
+			}
+			
+			$("#sign_in").submit(submitLoginForm);
+			
+			$("#tab_sign_out").click(logout);
+			
+			$("#tab_sign_in").click(function(){
+				layer_open('layer2');
+				return false;
+			});
+        	
+        	$("#sign_up").submit(submitForm);
+
+		})
+		/************************/
+
+		/*************************
+		* For Sign
+		*************************/
+
+		function submitForm(event) {
+			event.preventDefault();
+			var email = $('#sign_up_email').val();
+			var pw = $('#sign_up_pw').val();
+			var isGenderManChecked = $('#gender_man').is(':checked');
+			var gender = isGenderManChecked ? 'man' : 'woman';
+			var birthYear = parseInt($('#birthYear').val(), 10);
+			var job = $('#job').val();
+
+			RequestHelper.post('/account/makeUserAccount', {
+				email: email,
+				password: pw,
+				gender: gender,
+				birthYear: birthYear,
+				job: job
+			}, {
+			// Option is not needed.
+			}, function(data) {
+				alert(JSON.stringify(data));
+			}, function(data) {
+				alert(JSON.stringify(data));
+			});
+		}
+
+		function submitLoginForm(event) {
+			event.preventDefault();
+			
+			var email = $('#sign_id').val();
+			var pw = $('#sign_pw').val();
+
+			RequestHelper.post('/account/loginWithEmail', {
+				email: email,
+				password: pw
+			}, {
+				// Option is not needed.
+			}, function(data) {
+				alert(JSON.stringify(data));
+
+				if (data.result[0].status == 'ok') {
+					location.href = '/';
+				} else {
+					location.href = '/';
+				}
+
+				LocalStorage.put('sessionKey', data.result[0].sessionKey);
+				LocalStorage.put('accessKey', data.result[0].accessKey);
+				LocalStorage.put('accountSequence', data.result[0].accountSequence);
+			}, function(data) {
+				alert(JSON.stringify(data));
+			});
+		}
+
+		function logout(event) {
+			event.preventDefault();
+			var accountSequence = LocalStorage.get('accountSequence');
+
+			RequestHelper.post('/account/logoutUserAccount', {
+				accountSequence: accountSequence
+			}, {
+				sessionKey: LocalStorage.get('sessionKey'),
+				accessKey: LocalStorage.get('accessKey')
+			}, function(data) {
+				alert(JSON.stringify(data));
+				LocalStorage.clear('sessionKey');
+				LocalStorage.clear('accessKey');
+				LocalStorage.clear('accountSequence');
+
+				location.href = '/';
+			}, function(data) {
+				alert(JSON.stringify(data));
+			});
+		}
 
 		function layer_open(el){
 
@@ -456,8 +509,8 @@
 			});
 
 			$("#review_write_back_1").click(function(){
-				$("#review_write_1").hide();
-				$("#review_write_2").hide();
+				// $("#review_write_1").hide();
+				// $("#review_write_2").hide();
 
 				$('.layer2s').fadeOut();
 				// e.preventDefault();
@@ -518,153 +571,152 @@
 		<div id="layer2" class="pop-layer" style='z-index:3;'>
 			<div class="pop-container">
 				<div class="pop-conts">
-					<table class='sign_in_table' id='sign_in_table'>
-						<tr>
-							<td>
-								<h1 style='font-size:1.5rem;margin:0px;padding:0px;margin-bottom:20px;'>로그인</h1>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type='text' name='id' class='id' placeholder='이메일'/>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type='password' name='pw' class='pw' placeholder='비밀번호'/>
-							</td>
-						</tr>
-						<tr>
-							<td style='text-align:center;'>
-								<button class='sign_b'>시작하기</button><br/>
-								<span style='font-size:0.8rem;color:#58595B;'>이메일/비밀번호가 기억하지 않으시면 <a href='#' style='color:#58595B;'>여기</a>를 눌러주세요.</a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<br/><br/>
-								<span style='font-size:1.2rem;color:#58595B;'>아직도 회원이 아니시라구요??</span>
-								<button class='sign_b_s' id='sign_b_s'>이메일로 회원가입하기</button>
-							</td>
-						</tr>
-					</table>
-					<table class='sign_up_table_1' id='sign_up_table_1' style='display:none;'>
-						<tr>
-							<td>
-								<h1 style='font-size:1.5rem;margin:0px;padding:0px;margin-bottom:20px;'>회원가입</h1>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type='text' name='id' class='id' placeholder='이메일'/>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type='password' name='pw' class='pw' placeholder='비밀번호'/>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<input type='password' name='pw' class='pw' placeholder='비밀번호 확인'/>
-							</td>
-						</tr>
-						<tr>
-							<td style='text-align:center;'>
-								<button class='sign_b' id='sign_next_1'>가입완료</button>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<br/><br/><button class='sign_back' id='sign_back_1'>처음으로</button>
-							</td>
-						</tr>
-					</table>
-					<table class='sign_up_table_2' id='sign_up_table_2' style='display:none;'>
-						<tr>
-							<td>
-								<h1 style='font-size:1.5rem;margin:0px;padding:0px;margin-bottom:20px;'>회원가입</h1>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<span style='color:#58595B;font-size:1.15rem;'>직업</span>
-									<select name='job' style='margin-left:80px;width:150px;font-size:1.15rem;'>
-										<option value=''>선택해주세요</option>
-										<option value='고등학생'>고등학생</option>
-										<option value='중학생'>중학생</option>
-										<option value='대학생'>대학생</option>
-										<option value='학부모'>학부모</option>
-										<option value='교직원'>교직원</option>
-										<option value='기타'>기타</option>
-									</select>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<br/>
-								<span style='color:#58595B;font-size:1.15rem;'>성별</span>
-									<input type='radio' name='sex' value='남' style='margin-left:80px;'>&nbsp;&nbsp;남
+					<form id='sign_in'>
+						<table class='sign_in_table' id='sign_in_table'>
+							<tr>
+								<td>
+									<h1 class='sign_in_h1'>로그인</h1>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type='email' id='sign_id' name='id' class='id' placeholder='이메일'/>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type='password' id='sign_pw' name='pw' class='pw' placeholder='비밀번호'/>
+								</td>
+							</tr>
+							<tr>
+								<td style='text-align:center;'>
+									<button class='sign_b' onclick='submit'>시작하기</button><br/>
+									<span style='font-size:0.8rem;color:#58595B;'>이메일/비밀번호가 기억하지 않으시면 <a href='#' style='color:#58595B;'>여기</a>를 눌러주세요.</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<br/><br/>
+									<span style='font-size:1.2rem;color:#58595B;'>아직도 회원이 아니시라구요??</span>
+									<button class='sign_b_s' id='sign_b_s' onclick='return false;'>이메일로 회원가입하기</button>
+								</td>
+							</tr>
+						</table>
+					</form>
+			    	<form id='sign_up'>
+						<table class='sign_up_table_1' id='sign_up_table_1' style='display:none;'>
+							<tr>
+								<td>
+									<h1 class='sign_in_h1'>회원가입</h1>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type='email' id="sign_up_email" name='id' class='id' placeholder='이메일'/>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type='password' id="sign_up_pw" name='pw' class='pw' placeholder='비밀번호'/>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type='password' id="sign_up_pw_" name='pw' class='pw' placeholder='비밀번호 확인'/>
+								</td>
+							</tr>
+							<tr>
+								<td style='text-align:center;'>
+									<button class='sign_b' id='sign_next_1' onclick='return false;'>가입완료</button>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<br/><br/><button class='sign_back' id='sign_back_1' onclick='return false;'>처음으로</button>
+								</td>
+							</tr>
+						</table>
+						<table class='sign_up_table_2' id='sign_up_table_2' style='display:none;'>
+							<tr>
+								<td>
+									<h1 class='sign_in_h1'>회원가입</h1>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class='input_title'>직업</span>
+										<select name="selection" id="job" style='margin-left:80px;'>
+									        <option value='highSchoolStudent'>highSchoolStudent</option>
+									        <option value='middleSchoolStudent'>middleSchoolStudent</option>
+									        <option value='collegeStudent'>collegeStudent</option>
+									        <option value='schoolParent'>schoolParent</option>
+									        <option value='educationalPersonnel'>educationalPersonnel</option>
+										</select>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<br/><span class='input_title'>성별</span>
+									<input type='radio' id="gender_man" name="chk_info" checked value="man" style='margin-left:80px;'>&nbsp;&nbsp;남
 									&nbsp;&nbsp;&nbsp;&nbsp;
-									<input type='radio' name='sex' value='여'>&nbsp;&nbsp;여
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<br/>
-								<span style='color:#58595B;font-size:1.15rem;'>태어난 년도</span>
-									<select name='job' style='margin-left:28px;width:150px;font-size:1.15rem;'>
-										<option value=''>선택해주세요</option>
-										<option value='고등학생'>고등학생</option>
-										<option value='중학생'>중학생</option>
-										<option value='대학생'>대학생</option>
-										<option value='학부모'>학부모</option>
-										<option value='교직원'>교직원</option>
-										<option value='기타'>기타</option>
-									</select>
-							</td>
-						</tr>
-						<tr>
-							<td style='text-align:center;'>
-								<br/><br/><br/>
-								<button class='sign_b' id='sign_next_2'>가입하기</button>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<br/><br/><button class='sign_back' id='sign_back_2'>뒤로가기</button>
-							</td>
-						</tr>
-					</table>
-					<table class='sign_up_table_3' id='sign_up_table_3' style='display:none;'>
-						<tr>
-							<td>
-								<h1 style='font-size:1.5rem;margin:0px;padding:0px;margin-bottom:20px;'>회원가입 완료</h1>
-							</td>
-						</tr>
-						<tr>
-							<td style='font-size:1.1rem;color:#58595B;'>
-								AddCampus에 가입해 주셔서 감사합니다.<br/>
-								회원님께서 입력해주신
-							</td>
-						</tr>
-						<tr>
-							<td style='text-align:center;color:#1C75BA;font-size:1.5rem;padding:50px 0px;'>
-								addcampus@addcampus.com
-							</td>
-						</tr>
-						<tr>
-							<td style='font-size:1.1rem;color:#58595B;'>
-								해당 이메일을 통해 인증 절차를 완료해 주시면<br/>
-								AddCampus의 서비스를 이용하실 수 있습니다.
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<br/><br/><button class='sign_back' id='sign_back_3'>닫기</button>
-							</td>
-						</tr>
-					</table>
+									<input type='radio' id="gender_woamn" name="chk_info" value="woman">&nbsp;&nbsp;여
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<br/>
+									<span class='input_title'>태어난 년도</span>
+										<select name="selection" id="birthYear" style='margin-left:28px;'>
+									        <option value='1991'>1991</option>
+									        <option value='1992'>1992</option>
+									        <option value='1993'>1993</option>
+									        <option value='1994'>1994</option>
+									        <option value='1995'>1995</option>
+										</select>
+								</td>
+							</tr>
+							<tr>
+								<td style='text-align:center;'>
+									<br/><br/><br/>
+									<button class='sign_b' id='sign_next_2' onclick='submit'>가입하기</button>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<br/><br/><button class='sign_back' id='sign_back_2' onclick='return false;'>뒤로가기</button>
+								</td>
+							</tr>
+						</table>
+						<table class='sign_up_table_3' id='sign_up_table_3' style='display:none;'>
+							<tr>
+								<td>
+									<h1 class='sign_in_h1'>회원가입 완료</h1>
+								</td>
+							</tr>
+							<tr>
+								<td style='font-size:1.1rem;color:#58595B;'>
+									AddCampus에 가입해 주셔서 감사합니다.<br/>
+									회원님께서 입력해주신
+								</td>
+							</tr>
+							<tr>
+								<td style='text-align:center;color:#1C75BA;font-size:1.5rem;padding:50px 0px;'>
+									addcampus@addcampus.com
+								</td>
+							</tr>
+							<tr>
+								<td style='font-size:1.1rem;color:#58595B;'>
+									해당 이메일을 통해 인증 절차를 완료해 주시면<br/>
+									AddCampus의 서비스를 이용하실 수 있습니다.
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<br/><br/><button class='sign_back' id='sign_back_3' onclick='return false;'>닫기</button>
+								</td>
+							</tr>
+						</table>
+					</form>
 				</div>
 			</div> 
 		</div>
@@ -701,31 +753,7 @@
 						<tr>
 							<td style='width:170px;font-size:16pt;color:#58595B;padding:0px 0px 0px 35px;height:70px;'>학과군</td>
 							<td style='text-align:left;'>
-								<style>
 
-								    .mypage_memo select {
-								        background: transparent;
-								        margin: 0px auto;
-								        width: 95%;
-								        font-size: 12pt;
-								        outline: none;
-								        border: none;
-								        height: 100%;
-								        -webkit-appearance: none;
-								    }
-
-								    .mypage_memo {
-								        width: 80%;
-								        height: 1.7rem;
-								        overflow: hidden;
-								        text-align: center;
-								        border: 1px solid #BABCBE;
-								        padding: 8px 5px;
-								        border-radius: 10px;
-								        background: url("http://www.opexegypt.com/skin/frontend/opex/default/images/arrow-down-gray.png") no-repeat right;
-								    }
-
-							    </style>
 								<div class="mypage_memo">
 									<select name='mypage_form' id='mypage_form'>
 										<option value=''>선택해주세요</option>

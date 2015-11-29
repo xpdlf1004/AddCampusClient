@@ -1,5 +1,58 @@
 
 
+	#univ_main_image {
+		width: 100%;
+		height: 200px;
+
+		text-align: center;
+		color: #FFFFFF;
+
+		background-image: url("/assets/img/slide/kookmin_2480_550.jpg");
+	    background-size: cover;
+		-webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    -o-background-size: cover;
+	}
+
+	.univ_about {
+		width: 1000px;
+		height: auto;
+		text-align: left;
+		margin: 0px auto;
+		padding-top: 80px;
+	}
+
+	#univ_category {
+		height: 84px;
+		width: 100%;
+		margin: 0px auto;
+		background: #FFFFFF;
+		border-bottom: 3px solid #C9C9C9;
+	}
+
+	.category {
+		margin: 0px auto;
+		padding: 0px;
+		list-style: none;
+		width: 1000px;
+	}
+
+	.category li {
+		margin: 0px;
+		padding: 0px;
+		list-style: none;
+		display: inline-block;
+		text-align: center;
+		vertical-align: middle;
+		width: 100px;
+	}
+
+	.category h3 {
+		font-size: 1.38rem;
+		font-weight: 600;
+		margin: 10px 0px 10px 0px;
+	}
+
 	.head_title {
 		font-size: 3.4rem;
 		font-family: 'NanumMyeongjo';
@@ -222,7 +275,7 @@
 		font-size:1.125rem;
 	}
 
-	.univ_list {
+	.review_list {
 		width: 100%;
 		border-collapse: collapse;
 		margin: 0px;
@@ -231,22 +284,74 @@
 		border: 1px solid #BCBEC0;
 	}
 
-	.univ_list * {
+	.review_list * {
 		vertical-align: middle;
 	}
 
-	.univ_list td {
+	.review_list td {
 		margin: 0px;
 		padding: 0px;
 		vertical-align: middle;
 	}
 
-	.univ_list p {
+	.review_list p {
 		margin: 0px;
 		padding: 0px;
 		vertical-align: middle;
 		display: inline-block;
 		font-size: 1.2rem;
+	}
+	
+	.review_list .review_list_title {
+		font-size: 1.375rem;
+		font-weight: normal;
+		text-align: left;
+		padding: 15px 0px 14px 15px;
+		color: #58595B;
+	}
+
+	.review_list .review_more_b {
+		font-size: 0.8rem;
+		text-align: right;
+		padding: 18px 10px 14px 0px;
+		color: #1C75BA;
+	}
+
+	.review_list .of_rank {
+		width: 10%;
+		padding: 0px 10px;
+		color: #58595B;
+	}
+	
+	.review_list .of_college {
+		width: 65%;
+		padding: 7px 10px 8px 0px;
+		text-align: left;
+	}
+
+	.review_list .of_college img {
+		display:  inline-block;
+		margin:  0px 10px 0px 7px;
+	}
+	
+	.review_list .of_college p {
+		color: #58595B;
+	}
+	
+	.review_list .of_college span {
+		font-size: 0.9rem;
+		color: #808083;
+	}
+	
+	.review_list .of_diff {
+		width: 20%;
+		padding: 0px 10px 0px 0px;
+		font-size: 1rem;
+		color: #58595B;
+	}
+
+	.review_list .of_diff img {
+		vertical-align: middle;
 	}
 	
 	.layer2s { display:none; /*position:fixed;*/ top:0; left:0; width:100%; height:100%; z-index:100; }
@@ -259,3 +364,25 @@
 		margin: 0px;
 		padding: 0px;
 	}
+    
+    .mypage_memo select {
+        background: transparent;
+        margin: 0px auto;
+        width: 95%;
+        font-size: 12pt;
+        outline: none;
+        border: none;
+        height: 100%;
+        -webkit-appearance: none;
+    }
+
+    .mypage_memo {
+        width: 80%;
+        height: 1.7rem;
+        overflow: hidden;
+        text-align: center;
+        border: 1px solid #BABCBE;
+        padding: 8px 5px;
+        border-radius: 10px;
+        background: url("http://www.opexegypt.com/skin/frontend/opex/default/images/arrow-down-gray.png") no-repeat right;
+    }

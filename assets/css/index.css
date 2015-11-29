@@ -7,11 +7,43 @@
 		text-align: center;
 		color: #FFFFFF;
 
-		background-image: url("/assets/img/common/background.png");
+		background-image: url("/assets/img/slide/background_2480_550.jpg");	
 	    background-size: 100% 100%;
 		-webkit-background-size: 100% 100%;
 	    -moz-background-size: 100% 100%;
 	    -o-background-size: 100% 100%;
+	}
+
+	@media (max-width: 2500px) {
+	
+		#box_1_main_image {
+			background-image: url("/assets/img/slide/background_2480_550.jpg");	
+		}
+
+	}
+
+	@media (max-width: 2000px) {
+	
+		#box_1_main_image {
+			background-image: url("/assets/img/slide/background_1960_550.jpg");	
+		}
+
+	}
+
+	@media (max-width: 1700px) {
+	
+		#box_1_main_image {
+			background-image: url("/assets/img/slide/background_1680_550.jpg");	
+		}
+
+	}
+
+	@media (max-width: 1500px) {
+	
+		#box_1_main_image {
+			background-image: url("/assets/img/slide/background_1440_550.jpg");	
+		}
+
 	}
 
 	.head_title {
@@ -322,14 +354,20 @@
 		line-height: 1.2rem;
 	}
 
-	.review_more {
-		width: 80%;
-		height: 50px;
-		background: #CCCCCC;
-		border: 1px solid #3366CC;
-		color: #3366CC;
-		margin: 0px auto;
-		line-height: 50px;
+	.review_more_left {
+		vertical-align: top;
+		margin: 40px 10px 10px 0px;
+		padding: 0px;
+		font-size: 1.05rem;
+		position: relative;
+		right: 0%;
+		text-align: right;
+		color: #808083;
+	}
+
+	.review_more_left img {
+		vertical-align: top;
+		margin-top: 0.5px;
 	}
 
 	.review_list {
@@ -357,4 +395,56 @@
 		vertical-align: middle;
 		display: inline-block;
 		font-size: 1.2rem;
+	}
+	
+	.review_list .review_list_title {
+		font-size: 1.375rem;
+		font-weight: normal;
+		text-align: left;
+		padding: 15px 0px 14px 15px;
+		color: #58595B;
+	}
+
+	.review_list .review_more_b {
+		font-size: 0.8rem;
+		text-align: right;
+		padding: 18px 10px 14px 0px;
+		color: #1C75BA;
+	}
+
+	.review_list .of_rank {
+		width: 10%;
+		padding: 0px 10px;
+		color: #58595B;
+	}
+	
+	.review_list .of_college {
+		width: 65%;
+		padding: 7px 10px 8px 0px;
+		text-align: left;
+	}
+
+	.review_list .of_college img {
+		display:  inline-block;
+		margin:  0px 10px 0px 7px;
+	}
+	
+	.review_list .of_college p {
+		color: #58595B;
+	}
+	
+	.review_list .of_college span {
+		font-size: 0.9rem;
+		color: #808083;
+	}
+	
+	.review_list .of_diff {
+		width: 20%;
+		padding: 0px 10px 0px 0px;
+		font-size: 1rem;
+		color: #58595B;
+	}
+
+	.review_list .of_diff img {
+		vertical-align: middle;
 	}

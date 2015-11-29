@@ -3,30 +3,31 @@
 	* 웹 기본 세팅
 	**********************************************/
 	@font-face {
-		font-family: 'NanumBarunGothicLight';
+		font-family: 'NanumBarunGothic';
 		font-style: normal;
-		/*src: url('/assets/fonts/NanumBarunGothic.eot');
-		src: url('/assets/fonts/NanumBarunGothic.eot') format('embedded-opentype'),
-		url('/assets/fonts/NanumBarunGothic.woff') format('woff'),*/
-		src: url('/assets/fonts/NanumBarunGothicLight.ttf') format('truetype');
+		src: url('/assets/fonts/NanumBarunGothicLight.eot');
+		src: url('/assets/fonts/NanumBarunGothicLight.eot') format('embedded-opentype'),
+		url('/assets/fonts/NanumBarunGothicLight.woff') format('woff'),
+		url('/assets/fonts/NanumBarunGothicLight.ttf') format('truetype');
+		font-weight: 600;
 	}
 
 	@font-face {
 		font-family: 'NanumMyeongjo';
 		font-style: normal;
-		/*src: url('/assets/fonts/NanumBrush.eot');
-		src: url('/assets/fonts/NanumBrush.eot') format('embedded-opentype'),
-		url('/assets/fonts/NanumBrush.woff') format('woff'),*/
-		src: url('/assets/fonts/NanumMyeongjo.ttf') format('truetype');
+		src: url('/assets/fonts/NanumMyeongjo.eot');
+		src: url('/assets/fonts/NanumMyeongjo.eot') format('embedded-opentype'),
+		url('/assets/fonts/NanumMyeongjo.woff') format('woff'),
+		url('/assets/fonts/NanumMyeongjo.ttf') format('truetype');
 	}
 
 	@font-face {
 		font-family: 'NanumPen';
 		font-style: normal;
-		/*src: url('/assets/fonts/NanumPen.eot');
+		src: url('/assets/fonts/NanumPen.eot');
 		src: url('/assets/fonts/NanumPen.eot') format('embedded-opentype'),
-		url('/assets/fonts/NanumPen.woff') format('woff'),*/
-		src: url('/assets/fonts/NanumPen.ttf') format('truetype');
+		url('/assets/fonts/NanumPen.woff') format('woff'),
+		url('/assets/fonts/NanumPen.ttf') format('truetype');
 	}
 
 	* { font-family: 'NanumBarunGothic'; font-weight: normal; }
@@ -166,4 +167,14 @@
 		border: 1px solid #FFB347;
 		box-shadow: 0 0 5px #FFB347;
 		outline: 0;
+	}
+	
+	.sign_in_h1 { font-size:1.5rem;margin:0px;padding:0px;margin-bottom:20px; }
+
+	.sign_up_table_2 .input_title {
+		color:#58595B;font-size:1.15rem;
+	}
+
+	.sign_up_table_2 .input_title input[type=select] {
+		width:150px;font-size:1.15rem;
 	}
