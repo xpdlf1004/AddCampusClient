@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<!-- Meta tag for Old Version -->
+	<!-- Meta tag for Cross Browsing -->
 	<title>AddCampus</title>
 	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
 	<meta http-equiv='X-UA-Compatible' content='IE=edge, chrome=1'>
@@ -29,12 +29,12 @@
 				<li style='width:70px;margin:0px 23px 0px 0px;'>합격꿀팁</li>
 			</ul>
 			<ul class='header_right' id='header_right_in' style='display:none;'>
-				<li style='margin:0px 14px;'>리뷰작성</li>
+				<li style='margin:0px 14px;'><a href='/review/univ/comment/' style='text-decoration:none;color:inherit;'>리뷰작성</a></li>
 				<li style='margin:0px 14px;'>마이페이지</li>
 				<li style='margin:0px 14px;'><a class='btn-example' id='tab_sign_out'>로그아웃</a></li>
 			</ul>
 			<ul class='header_right' id='header_right_out' style='display:none;'>
-				<li style='margin:0px 14px;'>리뷰작성</li>
+				<li style='margin:0px 14px;'><a onclick="alert('애드캠퍼스 로그인 후 이용 가능합니다.');layer_open('layer2');return false;" style='text-decoration:none;color:inherit;'>리뷰작성</a></li>
 				<li style='margin:0px 14px;'><a class='btn-example' id='tab_sign_in'>로그인</a></li>
 			</ul>
 		</div>
@@ -44,9 +44,9 @@
 
 		<div id='univ_main_image'>
 			<div class='univ_about'>
-				<img src='/assets/img/common/review_logo.png' style='display:inline-block;margin-left:30px;'/>
-				<h2 style='display:inline-block;font-size:2rem;font-weight:bold;'>국민대학교<span style='font-size:1rem;margin-left:10px;font-weight:300;'>종합 4년제 사립대학</span><p style='font-size:1.5rem;margin-top:5px;font-weight:300;'>http://kookmin.ac.kr</p></h2>
-				<button style='font-size:1.2rem;font-weight:bold;color:#58595B;width:215px;height:40px;text-align:center;background:#FFD432;border-radius:10px;line-height:40px;float:right;margin-top:50px;margin-right:30px;' onclick="layer_open2('layer3');">리뷰 작성하기</button>
+				<img src='/assets/img/common/review_logo.png'/>
+				<h2>국민대학교<span>종합 4년제 사립대학</span><p>http://kookmin.ac.kr</p></h2>
+				<button onclick="layer_open2('layer3');">리뷰 작성하기</button>
 			</div>
 		</div>
 
@@ -410,40 +410,51 @@
 
 		function layer_open2(el){
 
-			var temp = $('#' + el);
-			var bg = temp.prev().hasClass('bg2');
-			//dimmed 레이어를 감지하기 위한 boolean 변수
+			if (LocalStorage.get('sessionKey') == undefined) {
 
-			if(bg){
-				$('.layer2s').fadeIn();
-				//'bg' 클래스가 존재하면 레이어가 나타나고 배경은 dimmed 된다. 
-			}else{
-				temp.fadeIn();
-			}
+				alert("애드캠퍼스 로그인 후 이용 가능합니다.");
+				
+				layer_open('layer2');
+				return false;
 
-			// 화면의 중앙에 레이어를 띄운다.
-			if (temp.outerHeight() < $(document).height() ) temp.css('margin-top', '-'+temp.outerHeight()/2+'px');
-			else temp.css('top', '0px');
-			if (true ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
-			// if (temp.outerWidth() < $(document).width() ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
-			// else temp.css('left', '0px');
+			} else {
 
-			temp.find('a.cbtn').click(function(e){
+				var temp = $('#' + el);
+				var bg = temp.prev().hasClass('bg2');
+				//dimmed 레이어를 감지하기 위한 boolean 변수
+
 				if(bg){
-					$('.layer2s').fadeOut(); 
-					//'bg' 클래스가 존재하면 레이어를 사라지게 한다. 
+					$('.layer2s').fadeIn();
+					//'bg' 클래스가 존재하면 레이어가 나타나고 배경은 dimmed 된다. 
 				}else{
-					temp.fadeOut();
+					temp.fadeIn();
 				}
-				e.preventDefault();
-			});
 
-			$('.layer2s .bg2').click(function(e){	
-			//배경을 클릭하면 레이어를 사라지게 하는 이벤트 핸들러
+				// 화면의 중앙에 레이어를 띄운다.
+				if (temp.outerHeight() < $(document).height() ) temp.css('margin-top', '-'+temp.outerHeight()/2+'px');
+				else temp.css('top', '0px');
+				if (true ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
+				// if (temp.outerWidth() < $(document).width() ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
+				// else temp.css('left', '0px');
 
-				$('.layer2s').fadeOut();
-				e.preventDefault();
-			});
+				temp.find('a.cbtn').click(function(e){
+					if(bg){
+						$('.layer2s').fadeOut(); 
+						//'bg' 클래스가 존재하면 레이어를 사라지게 한다. 
+					}else{
+						temp.fadeOut();
+					}
+					e.preventDefault();
+				});
+
+				$('.layer2s .bg2').click(function(e){	
+				//배경을 클릭하면 레이어를 사라지게 하는 이벤트 핸들러
+
+					$('.layer2s').fadeOut();
+					e.preventDefault();
+				});
+
+			}
 
 		}
 		

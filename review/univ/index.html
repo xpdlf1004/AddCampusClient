@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<!-- Meta tag for Old Version -->
+	<!-- Meta tag for Cross Browsing -->
 	<title>AddCampus</title>
 	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
 	<meta http-equiv='X-UA-Compatible' content='IE=edge, chrome=1'>
@@ -29,12 +29,12 @@
 				<li style='width:70px;margin:0px 23px 0px 0px;'>합격꿀팁</li>
 			</ul>
 			<ul class='header_right' id='header_right_in' style='display:none;'>
-				<li style='margin:0px 14px;'>리뷰작성</li>
+				<li style='margin:0px 14px;'><a href='/review/univ/comment/' style='text-decoration:none;color:inherit;'>리뷰작성</a></li>
 				<li style='margin:0px 14px;'>마이페이지</li>
 				<li style='margin:0px 14px;'><a class='btn-example' id='tab_sign_out'>로그아웃</a></li>
 			</ul>
 			<ul class='header_right' id='header_right_out' style='display:none;'>
-				<li style='margin:0px 14px;'>리뷰작성</li>
+				<li style='margin:0px 14px;'><a onclick="alert('애드캠퍼스 로그인 후 이용 가능합니다.');layer_open('layer2');return false;" style='text-decoration:none;color:inherit;'>리뷰작성</a></li>
 				<li style='margin:0px 14px;'><a class='btn-example' id='tab_sign_in'>로그인</a></li>
 			</ul>
 		</div>
@@ -44,9 +44,9 @@
 
 		<div id='univ_main_image'>
 			<div class='univ_about'>
-				<img src='/assets/img/common/review_logo.png' style='display:inline-block;margin-left:30px;'/>
-				<h2 style='display:inline-block;font-size:2rem;font-weight:bold;'>국민대학교<span style='font-size:1rem;margin-left:10px;font-weight:300;'>종합 4년제 사립대학</span><p style='font-size:1.5rem;margin-top:5px;font-weight:300;'>http://kookmin.ac.kr</p></h2>
-				<button style='font-size:1.2rem;font-weight:bold;color:#58595B;width:215px;height:40px;text-align:center;background:#FFD432;border-radius:10px;line-height:40px;float:right;margin-top:50px;margin-right:30px;' onclick="layer_open2('layer3');">리뷰 작성하기</button>
+				<img src='/assets/img/common/review_logo.png'/>
+				<h2>국민대학교<span>종합 4년제 사립대학</span><p>http://kookmin.ac.kr</p></h2>
+				<button onclick="layer_open2('layer3');">리뷰 작성하기</button>
 			</div>
 		</div>
 
@@ -58,98 +58,124 @@
 			</ul>
 		</div>
 
-		<div id='univ_content' style='width:1000px;margin:0px auto;'>
+		<div id='univ_content'>
 			<!-- 캠퍼스 왼쪽 리뷰 -->
-			<div class='univ_left' style='width: 675px;margin: 0px auto;margin-top: 20px;float: left;'>
+			<div class='univ_left'>
 
 				<table class='univ_table'>
 					<tr>
 						<td rowspan='7' colspan='2' class='univ_table_about' style='width:50%;'>
-							<h1 style='font-size:1.5rem;color:#58595B;font-weight:bold;margin-top:16px;margin-bottom:20px;'>국민대학교</h1>
-							<h1 style='font-size:1.5rem;color:#1C75BA;margin-top:0px;margin-bottom:10px;'>종합 10위</h1>
-							<img src='/assets/img/common/review_star_full.png' style='width:21px;height:21px;'/>
-							<img src='/assets/img/common/review_star_full.png' style='width:21px;height:21px;'/>
-							<img src='/assets/img/common/review_star_full.png' style='width:21px;height:21px;'/>
-							<img src='/assets/img/common/review_star_full.png' style='width:21px;height:21px;'/>
-							<img src='/assets/img/common/review_star_full.png' style='width:21px;height:21px;'/>
-							<span style='font-size:1.3125rem;color:#58595B;margin-left:10px;'>9.87</span>
-							<p style='font-size:1.1rem;font-weight:400;color:#58595B;margin-top:20px;'>재학생의 100%가 이 학교를 추천합니다.</p>
+							<h1 class='univ_name'>국민대학교</h1>
+							<h1 class='univ_star'>종합 10위</h1>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<span>9.87</span>
+							<p>재학생의 100%가 이 학교를 추천합니다.</p>
 						</td>
 					</tr>
 					<tr>
-						<td style='text-align:left;padding-left:30px;padding-top:15px;width:25%;font-size:0.95rem;color:#808083;border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>
-						<td style='text-align:left;padding-top:15px;vertical-align:middle;border-top:1px solid #BCBEC0;'>
-							<img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/>
-							<span style='font-size:0.95rem;color:#58595B;margin-left:16px;'>9.87</span>
+						<td class='univ_table_title' style='border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>
+						<td class='univ_table_star' style='border-top:1px solid #BCBEC0;'>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+
+							<span>9.87</span>
 						</td>
 					</tr>
 					<tr>
-						<td style='text-align:left;padding-left:30px;padding-top:15px;width:25%;font-size:0.95rem;color:#808083;'>캠퍼스문화만족도</td>
-						<td style='text-align:left;vertical-align:middle;padding-top:15px;'>
-							<img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/>
-							<span style='font-size:0.95rem;color:#58595B;margin-left:16px;'>9.87</span>
+						<td class='univ_table_title'>캠퍼스문화만족도</td>
+						<td class='univ_table_star'>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+
+							<span>9.87</span>
 						</td>
 					</tr>
 					<tr>
-						<td style='text-align:left;padding-left:30px;padding-top:15px;width:25%;font-size:0.95rem;color:#808083;'>대학가만족도</td>
-						<td style='text-align:left;vertical-align:middle;padding-top:15px;'>
-							<img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/>
-							<span style='font-size:0.95rem;color:#58595B;margin-left:16px;'>9.87</span>
+						<td class='univ_table_title'>대학가만족도</td>
+						<td class='univ_table_star'>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+
+							<span>9.87</span>
 						</td>
 					</tr>
 					<tr>
-						<td style='text-align:left;padding-left:30px;padding-top:15px;width:25%;font-size:0.95rem;color:#808083;'>등록금만족도</td>
-						<td style='text-align:left;vertical-align:middle;padding-top:15px;'>
-							<img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/>
-							<span style='font-size:0.95rem;color:#58595B;margin-left:16px;'>9.87</span>
+						<td class='univ_table_title'>등록금만족도</td>
+						<td class='univ_table_star'>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+
+							<span>9.87</span>
 						</td>
 					</tr>
 					<tr>
-						<td style='text-align:left;padding-left:30px;padding-top:15px;width:25%;font-size:0.95rem;color:#808083;'>교수만족도</td>
-						<td style='text-align:left;vertical-align:middle;padding-top:15px;'>
-							<img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/>
-							<span style='font-size:0.95rem;color:#58595B;margin-left:16px;'>9.87</span>
+						<td class='univ_table_title'>교수만족도</td>
+						<td class='univ_table_star'>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+
+							<span>9.87</span>
 						</td>
 					</tr>
 					<tr>
 						<td colspan='2'><br/></td>
 					</tr>
 					<tr>
-						<td colspan='4' style='text-align:left;padding-left:20px;padding-right:15px;'>
-							<h2 style='font-size:1.3125rem;color:#58595B;margin-top:5px;'>EDITER's Comment</h2>
-							<p style='font-size:0.9rem;color:#808083;font-weight:300;'>이 학교 한번 놀러가봤는데... 두번 다시 올라가보고 싶지 않았어 이 학교를 다니는 애들은 정말 학업에 대한 열정이 가득해서 이런 고행도 이겨낼 수 있는 것 같다. 국민대 학생들 짱짱맨 ^^</p>
+						<td colspan='4' class='edit_td'>
+							<h2 class='edit_comment_h2'>EDITER's Comment</h2>
+							<p class='edit_comment_p'>이 학교 한번 놀러가봤는데... 두번 다시 올라가보고 싶지 않았어 이 학교를 다니는 애들은 정말 학업에 대한 열정이 가득해서 이런 고행도 이겨낼 수 있는 것 같다. 국민대 학생들 짱짱맨 ^^</p>
 						</td>
 					</tr>
 				</table>
 
+
 				<table class='univ_table'>
 					<tr>
-						<td style='padding-left:25px;padding-top:25px;width:14%;text-align:left;font-size:1rem;color:#58595B;font-weight:bold;'>웹사이트</td><td style='text-align:left;width:30%;font-size:0.9rem;padding-top:25px;color:#808083;font-weight:300;'>www.kookmin.ac.kr</td>
-						<td style='padding-left:25px;padding-top:25px;width:17%;text-align:left;font-size:1rem;color:#58595B;font-weight:bold;'>주소</td><td style='text-align:left;width:36%;font-size:0.9rem;padding-top:25px;color:#808083;font-weight:300;'>서울특별시 성북구 정릉로</td>
+						<td class='univ_type_title'>웹사이트</td><td class='univ_type_content' style='width:30%;'>www.kookmin.ac.kr</td>
+						<td class='univ_type_title'>주소</td><td class='univ_type_content' style='width:36%;'>서울특별시 성북구 정릉로</td>
 					</tr>
 					<tr>
-						<td style='padding-left:25px;padding-top:25px;width:17%;text-align:left;font-size:1rem;color:#58595B;font-weight:bold;'>학생 수</td><td style='text-align:left;width:30%;font-size:0.9rem;padding-top:25px;color:#808083;font-weight:300;'>www.kookmin.ac.kr</td>
-						<td style='padding-left:25px;padding-top:25px;width:17%;text-align:left;font-size:1rem;color:#58595B;font-weight:bold;'>개교일</td><td style='text-align:left;width:36%;font-size:0.9rem;padding-top:25px;color:#808083;font-weight:300;'>서울특별시 성북구 정릉로</td>
+						<td class='univ_type_title'>학생 수</td><td class='univ_type_content' style='width:30%;'>www.kookmin.ac.kr</td>
+						<td class='univ_type_title'>개교일</td><td class='univ_type_content' style='width:36%;'>서울특별시 성북구 정릉로</td>
 					</tr>
 					<tr>
-						<td style='padding-left:25px;padding-top:25px;width:17%;text-align:left;font-size:1rem;color:#58595B;font-weight:bold;'>교원</td><td style='text-align:left;width:30%;font-size:0.9rem;padding-top:25px;color:#808083;font-weight:300;'>www.kookmin.ac.kr</td>
-						<td style='padding-left:25px;padding-top:25px;width:17%;text-align:left;font-size:1rem;color:#58595B;font-weight:bold;'>교통</td><td style='text-align:left;width:36%;font-size:0.9rem;padding-top:25px;color:#808083;font-weight:300;'>서울특별시 성북구 정릉로</td>
+						<td class='univ_type_title'>교원</td><td class='univ_type_content' style='width:30%;'>www.kookmin.ac.kr</td>
+						<td class='univ_type_title'>교통</td><td class='univ_type_content' style='width:36%;'>서울특별시 성북구 정릉로</td>
 					</tr>
 					<tr>
-						<td style='padding-left:25px;padding-top:25px;padding-bottom:25px;width:17%;text-align:left;font-size:1rem;color:#58595B;font-weight:bold;'>학교규모</td><td style='text-align:left;width:30%;font-size:0.9rem;padding-top:25px;padding-bottom:25px;color:#808083;font-weight:300;'>www.kookmin.ac.kr</td>
-						<td style='padding-left:25px;padding-top:25px;padding-bottom:25px;width:17%;text-align:left;font-size:1rem;color:#58595B;font-weight:bold;'>총장</td><td style='text-align:left;width:36%;font-size:0.9rem;padding-top:25px;padding-bottom:25px;color:#808083;font-weight:300;'>서울특별시 성북구 정릉로</td>
+						<td class='univ_type_title' style='padding-bottom:25px;'>학교규모</td><td class='univ_type_content' style='width:30%;padding-bottom:25px;'>www.kookmin.ac.kr</td>
+						<td class='univ_type_title' style='padding-bottom:25px;'>총장</td><td class='univ_type_content' style='width:36%;padding-bottom:25px;'>서울특별시 성북구 정릉로</td>
 					</tr>
 					<tr>
-						<td colspan='4' style='text-align:left;padding-left:20px;padding-right:15px;border-top:1px solid #BCBEC0;'>
-							<p style='font-size:0.9rem;color:#808083;font-weight:300;line-height:1.25rem;'>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다. </p>
+						<td colspan='4' class='univ_content_td'>
+							<p class='univ_content_content'>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다. </p>
 						</td>
 					</tr>
 				</table>
 
 				<table class='univ_pic'>
 					<tr>
-						<td style='text-align:left;padding:15px 0px 0px 20px;font-size:1.5rem;color:#58595B;'>대학 속 사진</td>
-						<td style='text-align:right;padding:20px 15px 0px 0px;font-size:0.9rem;color:#58595B;'>사진 더 보기</td>
+						<td class='univ_pic_in'>대학 속 사진</td>
+						<td class='univ_pic_more'>사진 더 보기</td>
 					</tr>
 					<tr>
 						<td colspan='2'>
@@ -161,7 +187,7 @@
 				</table>
 
 				<div class='univ'>
-					<h1 style='margin:0px;padding:15px 0px 15px 20px;font-size:1.5rem;margin-bottom:15px;color:#58595B;border-bottom:1px solid #C9C9C9;width:97%;text-align:left;'>맛보기 대학리뷰</h1>
+					<h1>맛보기 대학리뷰</h1>
 					<img src='/assets/img/common/review_logo.png' class='about_img'/>
 					<div class='univ_about_'>
 						<h3>00대 000대학 0000학과</h3>
@@ -177,7 +203,7 @@
 					</div>
 					<div class='univ_evaluation'>
 						<h6 class='h6_title'>작성자한줄평</h6>
-						<img src='/assets/img/common/review_user.png' style='position:absolute;margin-top:-11px;margin-left:25px;width:48px;height:48px;'/>
+						<img src='/assets/img/common/review_user.png'/>
 						<h6 class='h6_content' style='margin-left:98px'>"좋은 학과다. 허나 고민은 하고 들어왔으면 좋겠다"</h6>
 					</div>
 					<div class='pros'>
@@ -188,7 +214,7 @@
 						<h3>단점</h3>
 						<h4>빡세다, 과제가 많다. 오죽하면 매년 1학년 들이 미팅할 시간도 없다 라는 말을 한다. 덕분에 학교에서 먹고 자고 하면서 폐인이 되어간다, 또 교수들의 입김이 쌔다.</h4>
 					</div>
-					<p style='vertical-align:top;margin:40px 10px 10px 0px;padding:0px;font-size:1.05rem;position:relative;right:0%;text-align:right;color: #808083;'>대학리뷰 자세히 보기 <img src='/assets/img/common/review_more.png' style='vertical-align:top;margin-top:0.5px;'/></p>
+					<p class='univ_p'>대학리뷰 자세히 보기 <img src='/assets/img/common/review_more.png'/></p>
 				</div>
 
 			</div>
@@ -257,6 +283,9 @@
 						<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
 						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
 					</tr>
+					<tr>
+						<td colspan='3'>&nbsp;</td>
+					</tr>
 				</table>
 
 				<table class='review_list'>
@@ -288,6 +317,9 @@
 						<td class='of_rank'>1.</td>
 						<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
 						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
+					</tr>
+					<tr>
+						<td colspan='3'>&nbsp;</td>
 					</tr>
 				</table>
 
@@ -351,7 +383,6 @@
 		/*************************
 		* For Sign
 		*************************/
-
 		function submitForm(event) {
 			event.preventDefault();
 			var email = $('#sign_up_email').val();
@@ -465,40 +496,51 @@
 
 		function layer_open2(el){
 
-			var temp = $('#' + el);
-			var bg = temp.prev().hasClass('bg2');
-			//dimmed 레이어를 감지하기 위한 boolean 변수
+			if (LocalStorage.get('sessionKey') == undefined) {
 
-			if(bg){
-				$('.layer2s').fadeIn();
-				//'bg' 클래스가 존재하면 레이어가 나타나고 배경은 dimmed 된다. 
-			}else{
-				temp.fadeIn();
-			}
+				alert("애드캠퍼스 로그인 후 이용 가능합니다.");
+				
+				layer_open('layer2');
+				return false;
 
-			// 화면의 중앙에 레이어를 띄운다.
-			if (temp.outerHeight() < $(document).height() ) temp.css('margin-top', '-'+temp.outerHeight()/2+'px');
-			else temp.css('top', '0px');
-			if (true ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
-			// if (temp.outerWidth() < $(document).width() ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
-			// else temp.css('left', '0px');
+			} else {
 
-			temp.find('a.cbtn').click(function(e){
+				var temp = $('#' + el);
+				var bg = temp.prev().hasClass('bg2');
+				//dimmed 레이어를 감지하기 위한 boolean 변수
+
 				if(bg){
-					$('.layer2s').fadeOut(); 
-					//'bg' 클래스가 존재하면 레이어를 사라지게 한다. 
+					$('.layer2s').fadeIn();
+					//'bg' 클래스가 존재하면 레이어가 나타나고 배경은 dimmed 된다. 
 				}else{
-					temp.fadeOut();
+					temp.fadeIn();
 				}
-				e.preventDefault();
-			});
 
-			$('.layer2s .bg2').click(function(e){	
-			//배경을 클릭하면 레이어를 사라지게 하는 이벤트 핸들러
+				// 화면의 중앙에 레이어를 띄운다.
+				if (temp.outerHeight() < $(document).height() ) temp.css('margin-top', '-'+temp.outerHeight()/2+'px');
+				else temp.css('top', '0px');
+				if (true ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
+				// if (temp.outerWidth() < $(document).width() ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
+				// else temp.css('left', '0px');
 
-				$('.layer2s').fadeOut();
-				e.preventDefault();
-			});
+				temp.find('a.cbtn').click(function(e){
+					if(bg){
+						$('.layer2s').fadeOut(); 
+						//'bg' 클래스가 존재하면 레이어를 사라지게 한다. 
+					}else{
+						temp.fadeOut();
+					}
+					e.preventDefault();
+				});
+
+				$('.layer2s .bg2').click(function(e){	
+				//배경을 클릭하면 레이어를 사라지게 하는 이벤트 핸들러
+
+					$('.layer2s').fadeOut();
+					e.preventDefault();
+				});
+
+			}
 
 		}
 		
@@ -737,7 +779,7 @@
 						<tr>
 							<td colspan='2'>
 								<h3 style='margin-left:35px;margin-top:20px;margin-bottom:8px;font-size:15pt;color:#58595B;font-weight:bold;'>알려드립니다!</h3>
-								<p style='margin:0px;margin-left:35px;margin-right:40px;font-size:12pt;color:#58595B;'>회원님께서 입력해주신 모든 정보는 익명으로 관리됩니다. 걱정하지마세요! 또한, 개인정보 유출 위험이나 한 인물이 특정될 여지가 있는 리뷰는 관리자가 게시 거절을 할 수 있습니다.</p>
+								<p style='margin:0px;margin-left:35px;margin-right:40px;font-size:11pt;color:#58595B;'>회원님께서 입력해주신 모든 정보는 익명으로 관리됩니다. 걱정하지마세요! 또한, 개인정보<br/>유출 위험이나 한 인물이 특정될 여지가 있는 리뷰는 관리자가 게시 거절을 할 수 있습니다.</p>
 							</td>
 						</tr>
 						<tr>

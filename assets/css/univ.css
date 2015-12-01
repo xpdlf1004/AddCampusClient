@@ -14,6 +14,44 @@
 	    -o-background-size: cover;
 	}
 
+	#univ_main_image .univ_about img {
+		display: inline-block;
+		margin-left: 30px;
+	}
+
+	#univ_main_image .univ_about button {
+		font-size: 1.2rem;
+		font-weight: bold;
+		color: #58595B;
+		width: 215px;
+		height: 40px;
+		text-align: center;
+		background: #FFD432;
+		border-radius: 10px;
+		line-height: 40px;
+		float: right;
+		margin-top: 50px;
+		margin-right: 30px;
+	}
+
+	#univ_main_image .univ_about h2 {
+		display: inline-block;
+		font-size: 2rem;
+		font-weight: bold;
+	}
+
+	#univ_main_image .univ_about span {
+		font-size: 1rem;
+		margin-left: 10px;
+		font-weight: 300;
+	}
+
+	#univ_main_image .univ_about p {
+		font-size: 1.5rem;
+		margin-top: 5px;
+		font-weight: 300;
+	}
+
 	.univ_about {
 		width: 1000px;
 		height: auto;
@@ -74,9 +112,10 @@
 	}
 
 	#univ_content {
-		width: 100%;
 		text-align: center;
 		padding: 30px 0px;
+		width: 1000px;
+		margin:0px auto;
 	}
 
 	#univ_content .title {
@@ -87,6 +126,13 @@
 	#univ_content .subtitle {
 		font-size: 1.22rem;
 		margin: 0px;
+	}
+
+	.univ_left {
+		width: 675px;
+		margin: 0px auto;
+		margin-top: 20px;
+		float: left;
 	}
 
 	.find_campus {
@@ -115,10 +161,73 @@
 		margin-bottom: 10px;
 	}
 
-	.univ_table tr,
-	.univ_table td {
-		margin: 0px;
-		padding: 0px;
+	.univ_table_about img {
+		width: 21px;
+		height: 21px;
+	}
+
+	.univ_table_about p {
+		font-size: 1.1rem;
+		font-weight: 400;
+		color: #58595B;
+		margin-top: 20px;
+	}
+
+	.univ_table_about span {
+		font-size: 1.3125rem;
+		color: #58595B;
+		margin-left: 10px;
+	}
+
+	.univ_name {
+		font-size: 1.5rem;
+		color: #58595B;
+		font-weight: bold;
+		margin-top: 16px;
+		margin-bottom: 20px;
+	}
+
+	.univ_star {
+		font-size: 1.5rem;
+		color: #1C75BA;
+		margin-top: 0px;
+		margin-bottom: 10px;
+	}
+
+	.univ_table_title {
+		text-align: left;
+		padding-left: 30px;
+		padding-top: 15px;
+		width: 25%;
+		font-size: 0.95rem;
+		color: #808083;
+	}
+
+	.univ_table_star {
+		text-align: left;
+		vertical-align: middle;
+		padding-top: 15px;
+	}
+
+	.univ_table_star img {
+		width: 16px;
+		height: 16px;
+	}
+
+	.univ_table_star span {
+		font-size: 0.95rem;
+		color: #58595B;
+		margin-left: 16px;
+	}
+
+	.univ_type_title {
+		padding-left: 25px;
+		padding-top: 25px;
+		width: 17%;
+		text-align: left;
+		font-size: 1rem;
+		color: #58595B;
+		font-weight: bold;
 	}
 
 	.univ_pic {
@@ -136,6 +245,98 @@
 		padding: 0px 0px 0px 0px;
 		border: 1px solid #BCBEC0;
 		margin-bottom: 10px;
+	}
+
+	.univ_evaluation img {
+		position: absolute;
+		margin-top: -11px;
+		margin-left: 25px;
+		width: 48px;
+		height: 48px;
+
+	}
+
+	.univ h1 {
+		margin: 0px;
+		padding: 15px 0px 15px 20px;
+		font-size: 1.5rem;
+		margin-bottom: 15px;
+		color: #58595B;
+		border-bottom: 1px solid #C9C9C9;
+		width: 97%;
+		text-align: left;
+
+	}
+
+	.univ_p {
+		vertical-align: top;
+		margin: 40px 10px 10px 0px;
+		padding: 0px;
+		font-size: 1.05rem;
+		position: relative;
+		right: 0%;
+		text-align: right;
+		color:  #808083;
+
+	}
+
+	.univ_p img {
+		vertical-align: top;
+		margin-top: 0.5px;
+	}
+
+	.edit_td {
+		text-align: left;
+		padding-left: 20px;
+		padding-right: 15px;
+	}
+
+	.edit_comment_h2 {
+		font-size: 1.3125rem;
+		color: #58595B;
+		margin-top: 5px;
+	}
+
+	.edit_comment_p {
+		font-size: 0.9rem;
+		color: #808083;
+		font-weight: 300;
+	}
+
+	.univ_type_content {
+		text-align: left;
+		font-size: 0.9rem;
+		padding-top: 25px;
+		color: #808083;
+		font-weight: 300;
+	}
+
+	.univ_content_td {
+		text-align: left;
+		padding-left: 20px;
+		padding-right: 15px;
+		border-top: 1px solid #BCBEC0;
+	}
+
+	.univ_content_content {
+		font-size: 0.9rem;
+		color: #808083;
+		font-weight: 300;
+		line-height: 1.25rem;
+	}
+
+	.univ_pic_in {
+		text-align: left;
+		padding: 15px 0px 0px 20px;
+		font-size: 1.5rem;
+		color: #58595B;
+	}
+
+	.univ_pic_more {
+		text-align: right;
+		padding: 20px 15px 0px 0px;
+		font-size: 0.9rem;
+		color: #58595B;
 	}
 
 	.about_img { 
@@ -354,9 +555,28 @@
 		vertical-align: middle;
 	}
 	
-	.layer2s { display:none; /*position:fixed;*/ top:0; left:0; width:100%; height:100%; z-index:100; }
-	.layer2s .bg2 { position: fixed; top:0; left:0; width: 100%; height:100%; background:#000; opacity:.5; filter:alpha(opacity=50); }
-	.layer2s .pop-layer { display:block; }
+	.layer2s { display:none;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 100;
+	}
+
+	.layer2s .bg2 { 
+		position: fixed;
+		top: 0;
+		left: 0;
+		width:  100%;
+		height: 100%;
+		background: #000;
+		opacity: 0.5;
+		filter:alpha(opacity=50);
+	}
+
+	.layer2s .pop-layer { 
+		display: block;
+	}
 
 	.review_write {
 		width: 100%;
@@ -384,5 +604,6 @@
         border: 1px solid #BABCBE;
         padding: 8px 5px;
         border-radius: 10px;
-        background: url("http://www.opexegypt.com/skin/frontend/opex/default/images/arrow-down-gray.png") no-repeat right;
+        background: url("https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_down_48px-128.png") no-repeat right;
+        background-size: 40px;
     }
