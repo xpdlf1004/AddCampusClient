@@ -1,4 +1,4 @@
-
+	
 	#campus_image {
 		width: 100%;
 		height: 550px;
@@ -322,6 +322,63 @@
 	.campus_grade_etc {
 		margin-top: 5px;
 	}
+
+	.campus_univ_list {
+		border: 1px solid #BABCBE;
+		border-bottom: none;
+		width: 100%;
+	}
+
+	.campus_univ_list,
+	.campus_univ_list li {
+		margin: 0px;
+		padding: 0px;
+		list-style: none;
+		display: inline-block;
+	}
+
+	.campus_univ_list .univ_class {
+		padding: 0px 20px;
+		font-size: 1.2125rem;
+		color: #FF6666;
+	}
+
+	.campus_univ_list .univ_about {
+		font-size: 1.6875rem;
+		width: 60%;
+	}
+
+	.campus_univ_list .univ_comment {
+		font-size: 1.5rem;
+		color: #58595B;
+		text-align: left;
+		font-family: 'NanumPen';
+	}
+
+	.campus_univ_list .univ_about .univ_img {
+		width: 60px;
+		height: 60px;
+		margin: 0px 6px 0px 0px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.campus_univ_list .univ_about .rank_star {
+		height: 1.3rem;
+		vertical-align: middle;
+	}
+
+	.campus_univ_list .univ_about p {
+		color: #58595B;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.campus_univ_list .univ_comment p {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
 
 	.grade_table {
 		width: 215px;
