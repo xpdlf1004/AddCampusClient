@@ -296,7 +296,6 @@
 		/*************************
 		* For Sign
 		*************************/
-
 		function submitForm(event) {
 			event.preventDefault();
 			var email = $('#sign_up_email').val();
@@ -315,9 +314,15 @@
 			}, {
 			// Option is not needed.
 			}, function(data) {
+				$('#sign_up_email_').text(email);
+
 				alert(JSON.stringify(data));
+				alert("회원가입에 성공했습니다.");
 			}, function(data) {
 				alert(JSON.stringify(data));
+				alert("회원가입에 실패했습니다, 다시 시도해주세요.");
+
+				location.href='/';
 			});
 		}
 
@@ -326,6 +331,16 @@
 			
 			var email = $('#sign_id').val();
 			var pw = $('#sign_pw').val();
+
+			if (email == '') {
+				alert("이메일을 입력해주세요.");
+				return false;
+			}
+
+			if (pw == '') {
+				alert("로그인에 실패했습니다.");
+				return false;
+			}
 
 			RequestHelper.post('/account/loginWithEmail', {
 				email: email,
@@ -479,45 +494,79 @@
 			});
 
 			$("#sign_b_s").click(function(){
+
 				$("#sign_in_table").hide();
 				$("#sign_up_table_1").show();
+
 			});
 
 			$("#sign_back_1").click(function(){
+
 				$("#sign_in_table").show();
 				$("#sign_up_table_1").hide();
+
 			});
 
 			$("#sign_next_1").click(function(){
+
+				if ($('#sign_up_email').val() == '') {
+					alert("아이디를 정확하게 입력해주세요");
+					return false;
+				}
+
+				if ($('#sign_up_pw').val() == '') {
+					alert("비밀번호를 정확하게 입력해주세요");
+					return false;
+				}
+
+				if ($('#sign_up_pw_').val() == '') {
+					alert("비밀번호를 정확하게 입력해주세요");
+					return false;
+				}
+
+				if ($('#sign_up_pw').val() != $('#sign_up_pw_').val()) {
+					alert("입력한 두 비밀번호가 다릅니다");
+					return false;
+				}
+
 				$("#sign_in_table").hide();
 				$("#sign_up_table_1").hide();
 				$("#sign_up_table_2").show();
+
 			});
 
 			$("#sign_back_2").click(function(){
+
 				$("#sign_in_table").hide();
 				$("#sign_up_table_1").show();
 				$("#sign_up_table_2").hide();
 				$("#sign_up_table_3").hide();
+
 			});
 
 			$("#sign_next_2").click(function(){
+
 				$("#sign_in_table").hide();
 				$("#sign_up_table_1").hide();
 				$("#sign_up_table_2").hide();
 				$("#sign_up_table_3").show();
+
 			});
 
 			$("#sign_back_3").click(function(){
+
 				$("#sign_in_table").show();
 				$("#sign_up_table_1").hide();
 				$("#sign_up_table_2").hide();
 				$("#sign_up_table_3").hide();
 
 				$('.layer').fadeOut();
-				// e.preventDefault();
 
 			});
+
+			for (var year = 2015; year >= 1901; year--) {
+				$("#birthYear").append("<option value='" + year + "'>" + year + "</option>");	
+			}
 
 		});
 
@@ -603,11 +652,11 @@
 								<td>
 									<span class='input_title'>직업</span>
 										<select name="selection" id="job" style='margin-left:80px;'>
-									        <option value='highSchoolStudent'>highSchoolStudent</option>
-									        <option value='middleSchoolStudent'>middleSchoolStudent</option>
-									        <option value='collegeStudent'>collegeStudent</option>
-									        <option value='schoolParent'>schoolParent</option>
-									        <option value='educationalPersonnel'>educationalPersonnel</option>
+									        <option value='highSchoolStudent'>고등학생</option>
+									        <option value='middleSchoolStudent'>중학생</option>
+									        <option value='collegeStudent'>대학생</option>
+									        <option value='schoolParent'>선생님</option>
+									        <option value='educationalPersonnel'>교육 관련인</option>
 										</select>
 								</td>
 							</tr>
@@ -624,11 +673,6 @@
 									<br/>
 									<span class='input_title'>태어난 년도</span>
 										<select name="selection" id="birthYear" style='margin-left:28px;'>
-									        <option value='1991'>1991</option>
-									        <option value='1992'>1992</option>
-									        <option value='1993'>1993</option>
-									        <option value='1994'>1994</option>
-									        <option value='1995'>1995</option>
 										</select>
 								</td>
 							</tr>
@@ -658,7 +702,7 @@
 							</tr>
 							<tr>
 								<td style='text-align:center;color:#1C75BA;font-size:1.5rem;padding:50px 0px;'>
-									addcampus@addcampus.com
+									<span id='sign_up_email_'></span>
 								</td>
 							</tr>
 							<tr>
