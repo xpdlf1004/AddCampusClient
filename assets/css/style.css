@@ -178,3 +178,57 @@
 	.sign_up_table_2 .input_title input[type=select] {
 		width:150px;font-size:1.15rem;
 	}
+	
+	.layer2s { display:none;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 100;
+	}
+
+	.layer2s .bg2 { 
+		position: fixed;
+		top: 0;
+		left: 0;
+		width:  100%;
+		height: 100%;
+		background: #000;
+		opacity: 0.5;
+		filter:alpha(opacity=50);
+	}
+
+	.layer2s .pop-layer { 
+		display: block;
+	}
+
+	.review_write {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 0px;
+		padding: 0px;
+	}
+    
+    .sign_mypage_memo select {
+        background: transparent;
+        margin: 0px auto;
+        width: 95%;
+        font-size: 10pt;
+        outline: none;
+        border: none;
+        height: 100%;
+        -webkit-appearance: none;
+    }
+
+    .sign_mypage_memo {
+		width: 45%;
+	    display: inline-block;
+	    height: 1rem;
+	    overflow: hidden;
+	    text-align: center;
+	    border: 1px solid #BABCBE;
+	    padding: 8px 5px;
+	    border-radius: 10px;
+	    background: url("https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_down_48px-128.png") no-repeat right;
+	    background-size: 40px;
+    }

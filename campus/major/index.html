@@ -58,9 +58,9 @@
 			<div class='campus_left'>
 
 				<select name='' style='margin-top:10px;margin-bottom:25px;width:240px;height:40px;border-radius:15px;border:2px solid #808083;font-size:1rem;color:#58595B;'>
-					<option>자연과학 계열</option>
-					<option>인문/사회 계열</option>
-					<option>사범계열</option>
+					<option>자연계열</option>
+					<option>인문사회계열</option>
+					<option>교육계열</option>
 					<option>의학계열</option>
 					<option>공학계열</option>
 					<option>예체능계열</option>
@@ -255,16 +255,13 @@
 						<td><a href='/campus/major/' style='text-decoration:none;color:inherit;'>자연계열</a></td>
 					</tr>
 					<tr>
-						<td><a href='/campus/major/' style='text-decoration:none;color:inherit;'>인문계열</a></td>
-					</tr>
-					<tr>
-						<td><a href='/campus/major/' style='text-decoration:none;color:inherit;'>사회계열</a></td>
+						<td><a href='/campus/major/' style='text-decoration:none;color:inherit;'>인문사회계열</a></td>
 					</tr>
 					<tr>
 						<td><a href='/campus/major/' style='text-decoration:none;color:inherit;'>교육계열</a></td>
 					</tr>
 					<tr>
-						<td><a href='/campus/major/' style='text-decoration:none;color:inherit;'>의약계열</a></td>
+						<td><a href='/campus/major/' style='text-decoration:none;color:inherit;'>의학계열</a></td>
 					</tr>
 					<tr>
 						<td><a href='/campus/major/' style='text-decoration:none;color:inherit;'>공학계열</a></td>
@@ -496,7 +493,115 @@
 			});
 		}
 
-		$(document).ready(function() {
+		function layer_open(el){
+
+			var temp = $('#' + el);
+			var bg = temp.prev().hasClass('bg');
+			//dimmed 레이어를 감지하기 위한 boolean 변수
+
+			if(bg){
+				$('.layer').fadeIn();
+				//'bg' 클래스가 존재하면 레이어가 나타나고 배경은 dimmed 된다. 
+			}else{
+				temp.fadeIn();
+			}
+
+			// 화면의 중앙에 레이어를 띄운다.
+			if (temp.outerHeight() < $(document).height() ) temp.css('margin-top', '-'+temp.outerHeight()/2+'px');
+			else temp.css('top', '0px');
+			if (true ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
+			// if (temp.outerWidth() < $(document).width() ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
+			// else temp.css('left', '0px');
+
+			temp.find('a.cbtn').click(function(e){
+				if(bg){
+					$('.layer').fadeOut(); 
+					//'bg' 클래스가 존재하면 레이어를 사라지게 한다. 
+				}else{
+					temp.fadeOut();
+				}
+				e.preventDefault();
+			});
+
+			$('.layer .bg').click(function(e){	
+			//배경을 클릭하면 레이어를 사라지게 하는 이벤트 핸들러
+				$('.layer').fadeOut();
+				e.preventDefault();
+			});
+
+		}
+
+		function layer_open2(el){
+
+			if (LocalStorage.get('sessionKey') == undefined) {
+
+				alert("애드캠퍼스 로그인 후 이용 가능합니다.");
+				
+				layer_open('layer2');
+				return false;
+
+			} else {
+
+				var temp = $('#' + el);
+				var bg = temp.prev().hasClass('bg2');
+				//dimmed 레이어를 감지하기 위한 boolean 변수
+
+				if(bg){
+					$('.layer2s').fadeIn();
+					//'bg' 클래스가 존재하면 레이어가 나타나고 배경은 dimmed 된다. 
+				}else{
+					temp.fadeIn();
+				}
+
+				// 화면의 중앙에 레이어를 띄운다.
+				if (temp.outerHeight() < $(document).height() ) temp.css('margin-top', '-'+temp.outerHeight()/2+'px');
+				else temp.css('top', '0px');
+				if (true ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
+				// if (temp.outerWidth() < $(document).width() ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
+				// else temp.css('left', '0px');
+
+				temp.find('a.cbtn').click(function(e){
+					if(bg){
+						$('.layer2s').fadeOut(); 
+						//'bg' 클래스가 존재하면 레이어를 사라지게 한다. 
+					}else{
+						temp.fadeOut();
+					}
+					e.preventDefault();
+				});
+
+				$('.layer2s .bg2').click(function(e){	
+				//배경을 클릭하면 레이어를 사라지게 하는 이벤트 핸들러
+
+					$('.layer2s').fadeOut();
+					e.preventDefault();
+				});
+
+			}
+
+		}
+		
+		$(document).ready(function(){
+
+			$("#review_write_next_1").click(function(){
+
+				$("#review_write_1").hide();
+				$("#review_write_2").show();
+
+			});
+
+			$("#review_write_back_1").click(function(){
+
+				$('.layer2s').fadeOut();
+
+			});
+
+			$("#review_write_back_2").click(function(){
+
+				$("#review_write_1").show();
+				$("#review_write_2").hide();
+
+			});
 
 			$("#sign_b_s").click(function(){
 
@@ -574,44 +679,6 @@
 			}
 
 		});
-
-		function layer_open(el){
-
-			var temp = $('#' + el);
-			var bg = temp.prev().hasClass('bg');
-			//dimmed 레이어를 감지하기 위한 boolean 변수
-
-			if(bg){
-				$('.layer').fadeIn();
-				//'bg' 클래스가 존재하면 레이어가 나타나고 배경은 dimmed 된다. 
-			}else{
-				temp.fadeIn();
-			}
-
-			// 화면의 중앙에 레이어를 띄운다.
-			if (temp.outerHeight() < $(document).height() ) temp.css('margin-top', '-'+temp.outerHeight()/2+'px');
-			else temp.css('top', '0px');
-			if (true ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
-			// if (temp.outerWidth() < $(document).width() ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
-			// else temp.css('left', '0px');
-
-			temp.find('a.cbtn').click(function(e){
-				if(bg){
-					$('.layer').fadeOut(); 
-					//'bg' 클래스가 존재하면 레이어를 사라지게 한다. 
-				}else{
-					temp.fadeOut();
-				}
-				e.preventDefault();
-			});
-
-			$('.layer .bg').click(function(e){	
-			//배경을 클릭하면 레이어를 사라지게 하는 이벤트 핸들러
-				$('.layer').fadeOut();
-				e.preventDefault();
-			});
-
-		}
 
 	</script>
 
@@ -694,7 +761,9 @@
 							<tr>
 								<td>
 									<span class='input_title'>직업</span>
-										<select name="selection" id="job" style='margin-left:80px;'>
+
+										<div class="sign_mypage_memo" style='margin-left:80px;margin-bottom:-12px;'>
+										<select name="selection" id="job">
 									        <option value='highSchoolStudent'>고등학생</option>
 									        <option value='middleSchoolStudent'>중학생</option>
 									        <option value='collegeStudent'>대학생</option>
@@ -715,8 +784,12 @@
 								<td>
 									<br/>
 									<span class='input_title'>태어난 년도</span>
-										<select name="selection" id="birthYear" style='margin-left:28px;'>
-										</select>
+
+										<div class="sign_mypage_memo" style='margin-left:26px;margin-bottom:-12px;'>
+											<select name="selection" id="birthYear">
+												<option value=''>선택해주세요</option>
+											</select>
+										</div>
 								</td>
 							</tr>
 							<tr>
@@ -765,5 +838,229 @@
 			</div> 
 		</div>
 	</div>
+
+	<div class="layer2s">
+		<div class="bg2"></div>
+		<div id="layer3" class="pop-layer" style='z-index:3;width:650px;'>
+			<div class="pop-container">
+				<div class="pop-conts" style='padding: 0px;'>
+					<table class='review_write' id='review_write_1'>
+						<tr>
+							<td colspan='2' style='background:#FFD432;padding:10px 18px;font-size:22pt;color:#808083;font-weight:bold;'>
+								대학리뷰 작성하기
+							</td>
+						</tr>
+						<tr>
+							<td colspan='2'>
+								<h3 style='margin-left:35px;margin-top:20px;margin-bottom:8px;font-size:15pt;color:#58595B;font-weight:bold;'>알려드립니다!</h3>
+								<p style='margin:0px;margin-left:35px;margin-right:40px;font-size:11pt;color:#58595B;'>회원님께서 입력해주신 모든 정보는 익명으로 관리됩니다. 걱정하지마세요! 또한, 개인정보<br/>유출 위험이나 한 인물이 특정될 여지가 있는 리뷰는 관리자가 게시 거절을 할 수 있습니다.</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan='2'>
+								<hr size='1' style='width:89%;margin:20px 35px auto;'/>
+							</td>
+						</tr>
+						<tr>
+							<td style='width:170px;font-size:16pt;color:#58595B;padding:20px 0px 0px 35px;height:70px;'>대학명</td>
+							<td style='text-align:left;padding-top: 20px;'>
+								<input type='text' style='font-size:12pt;width:77%;padding: 12px 10px;border:1px solid #BABCBE;'/>
+							</td>
+						</tr>
+						<tr>
+							<td style='width:170px;font-size:16pt;color:#58595B;padding:0px 0px 0px 35px;height:70px;'>학과군</td>
+							<td style='text-align:left;'>
+
+								<div class="mypage_memo">
+									<select name='mypage_form' id='mypage_form'>
+										<option value=''>선택해주세요</option>
+									</select>
+								</div>
+
+							</td>
+						</tr>
+						<tr>
+							<td style='width:170px;font-size:16pt;color:#58595B;padding:0px 0px 25px 35px;height:70px;'>학과명</td>
+							<td style='text-align:left;padding-bottom:25px;'>
+								<div class="mypage_memo">
+									<select name='mypage_form' id='mypage_form'>
+										<option value=''>선택해주세요</option>
+									</select>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan='2'>
+								<button id='review_write_back_1' style='width:170px;height:45px;border-radius:10px;font-size:14pt;color:#58595B;float:left;margin-left:30px;'>취소</button>
+								<button id='review_write_next_1' style='background:#FFD432;width:170px;height:45px;border-radius:10px;font-size:14pt;color:#58595B;float:right;margin-right:35px;'>다음으로</button>
+							</td>
+						</tr>
+						<tr>
+							<td colspan='2'>
+								<br/>
+							</td>
+						</tr>
+					</table>
+
+					<table class='review_write' id='review_write_2' style='display:none;'>
+						<tr>
+							<td colspan='2' style='background:#FFD432;padding:10px 18px;font-size:22pt;color:#808083;font-weight:bold;'>
+								대학리뷰 작성하기
+							</td>
+						</tr>
+						<tr>
+							<td colspan='2'>
+								<h3 style='margin-left:35px;margin-top:20px;margin-bottom:8px;font-size:15pt;color:#58595B;font-weight:bold;'>알려드립니다!</h3>
+								<p style='margin:0px;margin-left:35px;margin-right:40px;font-size:12pt;color:#58595B;'>작성된 리뷰는 관리자의 승인에 의해 게시됩니다.</p>
+							</td>
+						</tr>
+						<tr>
+							<td colspan='2'>
+								<hr size='1' style='width:89%;margin:20px 35px auto;'/>
+							</td>
+						</tr>
+						<tr>
+							<td style='padding-left: 40px;width:120px;'>
+								<img src='/assets/img/common/rank_logo.png' style='width:100px;height:100px;'/>
+							</td>
+							<td>
+								<h1 style='font-size:25pt;color:#58595B;vertical-align:top;'>국민대학교<span style='margin-left:10px;color:#58595B;font-size:21pt;vertical-align:top;'>공업디자인과</span></h1>
+								<p style='font-size:12pt;color:#808083;'>종합 4년제 사립대학</p>
+								<span style='font-size:11pt;color:#808083;'>해당 대학/학과가 아니시라면 여기를 눌러주세요</span>
+							</td>
+						</tr>
+						<tr>
+							<td style='padding-left: 40px;width:120px;font-size:12.5pt;color:#58595B;height:60px;'>전공학과 평점</td>
+							<td style='text-align:left;'>
+								<img src='/assets/img/common/review_star_full.png'/>
+								<img src='/assets/img/common/review_star_full.png'/>
+								<img src='/assets/img/common/review_star_full.png'/>
+								<img src='/assets/img/common/review_star_full.png'/>
+								<img src='/assets/img/common/review_star_full.png'/>
+							</td>
+						</tr>
+						<tr>
+							<td style='padding-left: 40px;width:120px;font-size:12.5pt;color:#58595B;height:60px;'>학과 한줄평<br/><span style='font-size:11pt;font-weight:300;color:#808083;'>최대 20자</span></td>
+							<td style='text-align:left;'>
+								<input type='text' name='' maxlength='20' placeholder='ex) 나 같으면 여기는 절대 안 온다.' style='font-size:11pt;width:80%;padding: 7px 12px;border:1px solid #BABCBE;'/>
+							</td>
+						</tr>
+						<tr>
+							<td style='padding-left: 40px;width:120px;font-size:12.5pt;color:#58595B;height:80px;padding-top:20px;vertical-align:top;'>학과의 장점<br/><span style='font-size:11pt;font-weight:300;color:#808083;'>최소 20자</span></td>
+							<td style='text-align:left;'>
+								<textarea name='' placeholder='ex) 장점.. 단점이 없는게 장점' style='font-size:11pt;width:80%;padding: 7px 12px;height:60px;border:1px solid #BABCBE;'/></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td style='padding-left: 40px;width:120px;font-size:12.5pt;color:#58595B;vertical-align:top;'>학과의 단점 <br/><span style='font-size:11pt;font-weight:300;color:#808083;'>최소 20자</span></td>
+							<td style='text-align:left;'>
+								<textarea name='' placeholder='ex) 단점.. 장점이 없는게 단점' style='font-size:11pt;width:80%;padding: 7px 12px;height:60px;border:1px solid #BABCBE;'/></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td style='padding-left: 40px;width:120px;font-size:12.5pt;color:#58595B;height:80px;padding-top:20px;vertical-align:top;'>학과에 바라는 점<br/><span style='font-size:11pt;font-weight:300;color:#808083;'>최소 20자</span></td>
+							<td style='text-align:left;'>
+								<textarea name='' placeholder='ex) 솔로인 학우들을 위해 학과차원에서 과팅을 주선해달라' style='font-size:11pt;width:80%;padding: 7px 12px;height:60px;border:1px solid #BABCBE;'/></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td colspan='2'>
+								<br/>
+							</td>
+						</tr>
+						<tr>
+							<td style='padding-left: 40px;width:120px;font-size:12.5pt;color:#58595B;height:40px;'>캠퍼스시설만족도</td>
+							<td style='text-align:left;padding-left:15px;'>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<span style='font-size:10pt;color:#808083;margin-left:20px;'>대학의 복지시설등의 만족도를 평가해주세요</span>
+							</td>
+						</tr>
+						<tr>
+							<td style='padding-left: 40px;width:120px;font-size:12.5pt;color:#58595B;height:40px;'>캠퍼스문화만족도</td>
+							<td style='text-align:left;padding-left:15px;'>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<span style='font-size:10pt;color:#808083;margin-left:20px;'>대학의 여러 문화들을 평가해주세요</span>
+							</td>
+						</tr>
+						<tr>
+							<td style='padding-left: 40px;width:120px;font-size:12.5pt;color:#58595B;height:40px;'>대학가만족도</td>
+							<td style='text-align:left;padding-left:15px;'>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<span style='font-size:10pt;color:#808083;margin-left:20px;'>대학의 주변의 여러 상권, 교통등을 평가해주세요</span>
+							</td>
+						</tr>
+						<tr>
+							<td style='padding-left: 40px;width:120px;font-size:12.5pt;color:#58595B;height:40px;'>등록금만족도</td>
+							<td style='text-align:left;padding-left:15px;'>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<span style='font-size:10pt;color:#808083;margin-left:20px;'>등록금 대비 만족도를 평가해주세요</span>
+							</td>
+						</tr>
+						<tr>
+							<td style='padding-left: 40px;width:120px;font-size:12.5pt;color:#58595B;height:40px;'>교수만족도</td>
+							<td style='text-align:left;padding-left:15px;'>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<img src='/assets/img/common/review_star_full.png' style='vertical-align:middle;margin-bottom:6px;'/>
+								<span style='font-size:10pt;color:#808083;margin-left:20px;'>교수님의 지도 및 수업에 대한 만족도를 평가해주세요</span>
+							</td>
+						</tr>
+						<tr>
+							<td style='padding-left: 40px;font-size:12pt;color:#58595B;' colspan='2'>
+								<br/><br/>
+								이 학과를 후배들에게 추천하시겠습니까?
+								<input type='radio' name='1' style='margin-left:90px;'/>&nbsp;&nbsp;추천
+								<input type='radio' name='1' style='margin-left:25px;'/>&nbsp;&nbsp;비추천
+							</td>
+						</tr>
+						<tr>
+							<td style='padding-left: 40px;font-size:12pt;color:#58595B;' colspan='2'>
+								<br/>
+								이 학과의 3년 후 미래에 대해 어떻게 생각하십니까?
+								<input type='radio' name='2' style='margin-left:23px;'/>&nbsp;&nbsp;발전
+								<input type='radio' name='2' style='margin-left:18px;'/>&nbsp;&nbsp;유지
+								<input type='radio' name='2' style='margin-left:18px;'/>&nbsp;&nbsp;도태
+							</td>
+						</tr>
+						<tr>
+							<td colspan='2'>
+								<br/><br/><br/>
+							</td>
+						</tr>
+						<tr>
+							<td colspan='2'>
+								<button id='review_write_back_2' style='width:170px;height:45px;border-radius:10px;font-size:14pt;color:#58595B;float:left;margin-left:30px;'>뒤로</button>
+								<button id='review_write_next_2' style='background:#FFD432;width:170px;height:45px;border-radius:10px;font-size:14pt;color:#58595B;float:right;margin-right:35px;'>완료</button>
+							</td>
+						</tr>
+						<tr>
+							<td colspan='2'>
+								<br/>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div> 
+		</div>
+	</div>
+
 </body>
 </html>
