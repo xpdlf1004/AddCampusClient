@@ -1,5 +1,3 @@
-
-
 	#univ_main_image {
 		width: 100%;
 		height: 200px;
@@ -51,6 +49,34 @@
 		margin-top: 5px;
 		font-weight: 300;
 	}
+
+    .swiper-container {
+        /*width: 500px;
+        height: 300px;
+        margin: 20px auto;*/
+        height: auto;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        height: auto;
+        /*font-size: 18px;
+        background: #fff;*/
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
 
 	.univ_about {
 		width: 1000px;
@@ -128,6 +154,95 @@
 		margin: 0px;
 	}
 
+	.find_campus select {
+		margin-top: 10px;
+		width: 175px;
+		height: 40px;
+		border-radius: 15px;
+		border: 2px solid #BCBEC0;
+		font-size: 1rem;
+		color: #58595B;
+		margin-right: 10px;
+		
+	}
+
+	.find_campus h1 {
+		display: inline-block;
+		margin-left: 30px;
+		font-size: 1.1rem;
+		vertical-align: middle;
+		
+	}
+
+	.univ_name {
+		font-size: 1.5rem;
+		color: #58595B;
+		font-weight: bold;
+		margin-top: 16px;
+		margin-bottom: 20px;
+		
+	}
+
+	.univ_rank {
+		font-size: 1.5rem;
+		color: #1C75BA;
+		margin-top: 0px;
+		margin-bottom: 10px;
+		
+	}
+
+	.univ_star {
+		width: 21px;
+		height: 21px;
+			
+	}
+
+	.univ_point {
+		font-size: 1.3125rem;
+		color: #58595B;
+		margin-left: 10px;
+		
+	}
+
+	.univ_message {
+		font-size: 1.1rem;
+		font-weight: 400;
+		color: #58595B;
+		margin-top: 20px;
+		
+	}
+
+	.univ_table_title {
+		text-align: left;
+		padding-left: 30px;
+		padding-top: 15px;
+		width: 25%;
+		font-size: 0.95rem;
+		color: #808083;
+		
+	}
+
+	.univ_table_content {
+		text-align: left;
+		vertical-align: middle;
+		padding-top: 15px;
+		
+	}
+
+	.univ_table_content img {
+		width: 16px;
+		height: 16px;
+		
+	}
+
+	.univ_table_content span {
+		font-size: 0.95rem;
+		color: #58595B;
+		margin-left: 16px;
+		
+	}
+
+
 	.univ_left {
 		width: 675px;
 		margin: 0px auto;
@@ -150,6 +265,146 @@
 		border-collapse: collapse;
 		border: 1px solid #BCBEC0;
 		margin-bottom: 10px;
+	}
+
+
+	.comment_profile_img {
+		vertical-align: middle;
+		margin: 10px 15px 10px 18px;
+	}
+
+	.comment_profile_h3 {
+		font-size: 1.3125rem;
+		margin: 0px;
+		color: #58595B;
+		text-align: left;
+		display: inline-block;
+		vertical-align: middle;
+		margin-top: 5px;
+	}
+
+	.comment_profile_h3 span {
+		font-size: 1rem;
+		margin-left: 15px;
+	}
+
+	.comment_title {
+		text-align: left;
+		padding-left: 30px;
+		padding-top: 15px;
+		width: 25%;
+		font-size: 0.95rem;
+		color: #808083;
+	}
+
+	.comment_point {
+		text-align: left;
+		vertical-align: middle;
+		padding-top: 15px;
+	}
+
+	.comment_point img {
+		width: 16px;
+		height: 16px;
+	}
+
+	.comment_point span {
+		font-size: 0.95rem;
+		color: #58595B;
+		margin-left: 16px;
+	}
+
+	.comment_message {
+		font-size: 1rem;
+		height: 40px;
+		color: #1C75BA;
+		background: #FFB432;
+		font-family: NanumMyeongjo;
+	}
+
+	.comment_pros {
+		text-align: left;
+	}
+
+	.comment_pros h2 {
+		margin: 0px auto;
+		width: 90%;
+		color: #009244;
+		margin-top: 35px;
+		margin-bottom: 10px;
+	}
+
+	.comment_pros p {
+		margin: 0px auto;
+		width: 90%;
+		text-align: left;
+		font-size: 0.9rem;
+		line-height: 1.4rem;
+		color: #808083;
+	}
+
+	.comment_cons {
+		text-align: left;
+	}
+
+	.comment_cons h2 {
+		margin: 0px auto;
+		width: 90%;
+		color: #FF6666;
+		margin-top: 25px;
+		margin-bottom: 10px;
+	}
+
+	.comment_cons p {
+		margin: 0px auto;
+		width: 90%;
+		text-align: left;
+		font-size: 0.9rem;
+		line-height: 1.4rem;
+		color: #808083;
+	}
+
+	.comment_need {
+		text-align: left;
+	}
+
+	.comment_need h2 {
+		margin: 0px auto;
+		width: 90%;
+		color: #58595B;
+		margin-top: 35px;
+		margin-bottom: 10px;
+	}
+
+	.comment_need p {
+		margin: 0px auto;
+		width: 90%;
+		text-align: left;
+		font-size: 0.9rem;
+		line-height: 1.4rem;
+		color: #808083;
+	}
+
+	.comment_future {
+		text-align: left;
+	}
+
+	.comment_future h2 {
+		margin: 0px auto;
+		width: 90%;
+		color: #58595B;
+		margin-top: 35px;
+		margin-bottom: 10px;
+	}
+
+	.comment_future p {
+		margin: 0px auto;
+		width: 90%;
+		text-align: left;
+		font-size: 0.9rem;
+		line-height: 1.4rem;
+		color: #808083;
+		margin-bottom: 35px;	
 	}
 
 	.univ_table {
@@ -187,7 +442,7 @@
 		margin-bottom: 20px;
 	}
 
-	.univ_star {
+	.univ_star_ {
 		font-size: 1.5rem;
 		color: #1C75BA;
 		margin-top: 0px;
@@ -253,7 +508,6 @@
 		margin-left: 25px;
 		width: 48px;
 		height: 48px;
-
 	}
 
 	.univ h1 {
@@ -265,7 +519,6 @@
 		border-bottom: 1px solid #C9C9C9;
 		width: 97%;
 		text-align: left;
-
 	}
 
 	.univ_p {
@@ -277,7 +530,6 @@
 		right: 0%;
 		text-align: right;
 		color:  #808083;
-
 	}
 
 	.univ_p img {
@@ -441,7 +693,6 @@
 		font-size: 1rem;
 		color: #FF6666;
 		font-weight: bold;
-
 	}
 
 	.cons h4 { 

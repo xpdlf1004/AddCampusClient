@@ -15,6 +15,7 @@
 	<!-- Assets -->
 	<link rel='stylesheet' href='../../../assets/css/style.css'>
 	<link rel='stylesheet' href='../../../assets/css/univ.css'>
+	<link rel='stylesheet' href='../../../assets/css/swiper.css'>
 	<!-- Assets -->
 </head>
 <body>
@@ -58,67 +59,92 @@
 			</ul>
 		</div>
 
-		<div id='univ_content' style='width:1000px;margin:0px auto;'>
+		<div id='univ_content'>
 			<!-- 캠퍼스 왼쪽 리뷰 -->
 			<div class='univ_left' style='width: 675px;margin: 0px auto;margin-top: 20px;float: left;'>
 
 				<div class='find_campus'>
-					<select name='' style='margin-top:10px;width:175px;height:40px;border-radius:15px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;'>
+					<select name=''>
 						<option>조형대학</option>
 					</select>
-					<select name='' style='margin-top:10px;width:175px;height:40px;border-radius:15px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;'>
+					<select name=''>
 						<option>공업디자인</option>
 					</select>
-					<h1 style='display:inline-block;margin-left:30px;font-size:1.1rem;vertical-align:middle;'>총 00개의 학과리뷰가 있습니다</h1>
+					<h1>총 00개의 학과리뷰가 있습니다</h1>
 				</div>
 
 				<table class='univ_table'>
 					<tr>
 						<td rowspan='7' colspan='2' class='univ_table_about' style='width:50%;'>
-							<h1 style='font-size:1.5rem;color:#58595B;font-weight:bold;margin-top:16px;margin-bottom:20px;'>국민대학교 공업디자인과</h1>
-							<h1 style='font-size:1.5rem;color:#1C75BA;margin-top:0px;margin-bottom:10px;'>디자인부분 10위</h1>
-							<img src='/assets/img/common/review_star_full.png' style='width:21px;height:21px;'/>
-							<img src='/assets/img/common/review_star_full.png' style='width:21px;height:21px;'/>
-							<img src='/assets/img/common/review_star_full.png' style='width:21px;height:21px;'/>
-							<img src='/assets/img/common/review_star_full.png' style='width:21px;height:21px;'/>
-							<img src='/assets/img/common/review_star_full.png' style='width:21px;height:21px;'/>
-							<span style='font-size:1.3125rem;color:#58595B;margin-left:10px;'>9.87</span>
-							<p style='font-size:1.1rem;font-weight:400;color:#58595B;margin-top:20px;'>재학생의 100%가 이 학교를 추천합니다.</p>
+							<h1 class='univ_name'>국민대학교 공업디자인과</h1>
+							<h1 class='univ_rank'>디자인부분 10위</h1>
+							<img src='/assets/img/common/review_star_full.png' class='univ_star'/>
+							<img src='/assets/img/common/review_star_full.png' class='univ_star'/>
+							<img src='/assets/img/common/review_star_full.png' class='univ_star'/>
+							<img src='/assets/img/common/review_star_full.png' class='univ_star'/>
+							<img src='/assets/img/common/review_star_full.png' class='univ_star'/>
+							<span class='univ_point'>9.87</span>
+							<p class='univ_message'>재학생의 100%가 이 학교를 추천합니다.</p>
 						</td>
 					</tr>
 					<tr>
-						<td style='text-align:left;padding-left:30px;padding-top:15px;width:25%;font-size:0.95rem;color:#808083;border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>
-						<td style='text-align:left;padding-top:15px;vertical-align:middle;border-top:1px solid #BCBEC0;'>
-							<img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/>
-							<span style='font-size:0.95rem;color:#58595B;margin-left:16px;'>9.87</span>
+						<td class='univ_table_title' style='border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>
+						<td class='univ_table_content' style='border-top:1px solid #BCBEC0;'>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+
+							<span>9.87</span>
 						</td>
 					</tr>
 					<tr>
-						<td style='text-align:left;padding-left:30px;padding-top:15px;width:25%;font-size:0.95rem;color:#808083;'>캠퍼스문화만족도</td>
-						<td style='text-align:left;vertical-align:middle;padding-top:15px;'>
-							<img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/>
-							<span style='font-size:0.95rem;color:#58595B;margin-left:16px;'>9.87</span>
+						<td class='univ_table_title'>캠퍼스문화만족도</td>
+						<td class='univ_table_content'>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+
+							<span>9.87</span>
 						</td>
 					</tr>
 					<tr>
-						<td style='text-align:left;padding-left:30px;padding-top:15px;width:25%;font-size:0.95rem;color:#808083;'>대학가만족도</td>
-						<td style='text-align:left;vertical-align:middle;padding-top:15px;'>
-							<img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/>
-							<span style='font-size:0.95rem;color:#58595B;margin-left:16px;'>9.87</span>
+						<td class='univ_table_title'>대학가만족도</td>
+						<td class='univ_table_content'>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+
+							<span>9.87</span>
 						</td>
 					</tr>
 					<tr>
-						<td style='text-align:left;padding-left:30px;padding-top:15px;width:25%;font-size:0.95rem;color:#808083;'>등록금만족도</td>
-						<td style='text-align:left;vertical-align:middle;padding-top:15px;'>
-							<img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/>
-							<span style='font-size:0.95rem;color:#58595B;margin-left:16px;'>9.87</span>
+						<td class='univ_table_title'>등록금만족도</td>
+						<td class='univ_table_content'>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+
+							<span>9.87</span>
 						</td>
 					</tr>
 					<tr>
-						<td style='text-align:left;padding-left:30px;padding-top:15px;width:25%;font-size:0.95rem;color:#808083;'>교수만족도</td>
-						<td style='text-align:left;vertical-align:middle;padding-top:15px;'>
-							<img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/>
-							<span style='font-size:0.95rem;color:#58595B;margin-left:16px;'>9.87</span>
+						<td class='univ_table_title'>교수만족도</td>
+						<td class='univ_table_content'>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+							<img src='/assets/img/common/review_star_full.png'/>
+
+							<span>9.87</span>
 						</td>
 					</tr>
 					<tr>
@@ -126,93 +152,1124 @@
 					</tr>
 				</table>
 
-				<table class='univ_comment'>
-					<tr>
-						<td colspan='3' style='height:72px;text-align:left;'>
-							<img src='/assets/img/common/review_user.png' style='vertical-align:middle;margin:10px 15px 10px 18px;'/>
-							<h3 style='font-size:1.3125rem;margin:0px;color:#58595B;text-align:left;display:inline-block;vertical-align:middle;margin-top:5px;'>국민대학교 조형대학<span style='font-size:1rem;margin-left:15px;'>공업디자인 10학번</span><span style='font-size:1rem;margin-left:15px;'>2015/11/25</span></h3>
-						</td>
-					</tr>
-					<tr>
-						<td style='text-align:left;padding-left:30px;padding-top:15px;width:25%;font-size:0.95rem;color:#808083;border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>
-						<td style='text-align:left;padding-top:15px;vertical-align:middle;border-top:1px solid #BCBEC0;'>
-							<img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/>
-							<span style='font-size:0.95rem;color:#58595B;margin-left:16px;'>9.87</span>
-						</td>
-						<td rowspan='6' class='univ_table_about' style='width:45%;text-align:left;'>
-							<h1 style='font-size:1.12rem;color:#58595B;margin-top:20px;margin-bottom:10px;'>전공학과 평점</h1>
-							<img src='/assets/img/common/review_star_full.png' style='width:21px;height:21px;'/>
-							<img src='/assets/img/common/review_star_full.png' style='width:21px;height:21px;'/>
-							<img src='/assets/img/common/review_star_full.png' style='width:21px;height:21px;'/>
-							<img src='/assets/img/common/review_star_full.png' style='width:21px;height:21px;'/>
-							<img src='/assets/img/common/review_star_full.png' style='width:21px;height:21px;'/>
-							<span style='font-size:1.12rem;color:#58595B;margin-left:10px;'>보통이에요</span>
-							<p style='font-size:1.12rem;font-weight:400;color:#58595B;margin-top:40px;'>작성자는 이 학과를 <span style='color:#FF5555'>비추천</span> 합니다.</p>
-						</td>
-					</tr>
-					<tr>
-						<td style='text-align:left;padding-left:30px;padding-top:15px;width:25%;font-size:0.95rem;color:#808083;'>캠퍼스문화만족도</td>
-						<td style='text-align:left;vertical-align:middle;padding-top:15px;'>
-							<img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/>
-							<span style='font-size:0.95rem;color:#58595B;margin-left:16px;'>9.87</span>
-						</td>
-					</tr>
-					<tr>
-						<td style='text-align:left;padding-left:30px;padding-top:15px;width:25%;font-size:0.95rem;color:#808083;'>대학가만족도</td>
-						<td style='text-align:left;vertical-align:middle;padding-top:15px;'>
-							<img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/>
-							<span style='font-size:0.95rem;color:#58595B;margin-left:16px;'>9.87</span>
-						</td>
-					</tr>
-					<tr>
-						<td style='text-align:left;padding-left:30px;padding-top:15px;width:25%;font-size:0.95rem;color:#808083;'>등록금만족도</td>
-						<td style='text-align:left;vertical-align:middle;padding-top:15px;'>
-							<img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/>
-							<span style='font-size:0.95rem;color:#58595B;margin-left:16px;'>9.87</span>
-						</td>
-					</tr>
-					<tr>
-						<td style='text-align:left;padding-left:30px;padding-top:15px;width:25%;font-size:0.95rem;color:#808083;'>교수만족도</td>
-						<td style='text-align:left;vertical-align:middle;padding-top:15px;'>
-							<img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/><img src='/assets/img/common/review_star_full.png' style='width:16px;height:16px;'/>
-							<span style='font-size:0.95rem;color:#58595B;margin-left:16px;'>9.87</span>
-						</td>
-					</tr>
-					<tr>
-						<td colspan='3'><br/></td>
-					</tr>
-					<tr>
-						<td colspan='3' style='font-size:1rem;height:40px;color:#1C75BA;background:#FFB432;font-family:NanumMyeongjo;'>"온다고 한다면 말리진 않는다. 단, 대안이 있을 때는 한번 쯤은 고민하고 들어왔으면"</td>
-					</tr>
-					<tr>
-						<td colspan='3' style='text-align:left;'>
-							<h2 style='margin:0px auto;width:90%;color:#009244;margin-top:35px;margin-bottom:10px;'>장점</h2>
-							<p style='margin:0px auto;width:90%;text-align:left;font-size:0.9rem;line-height:1.4rem;color:#808083;'>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
-						</td>
-					</tr>
-					<tr>
-						<td colspan='3' style='text-align:left;'>
-							<h2 style='margin:0px auto;width:90%;color:#FF6666;margin-top:25px;margin-bottom:10px;'>단점</h2>
-							<p style='margin:0px auto;width:90%;text-align:left;font-size:0.9rem;line-height:1.4rem;color:#808083;'>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
-						</td>
-					</tr>
-					<tr>
-						<td colspan='3' style='text-align:left;'>
-							<h2 style='margin:0px auto;width:90%;color:#58595B;margin-top:35px;margin-bottom:10px;'>학과에 바라는 점</h2>
-							<p style='margin:0px auto;width:90%;text-align:left;font-size:0.9rem;line-height:1.4rem;color:#808083;'>학생들 기 좀 안 죽였으면 좋겠다 교수님들...ㅎ...</p>
-						</td>
-					</tr>
-					<tr>
-						<td colspan='3' style='text-align:left;'>
-							<h2 style='margin:0px auto;width:90%;color:#58595B;margin-top:35px;margin-bottom:10px;'>3년 후 학과의 미래</h2>
-							<p style='margin:0px auto;width:90%;text-align:left;font-size:0.9rem;line-height:1.4rem;color:#808083;margin-bottom:35px;'>우린 글러먹었어...</p>
-						</td>
-					</tr>
-				</table>
+			    <div class="swiper-container">
+			        <div class="swiper-wrapper">
 
-				<div class='univ_list' style='width:100%;padding:22px 0px;font-size:0.93rem;color:#808083;'>
+			            <div class="swiper-slide">
+
+			            	<div class='content'>
+
+			            		<table class='univ_comment'>
+									<tr>
+										<td colspan='3' style='height:72px;text-align:left;'>
+											<img class='comment_profile_img' src='/assets/img/common/review_user.png'/>
+											<h3 class='comment_profile_h3'>국민대학교 조형대학<span>공업디자인 10학번</span><span>2015/11/25</span></h3>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title' style='border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>
+										<td class='comment_point' style='border-top:1px solid #BCBEC0;'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+										<td rowspan='6' class='univ_table_about' style='width:45%;text-align:left;'>
+											<h1 style='font-size:1.12rem;color:#58595B;margin-top:20px;margin-bottom:10px;'>전공학과 평점</h1>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<span style='font-size:1.12rem;color:#58595B;margin-left:10px;'>보통이에요</span>
+											<p style='font-size:1.12rem;font-weight:400;color:#58595B;margin-top:40px;'>작성자는 이 학과를 <span style='color:#FF5555'>비추천</span> 합니다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>캠퍼스문화만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>대학가만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>등록금만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>교수만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3'><br/></td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_message'>"온다고 한다면 말리진 않는다. 단, 대안이 있을 때는 한번 쯤은 고민하고 들어왔으면"</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_pros'>
+											<h2>장점</h2>
+											<p>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_cons'>
+											<h2>단점</h2>
+											<p>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_need'>
+											<h2>학과에 바라는 점</h2>
+											<p>학생들 기 좀 안 죽였으면 좋겠다 교수님들...ㅎ...</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_future'>
+											<h2>3년 후 학과의 미래</h2>
+											<p>우린 글러먹었어...</p>
+										</td>
+									</tr>
+								</table>
+
+			            		<table class='univ_comment'>
+									<tr>
+										<td colspan='3' style='height:72px;text-align:left;'>
+											<img class='comment_profile_img' src='/assets/img/common/review_user.png'/>
+											<h3 class='comment_profile_h3'>국민대학교 조형대학<span>공업디자인 10학번</span><span>2015/11/25</span></h3>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title' style='border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>
+										<td class='comment_point' style='border-top:1px solid #BCBEC0;'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+										<td rowspan='6' class='univ_table_about' style='width:45%;text-align:left;'>
+											<h1 style='font-size:1.12rem;color:#58595B;margin-top:20px;margin-bottom:10px;'>전공학과 평점</h1>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<span style='font-size:1.12rem;color:#58595B;margin-left:10px;'>보통이에요</span>
+											<p style='font-size:1.12rem;font-weight:400;color:#58595B;margin-top:40px;'>작성자는 이 학과를 <span style='color:#FF5555'>비추천</span> 합니다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>캠퍼스문화만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>대학가만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>등록금만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>교수만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3'><br/></td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_message'>"온다고 한다면 말리진 않는다. 단, 대안이 있을 때는 한번 쯤은 고민하고 들어왔으면"</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_pros'>
+											<h2>장점</h2>
+											<p>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_cons'>
+											<h2>단점</h2>
+											<p>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_need'>
+											<h2>학과에 바라는 점</h2>
+											<p>학생들 기 좀 안 죽였으면 좋겠다 교수님들...ㅎ...</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_future'>
+											<h2>3년 후 학과의 미래</h2>
+											<p>우린 글러먹었어...</p>
+										</td>
+									</tr>
+								</table>
+
+			            		<table class='univ_comment'>
+									<tr>
+										<td colspan='3' style='height:72px;text-align:left;'>
+											<img class='comment_profile_img' src='/assets/img/common/review_user.png'/>
+											<h3 class='comment_profile_h3'>국민대학교 조형대학<span>공업디자인 10학번</span><span>2015/11/25</span></h3>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title' style='border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>
+										<td class='comment_point' style='border-top:1px solid #BCBEC0;'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+										<td rowspan='6' class='univ_table_about' style='width:45%;text-align:left;'>
+											<h1 style='font-size:1.12rem;color:#58595B;margin-top:20px;margin-bottom:10px;'>전공학과 평점</h1>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<span style='font-size:1.12rem;color:#58595B;margin-left:10px;'>보통이에요</span>
+											<p style='font-size:1.12rem;font-weight:400;color:#58595B;margin-top:40px;'>작성자는 이 학과를 <span style='color:#FF5555'>비추천</span> 합니다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>캠퍼스문화만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>대학가만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>등록금만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>교수만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3'><br/></td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_message'>"온다고 한다면 말리진 않는다. 단, 대안이 있을 때는 한번 쯤은 고민하고 들어왔으면"</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_pros'>
+											<h2>장점</h2>
+											<p>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_cons'>
+											<h2>단점</h2>
+											<p>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_need'>
+											<h2>학과에 바라는 점</h2>
+											<p>학생들 기 좀 안 죽였으면 좋겠다 교수님들...ㅎ...</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_future'>
+											<h2>3년 후 학과의 미래</h2>
+											<p>우린 글러먹었어...</p>
+										</td>
+									</tr>
+								</table>
+
+			            		<table class='univ_comment'>
+									<tr>
+										<td colspan='3' style='height:72px;text-align:left;'>
+											<img class='comment_profile_img' src='/assets/img/common/review_user.png'/>
+											<h3 class='comment_profile_h3'>국민대학교 조형대학<span>공업디자인 10학번</span><span>2015/11/25</span></h3>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title' style='border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>
+										<td class='comment_point' style='border-top:1px solid #BCBEC0;'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+										<td rowspan='6' class='univ_table_about' style='width:45%;text-align:left;'>
+											<h1 style='font-size:1.12rem;color:#58595B;margin-top:20px;margin-bottom:10px;'>전공학과 평점</h1>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<span style='font-size:1.12rem;color:#58595B;margin-left:10px;'>보통이에요</span>
+											<p style='font-size:1.12rem;font-weight:400;color:#58595B;margin-top:40px;'>작성자는 이 학과를 <span style='color:#FF5555'>비추천</span> 합니다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>캠퍼스문화만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>대학가만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>등록금만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>교수만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3'><br/></td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_message'>"온다고 한다면 말리진 않는다. 단, 대안이 있을 때는 한번 쯤은 고민하고 들어왔으면"</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_pros'>
+											<h2>장점</h2>
+											<p>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_cons'>
+											<h2>단점</h2>
+											<p>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_need'>
+											<h2>학과에 바라는 점</h2>
+											<p>학생들 기 좀 안 죽였으면 좋겠다 교수님들...ㅎ...</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_future'>
+											<h2>3년 후 학과의 미래</h2>
+											<p>우린 글러먹었어...</p>
+										</td>
+									</tr>
+								</table>
+
+			            		<table class='univ_comment'>
+									<tr>
+										<td colspan='3' style='height:72px;text-align:left;'>
+											<img class='comment_profile_img' src='/assets/img/common/review_user.png'/>
+											<h3 class='comment_profile_h3'>국민대학교 조형대학<span>공업디자인 10학번</span><span>2015/11/25</span></h3>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title' style='border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>
+										<td class='comment_point' style='border-top:1px solid #BCBEC0;'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+										<td rowspan='6' class='univ_table_about' style='width:45%;text-align:left;'>
+											<h1 style='font-size:1.12rem;color:#58595B;margin-top:20px;margin-bottom:10px;'>전공학과 평점</h1>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<span style='font-size:1.12rem;color:#58595B;margin-left:10px;'>보통이에요</span>
+											<p style='font-size:1.12rem;font-weight:400;color:#58595B;margin-top:40px;'>작성자는 이 학과를 <span style='color:#FF5555'>비추천</span> 합니다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>캠퍼스문화만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>대학가만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>등록금만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>교수만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3'><br/></td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_message'>"온다고 한다면 말리진 않는다. 단, 대안이 있을 때는 한번 쯤은 고민하고 들어왔으면"</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_pros'>
+											<h2>장점</h2>
+											<p>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_cons'>
+											<h2>단점</h2>
+											<p>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_need'>
+											<h2>학과에 바라는 점</h2>
+											<p>학생들 기 좀 안 죽였으면 좋겠다 교수님들...ㅎ...</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_future'>
+											<h2>3년 후 학과의 미래</h2>
+											<p>우린 글러먹었어...</p>
+										</td>
+									</tr>
+								</table>
+
+							</div>
+
+			            </div>
+			        	<!-- Swiper Content -->
+
+			            <div class="swiper-slide">
+
+			            	<div class='content'>
+
+			            		<table class='univ_comment'>
+									<tr>
+										<td colspan='3' style='height:72px;text-align:left;'>
+											<img class='comment_profile_img' src='/assets/img/common/review_user.png'/>
+											<h3 class='comment_profile_h3'>국민대학교 조형대학<span>공업디자인 10학번</span><span>2015/11/25</span></h3>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title' style='border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>
+										<td class='comment_point' style='border-top:1px solid #BCBEC0;'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+										<td rowspan='6' class='univ_table_about' style='width:45%;text-align:left;'>
+											<h1 style='font-size:1.12rem;color:#58595B;margin-top:20px;margin-bottom:10px;'>전공학과 평점</h1>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<span style='font-size:1.12rem;color:#58595B;margin-left:10px;'>보통이에요</span>
+											<p style='font-size:1.12rem;font-weight:400;color:#58595B;margin-top:40px;'>작성자는 이 학과를 <span style='color:#FF5555'>비추천</span> 합니다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>캠퍼스문화만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>대학가만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>등록금만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>교수만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3'><br/></td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_message'>"온다고 한다면 말리진 않는다. 단, 대안이 있을 때는 한번 쯤은 고민하고 들어왔으면"</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_pros'>
+											<h2>장점</h2>
+											<p>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_cons'>
+											<h2>단점</h2>
+											<p>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_need'>
+											<h2>학과에 바라는 점</h2>
+											<p>학생들 기 좀 안 죽였으면 좋겠다 교수님들...ㅎ...</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_future'>
+											<h2>3년 후 학과의 미래</h2>
+											<p>우린 글러먹었어...</p>
+										</td>
+									</tr>
+								</table>
+
+			            		<table class='univ_comment'>
+									<tr>
+										<td colspan='3' style='height:72px;text-align:left;'>
+											<img class='comment_profile_img' src='/assets/img/common/review_user.png'/>
+											<h3 class='comment_profile_h3'>국민대학교 조형대학<span>공업디자인 10학번</span><span>2015/11/25</span></h3>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title' style='border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>
+										<td class='comment_point' style='border-top:1px solid #BCBEC0;'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+										<td rowspan='6' class='univ_table_about' style='width:45%;text-align:left;'>
+											<h1 style='font-size:1.12rem;color:#58595B;margin-top:20px;margin-bottom:10px;'>전공학과 평점</h1>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<span style='font-size:1.12rem;color:#58595B;margin-left:10px;'>보통이에요</span>
+											<p style='font-size:1.12rem;font-weight:400;color:#58595B;margin-top:40px;'>작성자는 이 학과를 <span style='color:#FF5555'>비추천</span> 합니다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>캠퍼스문화만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>대학가만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>등록금만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>교수만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3'><br/></td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_message'>"온다고 한다면 말리진 않는다. 단, 대안이 있을 때는 한번 쯤은 고민하고 들어왔으면"</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_pros'>
+											<h2>장점</h2>
+											<p>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_cons'>
+											<h2>단점</h2>
+											<p>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_need'>
+											<h2>학과에 바라는 점</h2>
+											<p>학생들 기 좀 안 죽였으면 좋겠다 교수님들...ㅎ...</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_future'>
+											<h2>3년 후 학과의 미래</h2>
+											<p>우린 글러먹었어...</p>
+										</td>
+									</tr>
+								</table>
+
+			            		<table class='univ_comment'>
+									<tr>
+										<td colspan='3' style='height:72px;text-align:left;'>
+											<img class='comment_profile_img' src='/assets/img/common/review_user.png'/>
+											<h3 class='comment_profile_h3'>국민대학교 조형대학<span>공업디자인 10학번</span><span>2015/11/25</span></h3>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title' style='border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>
+										<td class='comment_point' style='border-top:1px solid #BCBEC0;'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+										<td rowspan='6' class='univ_table_about' style='width:45%;text-align:left;'>
+											<h1 style='font-size:1.12rem;color:#58595B;margin-top:20px;margin-bottom:10px;'>전공학과 평점</h1>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<span style='font-size:1.12rem;color:#58595B;margin-left:10px;'>보통이에요</span>
+											<p style='font-size:1.12rem;font-weight:400;color:#58595B;margin-top:40px;'>작성자는 이 학과를 <span style='color:#FF5555'>비추천</span> 합니다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>캠퍼스문화만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>대학가만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>등록금만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>교수만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3'><br/></td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_message'>"온다고 한다면 말리진 않는다. 단, 대안이 있을 때는 한번 쯤은 고민하고 들어왔으면"</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_pros'>
+											<h2>장점</h2>
+											<p>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_cons'>
+											<h2>단점</h2>
+											<p>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_need'>
+											<h2>학과에 바라는 점</h2>
+											<p>학생들 기 좀 안 죽였으면 좋겠다 교수님들...ㅎ...</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_future'>
+											<h2>3년 후 학과의 미래</h2>
+											<p>우린 글러먹었어...</p>
+										</td>
+									</tr>
+								</table>
+
+			            		<table class='univ_comment'>
+									<tr>
+										<td colspan='3' style='height:72px;text-align:left;'>
+											<img class='comment_profile_img' src='/assets/img/common/review_user.png'/>
+											<h3 class='comment_profile_h3'>국민대학교 조형대학<span>공업디자인 10학번</span><span>2015/11/25</span></h3>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title' style='border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>
+										<td class='comment_point' style='border-top:1px solid #BCBEC0;'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+										<td rowspan='6' class='univ_table_about' style='width:45%;text-align:left;'>
+											<h1 style='font-size:1.12rem;color:#58595B;margin-top:20px;margin-bottom:10px;'>전공학과 평점</h1>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<span style='font-size:1.12rem;color:#58595B;margin-left:10px;'>보통이에요</span>
+											<p style='font-size:1.12rem;font-weight:400;color:#58595B;margin-top:40px;'>작성자는 이 학과를 <span style='color:#FF5555'>비추천</span> 합니다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>캠퍼스문화만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>대학가만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>등록금만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>교수만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3'><br/></td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_message'>"온다고 한다면 말리진 않는다. 단, 대안이 있을 때는 한번 쯤은 고민하고 들어왔으면"</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_pros'>
+											<h2>장점</h2>
+											<p>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_cons'>
+											<h2>단점</h2>
+											<p>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_need'>
+											<h2>학과에 바라는 점</h2>
+											<p>학생들 기 좀 안 죽였으면 좋겠다 교수님들...ㅎ...</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_future'>
+											<h2>3년 후 학과의 미래</h2>
+											<p>우린 글러먹었어...</p>
+										</td>
+									</tr>
+								</table>
+
+			            		<table class='univ_comment'>
+									<tr>
+										<td colspan='3' style='height:72px;text-align:left;'>
+											<img class='comment_profile_img' src='/assets/img/common/review_user.png'/>
+											<h3 class='comment_profile_h3'>국민대학교 조형대학<span>공업디자인 10학번</span><span>2015/11/25</span></h3>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title' style='border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>
+										<td class='comment_point' style='border-top:1px solid #BCBEC0;'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+										<td rowspan='6' class='univ_table_about' style='width:45%;text-align:left;'>
+											<h1 style='font-size:1.12rem;color:#58595B;margin-top:20px;margin-bottom:10px;'>전공학과 평점</h1>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<span style='font-size:1.12rem;color:#58595B;margin-left:10px;'>보통이에요</span>
+											<p style='font-size:1.12rem;font-weight:400;color:#58595B;margin-top:40px;'>작성자는 이 학과를 <span style='color:#FF5555'>비추천</span> 합니다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>캠퍼스문화만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>대학가만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>등록금만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td class='comment_title'>교수만족도</td>
+										<td class='comment_point'>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+											<img src='/assets/img/common/review_star_full.png'/>
+
+											<span>9.87</span>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3'><br/></td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_message'>"온다고 한다면 말리진 않는다. 단, 대안이 있을 때는 한번 쯤은 고민하고 들어왔으면"</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_pros'>
+											<h2>장점</h2>
+											<p>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_cons'>
+											<h2>단점</h2>
+											<p>국민대학교는 서울특별시 성북구 정릉3동에 있는 대한민국의 해방 이후 최초의 민족사학이다. 1946년 9월 1일 서울 창성동에 국민대학관으로 설립되었다. 독립 후 김구, 조소앙, 신익희 등 임시정부 각료들은 긴 시야에서 민족 지도자를 길러낼 필요가 있다는 데 합의하였고, 그것이 곧 국민대학교의 기치가 되었다. 국민대학교 설립의 주요인물 중 하나였던 신익희가 초대 학장으로 취임하였다.</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_need'>
+											<h2>학과에 바라는 점</h2>
+											<p>학생들 기 좀 안 죽였으면 좋겠다 교수님들...ㅎ...</p>
+										</td>
+									</tr>
+									<tr>
+										<td colspan='3' class='comment_future'>
+											<h2>3년 후 학과의 미래</h2>
+											<p>우린 글러먹었어...</p>
+										</td>
+									</tr>
+								</table>
+
+							</div>
+
+			            </div>
+			        	<!-- Swiper Content -->
+
+			        </div>
+			        <div class="swiper-pagination"></div>
+			    </div>
+
+				<!-- <div class='univ_list' style='width:100%;padding:22px 0px;font-size:0.93rem;color:#808083;'>
 					<span style='margin-right:18px;'>첫 페이지</span><span style='margin-right:18px;'>이전</span> <span>|</span> <span style='margin:0px 8px;'>1</span> <span>|</span> <span style='margin:0px 8px;'>2</span> <span>|</span> <span style='margin:0px 8px;'>3</span> <span>|</span> <span style='margin:0px 8px;'>4</span> <span>|</span> <span style='margin:0px 8px;'>5</span> <span>|</span></span> <span style='margin-left:18px;'>다음</span> <span style='margin-left:18px;'>막 페이지</span>
-				</div>
+				</div> -->
 
 			</div>
 			<!-- 캠퍼스 왼쪽 리뷰 -->
@@ -345,6 +1402,16 @@
     <script src="../../../assets/lib/request_helper.js"></script>
     <script src="../../../assets/lib/local_storage.js"></script>
     <script src="../../../assets/lib/analytics.js"></script>
+    <script src="../../../assets/lib/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        spaceBetween: 30,
+    });
+    </script>
 
 	<script>
 
