@@ -23,18 +23,18 @@
 		<div class='header_menu'>
 			<ul class='header_left'>
 				<li style='margin:0px 28px 0px 14px;'><a href='/' style='text-decoration:none;color:#FFFFFF;'><img src='/assets/img/header/logo.png'/></a></li>
-				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/campus/' style='text-decoration:none;color:#FFFFFF;'>캠퍼스 보기</a></li>
-				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/review/' style='text-decoration:none;color:#FFFFFF;'>캠퍼스 리뷰</a></li>
-				<li style='width:70px;margin:0px 8px 0px 0px;'>대외활동</li>
-				<li style='width:70px;margin:0px 23px 0px 0px;'>합격꿀팁</li>
+				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/campus/' style='text-decoration:none;color:#000000;'>캠퍼스 보기</a></li>
+				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/review/' style='text-decoration:none;color:#666666;'>캠퍼스 리뷰</a></li>
+				<li style='width:70px;margin:0px 8px 0px 0px;'><a href='#' style='text-decoration:none;color:#999999;'>대외활동</a></li>
+				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='#' style='text-decoration:none;color:#999999;'>합격꿀팁</a></li>
 			</ul>
 			<ul class='header_right' id='header_right_in' style='display:none;'>
-				<li style='margin:0px 14px;'><a href='/review/univ/comment/' style='text-decoration:none;color:inherit;'>리뷰작성</a></li>
+				<li style='margin:0px 14px;'><a onclick="layer_open2('layer3');" style='text-decoration:none;color:#1C75BA;'>리뷰작성</a></li>
 				<li style='margin:0px 14px;'>마이페이지</li>
 				<li style='margin:0px 14px;'><a class='btn-example' id='tab_sign_out'>로그아웃</a></li>
 			</ul>
 			<ul class='header_right' id='header_right_out' style='display:none;'>
-				<li style='margin:0px 14px;'><a onclick="alert('애드캠퍼스 로그인 후 이용 가능합니다.');layer_open('layer2');return false;" style='text-decoration:none;color:inherit;'>리뷰작성</a></li>
+				<li style='margin:0px 14px;'><a onclick="layer_open2('layer3');" style='text-decoration:none;color:#1C75BA;'>리뷰작성</a></li>
 				<li style='margin:0px 14px;'><a class='btn-example' id='tab_sign_in'>로그인</a></li>
 			</ul>
 		</div>
@@ -59,7 +59,7 @@
 
 				<div class='campus_grade'>
 
-					<h1>대학종합순위</h1>
+					<h1 style='font-weight:bold;'>대학종합순위</h1>
 
 					<!-- 대학종합순위 > 1위  -->
 					<ul class='campus_list_title'>
@@ -203,7 +203,7 @@
 
 					<table class='grade_table'>
 						<tr>
-							<td class='grade_title'>캠퍼스 시설 만족도</td>
+							<td class='grade_title'>캠퍼스 문화 만족도</td>
 						</tr>
 						<tr>
 							<td>
@@ -277,7 +277,7 @@
 
 					<table class='grade_table'>
 						<tr>
-							<td class='grade_title'>캠퍼스 시설 만족도</td>
+							<td class='grade_title' style='padding: 0px 62.5px;'>대학가 만족도</td>
 						</tr>
 						<tr>
 							<td>
@@ -355,7 +355,7 @@
 
 					<table class='grade_table'>
 						<tr>
-							<td class='grade_title'>캠퍼스 시설 만족도</td>
+							<td class='grade_title' style='padding: 0px 62.5px;'>등록금 만족도</td>
 						</tr>
 						<tr>
 							<td>
@@ -429,7 +429,7 @@
 
 					<table class='grade_table'>
 						<tr>
-							<td class='grade_title'>캠퍼스 시설 만족도</td>
+							<td class='grade_title' style='padding: 0px 70px;'>교수 만족도</td>
 						</tr>
 						<tr>
 							<td>
@@ -503,7 +503,7 @@
 
 					<table class='grade_table'>
 						<tr>
-							<td class='grade_title'>캠퍼스 시설 만족도</td>
+							<td class='grade_title' style='background:#FFFFFF;padding:0px 78.5px;'>생명공학</td>
 						</tr>
 						<tr>
 							<td>
@@ -584,7 +584,7 @@
 
 				<table class='campus_category'>
 					<tr>
-						<td style='font-size:1.3125rem;font-weight:bold;color:#58595B;'>학과군</td>
+						<td style='font-family:NanumBarunGothicBold;font-size:1.3125rem;font-weight:bold;color:#58595B;'>학과군</td>
 					</tr>
 					<tr>
 						<td><a href='/campus/major/' style='text-decoration:none;color:inherit;'>자연계열</a></td>
@@ -611,7 +611,7 @@
 
 				<table class='review_list'>
 					<tr>
-						<td colspan='2' class='review_list_title'>가장 활발한 대학</td>
+						<td colspan='2' class='review_list_title' style='font-family:NanumBarunGothicBold;font-weight:bold;'>가장 활발한 대학</td>
 						<td class='review_more_b'><a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a></td>
 					</tr>
 					<tr>
@@ -646,7 +646,7 @@
 
 				<table class='review_list'>
 					<tr>
-						<td colspan='2' class='review_list_title'>가장 활발한 대학</td>
+						<td colspan='2' class='review_list_title' style='font-family:NanumBarunGothicBold;font-weight:bold;'>대학종합순위</td>
 						<td class='review_more_b'><a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a></td>
 					</tr>
 					<tr>

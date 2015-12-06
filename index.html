@@ -15,7 +15,6 @@
 	<!-- Assets -->
 	<link rel='stylesheet' href='assets/css/style.css'>
 	<link rel='stylesheet' href='assets/css/index.css'>
-	<!-- <link rel='stylesheet' href='assets/css/univ.css'> -->
 	<!-- Assets -->
 </head>
 <body>
@@ -26,16 +25,16 @@
 				<li style='margin:0px 28px 0px 14px;'><a href='/' style='text-decoration:none;color:#FFFFFF;'><img src='/assets/img/header/logo.png'/></a></li>
 				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/campus/' style='text-decoration:none;color:#FFFFFF;'>캠퍼스 보기</a></li>
 				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/review/' style='text-decoration:none;color:#FFFFFF;'>캠퍼스 리뷰</a></li>
-				<li style='width:70px;margin:0px 8px 0px 0px;'>대외활동</li>
-				<li style='width:70px;margin:0px 23px 0px 0px;'>합격꿀팁</li>
+				<li style='width:70px;margin:0px 8px 0px 0px;'><a href='#' style='text-decoration:none;color:#999999;'>대외활동</a></li>
+				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='#' style='text-decoration:none;color:#999999;'>합격꿀팁</a></li>
 			</ul>
 			<ul class='header_right' id='header_right_in' style='display:none;'>
-				<li style='margin:0px 14px;'><a onclick="layer_open2('layer3');" style='text-decoration:none;color:inherit;'>리뷰작성</a></li>
+				<li style='margin:0px 14px;'><a onclick="layer_open2('layer3');" style='text-decoration:none;color:#1C75BA;'>리뷰작성</a></li>
 				<li style='margin:0px 14px;'>마이페이지</li>
 				<li style='margin:0px 14px;'><a class='btn-example' id='tab_sign_out'>로그아웃</a></li>
 			</ul>
 			<ul class='header_right' id='header_right_out' style='display:none;'>
-				<li style='margin:0px 14px;'><a onclick="layer_open2('layer3');" style='text-decoration:none;color:inherit;'>리뷰작성</a></li>
+				<li style='margin:0px 14px;'><a onclick="layer_open2('layer3');" style='text-decoration:none;color:#1C75BA;'>리뷰작성</a></li>
 				<li style='margin:0px 14px;'><a class='btn-example' id='tab_sign_in'>로그인</a></li>
 			</ul>
 		</div>
@@ -54,26 +53,26 @@
 				<li style='margin-right:10px;'>
 					<a href='/campus/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/main_campus.png' id='campus_button_img1' onmouseover='src="/assets/img/common/main_campus_overall.png";document.getElementById("campus_s_button_img1").src="/assets/img/common/main_go_overall.png";' onmouseout='src="/assets/img/common/main_campus.png";document.getElementById("campus_s_button_img1").src="/assets/img/common/main_go.png";'/></a>
 					<h4>캠퍼스 보기</h4>
-					<p>실제 재학생들이<br/>말해주는 학교 이야기들과<br/>비하인드 스토리들!</p>
+					<p>실제 재학생들이<br/>말하는 학교 평가 순위!</p>
 					<a href='/campus/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/main_go.png' id='campus_s_button_img1' onmouseover='src="/assets/img/common/main_go_overall.png";document.getElementById("campus_button_img1").src="/assets/img/common/main_campus_overall.png";' onmouseout='src="/assets/img/common/main_go.png";document.getElementById("campus_button_img1").src="/assets/img/common/main_campus.png";'/></a>
 				</li>
 				<li style='margin-right:10px;'>
 					<a href='/review/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/main_club.png' id='campus_button_img2' onmouseover='src="/assets/img/common/main_club_overall.png";document.getElementById("campus_s_button_img2").src="/assets/img/common/main_go_overall.png";' onmouseout='src="/assets/img/common/main_club.png";document.getElementById("campus_s_button_img2").src="/assets/img/common/main_go.png";'/></a>
 					<h4>캠퍼스 리뷰</h4>
-					<p>실제 재학생들이<br/>말해주는 학교 이야기들과<br/>비하인드 스토리들!</p>
+					<p>실제 재학생들이<br/>말하는 학과 평가 리뷰!</p>
 					<a href='/review/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/main_go.png' id='campus_s_button_img2' onmouseover='src="/assets/img/common/main_go_overall.png";document.getElementById("campus_button_img2").src="/assets/img/common/main_club_overall.png";' onmouseout='src="/assets/img/common/main_go.png";document.getElementById("campus_button_img2").src="/assets/img/common/main_club.png";'/></a>
 				</li>
 				<li style='margin-right:10px;'>
-					<img src='/assets/img/common/main_tip.png' id='campus_button_img3' onmouseover='src="/assets/img/common/main_tip_overall.png";document.getElementById("campus_s_button_img3").src="/assets/img/common/main_go_overall.png";' onmouseout='src="/assets/img/common/main_tip.png";document.getElementById("campus_s_button_img3").src="/assets/img/common/main_go.png";'/>
+					<img src='/assets/img/common/main_tip.png' id='campus_button_img3'/> <!-- onmouseover='src="/assets/img/common/main_tip_overall.png";document.getElementById("campus_s_button_img3").src="/assets/img/common/main_go_overall.png";' onmouseout='src="/assets/img/common/main_tip.png";document.getElementById("campus_s_button_img3").src="/assets/img/common/main_go.png";' -->
 					<h4>합격꿀팁</h4>
-					<p>실제 재학생들이<br/>말해주는 학교 이야기들과<br/>비하인드 스토리들!</p>
-					<img src='/assets/img/common/main_go.png' id='campus_s_button_img3' onmouseover='src="/assets/img/common/main_go_overall.png";document.getElementById("campus_button_img3").src="/assets/img/common/main_tip_overall.png";' onmouseout='src="/assets/img/common/main_go.png";document.getElementById("campus_button_img3").src="/assets/img/common/main_tip.png";'/>
+					<p>Coming Soon!<br/><span style='color:transparent;'>말하는 학과 평가 리뷰!</span></p>
+					<img src='/assets/img/common/main_go.png' id='campus_s_button_img3'/>  <!-- onmouseover='src="/assets/img/common/main_go_overall.png";document.getElementById("campus_button_img3").src="/assets/img/common/main_tip_overall.png";' onmouseout='src="/assets/img/common/main_go.png";document.getElementById("campus_button_img3").src="/assets/img/common/main_tip.png";' -->
 				</li>
 				<li>
-					<img src='/assets/img/common/main_review.png' id='campus_button_img4' onmouseover='src="/assets/img/common/main_review_overall.png";document.getElementById("campus_s_button_img4").src="/assets/img/common/main_go_overall.png";' onmouseout='src="/assets/img/common/main_review.png";document.getElementById("campus_s_button_img4").src="/assets/img/common/main_go.png";'/>
+					<img src='/assets/img/common/main_review.png' id='campus_button_img4'/> <!-- onmouseover='src="/assets/img/common/main_review_overall.png";document.getElementById("campus_s_button_img4").src="/assets/img/common/main_go_overall.png";' onmouseout='src="/assets/img/common/main_review.png";document.getElementById("campus_s_button_img4").src="/assets/img/common/main_go.png";' -->
 					<h4>대외활동</h4>
-					<p>실제 재학생들이<br/>말해주는 학교 이야기들과<br/>비하인드 스토리들!</p>
-					<img src='/assets/img/common/main_go.png' id='campus_s_button_img4' onmouseover='src="/assets/img/common/main_go_overall.png";document.getElementById("campus_button_img4").src="/assets/img/common/main_review_overall.png";' onmouseout='src="/assets/img/common/main_go.png";document.getElementById("campus_button_img4").src="/assets/img/common/main_review.png";'/>
+					<p>Coming Soon!<br/><span style='color:transparent;'>말하는 학과 평가 리뷰!</span></p>
+					<img src='/assets/img/common/main_go.png' id='campus_s_button_img4'/>  <!-- onmouseover='src="/assets/img/common/main_go_overall.png";document.getElementById("campus_button_img4").src="/assets/img/common/main_review_overall.png";' onmouseout='src="/assets/img/common/main_go.png";document.getElementById("campus_button_img4").src="/assets/img/common/main_review.png";' -->
 				</li>
 			</ul>
 		</div>
@@ -81,26 +80,28 @@
 		<div id='box_2_main_banner'>
 			<h2 class='title'>진짜 대학생의 캠퍼스 라이프는 어떨까?</h2>
 			<h3 class='subtitle'>니들 선배가 될 사람들이 직접 작성한 리뷰를 봐라</h3>
-			<img src='/assets/img/common/campus_backward.png' style='padding-bottom:45px;'/>
-			<div class='banner_box' style='margin-left:25px;'>
-				<p>베스트 리뷰</p>
-				<h3>서울대학교</h3>
-				<h5>내가 고3 때로 돌아갈 수 있다면 여기는 안온다 왜냐하면...</h5>
+			<div style='width:1000px;margin:0px auto;'>
+				<img src='/assets/img/common/campus_backward.png' style='padding-bottom:45px;'/>
+				<div class='banner_box' style='margin-left:15px;'>
+					<p>베스트 리뷰</p>
+					<h3>서울대학교</h3>
+					<h5>내가 고3 때로 돌아갈 수 있다면 여기는 안온다 왜냐하면...</h5>
+				</div>
+				<div class='banner_box' style='margin:0px 15px 0px 15px;'>
+					<p>베스트 리뷰</p>
+					<h3>서울대학교</h3>
+					<h5>내가 고3 때로 돌아갈 수 있다면 여기는 안온다 왜냐하면...</h5>
+				</div>
+				<div class='banner_box' style='margin-right:15px;'>
+					<p>베스트 리뷰</p>
+					<h3>서울대학교</h3>
+					<h5>내가 고3 때로 돌아갈 수 있다면 여기는 안온다 왜냐하면...</h5>
+				</div>
+				<img src='/assets/img/common/campus_foward.png' style='padding-bottom:45px;'/>
 			</div>
-			<div class='banner_box' style='margin:0px 25px 0px 25px;'>
-				<p>베스트 리뷰</p>
-				<h3>서울대학교</h3>
-				<h5>내가 고3 때로 돌아갈 수 있다면 여기는 안온다 왜냐하면...</h5>
-			</div>
-			<div class='banner_box' style='margin-right:25px;'>
-				<p>베스트 리뷰</p>
-				<h3>서울대학교</h3>
-				<h5>내가 고3 때로 돌아갈 수 있다면 여기는 안온다 왜냐하면...</h5>
-			</div>
-			<img src='/assets/img/common/campus_foward.png' style='padding-bottom:45px;'/>
 		</div>
 
-		<div id='box_2_main_review' style='width:1000px;margin:0px auto;'>
+		<div id='box_2_main_review'>
 			<h2 class='title'>재학생이 알려주는 생생한 캠퍼스 리뷰</h2>
 			<h3 class='subtitle'>니들 선배가 될 사람들이 직접 작성한 리뷰를 봐라</h3>
 
@@ -121,11 +122,13 @@
 							</p>
 							<p style='display:inline-block;'>평가 종합순위 00위</p>
 						</div>
-						<div class='review_evaluation'>
-							<h6 class='h6_title'>작성자한줄평</h6>
-							<img src='/assets/img/common/review_user.png' style='position:absolute;margin-top:-11px;margin-left:25px;width:48px;height:48px;'/>
-							<h6 class='h6_content' style='margin-left:98px'>"좋은 학과다. 허나 고민은 하고 들어왔으면 좋겠다"</h6>
-						</div>
+						<a href='/review/univ/comment/' style='text-decoration:none;color:inherit;'>
+							<div class='review_evaluation'>
+								<h6 class='h6_title'>작성자한줄평</h6>
+								<img src='/assets/img/common/review_user.png' style='position:absolute;margin-top:-11px;margin-left:25px;width:48px;height:48px;'/>
+								<h6 class='h6_content' style='margin-left:98px'>"좋은 학과다. 허나 고민은 하고 들어왔으면 좋겠다"</h6>
+							</div>
+						</a>
 						<div class='pros'>
 							<h3>장점</h3>
 							<h4>대한민국 3대 산업디자인과의 이름이 아깝지 않은 동문선배들 다양한 행사에 초청되어 다양한 강연을 들을 기회가 많으며 여러 기업들과의 협약으로 직무체험, 제품지원 등 국민대학교 내에서는 최고의 혜택을 받는다.</h4>
@@ -151,11 +154,13 @@
 							</p>
 							<p style='display:inline-block;'>평가 종합순위 00위</p>
 						</div>
-						<div class='review_evaluation'>
-							<h6 class='h6_title'>작성자한줄평</h6>
-							<img src='/assets/img/common/review_user.png' style='position:absolute;margin-top:-11px;margin-left:25px;width:48px;height:48px;'/>
-							<h6 class='h6_content' style='margin-left:98px'>"좋은 학과다. 허나 고민은 하고 들어왔으면 좋겠다"</h6>
-						</div>
+						<a href='/review/univ/comment/' style='text-decoration:none;color:inherit;'>
+							<div class='review_evaluation'>
+								<h6 class='h6_title'>작성자한줄평</h6>
+								<img src='/assets/img/common/review_user.png' style='position:absolute;margin-top:-11px;margin-left:25px;width:48px;height:48px;'/>
+								<h6 class='h6_content' style='margin-left:98px'>"좋은 학과다. 허나 고민은 하고 들어왔으면 좋겠다"</h6>
+							</div>
+						</a>
 						<div class='pros'>
 							<h3>장점</h3>
 							<h4>대한민국 3대 산업디자인과의 이름이 아깝지 않은 동문선배들 다양한 행사에 초청되어 다양한 강연을 들을 기회가 많으며 여러 기업들과의 협약으로 직무체험, 제품지원 등 국민대학교 내에서는 최고의 혜택을 받는다.</h4>
@@ -181,11 +186,13 @@
 							</p>
 							<p style='display:inline-block;'>평가 종합순위 00위</p>
 						</div>
-						<div class='review_evaluation'>
-							<h6 class='h6_title'>작성자한줄평</h6>
-							<img src='/assets/img/common/review_user.png' style='position:absolute;margin-top:-11px;margin-left:25px;width:48px;height:48px;'/>
-							<h6 class='h6_content' style='margin-left:98px'>"좋은 학과다. 허나 고민은 하고 들어왔으면 좋겠다"</h6>
-						</div>
+						<a href='/review/univ/comment/' style='text-decoration:none;color:inherit;'>
+							<div class='review_evaluation'>
+								<h6 class='h6_title'>작성자한줄평</h6>
+								<img src='/assets/img/common/review_user.png' style='position:absolute;margin-top:-11px;margin-left:25px;width:48px;height:48px;'/>
+								<h6 class='h6_content' style='margin-left:98px'>"좋은 학과다. 허나 고민은 하고 들어왔으면 좋겠다"</h6>
+							</div>
+						</a>
 						<div class='pros'>
 							<h3>장점</h3>
 							<h4>대한민국 3대 산업디자인과의 이름이 아깝지 않은 동문선배들 다양한 행사에 초청되어 다양한 강연을 들을 기회가 많으며 여러 기업들과의 협약으로 직무체험, 제품지원 등 국민대학교 내에서는 최고의 혜택을 받는다.</h4>
@@ -205,7 +212,7 @@
 
 					<table class='review_list'>
 						<tr>
-							<td colspan='2' class='review_list_title'>가장 활발한 대학</td>
+							<td colspan='2' class='review_list_title' style='font-family:NanumBarunGothicBold;font-weight:bold;'>가장 활발한 대학</td>
 							<td class='review_more_b'><a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a></td>
 						</tr>
 						<tr>
@@ -240,7 +247,7 @@
 
 					<table class='review_list'>
 						<tr>
-							<td colspan='2' class='review_list_title'>가장 활발한 대학</td>
+							<td colspan='2' class='review_list_title' style='font-family:NanumBarunGothicBold;font-weight:bold;'>가장 활발한 대학</td>
 							<td class='review_more_b'><a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a></td>
 						</tr>
 						<tr>
@@ -275,7 +282,7 @@
 
 					<table class='review_list'>
 						<tr>
-							<td colspan='2' class='review_list_title'>가장 활발한 대학</td>
+							<td colspan='2' class='review_list_title' style='font-family:NanumBarunGothicBold;font-weight:bold;'>가장 활발한 대학</td>
 							<td class='review_more_b'><a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a></td>
 						</tr>
 						<tr>

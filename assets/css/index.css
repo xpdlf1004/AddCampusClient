@@ -146,6 +146,7 @@
 		width: 100%;
 		text-align: center;
 		padding: 30px 0px;
+		padding-top: 55px;
 		margin: 0px auto;
 		border-bottom: 3px solid #D1D3D4;
 		background: #F7F7F7;
@@ -162,9 +163,11 @@
 	}
 
 	#box_2_main_review {
-		width: 100%;
 		text-align: center;
 		padding: 30px 0px;
+		padding-top: 55px;
+		width:1000px;
+		margin: 0px auto;
 	}
 
 	#box_2_main_review .title {
@@ -234,7 +237,7 @@
 		width: 100%;
 		padding: 15px 0px 0px 0px;
 		border: 1px solid #BCBEC0;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 	}
 
 	.about_img { 
@@ -375,7 +378,7 @@
 		border-collapse: collapse;
 		margin: 0px;
 		padding: 0px;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 		border: 1px solid #BCBEC0;
 	}
 

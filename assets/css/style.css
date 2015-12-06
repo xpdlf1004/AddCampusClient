@@ -29,6 +29,15 @@
 		url('/assets/fonts/NanumPen.woff') format('woff'),
 		url('/assets/fonts/NanumPen.ttf') format('truetype');
 	}
+	@font-face {
+		font-family: 'NanumBarunGothicBold';
+		font-style: normal;
+		src: url('/assets/fonts/NanumBarunGothic.eot');
+		src: url('/assets/fonts/NanumBarunGothic.eot') format('embedded-opentype'),
+		url('/assets/fonts/NanumBarunGothic.woff') format('woff'),
+		url('/assets/fonts/NanumBarunGothic.ttf') format('truetype');
+		font-weight: 600;
+	}
 
 	* { font-family: 'NanumBarunGothic'; font-weight: normal; }
 	
@@ -231,4 +240,27 @@
 	    border-radius: 10px;
 	    background: url("https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_down_48px-128.png") no-repeat right;
 	    background-size: 40px;
+    }
+
+    .mypage_memo select {
+        background: transparent;
+        margin: 0px auto;
+        width: 95%;
+        font-size: 12pt;
+        outline: none;
+        border: none;
+        height: 100%;
+        -webkit-appearance: none;
+    }
+
+    .mypage_memo {
+        width: 80%;
+        height: 1.7rem;
+        overflow: hidden;
+        text-align: center;
+        border: 1px solid #BABCBE;
+        padding: 8px 5px;
+        border-radius: 10px;
+        background: url("https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_down_48px-128.png") no-repeat right;
+        background-size: 40px;
     }

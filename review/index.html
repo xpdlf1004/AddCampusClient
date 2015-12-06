@@ -23,18 +23,18 @@
 		<div class='header_menu'>
 			<ul class='header_left'>
 				<li style='margin:0px 28px 0px 14px;'><a href='/' style='text-decoration:none;color:#FFFFFF;'><img src='/assets/img/header/logo.png'/></a></li>
-				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/campus/' style='text-decoration:none;color:#FFFFFF;'>캠퍼스 보기</a></li>
-				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/review/' style='text-decoration:none;color:#FFFFFF;'>캠퍼스 리뷰</a></li>
-				<li style='width:70px;margin:0px 8px 0px 0px;'>대외활동</li>
-				<li style='width:70px;margin:0px 23px 0px 0px;'>합격꿀팁</li>
+				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/campus/' style='text-decoration:none;color:#666666;'>캠퍼스 보기</a></li>
+				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/review/' style='text-decoration:none;color:#000000;'>캠퍼스 리뷰</a></li>
+				<li style='width:70px;margin:0px 8px 0px 0px;'><a href='#' style='text-decoration:none;color:#999999;'>대외활동</a></li>
+				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='#' style='text-decoration:none;color:#999999;'>합격꿀팁</a></li>
 			</ul>
 			<ul class='header_right' id='header_right_in' style='display:none;'>
-				<li style='margin:0px 14px;'><a href='/review/univ/comment/' style='text-decoration:none;color:inherit;'>리뷰작성</a></li>
+				<li style='margin:0px 14px;'><a onclick="layer_open2('layer3');" style='text-decoration:none;color:#1C75BA;'>리뷰작성</a></li>
 				<li style='margin:0px 14px;'>마이페이지</li>
 				<li style='margin:0px 14px;'><a class='btn-example' id='tab_sign_out'>로그아웃</a></li>
 			</ul>
 			<ul class='header_right' id='header_right_out' style='display:none;'>
-				<li style='margin:0px 14px;'><a onclick="alert('애드캠퍼스 로그인 후 이용 가능합니다.');layer_open('layer2');return false;" style='text-decoration:none;color:inherit;'>리뷰작성</a></li>
+				<li style='margin:0px 14px;'><a onclick="layer_open2('layer3');" style='text-decoration:none;color:#1C75BA;'>리뷰작성</a></li>
 				<li style='margin:0px 14px;'><a class='btn-example' id='tab_sign_in'>로그인</a></li>
 			</ul>
 		</div>
@@ -54,15 +54,77 @@
 		<div id='review_banner'>
 			<div class='find_campus'>
 				<h2 class='title'>가고 싶은 대학이 어떤 곳인지는 한 번 찾아 봐야지?</h2>
-				<select name='' style='margin-top:10px;width:175px;height:40px;border-radius:15px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;'>
-					<option>학과군</option>
-				</select>
-				<select name='' style='margin-top:10px;width:175px;height:40px;border-radius:15px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;'>
-					<option>2차 학과군</option>
-				</select>
-				<select name='' style='margin-top:10px;width:175px;height:40px;border-radius:15px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;'>
-					<option>지역</option>
-				</select>
+				<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:15px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
+					<select name=''>
+						<option>학과군</option>
+						<option>자연계열</option>
+						<option>인문사회계열</option>
+						<option>교육계열</option>
+						<option>의학계열</option>
+						<option>공학계열</option>
+						<option>예체능계열</option>
+					</select>
+				</div>
+				<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:15px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
+					<select name=''>
+						<option>2차 학과군</option>
+						<option>농림, 수산</option>
+						<option>생물, 화학, 환경</option>
+						<option>생활과학</option>
+						<option>수학, 물리, 천문, 지리</option>
+						<option>언어, 문학</option>
+						<option>인문과학</option>
+						<option>경영, 경제</option>
+						<option>법률</option>
+						<option>사회과학</option>
+						<option>교육일반</option>
+						<option>유아교육</option>
+						<option>초등교육</option>
+						<option>중등교육</option>
+						<option>의료</option>
+						<option>간호</option>
+						<option>치료, 보건</option>
+						<option>건축</option>
+						<option>토목, 도시</option>
+						<option>교통, 운송</option>
+						<option>기계, 금속</option>
+						<option>전기, 전자</option>
+						<option>정밀, 에너지</option>
+						<option>소재, 재료</option>
+						<option>컴퓨터, 통신</option>
+						<option>산업</option>
+						<option>화공</option>
+						<option>기타</option>
+						<option>디자인</option>
+						<option>응용예술</option>
+						<option>무용, 체육</option>
+						<option>미술, 조형</option>
+						<option>연극, 영화</option>
+						<option>음악</option>
+					</select>
+				</div>
+				<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:15px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
+					<select name=''>
+						<option>지역</option>
+						<option>서울</option>
+						<option>경기</option>
+						<option>인천</option>
+						<option>부산</option>
+						<option>대구</option>
+						<option>대전</option>
+						<option>광주</option>
+						<option>울산</option>
+						<option>강원</option>
+						<option>경상도</option>
+						<option>경북</option>
+						<option>전남</option>
+						<option>전북</option>
+						<option>충남</option>
+						<option>충북</option>
+						<option>제주</option>
+						<option>세종</option>
+					</select>
+				</div>
 				<button style='float:right;margin-right:15px;width:216px;height:40px;border-radius:10px;margin-top:10px;'>검색하기</button>
 			</div>
 		</div>
@@ -85,11 +147,13 @@
 						</p>
 						<p style='display:inline-block;'>평가 종합순위 00위</p>
 					</div>
-					<div class='review_evaluation'>
-						<h6 class='h6_title'>작성자한줄평</h6>
-						<img src='/assets/img/common/review_user.png' style='position:absolute;margin-top:-11px;margin-left:25px;width:48px;height:48px;'/>
-						<h6 class='h6_content' style='margin-left:98px'>"좋은 학과다. 허나 고민은 하고 들어왔으면 좋겠다"</h6>
-					</div>
+					<a href='/review/univ/comment/' style='text-decoration:none;color:inherit;'>
+						<div class='review_evaluation'>
+							<h6 class='h6_title'>작성자한줄평</h6>
+							<img src='/assets/img/common/review_user.png' style='position:absolute;margin-top:-11px;margin-left:25px;width:48px;height:48px;'/>
+							<h6 class='h6_content' style='margin-left:98px'>"좋은 학과다. 허나 고민은 하고 들어왔으면 좋겠다"</h6>
+						</div>
+					</a>
 					<div class='pros'>
 						<h3>장점</h3>
 						<h4>대한민국 3대 산업디자인과의 이름이 아깝지 않은 동문선배들 다양한 행사에 초청되어 다양한 강연을 들을 기회가 많으며 여러 기업들과의 협약으로 직무체험, 제품지원 등 국민대학교 내에서는 최고의 혜택을 받는다.</h4>
@@ -115,11 +179,13 @@
 						</p>
 						<p style='display:inline-block;'>평가 종합순위 00위</p>
 					</div>
-					<div class='review_evaluation'>
-						<h6 class='h6_title'>작성자한줄평</h6>
-						<img src='/assets/img/common/review_user.png' style='position:absolute;margin-top:-11px;margin-left:25px;width:48px;height:48px;'/>
-						<h6 class='h6_content' style='margin-left:98px'>"좋은 학과다. 허나 고민은 하고 들어왔으면 좋겠다"</h6>
-					</div>
+					<a href='/review/univ/comment/' style='text-decoration:none;color:inherit;'>
+						<div class='review_evaluation'>
+							<h6 class='h6_title'>작성자한줄평</h6>
+							<img src='/assets/img/common/review_user.png' style='position:absolute;margin-top:-11px;margin-left:25px;width:48px;height:48px;'/>
+							<h6 class='h6_content' style='margin-left:98px'>"좋은 학과다. 허나 고민은 하고 들어왔으면 좋겠다"</h6>
+						</div>
+					</a>
 					<div class='pros'>
 						<h3>장점</h3>
 						<h4>대한민국 3대 산업디자인과의 이름이 아깝지 않은 동문선배들 다양한 행사에 초청되어 다양한 강연을 들을 기회가 많으며 여러 기업들과의 협약으로 직무체험, 제품지원 등 국민대학교 내에서는 최고의 혜택을 받는다.</h4>
@@ -145,11 +211,13 @@
 						</p>
 						<p style='display:inline-block;'>평가 종합순위 00위</p>
 					</div>
-					<div class='review_evaluation'>
-						<h6 class='h6_title'>작성자한줄평</h6>
-						<img src='/assets/img/common/review_user.png' style='position:absolute;margin-top:-11px;margin-left:25px;width:48px;height:48px;'/>
-						<h6 class='h6_content' style='margin-left:98px'>"좋은 학과다. 허나 고민은 하고 들어왔으면 좋겠다"</h6>
-					</div>
+					<a href='/review/univ/comment/' style='text-decoration:none;color:inherit;'>
+						<div class='review_evaluation'>
+							<h6 class='h6_title'>작성자한줄평</h6>
+							<img src='/assets/img/common/review_user.png' style='position:absolute;margin-top:-11px;margin-left:25px;width:48px;height:48px;'/>
+							<h6 class='h6_content' style='margin-left:98px'>"좋은 학과다. 허나 고민은 하고 들어왔으면 좋겠다"</h6>
+						</div>
+					</a>
 					<div class='pros'>
 						<h3>장점</h3>
 						<h4>대한민국 3대 산업디자인과의 이름이 아깝지 않은 동문선배들 다양한 행사에 초청되어 다양한 강연을 들을 기회가 많으며 여러 기업들과의 협약으로 직무체험, 제품지원 등 국민대학교 내에서는 최고의 혜택을 받는다.</h4>
@@ -169,7 +237,7 @@
 
 				<table class='campus_category'>
 					<tr>
-						<td style='font-size:1.3125rem;font-weight:bold;color:#58595B;'>학과군</td>
+						<td style='font-family:NanumBarunGothicBold;font-size:1.3125rem;font-weight:bold;color:#58595B;'>학과군</td>
 					</tr>
 					<tr>
 						<td><a href='/campus/major/' style='text-decoration:none;color:inherit;'>자연계열</a></td>
@@ -196,7 +264,7 @@
 
 				<table class='review_list'>
 					<tr>
-						<td colspan='2' class='review_list_title'>가장 활발한 대학</td>
+						<td colspan='2' class='review_list_title' style='font-family:NanumBarunGothicBold;font-weight:bold;'>가장 활발한 대학</td>
 						<td class='review_more_b'><a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a></td>
 					</tr>
 					<tr>
@@ -231,7 +299,7 @@
 
 				<table class='review_list'>
 					<tr>
-						<td colspan='2' class='review_list_title'>가장 활발한 대학</td>
+						<td colspan='2' class='review_list_title' style='font-family:NanumBarunGothicBold;font-weight:bold;'>대학종합순위</td>
 						<td class='review_more_b'><a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a></td>
 					</tr>
 					<tr>
