@@ -17,6 +17,12 @@
 	<link rel='stylesheet' href='../../../assets/css/univ.css'>
 	<link rel='stylesheet' href='../../../assets/css/swiper.css'>
 	<!-- Assets -->
+
+	<style>
+		body {
+			background: rgba(239, 240, 240, 0.5);
+		}
+	</style>
 </head>
 <body>
 
@@ -53,9 +59,9 @@
 
 		<div id='univ_category'>
 			<ul class='category'>
-				<a href='/review/univ/' style='color:#808083;text-decoration:none;'><li style='margin-left:30px;padding-top:15px;'>info<h3>대학정보</h3></li></a>
-				<a href='/review/univ/comment/' style='color:#000000;text-decoration:none;'><li style='margin:0px 45px;padding-top:15px;'>125<h3>대학리뷰</h3></li></a>
-				<a href='/review/univ/community/' style='color:#808083;text-decoration:none;'><li style='padding-top:15px;'>12,548<h3>익명게시판</h3></li></a>
+				<a href='/review/univ/' style='color:#808083;text-decoration:none;'><li style='margin-left:30px;padding-top:12px;'>info<h3>대학정보</h3></li></a>
+				<a href='/review/univ/comment/' style='color:#000000;text-decoration:none;'><li style='margin:0px 45px;margin-top:5px;padding-top:12px;border-bottom:5px solid #FFD432;'>125<h3>대학리뷰</h3></li></a>
+				<a href='/review/univ/community/' style='color:#808083;text-decoration:none;'><li style='padding-top:12px;'>12,548<h3>익명게시판</h3></li></a>
 			</ul>
 		</div>
 
@@ -64,13 +70,19 @@
 			<div class='univ_left' style='width: 675px;margin: 0px auto;margin-top: 20px;float: left;'>
 
 				<div class='find_campus'>
-					<select name=''>
-						<option>조형대학</option>
-					</select>
-					<select name=''>
-						<option>공업디자인</option>
-					</select>
-					<h1>총 00개의 학과리뷰가 있습니다</h1>
+					<div class="mypage_memo" style='display:inline-block;width:170px;height:25px;border-radius:5px;border:1px solid #808083;'>
+						<select name=''>
+							<option>조형대학</option>
+						</select>
+					</div>
+
+					<div class="mypage_memo" style='display:inline-block;width:170px;height:25px;border-radius:5px;border:1px solid #808083;margin-left:15px;'>
+						<select name=''>
+							<option>공업디자인</option>
+						</select>
+					</div>
+
+					<h1 style='vertical-align: top;margin-top: 13px;'>총 00개의 학과리뷰가 있습니다</h1>
 				</div>
 
 				<table class='univ_table'>

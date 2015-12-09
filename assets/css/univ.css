@@ -1,3 +1,4 @@
+
 	#univ_main_image {
 		width: 100%;
 		height: 200px;
@@ -18,7 +19,7 @@
 	}
 
 	#univ_main_image .univ_about button {
-		font-size: 1.2rem;
+		font-size: 1rem;
 		font-weight: bold;
 		color: #58595B;
 		width: 215px;
@@ -48,6 +49,10 @@
 		font-size: 1.5rem;
 		margin-top: 5px;
 		font-weight: 300;
+	}
+
+	.category li:hover {
+		color: #58595B;
 	}
 
     .swiper-container {
@@ -87,7 +92,7 @@
 	}
 
 	#univ_category {
-		height: 84px;
+		height: 87px;
 		width: 100%;
 		margin: 0px auto;
 		background: #FFFFFF;
@@ -318,7 +323,7 @@
 		font-size: 1rem;
 		height: 40px;
 		color: #1C75BA;
-		background: #FFB432;
+		background: rgba(255, 212, 50, 0.3);
 		font-family: NanumMyeongjo;
 	}
 

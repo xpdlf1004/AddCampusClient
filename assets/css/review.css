@@ -106,7 +106,6 @@
 		text-align: left;
 		margin: 0px auto;
 		border-bottom: 3px solid #D1D3D4;
-		background: #F7F7F7;
 	}
 
 	.find_campus {
@@ -198,7 +197,7 @@
 		width: 100%;
 		padding: 15px 0px 0px 0px;
 		border: 1px solid #BCBEC0;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 	}
 
 	.about_img { 
@@ -277,7 +276,7 @@
 
 	.pros h4 { 
 		display: inline-block;
-		width: 80%;
+		width: 84%;
 		text-align: left;
 		vertical-align: top;
 		margin: 0px;
@@ -308,7 +307,7 @@
 
 	.cons h4 { 
 		display: inline-block;
-		width: 80%;
+		width: 84%;
 		text-align: left;
 		vertical-align: top;
 		margin: 0px;
@@ -333,7 +332,7 @@
 		border-collapse: collapse;
 		margin: 0px;
 		padding: 0px;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 		border: 1px solid #BCBEC0;
 		text-align: left;
 	}
@@ -353,7 +352,7 @@
 		border-collapse: collapse;
 		margin: 0px;
 		padding: 0px;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 		border: 1px solid #BCBEC0;
 	}
 

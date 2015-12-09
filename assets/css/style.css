@@ -64,6 +64,14 @@
 		margin: 0px auto;
 	}
 
+	.header_menu a {
+		color: #666666;
+	}
+
+	.header_menu a:hover {
+		color: #000000 !important;
+	}
+
 	header ul,
 	header li {
 		margin: 0px;
