@@ -9,7 +9,7 @@ var RequestHelper = (function() {
   }
 
   function getSignature(query, accessKey) {
-    return CryptoJS.HmacSHA1(decodeURIComponent(query), accessKey).toString();
+    return CryptoJS.HmacSHA1(unescape(query), accessKey).toString();
   }
 
 	function post(url, data, options, successCallback, failCallback) {
