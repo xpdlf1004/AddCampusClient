@@ -67,57 +67,25 @@
 			<div class='find_campus'>
 				<h2 class='title'>가고 싶은 대학이 어떤 곳인지는 한 번 찾아 봐야지?</h2>
 				<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:5px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
-					<select name=''>
-						<option>학과군</option>
-						<option>자연계열</option>
-						<option>인문사회계열</option>
-						<option>교육계열</option>
-						<option>의학계열</option>
-						<option>공학계열</option>
-						<option>예체능계열</option>
+					<select id='type_1' class='type_1' name='type_1'>
+						<option value='c000' class='c000'>전체</option>
+						<option value='c001' class='c001'>자연계열</option>
+						<option value='c002' class='c002'>인문사회계열</option>
+						<option value='c003' class='c003'>교육계열</option>
+						<option value='c004' class='c004'>의학계열</option>
+						<option value='c005' class='c005'>공학계열</option>
+						<option value='c006' class='c006'>예체능계열</option>
+						<option value='c007' class='c007'>기타</option>
 					</select>
 				</div>
 				<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:5px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
-					<select name=''>
-						<option>2차 학과군</option>
-						<option>농림, 수산</option>
-						<option>생물, 화학, 환경</option>
-						<option>생활과학</option>
-						<option>수학, 물리, 천문, 지리</option>
-						<option>언어, 문학</option>
-						<option>인문과학</option>
-						<option>경영, 경제</option>
-						<option>법률</option>
-						<option>사회과학</option>
-						<option>교육일반</option>
-						<option>유아교육</option>
-						<option>초등교육</option>
-						<option>중등교육</option>
-						<option>의료</option>
-						<option>간호</option>
-						<option>치료, 보건</option>
-						<option>건축</option>
-						<option>토목, 도시</option>
-						<option>교통, 운송</option>
-						<option>기계, 금속</option>
-						<option>전기, 전자</option>
-						<option>정밀, 에너지</option>
-						<option>소재, 재료</option>
-						<option>컴퓨터, 통신</option>
-						<option>산업</option>
-						<option>화공</option>
-						<option>기타</option>
-						<option>디자인</option>
-						<option>응용예술</option>
-						<option>무용, 체육</option>
-						<option>미술, 조형</option>
-						<option>연극, 영화</option>
-						<option>음악</option>
+					<select id='type_2' class='type_2' name='type_2'>
+						<option value='g000' class='g000'>2차 학과군</option>
 					</select>
 				</div>
 				<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:5px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
-					<select name=''>
-						<option>지역</option>
+					<select class='type_3' name=''>
+						<option>전체</option>
 						<option>서울</option>
 						<option>경기</option>
 						<option>인천</option>
@@ -374,6 +342,71 @@
     <script src="../assets/lib/analytics.js"></script>
 
 	<script>
+
+		$('.type_1').change(function(){
+
+			$("#type_2").find("option").remove();
+
+			if ($('select[name=type_1]').val() == 'c001') {
+
+				$("#type_2").append("<option value='g001' class='g001'>농림, 수산</option>");
+				$("#type_2").append("<option value='g002' class='g002'>생물, 화학, 환경</option>");
+				$("#type_2").append("<option value='g003' class='g003'>생활과학</option>");
+				$("#type_2").append("<option value='g004' class='g004'>수학, 물리, 천문, 지리</option>");
+
+			} else if ($('select[name=type_1]').val() == 'c002') {
+
+				$("#type_2").append("<option value='g005' class='g005'>언어, 문학</option>");
+				$("#type_2").append("<option value='g006' class='g006'>인문과학</option>");
+				$("#type_2").append("<option value='g007' class='g007'>경영, 경제</option>");
+				$("#type_2").append("<option value='g008' class='g008'>법률</option>");
+				$("#type_2").append("<option value='g009' class='g009'>사회과학</option>");
+				$("#type_2").append("<option value='g034' class='g034'>기타</option>");
+
+			} else if ($('select[name=type_1]').val() == 'c003') {
+
+				$("#type_2").append("<option value='g010' class='g010'>교육일반</option>");
+				$("#type_2").append("<option value='g011' class='g011'>유아교육</option>");
+				$("#type_2").append("<option value='g012' class='g012'>초등교육</option>");
+				$("#type_2").append("<option value='g013' class='g013'>중등교육</option>");
+
+			} else if ($('select[name=type_1]').val() == 'c004') {
+
+				$("#type_2").append("<option value='g014' class='g014'>의료</option>");
+				$("#type_2").append("<option value='g015' class='g015'>간호</option>");
+				$("#type_2").append("<option value='g016' class='g016'>치료, 보건</option>");
+
+			} else if ($('select[name=type_1]').val() == 'c005') {
+
+				$("#type_2").append("<option value='g017' class='g017'>건축</option>");
+				$("#type_2").append("<option value='g018' class='g018'>토목, 도시</option>");
+				$("#type_2").append("<option value='g019' class='g019'>교통, 운송</option>");
+				$("#type_2").append("<option value='g020' class='g020'>기계, 금속</option>");
+				$("#type_2").append("<option value='g021' class='g021'>전기, 전자</option>");
+				$("#type_2").append("<option value='g022' class='g022'>정밀, 에너지</option>");
+				$("#type_2").append("<option value='g023' class='g023'>소재, 재료</option>");
+				$("#type_2").append("<option value='g024' class='g024'>컴퓨터, 통신</option>");
+				$("#type_2").append("<option value='g025' class='g025'>산업</option>");
+				$("#type_2").append("<option value='g026' class='g026'>화공</option>");
+				$("#type_2").append("<option value='g027' class='g027'>기타</option>");
+
+			} else if ($('select[name=type_1]').val() == 'c006') {
+
+				$("#type_2").append("<option value='g028' class='g028'>디자인</option>");
+				$("#type_2").append("<option value='g029' class='g029'>응용예술</option>");
+				$("#type_2").append("<option value='g030' class='g030'>무용, 체육</option>");
+				$("#type_2").append("<option value='g031' class='g031'>미술, 조형</option>");
+				$("#type_2").append("<option value='g032' class='g032'>연극, 영화</option>");
+				$("#type_2").append("<option value='g033' class='g033'>음악</option>");
+
+			} else if ($('select[name=type_1]').val() == 'c007') {
+
+				$("#type_2").append("<option value='g034' class='g034'>기타</option>");
+
+			}
+
+		});
+
 
 		/*************************
 		* For Header

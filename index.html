@@ -52,14 +52,14 @@
 			<ul class='campus_menu'>
 				<li style='margin-right:10px;'>
 					<a href='/campus/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/main_campus.png' id='campus_button_img1' onmouseover='src="/assets/img/common/main_campus_overall.png";document.getElementById("campus_s_button_img1").src="/assets/img/common/main_go_overall.png";' onmouseout='src="/assets/img/common/main_campus.png";document.getElementById("campus_s_button_img1").src="/assets/img/common/main_go.png";'/></a>
-					<h4>캠퍼스 보기</h4>
-					<p>실제 재학생들이<br/>말하는 학교 평가 순위!</p>
+					<h4 onmouseover='document.getElementById("campus_button_img1").src="/assets/img/common/main_campus_overall.png";document.getElementById("campus_s_button_img1").src="/assets/img/common/main_go_overall.png";' onmouseout='document.getElementById("campus_button_img1").src="/assets/img/common/main_campus.png";document.getElementById("campus_s_button_img1").src="/assets/img/common/main_go.png";'>캠퍼스 보기</h4>
+					<p onmouseover='document.getElementById("campus_button_img1").src="/assets/img/common/main_campus_overall.png";document.getElementById("campus_s_button_img1").src="/assets/img/common/main_go_overall.png";' onmouseout='document.getElementById("campus_button_img1").src="/assets/img/common/main_campus.png";document.getElementById("campus_s_button_img1").src="/assets/img/common/main_go.png";'>실제 재학생들이<br/>말하는 학교 평가 순위!</p>
 					<a href='/campus/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/main_go.png' id='campus_s_button_img1' onmouseover='src="/assets/img/common/main_go_overall.png";document.getElementById("campus_button_img1").src="/assets/img/common/main_campus_overall.png";' onmouseout='src="/assets/img/common/main_go.png";document.getElementById("campus_button_img1").src="/assets/img/common/main_campus.png";'/></a>
 				</li>
 				<li style='margin-right:10px;'>
 					<a href='/review/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/main_club.png' id='campus_button_img2' onmouseover='src="/assets/img/common/main_club_overall.png";document.getElementById("campus_s_button_img2").src="/assets/img/common/main_go_overall.png";' onmouseout='src="/assets/img/common/main_club.png";document.getElementById("campus_s_button_img2").src="/assets/img/common/main_go.png";'/></a>
-					<h4>캠퍼스 리뷰</h4>
-					<p>실제 재학생들이<br/>말하는 학과 평가 리뷰!</p>
+					<h4 onmouseover='document.getElementById("campus_button_img2").src="/assets/img/common/main_club_overall.png";document.getElementById("campus_s_button_img2").src="/assets/img/common/main_go_overall.png";' onmouseout='document.getElementById("campus_button_img2").src="/assets/img/common/main_club.png";document.getElementById("campus_s_button_img2").src="/assets/img/common/main_go.png";'>캠퍼스 리뷰</h4>
+					<p onmouseover='document.getElementById("campus_button_img2").src="/assets/img/common/main_club_overall.png";document.getElementById("campus_s_button_img2").src="/assets/img/common/main_go_overall.png";' onmouseout='document.getElementById("campus_button_img2").src="/assets/img/common/main_club.png";document.getElementById("campus_s_button_img2").src="/assets/img/common/main_go.png";'>실제 재학생들이<br/>말하는 학과 평가 리뷰!</p>
 					<a href='/review/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/main_go.png' id='campus_s_button_img2' onmouseover='src="/assets/img/common/main_go_overall.png";document.getElementById("campus_button_img2").src="/assets/img/common/main_club_overall.png";' onmouseout='src="/assets/img/common/main_go.png";document.getElementById("campus_button_img2").src="/assets/img/common/main_club.png";'/></a>
 				</li>
 				<li style='margin-right:10px;'>
@@ -430,11 +430,11 @@
 			}, function(data) {
 				alert(JSON.stringify(data));
 
-				if (data.result[0].status == 'ok') {
-					location.href = '/';
-				} else {
-					location.href = '/';
-				}
+				// if (data.result[0].status == 'ok') {
+				// 	location.href = '/';
+				// } else {
+				// 	location.href = '/';
+				// }
 
 				LocalStorage.put('sessionKey', data.result[0].sessionKey);
 				LocalStorage.put('accessKey', data.result[0].accessKey);
