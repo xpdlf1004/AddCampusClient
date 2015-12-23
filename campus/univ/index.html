@@ -25,8 +25,8 @@
 				<li style='margin:0px 28px 0px 14px;'><a href='/' style='text-decoration:none;color:#FFFFFF;'><img src='/assets/img/header/logo.png'/></a></li>
 				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/campus/' style='text-decoration:none;color:#000000;'>캠퍼스 랭킹</a></li>
 				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/review/' style='text-decoration:none;color:#666666;'>캠퍼스 리뷰</a></li>
-				<li style='width:70px;margin:0px 8px 0px 0px;'><a href='#' style='text-decoration:none;color:#999999;'>대외활동</a></li>
-				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='#' style='text-decoration:none;color:#999999;'>합격꿀팁</a></li>
+				<li style='width:70px;margin:0px 8px 0px 0px;'><a onclick='layer_open3();' style='text-decoration:none;color:#999999;'>대외활동</a></li>
+				<li style='width:70px;margin:0px 23px 0px 0px;'><a onclick='layer_open3();' style='text-decoration:none;color:#999999;'>합격꿀팁</a></li>
 			</ul>
 			<ul class='header_right' id='header_right_in' style='display:none;'>
 				<li style='margin:0px 14px;'><a onclick="layer_open2('layer3');" style='text-decoration:none;color:#1C75BA;'>리뷰작성</a></li>
@@ -608,6 +608,56 @@
 			}
 
 		}
+
+		function layer_open3(){
+
+			var temp = $("#popup_soon");
+			var bg = temp.prev().hasClass('bg2');
+			//dimmed 레이어를 감지하기 위한 boolean 변수
+
+			if(bg){
+				$('.layer3s').fadeIn();
+				//'bg' 클래스가 존재하면 레이어가 나타나고 배경은 dimmed 된다. 
+			}else{
+				temp.fadeIn();
+			}
+
+			// 화면의 중앙에 레이어를 띄운다.
+			if (temp.outerHeight() < $(document).height() ) temp.css('margin-top', '-'+temp.outerHeight()/2+'px');
+			else temp.css('top', '0px');
+			if (true ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
+			// if (temp.outerWidth() < $(document).width() ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
+			// else temp.css('left', '0px');
+
+			temp.find('a.cbtn').click(function(e){
+				if(bg){
+					$('.layer3s').fadeOut(); 
+					//'bg' 클래스가 존재하면 레이어를 사라지게 한다. 
+				}else{
+					temp.fadeOut();
+				}
+				e.preventDefault();
+			});
+
+			$('.layer3s .bg2').click(function(e){	
+			//배경을 클릭하면 레이어를 사라지게 하는 이벤트 핸들러
+
+				$('.layer3s').fadeOut();
+				e.preventDefault();
+			});
+
+			$('.layer3s button').click(function(e){	
+			//배경을 클릭하면 레이어를 사라지게 하는 이벤트 핸들러
+
+				$('.layer3s').fadeOut();
+				e.preventDefault();
+			});
+
+		}
+
+		$("#soon").click(function(){
+			layer_open3();
+		});
 		
 		$(document).ready(function(){
 
@@ -880,7 +930,7 @@
 							</tr>
 							<tr>
 								<td>
-									<button class='sign_back' id='sign_back_2' onclick='return false;'>뒤로가기</button>
+									<button class='sign_back' id='sign_back_2' onclick='return false;' style='margin-top:25px;'>뒤로가기</button>
 								</td>
 							</tr>
 						</table>
@@ -1119,6 +1169,19 @@
 							</tr>
 						</table>
 					</form>
+				</div>
+			</div> 
+		</div>
+	</div>
+
+	<div class="layer3s">
+		<div class="bg2"></div>
+		<div id="popup_soon" class="pop-layer" style='z-index:3;'>
+			<div class="pop-container">
+				<div class="pop-conts">
+					<h1>AddCampus</h1>
+					<h4>준비 중 입니다</h4>
+					<button>닫기</button>
 				</div>
 			</div> 
 		</div>
