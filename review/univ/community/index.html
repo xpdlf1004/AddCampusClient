@@ -16,6 +16,28 @@
 	<link rel='stylesheet' href='../../../assets/css/style.css'>
 	<link rel='stylesheet' href='../../../assets/css/univ.css'>
 	<!-- Assets -->
+	<script>
+
+		/******************************************
+		* URL 학교 코드 가져오기
+		/*****************************************/
+		function getQueryVariable(variable) {
+			var query = window.location.search.substring(1);
+			var vars = query.split("&");
+
+			for (var i=0; i<vars.length; i++) {
+				var pair = vars[i].split("=");
+				
+				if (pair[0] == variable) {
+					return pair[1];
+				}
+			}
+		}
+
+		// 학교 코드 저장
+		collegeID = getQueryVariable("univ");
+
+	</script>
 </head>
 <body>
 
@@ -52,9 +74,9 @@
 
 		<div id='univ_category'>
 			<ul class='category'>
-				<a href='/review/univ/' style='color:#808083;text-decoration:none;'><li style='margin-left:30px;padding-top:12px;'>info<h3>대학정보</h3></li></a>
-				<a href='/review/univ/comment/' style='color:#808083;text-decoration:none;'><li style='margin:0px 45px;padding-top:12px;'>125<h3>대학리뷰</h3></li></a>
-				<a href='/review/univ/community/' style='color:#000000;text-decoration:none;'><li style='margin-top:5px;padding-top:12px;border-bottom:5px solid #FFD432;'>12,548<h3>익명게시판</h3></li></a>
+				<a onclick='location.href="/review/univ/?univ=" + collegeID;' style='color:#808083;text-decoration:none;'><li style='margin-left:30px;padding-top:12px;'>info<h3>대학정보</h3></li></a>
+				<a onclick='location.href="/review/univ/comment/?univ=" + collegeID;' style='color:#808083;text-decoration:none;'><li style='margin:0px 45px;padding-top:12px;'>125<h3>대학리뷰</h3></li></a>
+				<a onclick='location.href="/review/univ/community/?univ=" + collegeID;' style='color:#000000;text-decoration:none;'><li style='margin-top:5px;padding-top:12px;border-bottom:5px solid #FFD432;'>12,548<h3>익명게시판</h3></li></a>
 			</ul>
 		</div>
 
@@ -303,6 +325,17 @@
         	
         	$("#sign_up").submit(submitForm);
         	$("#writeMajorReview").submit(writeMajorReview);
+
+			RequestHelper.post('/college/getAllAverageGradeOfCollege', {
+				collegeID: collegeID
+			},
+			{
+			// Option is not needed.
+			}, function(data) {
+				alert("학교 전체 리뷰 조회 성공: " + JSON.stringify(data));
+			}, function(data) {
+				alert("잘못된 접근입니다, 뒤로가기 이동");
+			});
 
 		})
 		/************************/

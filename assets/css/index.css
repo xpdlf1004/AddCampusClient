@@ -451,3 +451,23 @@
 	.review_list .of_diff img {
 		vertical-align: middle;
 	}
+
+	.campus_category {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 0px;
+		padding: 0px;
+		margin-bottom: 10px;
+		border: 1px solid #BCBEC0;
+		text-align: left;
+	}
+	
+	.campus_category td {
+		margin: 0px;
+		padding: 0px;
+		vertical-align: middle;
+		padding: 18px 0px 0px 18px;
+		border-right: 1px solid #BCBEC0;
+		color: #808083;
+		font-size:1.125rem;
+	}

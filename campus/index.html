@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<!-- Meta tag for Old Version -->
+	<!-- Meta tag for Cross Browsing -->
 	<title>AddCampus</title>
 	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
 	<meta http-equiv='X-UA-Compatible' content='IE=edge, chrome=1'>
@@ -15,6 +15,7 @@
 	<!-- Assets -->
 	<link rel='stylesheet' href='../assets/css/style.css'>
 	<link rel='stylesheet' href='../assets/css/campus.css'>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<!-- Assets -->
 </head>
 <body>
@@ -46,8 +47,10 @@
 			<h1 class='head_title'>캠퍼스는 [ <span>더하기</span> ]다!</h1>
 			<h3 class='head_subtitle'>캠퍼스에 이야기를 더하다. 애드캠퍼스가 함께합니다</h3>
 			<div class='search_box'>
-				<input type='text' name='search_school' placeholder='합격하고 싶은 대학을 검색해보세요!'/>
-				<img src='/assets/img/common/search_button.png'/>
+				<form action='/review/univ/' id='search_form' method='get' onsubmit="return SearchUnivA(this);">
+					<input type='text' id='search_school' name='search_school' placeholder='합격하고 싶은 대학을 검색해보세요!' style='margin-top: 12px;'/>
+					<img src='/assets/img/common/search_button.png' id='searchBtn' style='cursor:pointer;'/>
+				</form>
 			</div>
 		</div>
 
@@ -65,14 +68,10 @@
 					<ul class='campus_list_title'>
 						<li class='li_class'>1위</li>
 						<li class='li_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='rank_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1rem;color:#808083;'>(신촌캠퍼스)</span><br/>
-								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-								<span style='font-size:1.15rem;color:#80803;'>9.98</span>
+							<a class='AverageGradeLogo' style='text-decoration:none;color:inherit;'><img class='rank_img'/></a>
+							<p><a class='AverageGradeName' style='text-decoration:none;color:inherit;'></a> <!-- <span style='font-size:1rem;color:#808083;'>(신촌캠퍼스)</span> --><br/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<span class='AverageGradeGrade' style='font-size:1.15rem;color:#80803;'></span>
 							</p>
 						</li>
 						<li class='li_message'>
@@ -84,40 +83,28 @@
 					<ul class='campus_list_subtitle'>
 						<li class='li_class'>2위</li>
 						<li class='li_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='rank_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:0.9rem;color:#808083;'>(신촌캠퍼스)</span><br/>
-								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-								<span style='font-size:1.05rem;color:#80803;'>9.98</span>
+							<a class='AverageGradeLogo' style='text-decoration:none;color:inherit;'><img class='rank_img'/></a>
+							<p><a class='AverageGradeName' style='text-decoration:none;color:inherit;'></a> <!-- <span style='font-size:0.9rem;color:#808083;'>(신촌캠퍼스)</span> --><br/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<span class='AverageGrade' style='font-size:1.05rem;color:#80803;'></span>
 							</p>
 						</li>
 						<br/>
 						<li class='li_class'>3위</li>
 						<li class='li_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='rank_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:0.9rem;color:#808083;'>(신촌캠퍼스)</span><br/>
-								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-								<span style='font-size:1.05rem;color:#80803;'>9.98</span>
+							<a class='AverageGradeLogo' style='text-decoration:none;color:inherit;'><img class='rank_img'/></a>
+							<p><a class='AverageGradeName' style='text-decoration:none;color:inherit;'></a> <!-- <span style='font-size:0.9rem;color:#808083;'>(신촌캠퍼스)</span> --><br/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<span class='AverageGrade' style='font-size:1.05rem;color:#80803;'></span>
 							</p>
 						</li>
 						<br/>
 						<li class='li_class'>4위</li>
 						<li class='li_about' style='margin-bottom:0px;'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='rank_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:0.9rem;color:#808083;'>(신촌캠퍼스)</span><br/>
-								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-								<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-								<span style='font-size:1.05rem;color:#80803;'>9.98</span>
+							<a class='AverageGradeLogo' style='text-decoration:none;color:inherit;'><img class='rank_img'/></a>
+							<p><a class='AverageGradeName' style='text-decoration:none;color:inherit;'></a><!--  <span style='font-size:0.9rem;color:#808083;'>(신촌캠퍼스)</span> --><br/>
+								<img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/>
+								<span class='AverageGrade' style='font-size:1.05rem;color:#80803;'></span>
 							</p>
 						</li>
 						<br/>
@@ -133,67 +120,46 @@
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>1. <a class='FacilitiesName' style='text-decoration:none;color:inherit;'></a> <!-- <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='FacilitiesGrade'></span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>2. <a class='FacilitiesName'style='text-decoration:none;color:inherit;'></a> <!-- <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='FacilitiesGrade'></span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>3. <a class='FacilitiesName'style='text-decoration:none;color:inherit;'></a> <!-- <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='FacilitiesGrade'></span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>4. <a class='FacilitiesName'style='text-decoration:none;color:inherit;'></a> <!-- <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='FacilitiesGrade'></span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>5. <a class='FacilitiesName'style='text-decoration:none;color:inherit;'></a> <!-- <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class' style='margin-bottom:10px;'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
-								</p>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='FacilitiesGrade'></span>
 							</td>
 						</tr>
 						<tr>
@@ -207,66 +173,46 @@
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>1. <a class='CultureName' style='text-decoration:none;color:inherit;'></a> <!-- <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='CultureGrade'></span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>2. <a class='CultureName' style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='CultureGrade'></span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>3. <a class='CultureName' style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='CultureGrade'></span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>4. <a class='CultureName' style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='CultureGrade'></span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>5. <a class='CultureName' style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class' style='margin-bottom:10px;'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='CultureGrade'></span>
 								</p>
 							</td>
 						</tr>
@@ -281,66 +227,46 @@
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>1. <a class='TownName' style='text-decoration:none;color:inherit;'></a> <!-- <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='TownGrade'></span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>2. <a class='TownName' style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='TownGrade'></span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>3. <a class='TownName' style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='TownGrade'></span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>4. <a class='TownName' style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='TownGrade'></span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
-								<p class='grade_class' style='margin-bottom:10px;'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+								<p class='grade_about'>5. <a class='TownName' style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
+								<p class='grade_class' 
+								style='margin-bottom:10px;'><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='TownGrade'></span>
 								</p>
 							</td>
 						</tr>
@@ -359,66 +285,46 @@
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>1. <a class='TuitionName' style='text-decoration:none;color:inherit;'></a> <!-- <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='TuitionGrade'></span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>2. <a class='TuitionName' style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='TuitionGrade'></span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>3. <a class='TuitionName' style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='TuitionGrade'></span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>4. <a class='TuitionName' style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='TuitionGrade'></span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
-								<p class='grade_class' style='margin-bottom:10px;'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+								<p class='grade_about'>5. <a class='TuitionName' style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
+								<p class='grade_class' 
+								style='margin-bottom:10px;'><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='TuitionGrade'></span>
 								</p>
 							</td>
 						</tr>
@@ -433,66 +339,46 @@
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>1. <a class='ProfessorName' style='text-decoration:none;color:inherit;'></a> <!-- <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='ProfessorGrade'></span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>2. <a class='ProfessorName' style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='ProfessorGrade'></span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>3. <a class='ProfessorName' style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='ProfessorGrade'></span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>4. <a class='ProfessorName' style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='ProfessorGrade'></span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
-								<p class='grade_class' style='margin-bottom:10px;'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<span>9.9</span>
+								<p class='grade_about'>5. <a class='ProfessorName' style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
+								<p class='grade_class' 
+								style='margin-bottom:10px;'><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
+									<span class='ProfessorGrade'></span>
 								</p>
 							</td>
 						</tr>
@@ -507,65 +393,45 @@
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>1. <a style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
 									<span>9.9</span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>1. <a style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
 									<span>9.9</span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>1. <a style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
 									<span>9.9</span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
+								<p class='grade_about'>1. <a style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
 								<p class='grade_class'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
+									<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
 									<span>9.9</span>
 								</p>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<p class='grade_about'>1. <a href='/review/univ/' style='text-decoration:none;color:inherit;'>건국대학교</a> <span>(서울캠퍼스)</span></p>
-								<p class='grade_class' style='margin-bottom:10px;'>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
-									<img src='/assets/img/common/review_star_full.png'/>
+								<p class='grade_about'>1. <a style='text-decoration:none;color:inherit;'></a><!--  <span>(서울캠퍼스)</span> --></p>
+								<p class='grade_class' 
+								style='margin-bottom:10px;'><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
 									<span>9.9</span>
 								</p>
 							</td>
@@ -616,63 +482,43 @@
 					</tr>
 					<tr>
 						<td class='of_rank'>1.</td>
-						<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
-						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
+						<td class='of_college'>
+							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='CollegeLink'><img class='CollegeLogo' style='width:55px;height:55px;'/></a>
+							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='CollegeName'></a><br/><span>인문사회 - 정치</span></p>
+							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
+						</td>
 					</tr>
 					<tr>
-						<td class='of_rank'>1.</td>
-						<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
-						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
+						<td class='of_rank'>2.</td>
+						<td class='of_college'>
+							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='CollegeLink'><img class='CollegeLogo' style='width:55px;height:55px;'/></a>
+							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='CollegeName'></a><br/><span>인문사회 - 정치</span></p>
+							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
+						</td>
 					</tr>
 					<tr>
-						<td class='of_rank'>1.</td>
-						<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
-						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
+						<td class='of_rank'>3.</td>
+						<td class='of_college'>
+							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='CollegeLink'><img class='CollegeLogo' style='width:55px;height:55px;'/></a>
+							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='CollegeName'></a><br/><span>인문사회 - 정치</span></p>
+							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
+						</td>
 					</tr>
 					<tr>
-						<td class='of_rank'>1.</td>
-						<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
-						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
+						<td class='of_rank'>4.</td>
+						<td class='of_college'>
+							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='CollegeLink'><img class='CollegeLogo' style='width:55px;height:55px;'/></a>
+							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='CollegeName'></a><br/><span>인문사회 - 정치</span></p>
+							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
+						</td>
 					</tr>
 					<tr>
-						<td class='of_rank'>1.</td>
-						<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
-						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
-					</tr>
-					<tr>
-						<td colspan='3'>&nbsp;</td>
-					</tr>
-				</table>
-
-				<table class='review_list'>
-					<tr>
-						<td colspan='2' class='review_list_title' style='font-family:NanumBarunGothicBold;font-weight:bold;'>대학종합순위</td>
-						<td class='review_more_b'><a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a></td>
-					</tr>
-					<tr>
-						<td class='of_rank'>1.</td>
-						<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
-						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
-					</tr>
-					<tr>
-						<td class='of_rank'>1.</td>
-						<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
-						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
-					</tr>
-					<tr>
-						<td class='of_rank'>1.</td>
-						<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
-						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
-					</tr>
-					<tr>
-						<td class='of_rank'>1.</td>
-						<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
-						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
-					</tr>
-					<tr>
-						<td class='of_rank'>1.</td>
-						<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
-						<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
+						<td class='of_rank'>5.</td>
+						<td class='of_college'>
+							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='CollegeLink'><img class='CollegeLogo' style='width:55px;height:55px;'/></a>
+							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='CollegeName'></a><br/><span>인문사회 - 정치</span></p>
+							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
+						</td>
 					</tr>
 					<tr>
 						<td colspan='3'>&nbsp;</td>
@@ -699,436 +545,179 @@
 	<![endif]-->
 	<!-- Support for HTML5, CSS3 -->
 
-	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-    
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/crypto-js/crypto-js.js"></script>
+    <script src="/assets/lib/common.js"></script>
+
     <script src="../assets/lib/request_helper.js"></script>
     <script src="../assets/lib/local_storage.js"></script>
     <script src="../assets/lib/analytics.js"></script>
 
     <script src="../assets/lib/rate/jquery.raty.js"></script>
     <script src="../assets/lib/rate/labs.js"></script>
+
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     
 	<script>
 
-		/*************************
-		* For Header
-		*************************/
+		/******************************************
+		* Search Univ.
+		/*****************************************/
 		$(document).ready(function(){
 
-			if (LocalStorage.get('sessionKey') == undefined) {
-				$("#header_right_out").css("display", "inline-block");
-				$("#header_right_in").css("display", "none");
-			} else {
-				$("#header_right_out").css("display", "none");
-				$("#header_right_in").css("display", "inline-block");
-			}
-			
-			$("#sign_in").submit(submitLoginForm);
-			
-			$("#tab_sign_out").click(logout);
-			
-			$("#tab_sign_in").click(function(){
-				layer_open('layer2');
-				return false;
-			});
-			
-			$.fn.raty.defaults.path = '../assets/lib/rate/images';
-			
-			$("#averageGrade").raty();
-			$("#facilitiesGrade").raty();
-			$("#cultureGrade").raty();
-			$("#townGrade").raty();
-			$("#tuitionGrade").raty();
-			$("#professorGrade").raty();
-        	
-        	$("#sign_up").submit(submitForm);
-        	$("#writeMajorReview").submit(writeMajorReview);
+			availableTags = [];
 
-		})
-		/************************/
-
-		/*************************
-		* For Sign
-		*************************/
-		function submitForm(event) {
-			event.preventDefault();
-			var email = $('#sign_up_email').val();
-			var pw = $('#sign_up_pw').val();
-			var isGenderManChecked = $('#gender_man').is(':checked');
-			var gender = isGenderManChecked ? 'man' : 'woman';
-			var birthYear = parseInt($('#birthYear').val(), 10);
-			var job = $('#job').val();
-
-			RequestHelper.post('/account/makeUserAccount', {
-				email: email,
-				password: pw,
-				gender: gender,
-				birthYear: birthYear,
-				job: job
-			}, {
+			RequestHelper.post('/college/getAllColleges', {},
+			{
 			// Option is not needed.
 			}, function(data) {
-				$('#sign_up_email_').text(email);
+				var length = data.result[0].colleges.length;
 
-				alert(JSON.stringify(data));
-				alert("회원가입에 성공했습니다.");
+				for (var i = 0; i<length; i++) {
+					availableTags[i] = data.result[0].colleges[i].collegeName;
+				}
+
 			}, function(data) {
 				alert(JSON.stringify(data));
-				alert("회원가입에 실패했습니다, 다시 시도해주세요.");
-
-				location.href='/';
 			});
-		}
 
-		function submitLoginForm(event) {
-			event.preventDefault();
-			
-			var email = $('#sign_id').val();
-			var pw = $('#sign_pw').val();
+			$("#search_school").autocomplete({
+				source: availableTags
+			});
 
-			if (email == '') {
-				alert("이메일을 입력해주세요.");
-				return false;
-			}
+			function SearchUnivA (content) {
+				var univ = $("#search_school").val();
 
-			if (pw == '') {
-				alert("로그인에 실패했습니다.");
-				return false;
-			}
-
-			RequestHelper.post('/account/loginWithEmail', {
-				email: email,
-				password: pw
-			}, {
+				RequestHelper.post('/college/getAllColleges', {},
+				{
 				// Option is not needed.
-			}, function(data) {
-				alert(JSON.stringify(data));
+				}, function(data) {
+					var length = data.result[0].colleges.length;
 
-				if (data.result[0].status == 'ok') {
-					location.href = '/';
-				} else {
-					location.href = '/';
-				}
-
-				LocalStorage.put('sessionKey', data.result[0].sessionKey);
-				LocalStorage.put('accessKey', data.result[0].accessKey);
-				LocalStorage.put('accountSequence', data.result[0].accountSequence);
-			}, function(data) {
-				alert(JSON.stringify(data));
-			});
-		}
-
-		function logout(event) {
-			event.preventDefault();
-			var accountSequence = LocalStorage.get('accountSequence');
-
-			RequestHelper.post('/account/logoutUserAccount', {
-				accountSequence: accountSequence
-			}, {
-				sessionKey: LocalStorage.get('sessionKey'),
-				accessKey: LocalStorage.get('accessKey')
-			}, function(data) {
-				alert(JSON.stringify(data));
-				LocalStorage.clear('sessionKey');
-				LocalStorage.clear('accessKey');
-				LocalStorage.clear('accountSequence');
-
-				location.href = '/';
-			}, function(data) {
-				alert(JSON.stringify(data));
-			});
-		}
-
-		function layer_open(el){
-
-			var temp = $('#' + el);
-			var bg = temp.prev().hasClass('bg');
-			//dimmed 레이어를 감지하기 위한 boolean 변수
-
-			if(bg){
-				$('.layer').fadeIn();
-				//'bg' 클래스가 존재하면 레이어가 나타나고 배경은 dimmed 된다. 
-			}else{
-				temp.fadeIn();
-			}
-
-			// 화면의 중앙에 레이어를 띄운다.
-			if (temp.outerHeight() < $(document).height() ) temp.css('margin-top', '-'+temp.outerHeight()/2+'px');
-			else temp.css('top', '0px');
-			if (true ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
-			// if (temp.outerWidth() < $(document).width() ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
-			// else temp.css('left', '0px');
-
-			temp.find('a.cbtn').click(function(e){
-				if(bg){
-					$('.layer').fadeOut(); 
-					//'bg' 클래스가 존재하면 레이어를 사라지게 한다. 
-				}else{
-					temp.fadeOut();
-				}
-				e.preventDefault();
-			});
-
-			$('.layer .bg').click(function(e){	
-			//배경을 클릭하면 레이어를 사라지게 하는 이벤트 핸들러
-				$('.layer').fadeOut();
-				e.preventDefault();
-			});
-
-		}
-
-		function layer_open2(el){
-
-			if (LocalStorage.get('sessionKey') == undefined) {
-
-				alert("애드캠퍼스 로그인 후 이용 가능합니다.");
-				
-				layer_open('layer2');
-				return false;
-
-			} else {
-
-				var temp = $('#' + el);
-				var bg = temp.prev().hasClass('bg2');
-				//dimmed 레이어를 감지하기 위한 boolean 변수
-
-				if(bg){
-					$('.layer2s').fadeIn();
-					//'bg' 클래스가 존재하면 레이어가 나타나고 배경은 dimmed 된다. 
-				}else{
-					temp.fadeIn();
-				}
-
-				// 화면의 중앙에 레이어를 띄운다.
-				if (temp.outerHeight() < $(document).height() ) temp.css('margin-top', '-'+temp.outerHeight()/2+'px');
-				else temp.css('top', '0px');
-				if (true ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
-				// if (temp.outerWidth() < $(document).width() ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
-				// else temp.css('left', '0px');
-
-				temp.find('a.cbtn').click(function(e){
-					if(bg){
-						$('.layer2s').fadeOut(); 
-						//'bg' 클래스가 존재하면 레이어를 사라지게 한다. 
-					}else{
-						temp.fadeOut();
+					for (var i = 0; i<length; i++) {
+						if (data.result[0].colleges[i].collegeName == univ) {
+							location.href = '/review/univ/?univ=' + data.result[0].colleges[i].collegeID;
+						}
 					}
-					e.preventDefault();
+
+				}, function(data) {
+					alert(JSON.stringify(data));
 				});
-
-				$('.layer2s .bg2').click(function(e){	
-				//배경을 클릭하면 레이어를 사라지게 하는 이벤트 핸들러
-
-					$('.layer2s').fadeOut();
-					e.preventDefault();
-				});
-
 			}
 
-		}
-
-		function layer_open3(){
-
-			var temp = $("#popup_soon");
-			var bg = temp.prev().hasClass('bg2');
-			//dimmed 레이어를 감지하기 위한 boolean 변수
-
-			if(bg){
-				$('.layer3s').fadeIn();
-				//'bg' 클래스가 존재하면 레이어가 나타나고 배경은 dimmed 된다. 
-			}else{
-				temp.fadeIn();
-			}
-
-			// 화면의 중앙에 레이어를 띄운다.
-			if (temp.outerHeight() < $(document).height() ) temp.css('margin-top', '-'+temp.outerHeight()/2+'px');
-			else temp.css('top', '0px');
-			if (true ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
-			// if (temp.outerWidth() < $(document).width() ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
-			// else temp.css('left', '0px');
-
-			temp.find('a.cbtn').click(function(e){
-				if(bg){
-					$('.layer3s').fadeOut(); 
-					//'bg' 클래스가 존재하면 레이어를 사라지게 한다. 
-				}else{
-					temp.fadeOut();
-				}
-				e.preventDefault();
+			$("#searchBtn").click(function(){
+				$("#search_form").submit();
 			});
 
-			$('.layer3s .bg2').click(function(e){	
-			//배경을 클릭하면 레이어를 사라지게 하는 이벤트 핸들러
-
-				$('.layer3s').fadeOut();
-				e.preventDefault();
+			$("#search_form").submit(function(){
+				SearchUnivA();
 			});
 
-			$('.layer3s button').click(function(e){	
-			//배경을 클릭하면 레이어를 사라지게 하는 이벤트 핸들러
+			/******************************************
+			* Get Best College for SideBar
+			/*****************************************/
+			RequestHelper.post('/ranking/getCollegeActiveRanking', {},
+			{
+			// Option is not needed.
+			}, function(data) {
 
-				$('.layer3s').fadeOut();
-				e.preventDefault();
-			});
+				var CollegeLink = $(".CollegeLink");
+				var CollegeLogo = $(".CollegeLogo");
+				var CollegeName = $(".CollegeName");
 
-		}
+				for (var i = 0; i < 2; i++) {
 
-		$("#soon").click(function(){
-			layer_open3();
-		});
-		
-		$(document).ready(function(){
+					$(CollegeLink[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByCountOfReviews[i].collegeID);
+					$(CollegeLogo[i]).attr("src", "/assets/img/logo/logo_" + data.result[0].collegeRankingByCountOfReviews[i].collegeID + ".jpg");
+					$(CollegeName[i]).html(data.result[0].collegeRankingByCountOfReviews[i].collegeID);
 
-			$("#review_write_next_1").click(function(){
-
-				$("#review_write_1").hide();
-				$("#review_write_2").show();
-				return false;
-
-			});
-
-			$("#review_write_back_1").click(function(){
-
-				$('.layer2s').fadeOut();
-				return false;
-
-			});
-
-			$("#review_write_back_2").click(function(){
-
-				$("#review_write_1").show();
-				$("#review_write_2").hide();
-				return false;
-
-			});
-
-			$("#sign_b_s").click(function(){
-
-				$("#sign_in_table").hide();
-				$("#sign_up_table_1").show();
-				return false;
-
-			});
-
-			$("#sign_back_1").click(function(){
-
-				$("#sign_in_table").show();
-				$("#sign_up_table_1").hide();
-				return false;
-
-			});
-
-			$("#sign_next_1").click(function(){
-
-				if ($('#sign_up_email').val() == '') {
-					alert("아이디를 정확하게 입력해주세요");
-					return false;
 				}
 
-				if ($('#sign_up_pw').val() == '') {
-					alert("비밀번호를 정확하게 입력해주세요");
-					return false;
-				}
-
-				if ($('#sign_up_pw_').val() == '') {
-					alert("비밀번호를 정확하게 입력해주세요");
-					return false;
-				}
-
-				if ($('#sign_up_pw').val() != $('#sign_up_pw_').val()) {
-					alert("입력한 두 비밀번호가 다릅니다");
-					return false;
-				}
-
-				$("#sign_in_table").hide();
-				$("#sign_up_table_1").hide();
-				$("#sign_up_table_2").show();
-				return false;
-
+			}, function(data) {
+				alert(JSON.stringify(data));
 			});
+			/*****************************************/
 
-			$("#sign_back_2").click(function(){
+			/******************************************
+			* Get Best College for SideBar
+			/*****************************************/
+			RequestHelper.post('/ranking/getCollegeRankings', {},
+			{
+			// Option is not needed.
+			}, function(data) {
 
-				$("#sign_in_table").hide();
-				$("#sign_up_table_1").show();
-				$("#sign_up_table_2").hide();
-				$("#sign_up_table_3").hide();
-				return false;
+				// alert(JSON.stringify(data));
 
-			});
-
-			$("#sign_next_2").click(function(){
-
-				$("#sign_in_table").hide();
-				$("#sign_up_table_1").hide();
-				$("#sign_up_table_2").hide();
-				$("#sign_up_table_3").show();
-				return false;
-
-			});
-
-			$("#sign_back_3").click(function(){
-
-				$("#sign_in_table").show();
-				$("#sign_up_table_1").hide();
-				$("#sign_up_table_2").hide();
-				$("#sign_up_table_3").hide();
-
-				$('.layer').fadeOut();
-				return false;
-
-			});
-
-			for (var year = 2015; year >= 1901; year--) {
-				$("#birthYear").append("<option value='" + year + "'>" + year + "</option>");	
-			}
-
-		});
-
-		function writeMajorReview(event) {
-			event.preventDefault();
-			var accountSequence = LocalStorage.get('accountSequence');
-			var oneLineComment = $('#oneLineComment').val();
-			var advantageComment = $('#advantageComment').val();
-			var weaknessComment = $('#weaknessComment').val();
-			var wishComment = $('#wishComment').val();
-			var isRecommended = $("input[name=isRecommended]:checked").val()
-			var viewAfter3Years = $("input[name=viewAfter3Years]:checked").val()
-			var averageGrade = $("#averageGrade").raty('score');
-			var facilitiesGrade = $("#facilitiesGrade").raty('score');
-			var cultureGrade = $("#cultureGrade").raty('score');
-			var townGrade = $("#townGrade").raty('score');
-			var tuitionGrade = $("#tuitionGrade").raty('score');
-			var professorGrade = $("#professorGrade").raty('score');
-
-			RequestHelper.post('/college/writeMajorReview', {
-				accountSequence: accountSequence,
-				oneLineComment: oneLineComment,
-				advantageComment: advantageComment,
-				weaknessComment: weaknessComment,
-				wishComment: wishComment,
-				isRecommended: isRecommended,
-				viewAfter3Years: viewAfter3Years,
-				collegeID: 'aa',
-				majorID: 'aa',
-				averageGrade: averageGrade,
-				facilitiesGrade: facilitiesGrade,
-				cultureGrade: cultureGrade,
-				townGrade: townGrade,
-				tuitionGrade: tuitionGrade,
-				professorGrade: professorGrade
+				function MakeGrade(type) {
 				
-			}, {
-				sessionKey: LocalStorage.get('sessionKey'),
-				accessKey: LocalStorage.get('accessKey')
-			}, function(data) {
-				alert(JSON.stringify(data));
+					var CollegeName = $("." + type + "Name");
+					var CollegeGrade = $("." + type + "Grade");
+
+					var CollegeLogo = $(".rank_img");
+					var CollegeLink = $(".AverageGradeLogo");
+
+					for (var i = 0; i < 2; i++) {
+
+						if (type == 'Facilities') {
+
+							$(CollegeName[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByFacilities[i].collegeID);
+							$(CollegeName[i]).html(data.result[0].collegeRankingByFacilities[i].collegeID);
+							$(CollegeGrade[i]).html(data.result[0].collegeRankingByFacilities[i].facilities);
+
+						} else if (type == 'Culture') {
+
+							$(CollegeName[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByCulture[i].collegeID);
+							$(CollegeName[i]).html(data.result[0].collegeRankingByCulture[i].collegeID);
+							$(CollegeGrade[i]).html(data.result[0].collegeRankingByCulture[i].culture);
+
+						} else if (type == 'Town') {
+
+							$(CollegeName[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByTown[i].collegeID);
+							$(CollegeName[i]).html(data.result[0].collegeRankingByTown[i].collegeID);
+							$(CollegeGrade[i]).html(data.result[0].collegeRankingByTown[i].town);
+
+						} else if (type == 'Tuition') {
+
+							$(CollegeName[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByTuition[i].collegeID);
+							$(CollegeName[i]).html(data.result[0].collegeRankingByTuition[i].collegeID);
+							$(CollegeGrade[i]).html(data.result[0].collegeRankingByTuition[i].tuition);
+
+						} else if (type == 'Professor') {
+
+							$(CollegeName[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByProfessor[i].collegeID);
+							$(CollegeName[i]).html(data.result[0].collegeRankingByProfessor[i].collegeID);
+							$(CollegeGrade[i]).html(data.result[0].collegeRankingByProfessor[i].professor);
+
+						} else if (type == 'AverageGrade') {
+
+							$(CollegeLink[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByAverageGrade[i].collegeID);
+							$(CollegeName[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByAverageGrade[i].collegeID);
+							$(CollegeName[i]).html(data.result[0].collegeRankingByAverageGrade[i].collegeID);
+							$(CollegeGrade[i]).html(data.result[0].collegeRankingByAverageGrade[i].averageGrade);
+
+							$(CollegeLogo[i]).attr("src", "/assets/img/logo/logo_" + data.result[0].collegeRankingByAverageGrade[i].collegeID + ".jpg");
+
+						}
+
+
+					}
+
+				}
+
+				MakeGrade("AverageGrade");
+				MakeGrade("Facilities");
+				MakeGrade("Culture");
+				MakeGrade("Town");
+				MakeGrade("Tuition");
+				MakeGrade("Professor");
+
 			}, function(data) {
 				alert(JSON.stringify(data));
 			});
-		}
+			/*****************************************/
+
+		});
+		/*****************************************/
 
 	</script>
 
@@ -1321,9 +910,8 @@
 							<tr>
 								<td style='width:170px;font-size:16pt;color:#58595B;padding:0px 0px 0px 35px;height:70px;'>학과군</td>
 								<td style='text-align:left;'>
-
 									<div class="mypage_memo">
-										<select name='mypage_form' id='mypage_form'>
+										<select name='mypage_form' id='getMajor1'>
 											<option value=''>선택해주세요</option>
 										</select>
 									</div>
@@ -1334,7 +922,7 @@
 								<td style='width:170px;font-size:16pt;color:#58595B;padding:0px 0px 25px 35px;height:70px;'>학과명</td>
 								<td style='text-align:left;padding-bottom:25px;'>
 									<div class="mypage_memo">
-										<select name='mypage_form' id='mypage_form'>
+										<select name='mypage_form' id='getMajor2'>
 											<option value=''>선택해주세요</option>
 										</select>
 									</div>
@@ -1458,8 +1046,8 @@
 								<td style='padding-left: 40px;font-size:12pt;color:#58595B;' colspan='2'>
 									<br/><br/>
 									이 학과를 후배들에게 추천하시겠습니까?
-									<input type='radio' name='isRecommended' id='isRecommended' value='true' style='margin-left:90px;'/>&nbsp;&nbsp;추천
-									<input type='radio' name='isRecommended' id='isRecommended' value='false' style='margin-left:25px;'/>&nbsp;&nbsp;비추천
+									<input type='radio' name='isRecommended' id='isRecommended' value='1' style='margin-left:90px;'/>&nbsp;&nbsp;추천
+									<input type='radio' name='isRecommended' id='isRecommended' value='0' style='margin-left:25px;'/>&nbsp;&nbsp;비추천
 								</td>
 							</tr>
 							<tr>
@@ -1493,7 +1081,7 @@
 			</div> 
 		</div>
 	</div>
-
+	
 	<div class="layer3s">
 		<div class="bg2"></div>
 		<div id="popup_soon" class="pop-layer" style='z-index:3;'>

@@ -8,7 +8,8 @@
     <script>
       function submitForm(event) {
         event.preventDefault();
-        var selectedCollegeID = $('#collegeList').val();
+        // var selectedCollegeID = $('#collegeList').val();
+        var selectedCollegeID = 'c056';
         RequestHelper.post('/college/getCollegeInfo', {
           collegeID: selectedCollegeID
         },

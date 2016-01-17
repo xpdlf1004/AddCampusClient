@@ -16,6 +16,8 @@
 	#univ_main_image .univ_about img {
 		display: inline-block;
 		margin-left: 30px;
+		width: 100px;
+		margin-right: 15px;
 	}
 
 	#univ_main_image .univ_about button {
@@ -37,11 +39,11 @@
 		display: inline-block;
 		font-size: 2rem;
 		font-weight: bold;
+		margin: 0px;
 	}
 
 	#univ_main_image .univ_about span {
-		font-size: 1rem;
-		margin-left: 10px;
+		font-size: 2rem;
 		font-weight: 300;
 	}
 

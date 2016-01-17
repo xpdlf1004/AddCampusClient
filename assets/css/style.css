@@ -43,7 +43,7 @@
 	
 	html, head, body { font-size: 100%; }
 	body { margin: 0px; padding: 0px; }
-	button, a { cursor: pointer; }
+	* img, img *, button *, a * { cursor: pointer !important; }
 	textarea, button, img { outline: none; border: none; }
 
 	header {
