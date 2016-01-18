@@ -113,7 +113,7 @@
 			$("#sign_up_table_1").hide();
 			$("#sign_up_table_2").hide();
 			$("#sign_up_table_3").show();
-			return false;
+			// return false;
 
 		});
 
