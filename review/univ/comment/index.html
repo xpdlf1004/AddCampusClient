@@ -60,7 +60,7 @@
 			</ul>
 			<ul class='header_right' id='header_right_in' style='display:none;'>
 				<li style='margin:0px 14px;'><a onclick="layer_open2('layer3');" style='text-decoration:none;color:#1C75BA;'>리뷰작성</a></li>
-				<li style='margin:0px 14px;'>마이페이지</li>
+				<!-- <li style='margin:0px 14px;'>마이페이지</li> -->
 				<li style='margin:0px 14px;'><a class='btn-example' id='tab_sign_out'>로그아웃</a></li>
 			</ul>
 			<ul class='header_right' id='header_right_out' style='display:none;'>
@@ -86,7 +86,7 @@
 			<ul class='category'>
 				<a onclick='location.href="/review/univ/?univ=" + collegeID;' style='color:#808083;text-decoration:none;'><li style='margin-left:30px;padding-top:12px;'>info<h3>대학정보</h3></li></a>
 				<a onclick='location.href="/review/univ/comment/?univ=" + collegeID;' style='color:#000000;text-decoration:none;'><li style='margin:0px 45px;margin-top:5px;padding-top:12px;border-bottom:5px solid #FFD432;'>125<h3>대학리뷰</h3></li></a>
-				<a onclick='location.href="/review/univ/community/?univ=" + collegeID;' style='color:#808083;text-decoration:none;'><li style='padding-top:12px;'>12,548<h3>익명게시판</h3></li></a>
+				<!-- <a onclick='location.href="/review/univ/community/?univ=" + collegeID;' style='color:#808083;text-decoration:none;'><li style='padding-top:12px;'>12,548<h3>익명게시판</h3></li></a> -->
 			</ul>
 		</div>
 
@@ -162,14 +162,96 @@
 					<tr>
 						<td colspan='3' style='height:72px;text-align:left;'>
 							<img class='comment_profile_img' src='/assets/img/common/review_user.png'/>
-							<h3 class='comment_profile_h3'>국민대학교 조형대학<!-- <span>공업디자인 10학번</span> --><span class='profileDate'>2015/11/25</span></h3>
+							<h3 class='comment_profile_h3'><span class='profileUniv' style='font-size: 1.3125rem;margin: 0px;color: #58595B;text-align: left;'></span><!-- <span>공업디자인 10학번</span> --><span class='profileDate'></span></h3>
 						</td>
 					</tr>
 					<tr>
 						<td class='comment_title' style='border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>
 						<td class='comment_point' style='border-top:1px solid #BCBEC0;'>
+							<span class='gradefacilities'></span>
+							<span class='pointfacilities'></span>
+						</td>
+						<td rowspan='6' class='univ_table_about' style='width:45%;text-align:left;'>
+							<h1 style='font-size:1.12rem;color:#58595B;margin-top:20px;margin-bottom:10px;'>전공학과 평점</h1>
+							<!-- <img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/> -->
 							<span class='gradeaverageGrade'></span>
-							<span class='pointaverageGrade'></span>
+							<!-- <span class='pointaverageGrade'></span> -->
+							<span style='font-size:1.12rem;color:#58595B;margin-left:10px;'>보통이에요</span>
+							<p style='font-size:1.12rem;font-weight:400;color:#58595B;margin-top:40px;'>작성자는 이 학과를 <span class='recommandComment' style='color:#FF5555'></span> 합니다.</p>
+						</td>
+					</tr>
+					<tr>
+						<td class='comment_title'>캠퍼스문화만족도</td>
+						<td class='comment_point'>
+							<span class='gradeculture'></span>
+							<span class='pointculture'></span>
+						</td>
+					</tr>
+					<tr>
+						<td class='comment_title'>대학가만족도</td>
+						<td class='comment_point'>
+							<span class='gradetown'></span>
+							<span class='pointtown'></span>
+						</td>
+					</tr>
+					<tr>
+						<td class='comment_title'>등록금만족도</td>
+						<td class='comment_point'>
+							<span class='gradetuition'></span>
+							<span class='pointtuition'></span>
+						</td>
+					</tr>
+					<tr>
+						<td class='comment_title'>교수만족도</td>
+						<td class='comment_point'>
+							<span class='gradeprofessor'></span>
+							<span class='pointprofessor'></span>
+						</td>
+					</tr>
+					<tr>
+						<td colspan='3'><br/></td>
+					</tr>
+					<tr>
+						<td colspan='3' class='comment_message'></td>
+					</tr>
+					<tr>
+						<td colspan='3' class='comment_pros'>
+							<h2>장점</h2>
+							<p class='commendPros'></p>
+						</td>
+					</tr>
+					<tr>
+						<td colspan='3' class='comment_cons'>
+							<h2>단점</h2>
+							<p class='commendCons'></p>
+						</td>
+					</tr>
+					<tr>
+						<td colspan='3' class='comment_need'>
+							<h2>학과에 바라는 점</h2>
+							<p class='commendNeed'></p>
+						</td>
+					</tr>
+					<tr>
+						<td colspan='3' class='comment_future'>
+							<h2>3년 후 학과의 미래</h2>
+							<p class='commentFuture'></p>
+						</td>
+					</tr>
+				</table>
+
+        		<table class='univ_comment' style='background:#FFF;'>
+					<tr>
+						<td colspan='3' style='height:72px;text-align:left;'>
+							<img class='comment_profile_img' src='/assets/img/common/review_user.png'/>
+							<h3 class='comment_profile_h3'><span class='profileUniv' style='font-size: 1.3125rem;margin: 0px;color: #58595B;text-align: left;'></span><!-- <span>공업디자인 10학번</span> --><span class='profileDate'></span></h3>
+						</td>
+					</tr>
+					<tr>
+						<td class='comment_title' style='border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>
+						<td class='comment_point' style='border-top:1px solid #BCBEC0;'>
+							<span class='gradefacilities'></span>
+							<span class='pointfacilities'></span>
 						</td>
 						<td rowspan='6' class='univ_table_about' style='width:45%;text-align:left;'>
 							<h1 style='font-size:1.12rem;color:#58595B;margin-top:20px;margin-bottom:10px;'>전공학과 평점</h1>
@@ -242,94 +324,14 @@
 					<tr>
 						<td colspan='3' style='height:72px;text-align:left;'>
 							<img class='comment_profile_img' src='/assets/img/common/review_user.png'/>
-							<h3 class='comment_profile_h3'>국민대학교 조형대학<!-- <span>공업디자인 10학번</span> --><span class='profileDate'>2015/11/25</span></h3>
+							<h3 class='comment_profile_h3'><span class='profileUniv' style='font-size: 1.3125rem;margin: 0px;color: #58595B;text-align: left;'></span><!-- <span>공업디자인 10학번</span> --><span class='profileDate'></span></h3>
 						</td>
 					</tr>
 					<tr>
 						<td class='comment_title' style='border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>
 						<td class='comment_point' style='border-top:1px solid #BCBEC0;'>
-							<span class='gradeaverageGrade'></span>
-							<span class='pointaverageGrade'></span>
-						</td>
-						<td rowspan='6' class='univ_table_about' style='width:45%;text-align:left;'>
-							<h1 style='font-size:1.12rem;color:#58595B;margin-top:20px;margin-bottom:10px;'>전공학과 평점</h1>
-							<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>
-							<span style='font-size:1.12rem;color:#58595B;margin-left:10px;'>보통이에요</span>
-							<p style='font-size:1.12rem;font-weight:400;color:#58595B;margin-top:40px;'>작성자는 이 학과를 <span class='recommandComment' style='color:#FF5555'></span> 합니다.</p>
-						</td>
-					</tr>
-					<tr>
-						<td class='comment_title'>캠퍼스문화만족도</td>
-						<td class='comment_point'>
-							<span class='gradeculture'></span>
-							<span class='pointculture'></span>
-						</td>
-					</tr>
-					<tr>
-						<td class='comment_title'>대학가만족도</td>
-						<td class='comment_point'>
-							<span class='gradetown'></span>
-							<span class='pointtown'></span>
-						</td>
-					</tr>
-					<tr>
-						<td class='comment_title'>등록금만족도</td>
-						<td class='comment_point'>
-							<span class='gradetuition'></span>
-							<span class='pointtuition'></span>
-						</td>
-					</tr>
-					<tr>
-						<td class='comment_title'>교수만족도</td>
-						<td class='comment_point'>
-							<span class='gradeprofessor'></span>
-							<span class='pointprofessor'></span>
-						</td>
-					</tr>
-					<tr>
-						<td colspan='3'><br/></td>
-					</tr>
-					<tr>
-						<td colspan='3' class='comment_message'></td>
-					</tr>
-					<tr>
-						<td colspan='3' class='comment_pros'>
-							<h2>장점</h2>
-							<p class='commendPros'></p>
-						</td>
-					</tr>
-					<tr>
-						<td colspan='3' class='comment_cons'>
-							<h2>단점</h2>
-							<p class='commendCons'></p>
-						</td>
-					</tr>
-					<tr>
-						<td colspan='3' class='comment_need'>
-							<h2>학과에 바라는 점</h2>
-							<p class='commendNeed'></p>
-						</td>
-					</tr>
-					<tr>
-						<td colspan='3' class='comment_future'>
-							<h2>3년 후 학과의 미래</h2>
-							<p class='commentFuture'></p>
-						</td>
-					</tr>
-				</table>
-
-        		<table class='univ_comment' style='background:#FFF;'>
-					<tr>
-						<td colspan='3' style='height:72px;text-align:left;'>
-							<img class='comment_profile_img' src='/assets/img/common/review_user.png'/>
-							<h3 class='comment_profile_h3'>국민대학교 조형대학<!-- <span>공업디자인 10학번</span> --><span class='profileDate'>2015/11/25</span></h3>
-						</td>
-					</tr>
-					<tr>
-						<td class='comment_title' style='border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>
-						<td class='comment_point' style='border-top:1px solid #BCBEC0;'>
-							<span class='gradeaverageGrade'></span>
-							<span class='pointaverageGrade'></span>
+							<span class='gradefacilities'></span>
+							<span class='pointfacilities'></span>
 						</td>
 						<td rowspan='6' class='univ_table_about' style='width:45%;text-align:left;'>
 							<h1 style='font-size:1.12rem;color:#58595B;margin-top:20px;margin-bottom:10px;'>전공학과 평점</h1>
@@ -439,40 +441,40 @@
 					<tr>
 						<td class='of_rank'>1.</td>
 						<td class='of_college'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='CollegeLink'><img class='CollegeLogo' style='width:55px;height:55px;'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='CollegeName'></a><br/><span>인문사회 - 정치</span></p>
+							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
+							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><span>인문사회 - 정치</span></p>
 							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</td>
 					</tr>
 					<tr>
 						<td class='of_rank'>2.</td>
 						<td class='of_college'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='CollegeLink'><img class='CollegeLogo' style='width:55px;height:55px;'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='CollegeName'></a><br/><span>인문사회 - 정치</span></p>
+							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
+							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><span>인문사회 - 정치</span></p>
 							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</td>
 					</tr>
 					<tr>
 						<td class='of_rank'>3.</td>
 						<td class='of_college'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='CollegeLink'><img class='CollegeLogo' style='width:55px;height:55px;'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='CollegeName'></a><br/><span>인문사회 - 정치</span></p>
+							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
+							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><span>인문사회 - 정치</span></p>
 							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</td>
 					</tr>
 					<tr>
 						<td class='of_rank'>4.</td>
 						<td class='of_college'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='CollegeLink'><img class='CollegeLogo' style='width:55px;height:55px;'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='CollegeName'></a><br/><span>인문사회 - 정치</span></p>
+							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
+							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><span>인문사회 - 정치</span></p>
 							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</td>
 					</tr>
 					<tr>
 						<td class='of_rank'>5.</td>
 						<td class='of_college'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='CollegeLink'><img class='CollegeLogo' style='width:55px;height:55px;'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='CollegeName'></a><br/><span>인문사회 - 정치</span></p>
+							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
+							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><span>인문사회 - 정치</span></p>
 							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</td>
 					</tr>
@@ -486,6 +488,23 @@
 
 		</div>
 	</div>
+
+	<footer id='footer'>
+		<ul>
+			<li>이용약관</li>
+			<li>개인정보취급방침</li>
+			<li>공지사항</li>
+			<li class='f_sign'>로그인</li>
+			<li class='f_sign'>회원가입</li>
+			<li>문의 및 신고</li>
+			<li>About US</li>
+		</ul>
+		<div class='footer_content'>
+			텐덤스페이스 (대표: 유원일) | 사업자등록번호: 209-16-86931 | 개인정보책임관리자: 유원일<br/>
+			서울시 성북구 동소문로63 드림트리빌딩 6층 20호실<br/>
+			Copyright(C)TENDOMSPACE. All rights reserved.
+		</div>
+	</footer>
 
 	<!-- Support for HTML5, CSS3 -->
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -534,6 +553,9 @@
 				$(".univ_name").html(data.result[0].collegeInfo.name);
 				$(".collegeWeb").html(data.result[0].collegeInfo.web);
 
+				// 
+				$(".profileUniv").html(data.result[0].collegeInfo.name);
+
 			}, function(data) {
 				alert("잘못된 접근입니다, 뒤로가기 이동");
 			});
@@ -578,9 +600,11 @@
 			// Option is not needed.
 			}, function(data) {
 
-				var CollegeLink = $(".CollegeLink");
-				var CollegeLogo = $(".CollegeLogo");
-				var CollegeName = $(".CollegeName");
+				// alert(JSON.stringify(data));
+
+				var CollegeLink = $(".SideCollegeLink");
+				var CollegeLogo = $(".SideCollegeLogo");
+				var CollegeName = $(".SideCollegeName");
 
 				for (var i = 0; i < 1; i++) {
 
@@ -595,7 +619,7 @@
 			});
 			/*****************************************/
 
-			$('#collegeMajor1').change(function(event){
+			$('#collegeMajor1').change(function(){
 
 				AverageGradeOfMajor($("#collegeMajor2").val());
 				CountOfMajorReviews($("#collegeMajor2").val());
@@ -603,7 +627,7 @@
 
 			});
 
-			$('#collegeMajor2').change(function(event){
+			$('#collegeMajor2').change(function(){
 
 				AverageGradeOfMajor($("#collegeMajor2").val());
 				CountOfMajorReviews($("#collegeMajor2").val());
@@ -679,7 +703,9 @@
 			{
 			// Option is not needed.
 			}, function(data) {
+				
 				var pointaverageGrade = $(".pointaverageGrade");
+				var pointfacilities = $(".pointfacilities");
 				var pointculture = $(".pointculture");
 				var pointtown = $(".pointtown");
 				var pointtuition = $(".pointtuition");
@@ -691,11 +717,6 @@
 				var commentFuture = $(".commentFuture");
 				var recommandComment = $(".recommandComment");
 				var profileDate = $(".profileDate");
-
-				// {
-				// "collegeID": "c056",
-				// "majorID": "m2133",
-				// }
 
 				for (var i = 0; i < 3; i++) {
 
@@ -722,9 +743,9 @@
 					}
 
 					// $(pointaverageGrade[i]).html(data.result[0].reviews[i].averageGrade);
-					// makeStar('gradeaverageGrade', data.result[0]. reviews[i].averageGrade, '2');
+					makeStar('gradeaverageGrade', data.result[0]. reviews[i].averageGrade, '2');
 
-					$(pointculture[i]).html(data.result[0].reviews[i].facilitiesGrade);
+					$(pointfacilities[i]).html(data.result[0].reviews[i].facilitiesGrade);
 					makeStar('gradefacilities', data.result[0].reviews[i].facilitiesGrade, '2');
 
 					$(pointculture[i]).html(data.result[0].reviews[i].cultureGrade);
@@ -858,8 +879,11 @@
 							<tr>
 								<td>
 									<br/><br/>
-									<span style='font-size:1.2rem;color:#58595B;'>아직도 회원이 아니시라구요??</span>
+									<span style='font-size:1.2rem;color:#58595B;margin-bottom:5px;'>아직도 회원이 아니시라구요??</span>
 									<button class='sign_b_s' id='sign_b_s' onclick='return false;'>이메일로 회원가입하기</button>
+									<br/>
+									<button class='sign_b_s' id='sign_b_s' onclick='facebookSign();return false;'>페이스북으로 회원가입하기</button>
+									<div id="status"></div>
 								</td>
 							</tr>
 						</table>
@@ -1010,7 +1034,7 @@
 							<tr>
 								<td style='width:170px;font-size:16pt;color:#58595B;padding:20px 0px 0px 35px;height:70px;'>대학명</td>
 								<td style='text-align:left;padding-top: 20px;'>
-									<input type='text' id='collegeName' style='font-size:12pt;width:77%;padding: 12px 10px;border:1px solid #BABCBE;'/>
+									<input type='text' id='SearchcollegeName' style='font-size:12pt;width:77%;padding: 12px 10px;border:1px solid #BABCBE;'/>
 								</td>
 							</tr>
 							<tr>
@@ -1065,13 +1089,13 @@
 								</td>
 							</tr>
 							<tr>
-								<td style='padding-left: 40px;width:120px;'>
-									<img src='/assets/img/common/rank_logo.png' style='width:100px;height:100px;'/>
+								<td style='padding-left: 40px;padding-top:10px;width:120px;'>
+									<img class='SearchCollegeLogo' style='width:100px;height:100px;'/>
 								</td>
 								<td>
-									<h1 style='font-size:25pt;color:#58595B;vertical-align:top;'>국민대학교<span style='margin-left:10px;color:#58595B;font-size:21pt;vertical-align:top;'>공업디자인과</span></h1>
-									<p style='font-size:12pt;color:#808083;'>종합 4년제 사립대학</p>
-									<span style='font-size:11pt;color:#808083;'>해당 대학/학과가 아니시라면 여기를 눌러주세요</span>
+									<h1 class='SearchCollegeMajor' style='font-size:25pt;color:#58595B;vertical-align:top;'></h1>
+									<!-- <p style='font-size:12pt;color:#808083;'>종합 4년제 사립대학</p> -->
+									<!-- <span style='font-size:11pt;color:#808083;'>해당 대학/학과가 아니시라면 여기를 눌러주세요</span> -->
 								</td>
 							</tr>
 							<tr>
@@ -1152,8 +1176,8 @@
 								<td style='padding-left: 40px;font-size:12pt;color:#58595B;' colspan='2'>
 									<br/><br/>
 									이 학과를 후배들에게 추천하시겠습니까?
-									<input type='radio' name='isRecommended' id='isRecommended' value='true' style='margin-left:90px;'/>&nbsp;&nbsp;추천
-									<input type='radio' name='isRecommended' id='isRecommended' value='false' style='margin-left:25px;'/>&nbsp;&nbsp;비추천
+									<input type='radio' name='isRecommended' id='isRecommended' value='1' style='margin-left:90px;'/>&nbsp;&nbsp;추천
+									<input type='radio' name='isRecommended' id='isRecommended' value='0' style='margin-left:25px;'/>&nbsp;&nbsp;비추천
 								</td>
 							</tr>
 							<tr>
@@ -1187,7 +1211,7 @@
 			</div> 
 		</div>
 	</div>
-
+	
 	<div class="layer3s">
 		<div class="bg2"></div>
 		<div id="popup_soon" class="pop-layer" style='z-index:3;'>

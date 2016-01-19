@@ -12,7 +12,7 @@
 		
 		$("#tab_sign_out").click(logout);
 		
-		$("#tab_sign_in").click(function(){
+		$("#tab_sign_in, .f_sign").click(function(){
 			layer_open('layer2');
 			return false;
 		});
@@ -31,8 +31,21 @@
 
 		$("#review_write_next_1").click(function(){
 
-			$("#review_write_1").hide();
-			$("#review_write_2").show();
+			if (retCollegeID) {
+
+				$("#review_write_1").hide();
+				$("#review_write_2").show();
+
+				$(".SearchCollegeMajor").html($("#SearchcollegeName").val() + " " + $("#getMajor2 option:selected").text());
+
+				$(".SearchCollegeLogo").attr('src', '/assets/img/logo/logo_' + retCollegeID + '.jpg');
+
+			} else {
+
+				alert("리뷰를 작성하려고 하는 대학교를 먼저 선택해주세요.");
+
+			}
+
 			return false;
 
 		});
@@ -48,6 +61,20 @@
 
 			$("#review_write_1").show();
 			$("#review_write_2").hide();
+
+			$('#oneLineComment').val("");
+			$('#advantageComment').val("");
+			$('#weaknessComment').val("");
+			$('#wishComment').val("");
+			$("input[name=isRecommended]:checked").val("");
+			$("input[name=viewAfter3Years]:checked").val("");
+			$("#averageGrade").val("");
+			$("#facilitiesGrade").val("");
+			$("#cultureGrade").val("");
+			$("#townGrade").val("");
+			$("#tuitionGrade").val("");
+			$("#professorGrade").val("");
+
 			return false;
 
 		});
@@ -90,9 +117,22 @@
 				return false;
 			}
 
-			$("#sign_in_table").hide();
-			$("#sign_up_table_1").hide();
-			$("#sign_up_table_2").show();
+			RequestHelper.post('/account/checkEmail', {
+				email: $('#sign_up_email').val()
+			}, {
+			// Option is not needed.
+			}, function(data) {
+
+				$("#sign_in_table").hide();
+				$("#sign_up_table_1").hide();
+				$("#sign_up_table_2").show();
+
+			}, function(data) {
+
+				alert("이메일이 잘못되었거나 사용할 수 없는 이메일 입니다.");
+				return false;
+			});
+
 			return false;
 
 		});
@@ -113,7 +153,11 @@
 			$("#sign_up_table_1").hide();
 			$("#sign_up_table_2").hide();
 			$("#sign_up_table_3").show();
-			// return false;
+
+			$("#sign_up_email").val("");
+			$("#sign_up_pw").val("");
+			$("#sign_up_pw_").val("");
+			$("select#birthYear").val("");
 
 		});
 
@@ -160,6 +204,14 @@
 			getMajor($("#collegeName").val());
 		});
 
+		$("#SearchcollegeName").autocomplete({
+			source: availableTagsCollege
+		});
+
+		$("#SearchcollegeName").keyup(function(){
+			getMajor($("#SearchcollegeName").val());
+		});
+
 	})
 	/************************/
 
@@ -185,8 +237,6 @@
 		// Option is not needed.
 		}, function(data) {
 			$('#sign_up_email_').text(email);
-
-			alert(JSON.stringify(data));
 			alert("회원가입에 성공했습니다.");
 		}, function(data) {
 			alert(JSON.stringify(data));
@@ -208,7 +258,7 @@
 		}
 
 		if (pw == '') {
-			alert("로그인에 실패했습니다.");
+			alert("패스워드를 입력해주세요.");
 			return false;
 		}
 
@@ -218,7 +268,7 @@
 		}, {
 			// Option is not needed.
 		}, function(data) {
-			alert(JSON.stringify(data));
+			alert("성공적으로 로그인ㄴ 되었습니다.");
 
 			if (data.result[0].status == 'ok') {
 				location.href = '/';
@@ -244,14 +294,19 @@
 			sessionKey: LocalStorage.get('sessionKey'),
 			accessKey: LocalStorage.get('accessKey')
 		}, function(data) {
-			alert(JSON.stringify(data));
+			alert("성공적으로 로그아웃 되었습니다.");
 			LocalStorage.clear('sessionKey');
 			LocalStorage.clear('accessKey');
 			LocalStorage.clear('accountSequence');
 
 			location.href = '/';
 		}, function(data) {
-			alert(JSON.stringify(data));
+			alert("성공적으로 로그아웃 되었습니다.");
+			LocalStorage.clear('sessionKey');
+			LocalStorage.clear('accessKey');
+			LocalStorage.clear('accountSequence');
+
+			location.href = '/';
 		});
 	}
 
@@ -415,6 +470,31 @@
 		var collegeID = retCollegeID;
 		var majorID = $("#getMajor2").val();
 
+		if ((oneLineComment == '') || (advantageComment == '') || (weaknessComment == '') || (wishComment == '') || (isRecommended == '') || (viewAfter3Years == '') || (averageGrade == '') || (facilitiesGrade == '') || (cultureGrade == '') || (townGrade == '') || (tuitionGrade == '') || (professorGrade == '')) {
+			alert("모든 내용을 빠짐없이 작성해주셔야 합니다");
+			return false;
+		}
+
+		if (String($('#oneLineComment').val()).length > 20) {
+			alert("학과 한줄평은 최대 20자까지 작성이 가능합니다.");
+			return false;
+		}
+
+		if (String($('#advantageComment').val()).length < 30) {
+			alert("학과의 장점은 최소 30자이상 작성해야합니다.");
+			return false;
+		}
+
+		if (String($('#weaknessComment').val()).length < 30) {
+			alert("학과의 단점은 최소 30자이상 작성해야합니다.");
+			return false;
+		}
+
+		if (String($('#wishComment').val()).length < 30) {
+			alert("학과의 바라는점은 최소 30자이상 작성해야합니다.");
+			return false;
+		}
+
 		RequestHelper.post('/college/writeMajorReview', {
 			accountSequence: accountSequence,
 			oneLineComment: oneLineComment,
@@ -492,67 +572,62 @@
 	}
 	/*****************************************/
 
-  // function statusChangeCallback(response) {
-  //   console.log('statusChangeCallback');
-  //   console.log(response);
-  //   if (response.status === 'connected') {
-  //     testAPI();
-  //   } else if (response.status === 'not_authorized') {
-  //     document.getElementById('status').innerHTML = 'Please log ' + 'into this app.';
-  //   } else {
-  //     document.getElementById('status').innerHTML = 'Please log ' + 'into Facebook.';
-  //   }
-  // }
+	function facebookSign() {
+		FB.getLoginStatus(function(response) {
+			statusChangeCallback(response);
+		});
+	}
 
-  // function checkLoginState() {
-  //   FB.getLoginStatus(function(response) {
-  //     statusChangeCallback(response);
-  //   });
-  // }
+	function statusChangeCallback(response) {
 
-  // window.fbAsyncInit = function() {
-  // FB.init({
-  //   appId      : '1513892868907796',
-  //   cookie     : true,  // enable cookies to allow the server to access 
-  //                       // the session
-  //   xfbml      : true,  // parse social plugins on this page
-  //   version    : 'v2.2' // use version 2.2
-  // });
+		var responseCallback = response;
 
-  // // Now that we've initialized the JavaScript SDK, we call 
-  // // FB.getLoginStatus().  This function gets the state of the
-  // // person visiting this page and can return one of three states to
-  // // the callback you provide.  They can be:
-  // //
-  // // 1. Logged into your app ('connected')
-  // // 2. Logged into Facebook, but not your app ('not_authorized')
-  // // 3. Not logged into Facebook and can't tell if they are logged into
-  // //    your app or not.
-  // //
-  // // These three cases are handled in the callback function.
+		if (response.status === 'connected') {
 
-  // FB.getLoginStatus(function(response) {
-  //   statusChangeCallback(response);
-  // });
+			FB.api('/me', function(response) {
+				RequestHelper.post('/account/loginWithFacebook', {
+					facebookUserKey: response.id,
+					facebookAccessToken: responseCallback.authResponse.accessToken
+				}, {
+					// Option is not needed.
+				}, function(data) {
+					alert("성공적으로 로그인 되었습니다.");
+					location.href = '/';
 
-  // };
+					LocalStorage.put('sessionKey', data.result[0].sessionKey);
+					LocalStorage.put('accessKey', data.result[0].accessKey);
+					LocalStorage.put('accountSequence', data.result[0].accountSequence);
+				}, function(data) {
+					alert("로그인에 실패했습니다, 다시 시도해주세요.");
+					location.href = '/';
+				});
+			});
 
-  // // Load the SDK asynchronously
-  // (function(d, s, id) {
-  //   var js, fjs = d.getElementsByTagName(s)[0];
-  //   if (d.getElementById(id)) return;
-  //   js = d.createElement(s); js.id = id;
-  //   js.src = "//connect.facebook.net/en_US/sdk.js";
-  //   fjs.parentNode.insertBefore(js, fjs);
-  // }(document, 'script', 'facebook-jssdk'));
+		} else {
+			alert("페이스북 로그인에 실패했습니다, 다시 시도해주세요.");
+			location.href = '/';
+		}
 
-  // // Here we run a very simple test of the Graph API after login is
-  // // successful.  See statusChangeCallback() for when this call is made.
-  // function testAPI() {
-  //   console.log('Welcome!  Fetching your information.... ');
-  //   FB.api('/me', function(response) {
-  //     console.log('Successful login for: ' + response.name);
-  //     document.getElementById('status').innerHTML =
-  //       'Thanks for logging in, ' + response.name + '!';
-  //   });
-  // }
+	}
+
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '1513892868907796',
+			cookie     : true,
+			xfbml      : true,
+			version    : 'v2.2'
+		});
+	};
+
+	(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/sdk.js";
+	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+
+	function testAPI() {
+		console.log('Welcome!  Fetching your information.... ');
+
+	}

@@ -264,6 +264,23 @@
 		</div>
 	</div>
 
+	<footer id='footer'>
+		<ul>
+			<li>이용약관</li>
+			<li>개인정보취급방침</li>
+			<li>공지사항</li>
+			<li class='f_sign'>로그인</li>
+			<li class='f_sign'>회원가입</li>
+			<li>문의 및 신고</li>
+			<li>About US</li>
+		</ul>
+		<div class='footer_content'>
+			텐덤스페이스 (대표: 유원일) | 사업자등록번호: 209-16-86931 | 개인정보책임관리자: 유원일<br/>
+			서울시 성북구 동소문로63 드림트리빌딩 6층 20호실<br/>
+			Copyright(C)TENDOMSPACE. All rights reserved.
+		</div>
+	</footer>
+
 	<!-- Support for HTML5, CSS3 -->
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<!--[if lt IE 9]>
@@ -754,8 +771,11 @@
 							<tr>
 								<td>
 									<br/><br/>
-									<span style='font-size:1.2rem;color:#58595B;'>아직도 회원이 아니시라구요??</span>
+									<span style='font-size:1.2rem;color:#58595B;margin-bottom:5px;'>아직도 회원이 아니시라구요??</span>
 									<button class='sign_b_s' id='sign_b_s' onclick='return false;'>이메일로 회원가입하기</button>
+									<br/>
+									<button class='sign_b_s' id='sign_b_s' onclick='facebookSign();return false;'>페이스북으로 회원가입하기</button>
+									<div id="status"></div>
 								</td>
 							</tr>
 						</table>
@@ -906,15 +926,14 @@
 							<tr>
 								<td style='width:170px;font-size:16pt;color:#58595B;padding:20px 0px 0px 35px;height:70px;'>대학명</td>
 								<td style='text-align:left;padding-top: 20px;'>
-									<input type='text' id='collegeName' style='font-size:12pt;width:77%;padding: 12px 10px;border:1px solid #BABCBE;'/>
+									<input type='text' id='SearchcollegeName' style='font-size:12pt;width:77%;padding: 12px 10px;border:1px solid #BABCBE;'/>
 								</td>
 							</tr>
 							<tr>
 								<td style='width:170px;font-size:16pt;color:#58595B;padding:0px 0px 0px 35px;height:70px;'>학과군</td>
 								<td style='text-align:left;'>
-
 									<div class="mypage_memo">
-										<select name='mypage_form' id='mypage_form'>
+										<select name='mypage_form' id='getMajor1'>
 											<option value=''>선택해주세요</option>
 										</select>
 									</div>
@@ -925,7 +944,7 @@
 								<td style='width:170px;font-size:16pt;color:#58595B;padding:0px 0px 25px 35px;height:70px;'>학과명</td>
 								<td style='text-align:left;padding-bottom:25px;'>
 									<div class="mypage_memo">
-										<select name='mypage_form' id='mypage_form'>
+										<select name='mypage_form' id='getMajor2'>
 											<option value=''>선택해주세요</option>
 										</select>
 									</div>
@@ -962,13 +981,13 @@
 								</td>
 							</tr>
 							<tr>
-								<td style='padding-left: 40px;width:120px;'>
-									<img src='/assets/img/common/rank_logo.png' style='width:100px;height:100px;'/>
+								<td style='padding-left: 40px;padding-top:10px;width:120px;'>
+									<img class='SearchCollegeLogo' style='width:100px;height:100px;'/>
 								</td>
 								<td>
-									<h1 style='font-size:25pt;color:#58595B;vertical-align:top;'>국민대학교<span style='margin-left:10px;color:#58595B;font-size:21pt;vertical-align:top;'>공업디자인과</span></h1>
-									<p style='font-size:12pt;color:#808083;'>종합 4년제 사립대학</p>
-									<span style='font-size:11pt;color:#808083;'>해당 대학/학과가 아니시라면 여기를 눌러주세요</span>
+									<h1 class='SearchCollegeMajor' style='font-size:25pt;color:#58595B;vertical-align:top;'></h1>
+									<!-- <p style='font-size:12pt;color:#808083;'>종합 4년제 사립대학</p> -->
+									<!-- <span style='font-size:11pt;color:#808083;'>해당 대학/학과가 아니시라면 여기를 눌러주세요</span> -->
 								</td>
 							</tr>
 							<tr>
@@ -1049,8 +1068,8 @@
 								<td style='padding-left: 40px;font-size:12pt;color:#58595B;' colspan='2'>
 									<br/><br/>
 									이 학과를 후배들에게 추천하시겠습니까?
-									<input type='radio' name='isRecommended' id='isRecommended' value='true' style='margin-left:90px;'/>&nbsp;&nbsp;추천
-									<input type='radio' name='isRecommended' id='isRecommended' value='false' style='margin-left:25px;'/>&nbsp;&nbsp;비추천
+									<input type='radio' name='isRecommended' id='isRecommended' value='1' style='margin-left:90px;'/>&nbsp;&nbsp;추천
+									<input type='radio' name='isRecommended' id='isRecommended' value='0' style='margin-left:25px;'/>&nbsp;&nbsp;비추천
 								</td>
 							</tr>
 							<tr>
@@ -1084,7 +1103,7 @@
 			</div> 
 		</div>
 	</div>
-
+	
 	<div class="layer3s">
 		<div class="bg2"></div>
 		<div id="popup_soon" class="pop-layer" style='z-index:3;'>
