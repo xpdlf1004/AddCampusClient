@@ -268,13 +268,13 @@
 		}, {
 			// Option is not needed.
 		}, function(data) {
-			alert("성공적으로 로그인ㄴ 되었습니다.");
+			alert("성공적으로 로그인 되었습니다.");
 
-			if (data.result[0].status == 'ok') {
+			// if (data.result[0].status == 'ok') {
 				location.href = '/';
-			} else {
-				location.href = '/';
-			}
+			// } else {
+				// location.href = '/';
+			// }
 
 			LocalStorage.put('sessionKey', data.result[0].sessionKey);
 			LocalStorage.put('accessKey', data.result[0].accessKey);
