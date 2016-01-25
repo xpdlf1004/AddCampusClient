@@ -33,6 +33,8 @@
 
 			if (retCollegeID) {
 
+				$(".help_write_1").hide();
+				$(".help_write_2").show();
 				$("#review_write_1").hide();
 				$("#review_write_2").show();
 
@@ -61,6 +63,9 @@
 
 			$("#review_write_1").show();
 			$("#review_write_2").hide();
+			
+			$(".help_write_1").show();
+			$(".help_write_2").hide();
 
 			$('#oneLineComment').val("");
 			$('#advantageComment').val("");
@@ -270,11 +275,7 @@
 		}, function(data) {
 			alert("성공적으로 로그인 되었습니다.");
 
-			// if (data.result[0].status == 'ok') {
-				location.href = '/';
-			// } else {
-				// location.href = '/';
-			// }
+			location.href = '/';
 
 			LocalStorage.put('sessionKey', data.result[0].sessionKey);
 			LocalStorage.put('accessKey', data.result[0].accessKey);
@@ -516,7 +517,10 @@
 			sessionKey: LocalStorage.get('sessionKey'),
 			accessKey: LocalStorage.get('accessKey')
 		}, function(data) {
-			alert(JSON.stringify(data));
+			// alert(JSON.stringify(data));
+			alert("성공적으로 리뷰가 작성되었습니다, 해당 대학 페이지로 이동됩니다!");
+			location.href = '/review/univ/?univ=' + collegeID;
+
 		}, function(data) {
 			alert(JSON.stringify(data));
 		});
