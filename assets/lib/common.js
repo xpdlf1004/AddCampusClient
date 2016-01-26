@@ -128,9 +128,18 @@
 			// Option is not needed.
 			}, function(data) {
 
-				$("#sign_in_table").hide();
-				$("#sign_up_table_1").hide();
-				$("#sign_up_table_2").show();
+				if (data.status == "ok") {
+
+					$("#sign_in_table").hide();
+					$("#sign_up_table_1").hide();
+					$("#sign_up_table_2").show();
+
+				} else if (data.status == "DuplicatedEmail") {
+
+					alert("이미 사용 중인 이메일 입니다!");
+					return false;
+
+				}
 
 			}, function(data) {
 
@@ -159,10 +168,9 @@
 			$("#sign_up_table_2").hide();
 			$("#sign_up_table_3").show();
 
-			$("#sign_up_email").val("");
-			$("#sign_up_pw").val("");
-			$("#sign_up_pw_").val("");
-			$("select#birthYear").val("");
+			var inputEmail = $("#sign_up_email").val();
+
+			$("#sign_up_email_").text(inputEmail);
 
 		});
 
@@ -229,7 +237,7 @@
 		var pw = $('#sign_up_pw').val();
 		var isGenderManChecked = $('#gender_man').is(':checked');
 		var gender = isGenderManChecked ? 'man' : 'woman';
-		var birthYear = parseInt($('#birthYear').val(), 10);
+		var birthYear = $('#birthYear').val();
 		var job = $('#job').val();
 
 		RequestHelper.post('/account/makeUserAccount', {
@@ -241,10 +249,10 @@
 		}, {
 		// Option is not needed.
 		}, function(data) {
-			$('#sign_up_email_').text(email);
 			alert("회원가입에 성공했습니다.");
+
+			// location.href='/';
 		}, function(data) {
-			alert(JSON.stringify(data));
 			alert("회원가입에 실패했습니다, 다시 시도해주세요.");
 
 			location.href='/';
