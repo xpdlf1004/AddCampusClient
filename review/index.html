@@ -64,6 +64,10 @@
 					<img src='/assets/img/common/search_button.png' id='searchBtn' style='cursor:pointer;'/>
 				</form>
 			</div>
+			<div style='width: 280px;height: 60px;position: relative;bottom: -100px;left: 100px;background: rgba(0,0,0,0.5);padding:20px;'>
+				<p style='text-align:left;margin:0px;padding:0px;font-size:1.2rem;'>국민대학교&nbsp;&nbsp;&nbsp;<span style='font-size:0.8rem;'>서울특별시 성북구 정릉로 77</span></p>
+				<p style='text-align:left;margin:0px;padding:0px;margin-top:15px;'><a href='http://kookmin.ac.kr/' target='_blank' style='text-decoration:none;color:#FFF;'>http://kookmin.ac.kr/</a></p>
+			</div>
 		</div>
 
 		<div id='review_banner'>
@@ -129,7 +133,6 @@
 							<img src='/assets/img/common/review_star_full.png'/>
 							<span style='margin:0px 5px;' id='averageGrade1'></span> <span class='CollegeGrade'></span>명의 평가
 						</p>
-						<p style='display:inline-block;'>평가 종합순위 01위</p>
 					</div>
 					<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>
 						<div class='review_evaluation'>
@@ -162,7 +165,6 @@
 							<img src='/assets/img/common/review_star_full.png'/>
 							<span style='margin:0px 5px;' id='averageGrade2'></span> <span class='CollegeGrade'></span>명의 평가
 						</p>
-						<p style='display:inline-block;'>평가 종합순위 02위</p>
 					</div>
 					<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>
 						<div class='review_evaluation'>
@@ -195,7 +197,6 @@
 							<img src='/assets/img/common/review_star_full.png'/>
 							<span style='margin:0px 5px;' id='averageGrade3'></span> <span class='CollegeGrade'></span>명의 평가
 						</p>
-						<p style='display:inline-block;'>평가 종합순위 03위</p>
 					</div>
 					<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>
 						<div class='review_evaluation'>
@@ -376,8 +377,9 @@
 				source: availableTags
 			});
 
-			function SearchUnivA(content) {
+			function SearchUnivA (content) {
 				var content = $("#search_school").val();
+				var searchURL = "";
 
 				RequestHelper.post('/college/getAllColleges', {},
 				{
@@ -386,15 +388,27 @@
 					var length = data.result[0].colleges.length;
 
 					for (var i = 0; i<length; i++) {
-						if (data.result[0].colleges[i].collegeName == content) {
-							location.href = '/review/univ/?univ=' + data.result[0].colleges[i].collegeID;
+
+						if (data.result[0].colleges[i].collegeName === content) {
+							// location.href = '/review/univ/?univ=' + data.result[0].colleges[i].collegeID;
+							searchURL = data.result[0].colleges[i].collegeID;
 						}
+
+					}
+
+					if (searchURL != "") {
+						location.href = '/review/univ/?univ=' + searchURL;
+					} else if (searchURL === undefined) {
+						alert("학교 이름을 정확하게 입력해주세요.");
+					} else {
+						alert("학교 이름을 정확하게 입력해주세요.");
 					}
 
 				}, function(data) {
 					alert(JSON.stringify(data));
 				});
 
+				return false;
 			}
 
 			$("#searchBtn").click(function(){
@@ -403,8 +417,8 @@
 
 			$("#search_form").submit(function(){
 				SearchUnivA();
+				return false;
 			});
-			/*****************************************/
 
 			/******************************************
 			* Get BestReviews
@@ -414,22 +428,46 @@
 			// Option is not needed.
 			}, function(data) {
 
-				// alert(JSON.stringify(data));
-
 				var CollegeLink = $(".CollegeLink");
 				var CollegeLink1 = $(".CollegeLink_A");
 				var CollegeLink2 = $(".CollegeLink_B");
 				var CollegeLink3 = $(".CollegeLink_C");
-
 				var CollegeLogo = $(".CollegeLink img");
-
 				var CollegeGrade = $(".CollegeGrade");
+				var CollegeNameList = new Array();
 
 				for (var cntReview = 1; cntReview <= 3; cntReview++) {
 
 					var cnti = cntReview - 1;
+					var collegeCode = data.result[0].reviews[cnti].collegeID;
 
-					$("#univName" + cntReview).html("베스트 리뷰 학교 " + cntReview);
+					/******************************************
+					* Get Name of the College
+					/*****************************************/
+					RequestHelper.post('/college/getAllColleges', {},
+					{
+					// Option is not needed.
+					}, function(data) {
+						var lengthColleges = data.result[0].colleges.length;
+
+						for (var i = 0; i<lengthColleges; i++) {
+
+							if (data.result[0].colleges[i].collegeID == collegeCode) {
+								CollegeNameList.push(data.result[0].colleges[i].collegeName);
+
+								$("#univName1").html(CollegeNameList[0]);
+								$("#univName2").html(CollegeNameList[1]);
+								$("#univName3").html(CollegeNameList[2]);
+							}
+
+						}
+
+					}, function(data) {
+						alert(JSON.stringify(data));
+					});
+					/*****************************************/
+
+					$("#univName" + cntReview).html(CollegeNameList[cnti]);
 
 					$("#oneLineComment" + cntReview).html(data.result[0].reviews[cnti].oneLineComment);
 					$("#advantageComment" + cntReview).html(data.result[0].reviews[cnti].advantageComment);

@@ -133,7 +133,7 @@
 	.campus_menu li h4 {
 		font-size: 1.18rem;
 		margin: 0px;
-		margin-top: -15px;
+		margin-top: -0px;
 		z-index: 5;
 	}
 
@@ -145,8 +145,8 @@
 	#box_2_main_banner {
 		width: 100%;
 		text-align: center;
-		padding: 30px 0px;
-		padding-top: 55px;
+	    padding: 40px 0px;
+	    padding-top: 65px;
 		margin: 0px auto;
 		border-bottom: 3px solid #D1D3D4;
 		background: #F7F7F7;

@@ -862,6 +862,6 @@
         border: 1px solid #BABCBE;
         padding: 8px 5px;
         border-radius: 10px;
-        background: url("https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_down_48px-128.png") no-repeat right;
+        background: url("https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_down_48px-128.png") #FFF no-repeat right;
         background-size: 40px;
     }

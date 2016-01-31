@@ -29,6 +29,7 @@
 		url('/assets/fonts/NanumPen.woff') format('woff'),
 		url('/assets/fonts/NanumPen.ttf') format('truetype');
 	}
+
 	@font-face {
 		font-family: 'NanumBarunGothicBold';
 		font-style: normal;
@@ -36,6 +37,16 @@
 		src: url('/assets/fonts/NanumBarunGothic.eot') format('embedded-opentype'),
 		url('/assets/fonts/NanumBarunGothic.woff') format('woff'),
 		url('/assets/fonts/NanumBarunGothic.ttf') format('truetype');
+		font-weight: 600;
+	}
+
+	@font-face {
+		font-family: 'Chosun';
+		font-style: normal;
+		src: url('/assets/fonts/ChosunM.eot');
+		src: url('/assets/fonts/ChosunM.eot') format('embedded-opentype'),
+		url('/assets/fonts/ChosunM.woff') format('woff'),
+		url('/assets/fonts/ChosunM.ttf') format('truetype');
 		font-weight: 600;
 	}
 
@@ -79,7 +90,7 @@
 		height: 36px;
 		list-style: none;
 		display: inline-block;
-		font-size: 0.93rem;
+		font-size: 0.9rem;
 		line-height: 36px;
 	}
 
@@ -148,7 +159,7 @@
 		font-size: 1.15rem;
 		border-radius: 10px;
 		margin-bottom: 5px;
-		background: #1C75BA;
+		background: #3B5998;
 		color: #FFFFFF;
 		border: none;
 		text-decoration: none;

@@ -52,10 +52,14 @@
 					<img src='/assets/img/common/search_button.png' id='searchBtn' style='cursor:pointer;'/>
 				</form>
 			</div>
+			<div style='width: 280px;height: 60px;position: relative;bottom: -100px;left: 100px;background: rgba(0,0,0,0.5);padding:20px;'>
+				<p style='text-align:left;margin:0px;padding:0px;font-size:1.2rem;'>국민대학교&nbsp;&nbsp;&nbsp;<span style='font-size:0.8rem;'>서울특별시 성북구 정릉로 77</span></p>
+				<p style='text-align:left;margin:0px;padding:0px;margin-top:15px;'><a href='http://kookmin.ac.kr/' target='_blank' style='text-decoration:none;color:#FFF;'>http://kookmin.ac.kr/</a></p>
+			</div>
 		</div>
 
 		<div id='campus_content'>
-			<h2 class='title'>재학생이 알려주는 생생한 캠퍼스 리뷰</h2>
+			<h2 class='title' style='font-family:Chosun;'>재학생이 알려주는 생생한 캠퍼스 리뷰</h2>
 			<h3 class='subtitle'>니들 선배가 될 사람들이 직접 작성한 리뷰를 봐라</h3>
 
 			<div class='campus_left'>
@@ -604,6 +608,7 @@
 
 			function SearchUnivA (content) {
 				var univ = $("#search_school").val();
+				var searchURL = "";
 
 				RequestHelper.post('/college/getAllColleges', {},
 				{
@@ -612,14 +617,27 @@
 					var length = data.result[0].colleges.length;
 
 					for (var i = 0; i<length; i++) {
-						if (data.result[0].colleges[i].collegeName == univ) {
-							location.href = '/review/univ/?univ=' + data.result[0].colleges[i].collegeID;
+						
+						if (data.result[0].colleges[i].collegeName === univ) {
+							// location.href = '/review/univ/?univ=' + data.result[0].colleges[i].collegeID;
+							searchURL = data.result[0].colleges[i].collegeID;
 						}
+
+					}
+
+					if (searchURL != "") {
+						location.href = '/review/univ/?univ=' + searchURL;
+					} else if (searchURL === undefined) {
+						alert("학교 이름을 정확하게 입력해주세요.");
+					} else {
+						alert("학교 이름을 정확하게 입력해주세요.");
 					}
 
 				}, function(data) {
 					alert(JSON.stringify(data));
 				});
+
+				return false;
 			}
 
 			$("#searchBtn").click(function(){
@@ -628,6 +646,7 @@
 
 			$("#search_form").submit(function(){
 				SearchUnivA();
+				return false;
 			});
 
 			/******************************************
@@ -770,9 +789,9 @@
 								<td>
 									<br/><br/>
 									<span style='font-size:1.2rem;color:#58595B;margin-bottom:5px;'>아직도 회원이 아니시라구요??</span>
-									<button class='sign_b_s' id='sign_b_s' onclick='return false;'>이메일로 회원가입하기</button>
+									<button class='sign_b_s' id='sign_b_s' onclick='return false;' style='margin: 15px 0px;'>이메일로 회원가입하기</button>
 									<br/>
-									<button class='sign_b_s' id='sign_b_s' onclick='facebookSign();return false;'>페이스북으로 회원가입하기</button>
+									<button class='sign_b_s' id='sign_b_s' onclick='facebookSign();return false;' style='margin: 15px 0px;'>페이스북으로 회원가입하기</button>
 									<div id="status"></div>
 								</td>
 							</tr>

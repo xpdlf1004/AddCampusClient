@@ -594,31 +594,31 @@
 
 		var responseCallback = response;
 
-		if (response.status === 'connected') {
+		// if (response.status === 'connected') {
 
-			FB.api('/me', function(response) {
-				RequestHelper.post('/account/loginWithFacebook', {
-					facebookUserKey: response.id,
-					facebookAccessToken: responseCallback.authResponse.accessToken
-				}, {
-					// Option is not needed.
-				}, function(data) {
-					alert("성공적으로 로그인 되었습니다.");
-					location.href = '/';
+			// FB.api('/me', function(response) {
+			// 	RequestHelper.post('/account/loginWithFacebook', {
+			// 		facebookUserKey: response.id,
+			// 		facebookAccessToken: responseCallback.authResponse.accessToken
+			// 	}, {
+			// 		// Option is not needed.
+			// 	}, function(data) {
+			// 		alert("성공적으로 로그인 되었습니다.");
+			// 		location.href = '/';
 
-					LocalStorage.put('sessionKey', data.result[0].sessionKey);
-					LocalStorage.put('accessKey', data.result[0].accessKey);
-					LocalStorage.put('accountSequence', data.result[0].accountSequence);
-				}, function(data) {
-					alert("로그인에 실패했습니다, 다시 시도해주세요.");
-					location.href = '/';
-				});
-			});
+			// 		LocalStorage.put('sessionKey', data.result[0].sessionKey);
+			// 		LocalStorage.put('accessKey', data.result[0].accessKey);
+			// 		LocalStorage.put('accountSequence', data.result[0].accountSequence);
+			// 	}, function(data) {
+			// 		alert("로그인에 실패했습니다, 다시 시도해주세요.");
+			// 		location.href = '/';
+			// 	});
+			// });
 
-		} else {
-			alert("페이스북 로그인에 실패했습니다, 다시 시도해주세요.");
-			location.href = '/';
-		}
+		// } else {
+			// alert("페이스북 로그인에 실패했습니다, 다시 시도해주세요.");
+			// location.href = '/';
+		// }
 
 	}
 
