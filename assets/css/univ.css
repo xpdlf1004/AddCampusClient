@@ -33,6 +33,7 @@
 		float: right;
 		margin-top: 50px;
 		margin-right: 30px;
+		cursor: pointer;
 	}
 
 	#univ_main_image .univ_about h2 {
@@ -272,6 +273,7 @@
 		border-collapse: collapse;
 		border: 1px solid #BCBEC0;
 		margin-bottom: 10px;
+		word-break: break-all;
 	}
 
 
@@ -776,6 +778,14 @@
 		color: #1C75BA;
 	}
 
+	.review_more_left {
+		font-size: 0.9rem;
+		text-align: right;
+		padding: 18px 10px 14px 0px;
+		color: #1C75BA;
+		vertical-align: middle;
+	}
+
 	.review_list .of_rank {
 		width: 10%;
 		padding: 0px 10px;
@@ -813,7 +823,8 @@
 		vertical-align: middle;
 	}
 	
-	.layer2s { display:none;
+	.layer2s { 
+		display:none;
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -865,3 +876,132 @@
         background: url("https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_down_48px-128.png") #FFF no-repeat right;
         background-size: 40px;
     }
+
+    /* 맛보기 대학리뷰 */
+	.univ .about_img { 
+		width: 96px;
+		height: 96px;
+		vertical-align: top;
+		display: inline-block;
+	}
+
+	.univ .review_about_ { 
+		display: inline-block;
+		width: 80%;
+		text-align: left;
+		padding: 8px 0px 0px 18px;
+	}
+
+	.univ .review_about_ h3 { 
+		font-size: 1.5rem;
+		margin: 0px;
+		margin-bottom: 5px;
+		color: #58595B
+	}
+
+	.univ .review_about_ p { 
+		margin: 0px;
+		font-size: 1.05rem;
+		color: #808083;
+	}
+
+	.univ .review_evaluation { 
+		background: rgba(255, 211, 66, 0.3);
+		text-align: left;
+		color: #3366CC;
+		padding: 5px 0px 5px 15px;
+		margin: 15px 0px 30px 0px;
+		vertical-align: middle;
+	}
+
+	.univ .review_evaluation .h6_title {
+		height: 100%;
+		margin: 0px;
+		padding: 0px;
+		display: inline-block;
+		font-size: 0.9rem;
+		margin-left: 8px;
+		vertical-align: middle;
+		color: #808083;
+	}
+
+	.univ .review_evaluation .h6_content { 
+		height: 100%;
+		margin: 0px;
+		padding: 0px;
+		display: inline-block;
+		color: #3366CC;
+		font-size: 1.3rem;
+		vertical-align: middle;
+	}
+
+	.univ .pros {
+		width: 85%;
+		margin: 0px auto;
+	}
+
+	.univ .pros h3 {
+		display: inline-block;
+		text-align: left;
+		vertical-align: top;
+		margin: 0px;
+		margin-right: 28px;
+		padding: 0px;
+		font-size: 1rem;
+		color: #00B74A;
+		font-weight: bold;
+	}
+
+	.univ .pros h4 { 
+		display: inline-block;
+		width: 84%;
+		text-align: left;
+		vertical-align: top;
+		margin: 0px;
+		padding: 0px;
+		font-size: 0.9rem;
+		color: #58595B;
+		line-height: 1.2rem;
+	}
+
+	.univ .cons { 
+		width: 85%; 
+		margin: 0px auto;
+		margin-top: 20px;
+	}
+
+	.univ .cons h3 { 
+		display: inline-block;
+		text-align: left;
+		vertical-align: top;
+		margin: 0px;
+		margin-right: 28px;
+		padding: 0px;
+		font-size: 1rem;
+		color: #FF6666;
+		font-weight: bold;
+
+	}
+
+	.univ .cons h4 { 
+		display: inline-block;
+		width: 84%;
+		text-align: left;
+		vertical-align: top;
+		margin: 0px;
+		padding: 0px;
+		font-size: 0.9rem;
+		color: #58595B;
+		line-height: 1.2rem;
+	}
+
+	.univ .review_more {
+		width: 80%;
+		height: 50px;
+		background: #CCCCCC;
+		border: 1px solid #3366CC;
+		color: #3366CC;
+		margin: 0px auto;
+		line-height: 50px;
+	}
+	/* 맛보기 대학리뷰 */

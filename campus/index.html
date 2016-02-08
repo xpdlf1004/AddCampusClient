@@ -657,17 +657,45 @@
 			// Option is not needed.
 			}, function(data) {
 
-				// alert(JSON.stringify(data));
-
 				var CollegeLink = $(".SideCollegeLink");
 				var CollegeLogo = $(".SideCollegeLogo");
 				var CollegeName = $(".SideCollegeName");
+				var CollegeNameList = new Array();
 
 				for (var i = 0; i < 1; i++) {
 
 					$(CollegeLink[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByCountOfReviews[i].collegeID);
 					$(CollegeLogo[i]).attr("src", "/assets/img/logo/logo_" + data.result[0].collegeRankingByCountOfReviews[i].collegeID + ".jpg");
-					$(CollegeName[i]).html(data.result[0].collegeRankingByCountOfReviews[i].collegeID);
+
+					collegeCode = data.result[0].collegeRankingByCountOfReviews[i].collegeID;
+
+					/******************************************
+					* Get Name of the College
+					/*****************************************/
+					RequestHelper.post('/college/getAllColleges', {},
+					{
+					// Option is not needed.
+					}, function(data) {
+						var lengthColleges = data.result[0].colleges.length;
+
+						for (var i = 0; i<lengthColleges; i++) {
+
+							if (data.result[0].colleges[i].collegeID == collegeCode) {
+								CollegeNameList.push(data.result[0].colleges[i].collegeName);
+
+								// alert(CollegeNameList[0]);
+
+								$(CollegeName[0]).html(CollegeNameList[0]);
+								// $("#univName2").html(CollegeNameList[1]);
+								// $("#univName3").html(CollegeNameList[2]);
+							}
+
+						}
+
+					}, function(data) {
+						alert(JSON.stringify(data));
+					});
+					/*****************************************/
 
 				}
 
@@ -697,44 +725,67 @@
 						if (type == 'Facilities') {
 
 							$(CollegeName[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByFacilities[i].collegeID);
-							$(CollegeName[i]).html(data.result[0].collegeRankingByFacilities[i].collegeID);
 							$(CollegeGrade[i]).html(data.result[0].collegeRankingByFacilities[i].facilities);
+
+							var collegeCode = data.result[0].collegeRankingByFacilities[i].collegeID;
 
 						} else if (type == 'Culture') {
 
 							$(CollegeName[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByCulture[i].collegeID);
-							$(CollegeName[i]).html(data.result[0].collegeRankingByCulture[i].collegeID);
 							$(CollegeGrade[i]).html(data.result[0].collegeRankingByCulture[i].culture);
+
+							var collegeCode = data.result[0].collegeRankingByCulture[i].collegeID;
 
 						} else if (type == 'Town') {
 
 							$(CollegeName[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByTown[i].collegeID);
-							$(CollegeName[i]).html(data.result[0].collegeRankingByTown[i].collegeID);
 							$(CollegeGrade[i]).html(data.result[0].collegeRankingByTown[i].town);
+
+							var collegeCode = data.result[0].collegeRankingByTown[i].collegeID;
 
 						} else if (type == 'Tuition') {
 
 							$(CollegeName[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByTuition[i].collegeID);
-							$(CollegeName[i]).html(data.result[0].collegeRankingByTuition[i].collegeID);
 							$(CollegeGrade[i]).html(data.result[0].collegeRankingByTuition[i].tuition);
+
+							var collegeCode = data.result[0].collegeRankingByTuition[i].collegeID;
 
 						} else if (type == 'Professor') {
 
 							$(CollegeName[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByProfessor[i].collegeID);
-							$(CollegeName[i]).html(data.result[0].collegeRankingByProfessor[i].collegeID);
 							$(CollegeGrade[i]).html(data.result[0].collegeRankingByProfessor[i].professor);
+
+							var collegeCode = data.result[0].collegeRankingByProfessor[i].collegeID;
 
 						} else if (type == 'AverageGrade') {
 
 							$(CollegeLink[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByAverageGrade[i].collegeID);
 							$(CollegeName[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByAverageGrade[i].collegeID);
-							$(CollegeName[i]).html(data.result[0].collegeRankingByAverageGrade[i].collegeID);
 							$(CollegeGrade[i]).html(data.result[0].collegeRankingByAverageGrade[i].averageGrade);
+
+							var collegeCode = data.result[0].collegeRankingByAverageGrade[i].collegeID;
 
 							$(CollegeLogo[i]).attr("src", "/assets/img/logo/logo_" + data.result[0].collegeRankingByAverageGrade[i].collegeID + ".jpg");
 
 						}
 
+						RequestHelper.post('/college/getAllColleges', {},
+						{
+						// Option is not needed.
+						}, function(data) {
+							var lengthColleges = data.result[0].colleges.length;
+
+							for (var j = 0; j<lengthColleges; j++) {
+
+								if (data.result[0].colleges[j].collegeID == collegeCode) {
+									$(CollegeName[0]).html(data.result[0].colleges[j].collegeName);
+								}
+
+							}
+
+						}, function(data) {
+							alert(JSON.stringify(data));
+						});
 
 					}
 
@@ -753,6 +804,36 @@
 			/*****************************************/
 
 		});
+		/*****************************************/
+
+		/******************************************
+		* Get Name of the College
+		/*****************************************/
+		function getNameOfTheCollege(collegeCode) {
+			RequestHelper.post('/college/getAllColleges', {},
+			{
+			// Option is not needed.
+			}, function(data) {
+				var lengthColleges = data.result[0].colleges.length;
+
+				for (var i = 0; i<lengthColleges; i++) {
+
+					if (data.result[0].colleges[i].collegeID == collegeCode) {
+						CollegeNameList.push(data.result[0].colleges[i].collegeName);
+
+						// alert(CollegeNameList[0]);
+
+						$(CollegeName[0]).html(CollegeNameList[0]);
+						// $("#univName2").html(CollegeNameList[1]);
+						// $("#univName3").html(CollegeNameList[2]);
+					}
+
+				}
+
+			}, function(data) {
+				alert(JSON.stringify(data));
+			});
+		}
 		/*****************************************/
 
 	</script>
@@ -789,9 +870,9 @@
 								<td>
 									<br/><br/>
 									<span style='font-size:1.2rem;color:#58595B;margin-bottom:5px;'>아직도 회원이 아니시라구요??</span>
-									<button class='sign_b_s' id='sign_b_s' onclick='return false;' style='margin: 15px 0px;'>이메일로 회원가입하기</button>
+									<button class='sign_b_s' id='sign_b_s' onclick='return false;' style='margin: 10px 0px;'>이메일로 회원가입하기</button>
 									<br/>
-									<button class='sign_b_s' id='sign_b_s' onclick='facebookSign();return false;' style='margin: 15px 0px;'>페이스북으로 회원가입하기</button>
+									<button class='sign_b_s' id='sign_b_s' onclick='facebookSign();return false;'>페이스북으로 회원가입하기</button>
 									<div id="status"></div>
 								</td>
 							</tr>

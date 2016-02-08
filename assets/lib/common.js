@@ -39,7 +39,6 @@
 				$("#review_write_2").show();
 
 				$(".SearchCollegeMajor").html($("#SearchcollegeName").val() + " " + $("#getMajor2 option:selected").text());
-
 				$(".SearchCollegeLogo").attr('src', '/assets/img/logo/logo_' + retCollegeID + '.jpg');
 
 			} else {
@@ -225,6 +224,24 @@
 			getMajor($("#SearchcollegeName").val());
 		});
 
+		$('#getMajor1').change(function(){
+
+			$("#getMajor2").find("option").remove();
+
+			for (var i in majorsNameLists) {
+
+				if (majorsNameLists[i].indexOf($("#getMajor1 option:selected").val()) != -1) {
+
+					var className = majorsNameLists[i].split("/");
+
+					$('#getMajor2').append("<option value='" + className[2] + "'>" + className[1] + "</option>");
+
+				}
+
+			}
+
+		});
+
 	})
 	/************************/
 
@@ -397,10 +414,23 @@
 			});
 
 			$('.layer2s .bg2').click(function(e){	
-			//배경을 클릭하면 레이어를 사라지게 하는 이벤트 핸들러
 
 				$('.layer2s').fadeOut();
 				e.preventDefault();
+
+				$("#review_write_1").show();
+				$("#review_write_2").hide();
+				
+				$(".help_write_1").show();
+				$(".help_write_2").hide();
+
+				$("#SearchcollegeName").val("");
+				$("#getMajor1").val("");
+				$("#getMajor2").val("");
+
+				retCollegeID = "";
+				$(".SearchCollegeMajor").val("");
+
 			});
 
 		}
@@ -538,6 +568,9 @@
 	* 학교 입력 후 해당 학과 정보 가져오기
 	/*****************************************/
 	retCollegeID = '';
+	majorClassList = new Array();
+	majorNameList = new Array();
+	majorsNameLists = new Array();
 
 	function getMajor(ofName) {
 
@@ -548,7 +581,9 @@
 			var length = data.result[0].colleges.length;
 
 			for (var i = 0; i<length; i++) {
+
 				if (data.result[0].colleges[i].collegeName == ofName) {
+
 					retCollegeID = data.result[0].colleges[i].collegeID;
 
 					RequestHelper.post('/college/getAllMajorsInCollege', {
@@ -558,15 +593,42 @@
 					// Option is not needed.
 					}, function(data) {
 						// 리스트 추가
+
 						var majors = data.result[0].majors;
+
 						var groupList = $('#getMajor1');
 						var majorsList = $('#getMajor2');
 
 						for (var i in majors) {
-							var optionStr1 = '<option value="' + majors[i].majorID + '">' + majors[i].majorClass + '</option>';
-							var optionStr2 = '<option value="' + majors[i].majorID + '">' + majors[i].majorName + '</option>';
-							$(optionStr1).appendTo(groupList);
-							$(optionStr2).appendTo(majorsList);
+
+							majorClassList[i] = majors[i].majorClass;
+							majorNameList[i] = majors[i].majorName;
+
+							majorsNameLists[i] = data.result[0].majors[i].majorClass + "/" + data.result[0].majors[i].majorName + "/" + data.result[0].majors[i].majorID;
+
+						}
+
+						// 배열 중복 제거
+						majorClassList = $.unique(majorClassList);
+
+						for (var i in majorClassList) {
+
+							$(groupList).append("<option value='" + majorClassList[i] + "'>" + majorClassList[i] + "</option>");
+
+						}
+
+						$("#getMajor2").find("option").remove();
+
+						for (var i in majorsNameLists) {
+
+							if (majorsNameLists[i].indexOf($("#getMajor1 option:selected").val()) != -1) {
+
+								var className = majorsNameLists[i].split("/");
+
+								$('#getMajor2').append("<option value='" + className[2] + "'>" + className[1] + "</option>");
+
+							}
+
 						}
 
 					}, function(data) {
@@ -585,40 +647,42 @@
 	/*****************************************/
 
 	function facebookSign() {
-		FB.getLoginStatus(function(response) {
-			statusChangeCallback(response);
-		});
+		// FB.getLoginStatus(function(response) {
+		// 	statusChangeCallback(response);
+		// });
+
+		alert("준비 중 입니다.");
 	}
 
 	function statusChangeCallback(response) {
 
 		var responseCallback = response;
 
-		// if (response.status === 'connected') {
+		if (response.status === 'connected') {
 
-			// FB.api('/me', function(response) {
-			// 	RequestHelper.post('/account/loginWithFacebook', {
-			// 		facebookUserKey: response.id,
-			// 		facebookAccessToken: responseCallback.authResponse.accessToken
-			// 	}, {
-			// 		// Option is not needed.
-			// 	}, function(data) {
-			// 		alert("성공적으로 로그인 되었습니다.");
-			// 		location.href = '/';
+			FB.api('/me', function(response) {
+				RequestHelper.post('/account/loginWithFacebook', {
+					facebookUserKey: response.id,
+					facebookAccessToken: responseCallback.authResponse.accessToken
+				}, {
+					// Option is not needed.
+				}, function(data) {
+					alert("성공적으로 로그인 되었습니다.");
+					location.href = '/';
 
-			// 		LocalStorage.put('sessionKey', data.result[0].sessionKey);
-			// 		LocalStorage.put('accessKey', data.result[0].accessKey);
-			// 		LocalStorage.put('accountSequence', data.result[0].accountSequence);
-			// 	}, function(data) {
-			// 		alert("로그인에 실패했습니다, 다시 시도해주세요.");
-			// 		location.href = '/';
-			// 	});
-			// });
+					LocalStorage.put('sessionKey', data.result[0].sessionKey);
+					LocalStorage.put('accessKey', data.result[0].accessKey);
+					LocalStorage.put('accountSequence', data.result[0].accountSequence);
+				}, function(data) {
+					alert("로그인에 실패했습니다, 다시 시도해주세요.");
+					location.href = '/';
+				});
+			});
 
-		// } else {
-			// alert("페이스북 로그인에 실패했습니다, 다시 시도해주세요.");
-			// location.href = '/';
-		// }
+		} else {
+			alert("페이스북 로그인에 실패했습니다, 다시 시도해주세요.");
+			location.href = '/';
+		}
 
 	}
 

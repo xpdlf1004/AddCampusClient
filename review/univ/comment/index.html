@@ -83,8 +83,12 @@
 
 		<div id='univ_category'>
 			<ul class='category'>
-				<a onclick='location.href="/review/univ/?univ=" + collegeID;' style='color:#808083;text-decoration:none;'><li style='margin-left:30px;padding-top:12px;'>info<h3>대학정보</h3></li></a>
-				<a onclick='location.href="/review/univ/comment/?univ=" + collegeID;' style='color:#000000;text-decoration:none;'><li style='margin:0px 45px;margin-top:5px;padding-top:12px;border-bottom:5px solid #FFD432;'>125<h3>대학리뷰</h3></li></a>
+				<a onclick='location.href="/review/univ/?univ=" + collegeID;' style='color:#808083;text-decoration:none;'>
+					<li style='margin-left:30px;padding-top:12px;'>info<h3>대학정보</h3></li>
+				</a>
+				<a onclick='location.href="/review/univ/comment/?univ=" + collegeID;' style='color:#000000;text-decoration:none;'>
+					<li style='margin:0px 45px;margin-top:5px;padding-top:12px;border-bottom:5px solid #FFD432;'><span class='collegeCountOfReviews' style='font-size:inherit;color:inherit;'></span><h3>대학리뷰</h3></li>
+				</a>
 				<!-- <a onclick='location.href="/review/univ/community/?univ=" + collegeID;' style='color:#808083;text-decoration:none;'><li style='padding-top:12px;'>12,548<h3>익명게시판</h3></li></a> -->
 			</ul>
 		</div>
@@ -111,44 +115,74 @@
 					<tr>
 						<td rowspan='7' colspan='2' class='univ_table_about' style='width:50%;'>
 							<h1 class='univ_name' style='font-family:NanumBarunGothicBold;font-weight:bold;'></h1>
-							<h1 class='univ_star_'>종합 10위</h1>
-							<img src='/assets/img/common/review_star_full.png' id='averageGradeStar1'/><img src='/assets/img/common/review_star_full.png' id='averageGradeStar2'/><img src='/assets/img/common/review_star_full.png' id='averageGradeStar3'/><img src='/assets/img/common/review_star_full.png' id='averageGradeStar4'/><img src='/assets/img/common/review_star_full.png' id='averageGradeStar5'/>
+							<h1 class='univ_star_'>종합 <span class='majorAverageRank' style='font-size:inherit;color:inherit;'></span>위</h1>
+							<img src='/assets/img/common/review_star_full.png' id='averageGradeStar1'/>
+							<img src='/assets/img/common/review_star_full.png' id='averageGradeStar2'/>
+							<img src='/assets/img/common/review_star_full.png' id='averageGradeStar3'/>
+							<img src='/assets/img/common/review_star_full.png' id='averageGradeStar4'/>
+							<img src='/assets/img/common/review_star_full.png' id='averageGradeStar5'/>
 							<span id='averageGradePoint'></span>
 							<p>재학생의 100%가 이 학교를 추천합니다.</p>
+							<!-- <p>재학생의 100%가 이 학교를 추천합니다.</p> -->
 						</td>
 					</tr>
 					<tr>
 						<td class='univ_table_title' style='border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>
 						<td class='univ_table_star' style='border-top:1px solid #BCBEC0;'>
-							<img src='/assets/img/common/review_star_full.png' id='facilitiesStar1'/><img src='/assets/img/common/review_star_full.png' id='facilitiesStar2'/><img src='/assets/img/common/review_star_full.png' id='facilitiesStar3'/><img src='/assets/img/common/review_star_full.png' id='facilitiesStar4'/><img src='/assets/img/common/review_star_full.png' id='facilitiesStar5'/>
+							<img src='/assets/img/common/review_star_full.png' id='facilitiesStar1'/>
+							<img src='/assets/img/common/review_star_full.png' id='facilitiesStar2'/>
+							<img src='/assets/img/common/review_star_full.png' id='facilitiesStar3'/>
+							<img src='/assets/img/common/review_star_full.png' id='facilitiesStar4'/>
+							<img src='/assets/img/common/review_star_full.png' id='facilitiesStar5'/>
+
 							<span id='facilities'></span>
 						</td>
 					</tr>
 					<tr>
 						<td class='univ_table_title'>캠퍼스문화만족도</td>
 						<td class='univ_table_star'>
-							<img src='/assets/img/common/review_star_full.png' id='cultureStar1'/><img src='/assets/img/common/review_star_full.png' id='cultureStar2'/><img src='/assets/img/common/review_star_full.png' id='cultureStar3'/><img src='/assets/img/common/review_star_full.png' id='cultureStar4'/><img src='/assets/img/common/review_star_full.png' id='cultureStar5'/>
+							<img src='/assets/img/common/review_star_full.png' id='cultureStar1'/>
+							<img src='/assets/img/common/review_star_full.png' id='cultureStar2'/>
+							<img src='/assets/img/common/review_star_full.png' id='cultureStar3'/>
+							<img src='/assets/img/common/review_star_full.png' id='cultureStar4'/>
+							<img src='/assets/img/common/review_star_full.png' id='cultureStar5'/>
+
 							<span id='culture'></span>
 						</td>
 					</tr>
 					<tr>
 						<td class='univ_table_title'>대학가만족도</td>
 						<td class='univ_table_star'>
-							<img src='/assets/img/common/review_star_full.png' id='townStar1'/><img src='/assets/img/common/review_star_full.png' id='townStar2'/><img src='/assets/img/common/review_star_full.png' id='townStar3'/><img src='/assets/img/common/review_star_full.png' id='townStar4'/><img src='/assets/img/common/review_star_full.png' id='townStar5'/>
+							<img src='/assets/img/common/review_star_full.png' id='townStar1'/>
+							<img src='/assets/img/common/review_star_full.png' id='townStar2'/>
+							<img src='/assets/img/common/review_star_full.png' id='townStar3'/>
+							<img src='/assets/img/common/review_star_full.png' id='townStar4'/>
+							<img src='/assets/img/common/review_star_full.png' id='townStar5'/>
+
 							<span id='town'></span>
 						</td>
 					</tr>
 					<tr>
 						<td class='univ_table_title'>등록금만족도</td>
 						<td class='univ_table_star'>
-							<img src='/assets/img/common/review_star_full.png' id='tuitionStar1'/><img src='/assets/img/common/review_star_full.png' id='tuitionStar2'/><img src='/assets/img/common/review_star_full.png' id='tuitionStar3'/><img src='/assets/img/common/review_star_full.png' id='tuitionStar4'/><img src='/assets/img/common/review_star_full.png' id='tuitionStar5'/>
+							<img src='/assets/img/common/review_star_full.png' id='tuitionStar1'/>
+							<img src='/assets/img/common/review_star_full.png' id='tuitionStar2'/>
+							<img src='/assets/img/common/review_star_full.png' id='tuitionStar3'/>
+							<img src='/assets/img/common/review_star_full.png' id='tuitionStar4'/>
+							<img src='/assets/img/common/review_star_full.png' id='tuitionStar5'/>
+
 							<span id='tuition'></span>
 						</td>
 					</tr>
 					<tr>
 						<td class='univ_table_title'>교수만족도</td>
 						<td class='univ_table_star'>
-							<img src='/assets/img/common/review_star_full.png' id='professorStar1'/><img src='/assets/img/common/review_star_full.png' id='professorStar2'/><img src='/assets/img/common/review_star_full.png' id='professorStar3'/><img src='/assets/img/common/review_star_full.png' id='professorStar4'/><img src='/assets/img/common/review_star_full.png' id='professorStar5'/>
+							<img src='/assets/img/common/review_star_full.png' id='professorStar1'/>
+							<img src='/assets/img/common/review_star_full.png' id='professorStar2'/>
+							<img src='/assets/img/common/review_star_full.png' id='professorStar3'/>
+							<img src='/assets/img/common/review_star_full.png' id='professorStar4'/>
+							<img src='/assets/img/common/review_star_full.png' id='professorStar5'/>
+
 							<span id='professor'></span>
 						</td>
 					</tr>
@@ -534,6 +568,12 @@
 	<script>
 	
 		$(document).ready(function(){
+			
+			majorClassList = new Array();
+			majorNameList = new Array();
+			majorsNameLists = new Array();
+			collegeName = "";
+			majorName = "";
 
 			/******************************************
 			* 학교 정보 가져오기
@@ -545,44 +585,66 @@
 			// Option is not needed.
 			}, function(data) {
 
-				$(".univ_logo").attr('src', '/assets/img/logo/logo_' + collegeID + '.jpg');
-				$("#collegeName").html(data.result[0].collegeInfo.name);
-				$(".univ_name").html(data.result[0].collegeInfo.name);
-				$(".collegeWeb").html(data.result[0].collegeInfo.web);
-
-				// 
-				$(".profileUniv").html(data.result[0].collegeInfo.name);
-
-			}, function(data) {
-				alert("잘못된 접근입니다, 뒤로가기 이동");
-			});
-			/*****************************************/
-
-			/******************************************
-			* 학과 정보 가져오기
-			/*****************************************/
-			RequestHelper.post('/college/getAllMajorsInCollege', {
-				collegeID: collegeID
-			},
-			{
-			// Option is not needed.
-			}, function(data) {
-				
-				// 리스트 추가
-				var majors = data.result[0].majors;
-				var groupList = $('#collegeMajor1');
-				var majorsList = $('#collegeMajor2');
-
-				for (var i in majors) {
-					var optionStr1 = '<option value="' + majors[i].majorID + '">' + majors[i].majorClass + '</option>';
-					var optionStr2 = '<option value="' + majors[i].majorID + '">' + majors[i].majorName + '</option>';
-					$(optionStr1).appendTo(groupList);
-					$(optionStr2).appendTo(majorsList);
+				if (data.status == "InvalidCollegeID") {
+					alert("잘못된 접근 입니다.");
+					location.href = '/review/univ/comment/?univ=c001';
 				}
 
-				AverageGradeOfMajor($("#collegeMajor2").val());
-				CountOfMajorReviews($("#collegeMajor2").val());
-				BestMajorReviews($("#collegeMajor2").val());
+				collegeName = data.result[0].collegeInfo.name;
+
+				$(".univ_logo").attr('src', '/assets/img/logo/logo_' + collegeID + '.jpg');
+				$("#collegeName").html(collegeName);
+				$(".collegeWeb").html(data.result[0].collegeInfo.web);
+				$(".profileUniv").html(collegeName);
+
+				/******************************************
+				* 학과 정보 가져오기
+				/*****************************************/
+				RequestHelper.post('/college/getAllMajorsInCollege', {
+					collegeID: collegeID
+				},
+				{
+				// Option is not needed.
+				}, function(data) {
+					
+					// 리스트 추가
+					var majors = data.result[0].majors;
+					var groupList = $('#collegeMajor1');
+					var majorsList = $('#collegeMajor2');
+
+					// 계열 선택 후 학과 목록 초기화
+					for (var i in majors) {
+						majorClassList[i] = majors[i].majorClass;
+						majorNameList[i] = majors[i].majorName;
+						majorsNameLists[i] = data.result[0].majors[i].majorClass + "/" + data.result[0].majors[i].majorName + "/" + data.result[0].majors[i].majorID;
+					}
+
+					$("#collegeMajor2").find("option").remove();
+					$(".univ_name").html(collegeName + " " + majorNameList[0]);
+
+					majorClassList = $.unique(majorClassList);
+
+					for (var i in majorClassList) {
+						$(groupList).append("<option value='" + majorClassList[i] + "'>" + majorClassList[i] + "</option>");
+					}
+
+					for (var i in majorsNameLists) {
+						if (majorsNameLists[i].indexOf($("#collegeMajor1 option:selected").val()) != -1) {
+							var className = majorsNameLists[i].split("/");
+							$(majorsList).append("<option value='" + className[2] + "'>" + className[1] + "</option>");
+						}
+					}
+
+					AverageGradeOfMajor($("#collegeMajor2").val());
+					CountOfMajorReviews($("#collegeMajor2").val());
+					BestMajorReviews($("#collegeMajor2").val());
+					getMoreInfoOfMajor($("#collegeMajor2").val());
+					CountOfCollegeReviews();
+
+				}, function(data) {
+					alert("잘못된 접근입니다, 뒤로가기 이동");
+				});
+				/*****************************************/
 
 			}, function(data) {
 				alert("잘못된 접근입니다, 뒤로가기 이동");
@@ -597,17 +659,45 @@
 			// Option is not needed.
 			}, function(data) {
 
-				// alert(JSON.stringify(data));
-
 				var CollegeLink = $(".SideCollegeLink");
 				var CollegeLogo = $(".SideCollegeLogo");
 				var CollegeName = $(".SideCollegeName");
+				var CollegeNameList = new Array();
 
 				for (var i = 0; i < 1; i++) {
 
 					$(CollegeLink[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByCountOfReviews[i].collegeID);
 					$(CollegeLogo[i]).attr("src", "/assets/img/logo/logo_" + data.result[0].collegeRankingByCountOfReviews[i].collegeID + ".jpg");
-					$(CollegeName[i]).html(data.result[0].collegeRankingByCountOfReviews[i].collegeID);
+
+					collegeCode = data.result[0].collegeRankingByCountOfReviews[i].collegeID;
+
+					/******************************************
+					* Get Name of the College
+					/*****************************************/
+					RequestHelper.post('/college/getAllColleges', {},
+					{
+					// Option is not needed.
+					}, function(data) {
+						var lengthColleges = data.result[0].colleges.length;
+
+						for (var i = 0; i<lengthColleges; i++) {
+
+							if (data.result[0].colleges[i].collegeID == collegeCode) {
+								CollegeNameList.push(data.result[0].colleges[i].collegeName);
+
+								// alert(CollegeNameList[0]);
+
+								$(CollegeName[0]).html(CollegeNameList[0]);
+								// $("#univName2").html(CollegeNameList[1]);
+								// $("#univName3").html(CollegeNameList[2]);
+							}
+
+						}
+
+					}, function(data) {
+						alert(JSON.stringify(data));
+					});
+					/*****************************************/
 
 				}
 
@@ -621,6 +711,17 @@
 				AverageGradeOfMajor($("#collegeMajor2").val());
 				CountOfMajorReviews($("#collegeMajor2").val());
 				BestMajorReviews($("#collegeMajor2").val());
+				getMoreInfoOfMajor($("#collegeMajor2").val());
+
+				// 계열 선택 후 학과 목록 초기화
+				$("#collegeMajor2").find("option").remove();
+
+				for (var i in majorsNameLists) {
+					if (majorsNameLists[i].indexOf($("#collegeMajor1 option:selected").val()) != -1) {
+						var className = majorsNameLists[i].split("/");
+						$('#collegeMajor2').append("<option value='" + className[2] + "'>" + className[1] + "</option>");
+					}
+				}
 
 			});
 
@@ -629,11 +730,31 @@
 				AverageGradeOfMajor($("#collegeMajor2").val());
 				CountOfMajorReviews($("#collegeMajor2").val());
 				BestMajorReviews($("#collegeMajor2").val());
+				getMoreInfoOfMajor($("#collegeMajor2").val());
+
+				$(".univ_name").html(collegeName + " " + $("#collegeMajor2 option:selected").text());
 
 			});
 
-
 		});
+
+		/******************************************
+		* 해당 학과 추가 정보 가져오기
+		/*****************************************/
+		function getMoreInfoOfMajor(getMajorID) {
+			RequestHelper.post('/college/getMajorInfo', {
+				collegeID: collegeID,
+				majorID: getMajorID
+			},
+			{
+			// Option is not needed.
+			}, function(data) {
+				$(".majorAverageRank").html(data.result[0].majorInfo.averageRank);
+			}, function(data) {
+				alert("잘못된 접근입니다, 뒤로가기 이동");
+			});
+		}
+		/*****************************************/
 
 		/******************************************
 		* 해당 학과 리뷰 개수 가져오기
@@ -647,6 +768,23 @@
 			// Option is not needed.
 			}, function(data) {
 				$("#CountofReview").html(data.result[0].countOfReviews);
+			}, function(data) {
+				alert("잘못된 접근입니다, 뒤로가기 이동");
+			});
+		}
+		/*****************************************/
+
+		/******************************************
+		* 해당 대학 리뷰 개수 가져오기
+		/*****************************************/
+		function CountOfCollegeReviews() {
+			RequestHelper.post('/college/getAllCountOfCollegeReviews', {
+				collegeID: collegeID
+			},
+			{
+			// Option is not needed.
+			}, function(data) {
+				$(".collegeCountOfReviews").html(data.result[0].countOfReviews);
 			}, function(data) {
 				alert("잘못된 접근입니다, 뒤로가기 이동");
 			});
@@ -700,65 +838,70 @@
 			{
 			// Option is not needed.
 			}, function(data) {
-				
-				var pointaverageGrade = $(".pointaverageGrade");
-				var pointfacilities = $(".pointfacilities");
-				var pointculture = $(".pointculture");
-				var pointtown = $(".pointtown");
-				var pointtuition = $(".pointtuition");
-				var pointprofessor = $(".pointprofessor");
-				var comment_message = $(".comment_message");
-				var commendPros = $(".commendPros");
-				var commendCons = $(".commendCons");
-				var commendNeed = $(".commendNeed");
-				var commentFuture = $(".commentFuture");
-				var recommandComment = $(".recommandComment");
-				var profileDate = $(".profileDate");
 
-				for (var i = 0; i < 3; i++) {
-
-					var writeDate = data.result[0].reviews[i].time.substr(0, 10);
-
-					$(comment_message[i]).html(data.result[0].reviews[i].oneLineComment);
-					$(commendPros[i]).html(data.result[0].reviews[i].advantageComment);
-					$(commendCons[i]).html(data.result[0].reviews[i].weaknessComment);
-					$(commendNeed[i]).html(data.result[0].reviews[i].wishComment);
-					$(profileDate[i]).html(writeDate);
-
-					if (isRecommended) { 
-						$(recommandComment[i]).html("추천"); 
-					} else { 
-						$(recommandComment[i]).html("비추천"); 
-					}
+				if (data.result[0].reviews[0] == undefined) {
+					alert("해당 학과에 아직 작성된 리뷰가 없습니다.");
+				} else {
 					
-					if (data.result[0].reviews[i].viewAfter3Years == 'up') { 
-						$(commentFuture[i]).html("발전한다"); 
-					} else if (data.result[0].reviews[i].viewAfter3Years == 'maintain') {
-						$(commentFuture[i]).html("유지된다"); 
-					} else if (data.result[0].reviews[i].viewAfter3Years == 'down') { 
-						$(commentFuture[i]).html("도태된다"); 
+					var pointaverageGrade = $(".pointaverageGrade");
+					var pointfacilities = $(".pointfacilities");
+					var pointculture = $(".pointculture");
+					var pointtown = $(".pointtown");
+					var pointtuition = $(".pointtuition");
+					var pointprofessor = $(".pointprofessor");
+					var comment_message = $(".comment_message");
+					var commendPros = $(".commendPros");
+					var commendCons = $(".commendCons");
+					var commendNeed = $(".commendNeed");
+					var commentFuture = $(".commentFuture");
+					var recommandComment = $(".recommandComment");
+					var profileDate = $(".profileDate");
+
+					for (var i = 0; i < 3; i++) {
+
+						var writeDate = data.result[0].reviews[i].time.substr(0, 10);
+
+						$(comment_message[i]).html(data.result[0].reviews[i].oneLineComment);
+						$(commendPros[i]).html(data.result[0].reviews[i].advantageComment);
+						$(commendCons[i]).html(data.result[0].reviews[i].weaknessComment);
+						$(commendNeed[i]).html(data.result[0].reviews[i].wishComment);
+						$(profileDate[i]).html(writeDate);
+
+						if (isRecommended) { 
+							$(recommandComment[i]).html("추천"); 
+						} else { 
+							$(recommandComment[i]).html("비추천"); 
+						}
+						
+						if (data.result[0].reviews[i].viewAfter3Years == 'up') { 
+							$(commentFuture[i]).html("발전한다"); 
+						} else if (data.result[0].reviews[i].viewAfter3Years == 'maintain') {
+							$(commentFuture[i]).html("유지된다"); 
+						} else if (data.result[0].reviews[i].viewAfter3Years == 'down') { 
+							$(commentFuture[i]).html("도태된다"); 
+						}
+
+						// $(pointaverageGrade[i]).html(data.result[0].reviews[i].averageGrade);
+						makeStar('gradeaverageGrade', data.result[0]. reviews[i].averageGrade, '2');
+
+						$(pointfacilities[i]).html(data.result[0].reviews[i].facilitiesGrade);
+						makeStar('gradefacilities', data.result[0].reviews[i].facilitiesGrade, '2');
+
+						$(pointculture[i]).html(data.result[0].reviews[i].cultureGrade);
+						makeStar('gradeculture', data.result[0].reviews[i].cultureGrade, '2');
+
+						$(pointtown[i]).html(data.result[0].reviews[i].townGrade);
+						makeStar('gradetown', data.result[0].reviews[i].townGrade, '2');
+
+						$(pointtuition[i]).html(data.result[0].reviews[i].tuitionGrade);
+						makeStar('gradetuition', data.result[0].reviews[i].tuitionGrade, '2');
+
+						$(pointprofessor[i]).html(data.result[0].reviews[i].professorGrade);
+						makeStar('gradeprofessor', data.result[0].reviews[i].professorGrade, '2');
+
 					}
-
-					// $(pointaverageGrade[i]).html(data.result[0].reviews[i].averageGrade);
-					makeStar('gradeaverageGrade', data.result[0]. reviews[i].averageGrade, '2');
-
-					$(pointfacilities[i]).html(data.result[0].reviews[i].facilitiesGrade);
-					makeStar('gradefacilities', data.result[0].reviews[i].facilitiesGrade, '2');
-
-					$(pointculture[i]).html(data.result[0].reviews[i].cultureGrade);
-					makeStar('gradeculture', data.result[0].reviews[i].cultureGrade, '2');
-
-					$(pointtown[i]).html(data.result[0].reviews[i].townGrade);
-					makeStar('gradetown', data.result[0].reviews[i].townGrade, '2');
-
-					$(pointtuition[i]).html(data.result[0].reviews[i].tuitionGrade);
-					makeStar('gradetuition', data.result[0].reviews[i].tuitionGrade, '2');
-
-					$(pointprofessor[i]).html(data.result[0].reviews[i].professorGrade);
-					makeStar('gradeprofessor', data.result[0].reviews[i].professorGrade, '2');
 
 				}
-
 
 			}, function(data) {
 				alert("잘못된 접근입니다, 뒤로가기 이동");
@@ -877,7 +1020,7 @@
 								<td>
 									<br/><br/>
 									<span style='font-size:1.2rem;color:#58595B;margin-bottom:5px;'>아직도 회원이 아니시라구요??</span>
-									<button class='sign_b_s' id='sign_b_s' onclick='return false;'>이메일로 회원가입하기</button>
+									<button class='sign_b_s' id='sign_b_s' onclick='return false;' style='margin: 10px 0px;'>이메일로 회원가입하기</button>
 									<br/>
 									<button class='sign_b_s' id='sign_b_s' onclick='facebookSign();return false;'>페이스북으로 회원가입하기</button>
 									<div id="status"></div>

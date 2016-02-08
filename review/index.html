@@ -497,17 +497,45 @@
 			// Option is not needed.
 			}, function(data) {
 
-				// alert(JSON.stringify(data));
-
 				var CollegeLink = $(".SideCollegeLink");
 				var CollegeLogo = $(".SideCollegeLogo");
 				var CollegeName = $(".SideCollegeName");
+				var CollegeNameList = new Array();
 
 				for (var i = 0; i < 1; i++) {
 
 					$(CollegeLink[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByCountOfReviews[i].collegeID);
 					$(CollegeLogo[i]).attr("src", "/assets/img/logo/logo_" + data.result[0].collegeRankingByCountOfReviews[i].collegeID + ".jpg");
-					$(CollegeName[i]).html(data.result[0].collegeRankingByCountOfReviews[i].collegeID);
+
+					collegeCode = data.result[0].collegeRankingByCountOfReviews[i].collegeID;
+
+					/******************************************
+					* Get Name of the College
+					/*****************************************/
+					RequestHelper.post('/college/getAllColleges', {},
+					{
+					// Option is not needed.
+					}, function(data) {
+						var lengthColleges = data.result[0].colleges.length;
+
+						for (var i = 0; i<lengthColleges; i++) {
+
+							if (data.result[0].colleges[i].collegeID == collegeCode) {
+								CollegeNameList.push(data.result[0].colleges[i].collegeName);
+
+								// alert(CollegeNameList[0]);
+
+								$(CollegeName[0]).html(CollegeNameList[0]);
+								// $("#univName2").html(CollegeNameList[1]);
+								// $("#univName3").html(CollegeNameList[2]);
+							}
+
+						}
+
+					}, function(data) {
+						alert(JSON.stringify(data));
+					});
+					/*****************************************/
 
 				}
 
@@ -617,7 +645,7 @@
 								<td>
 									<br/><br/>
 									<span style='font-size:1.2rem;color:#58595B;margin-bottom:5px;'>아직도 회원이 아니시라구요??</span>
-									<button class='sign_b_s' id='sign_b_s' onclick='return false;'>이메일로 회원가입하기</button>
+									<button class='sign_b_s' id='sign_b_s' onclick='return false;' style='margin: 10px 0px;'>이메일로 회원가입하기</button>
 									<br/>
 									<button class='sign_b_s' id='sign_b_s' onclick='facebookSign();return false;'>페이스북으로 회원가입하기</button>
 									<div id="status"></div>

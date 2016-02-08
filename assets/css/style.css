@@ -70,6 +70,10 @@
 		color: #FFFFFF;
 	}
 
+	header a {
+		cursor: pointer !important;
+	}
+
 	.header_menu {
 		width: 1000px;
 		margin: 0px auto;
