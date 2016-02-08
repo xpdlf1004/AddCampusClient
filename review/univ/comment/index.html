@@ -861,8 +861,6 @@
 
 						var writeDate = data.result[0].reviews[i].time.substr(0, 10);
 
-						alert(data.result[0].reviews[i].isRecommended);
-
 						$(comment_message[i]).html(data.result[0].reviews[i].oneLineComment);
 						$(commendPros[i]).html(data.result[0].reviews[i].advantageComment);
 						$(commendCons[i]).html(data.result[0].reviews[i].weaknessComment);

@@ -454,13 +454,13 @@
 
 							if (data.result[0].colleges[i].collegeID == collegeCode) {
 								CollegeNameList.push(data.result[0].colleges[i].collegeName);
-
-								$("#univName1").html(CollegeNameList[0]);
-								$("#univName2").html(CollegeNameList[1]);
-								$("#univName3").html(CollegeNameList[2]);
 							}
 
 						}
+
+						$("#univName1").html(CollegeNameList[0]);
+						$("#univName2").html(CollegeNameList[1]);
+						$("#univName3").html(CollegeNameList[2]);
 
 					}, function(data) {
 						alert(JSON.stringify(data));
