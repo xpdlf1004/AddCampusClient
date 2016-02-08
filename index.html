@@ -451,13 +451,13 @@
 
 							if (data.result[0].colleges[i].collegeID == collegeCode) {
 								CollegeNameList.push(data.result[0].colleges[i].collegeName);
-
-								$("#univName1").html(CollegeNameList[0]);
-								$("#univName2").html(CollegeNameList[1]);
-								$("#univName3").html(CollegeNameList[2]);
 							}
 
 						}
+
+						$("#univName1").html(CollegeNameList[0]);
+						$("#univName2").html(CollegeNameList[1]);
+						$("#univName3").html(CollegeNameList[2]);
 
 					}, function(data) {
 						alert(JSON.stringify(data));
@@ -898,7 +898,7 @@
 									<br/><br/>
 									이 학과를 후배들에게 추천하시겠습니까?
 									<input type='radio' name='isRecommended' id='isRecommended' value='1' style='margin-left:90px;'/>&nbsp;&nbsp;추천
-									<input type='radio' name='isRecommended' id='isRecommended' value='0' style='margin-left:25px;'/>&nbsp;&nbsp;비추천
+									<input type='radio' name='isRecommended' id='isRecommended' value='' style='margin-left:25px;'/>&nbsp;&nbsp;비추천
 								</td>
 							</tr>
 							<tr>

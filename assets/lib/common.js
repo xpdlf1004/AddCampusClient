@@ -229,15 +229,10 @@
 			$("#getMajor2").find("option").remove();
 
 			for (var i in majorsNameLists) {
-
 				if (majorsNameLists[i].indexOf($("#getMajor1 option:selected").val()) != -1) {
-
 					var className = majorsNameLists[i].split("/");
-
 					$('#getMajor2').append("<option value='" + className[2] + "'>" + className[1] + "</option>");
-
 				}
-
 			}
 
 		});
@@ -298,13 +293,20 @@
 		}, {
 			// Option is not needed.
 		}, function(data) {
-			alert("성공적으로 로그인 되었습니다.");
 
-			location.href = '/';
+				if (data.status == "ok") {
+					alert("성공적으로 로그인 되었습니다.");
 
-			LocalStorage.put('sessionKey', data.result[0].sessionKey);
-			LocalStorage.put('accessKey', data.result[0].accessKey);
-			LocalStorage.put('accountSequence', data.result[0].accountSequence);
+					location.href = '/';
+
+					LocalStorage.put('sessionKey', data.result[0].sessionKey);
+					LocalStorage.put('accessKey', data.result[0].accessKey);
+					LocalStorage.put('accountSequence', data.result[0].accountSequence);
+				} else {
+					alert("로그인에 실패했습니다, 다시 시도해주세요.");
+					location.href = '/';
+				}
+				
 		}, function(data) {
 			alert(JSON.stringify(data));
 		});
@@ -497,8 +499,8 @@
 		var advantageComment = $('#advantageComment').val();
 		var weaknessComment = $('#weaknessComment').val();
 		var wishComment = $('#wishComment').val();
-		var isRecommended = $("input[name=isRecommended]:checked").val()
-		var viewAfter3Years = $("input[name=viewAfter3Years]:checked").val()
+		var isRecommended = $("input[name=isRecommended]:checked").val();
+		var viewAfter3Years = $("input[name=viewAfter3Years]:checked").val();
 		var averageGrade = $("#averageGrade").raty('score');
 		var facilitiesGrade = $("#facilitiesGrade").raty('score');
 		var cultureGrade = $("#cultureGrade").raty('score');
@@ -506,10 +508,12 @@
 		var tuitionGrade = $("#tuitionGrade").raty('score');
 		var professorGrade = $("#professorGrade").raty('score');
 
+		isRecommended = new Boolean (isRecommended);
+
 		var collegeID = retCollegeID;
 		var majorID = $("#getMajor2").val();
 
-		if ((oneLineComment == '') || (advantageComment == '') || (weaknessComment == '') || (wishComment == '') || (isRecommended == '') || (viewAfter3Years == '') || (averageGrade == '') || (facilitiesGrade == '') || (cultureGrade == '') || (townGrade == '') || (tuitionGrade == '') || (professorGrade == '')) {
+		if ((oneLineComment == '') || (advantageComment == '') || (weaknessComment == '') || (wishComment == '') || (viewAfter3Years == '') || (averageGrade == '') || (facilitiesGrade == '') || (cultureGrade == '') || (townGrade == '') || (tuitionGrade == '') || (professorGrade == '')) {
 			alert("모든 내용을 빠짐없이 작성해주셔야 합니다");
 			return false;
 		}
@@ -600,35 +604,25 @@
 						var majorsList = $('#getMajor2');
 
 						for (var i in majors) {
-
 							majorClassList[i] = majors[i].majorClass;
 							majorNameList[i] = majors[i].majorName;
-
 							majorsNameLists[i] = data.result[0].majors[i].majorClass + "/" + data.result[0].majors[i].majorName + "/" + data.result[0].majors[i].majorID;
-
 						}
 
 						// 배열 중복 제거
 						majorClassList = $.unique(majorClassList);
 
 						for (var i in majorClassList) {
-
 							$(groupList).append("<option value='" + majorClassList[i] + "'>" + majorClassList[i] + "</option>");
-
 						}
 
 						$("#getMajor2").find("option").remove();
 
 						for (var i in majorsNameLists) {
-
 							if (majorsNameLists[i].indexOf($("#getMajor1 option:selected").val()) != -1) {
-
 								var className = majorsNameLists[i].split("/");
-
 								$('#getMajor2').append("<option value='" + className[2] + "'>" + className[1] + "</option>");
-
 							}
-
 						}
 
 					}, function(data) {

@@ -347,7 +347,7 @@
 	}
 
 	#footer li {
-		margin:0px;padding:0px;list-style:none;display:inline-block;margin-left: 20px;margin-right: 20px;
+		margin:0px;padding:0px;list-style:none;display:inline-block;margin-left: 20px;margin-right: 20px;cursor: pointer;
 	}
 
 	#footer .footer_content {
