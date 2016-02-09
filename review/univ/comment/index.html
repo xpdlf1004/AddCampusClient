@@ -473,7 +473,7 @@
 						<td class='of_rank'>1.</td>
 						<td class='of_college'>
 							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><span>인문사회 - 정치</span></p>
+							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
 							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</td>
 					</tr>
@@ -481,7 +481,7 @@
 						<td class='of_rank'>2.</td>
 						<td class='of_college'>
 							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><span>인문사회 - 정치</span></p>
+							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
 							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</td>
 					</tr>
@@ -489,7 +489,7 @@
 						<td class='of_rank'>3.</td>
 						<td class='of_college'>
 							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><span>인문사회 - 정치</span></p>
+							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
 							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</td>
 					</tr>
@@ -497,7 +497,7 @@
 						<td class='of_rank'>4.</td>
 						<td class='of_college'>
 							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><span>인문사회 - 정치</span></p>
+							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
 							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</td>
 					</tr>
@@ -505,7 +505,7 @@
 						<td class='of_rank'>5.</td>
 						<td class='of_college'>
 							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><span>인문사회 - 정치</span></p>
+							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
 							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</td>
 					</tr>
@@ -663,41 +663,33 @@
 				var CollegeLogo = $(".SideCollegeLogo");
 				var CollegeName = $(".SideCollegeName");
 				var CollegeNameList = new Array();
+				var collegeCode = new Array();
 
-				for (var i = 0; i < 1; i++) {
+				for (var i = 0; i < 3; i++) {
+
+					collegeCode[i] = data.result[0].collegeRankingByCountOfReviews[i].collegeID;
 
 					$(CollegeLink[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByCountOfReviews[i].collegeID);
 					$(CollegeLogo[i]).attr("src", "/assets/img/logo/logo_" + data.result[0].collegeRankingByCountOfReviews[i].collegeID + ".jpg");
 
-					collegeCode = data.result[0].collegeRankingByCountOfReviews[i].collegeID;
-
-					/******************************************
-					* Get Name of the College
-					/*****************************************/
 					RequestHelper.post('/college/getAllColleges', {},
 					{
-					// Option is not needed.
 					}, function(data) {
 						var lengthColleges = data.result[0].colleges.length;
 
-						for (var i = 0; i<lengthColleges; i++) {
+						for (var i = 0; i < lengthColleges; i++) {
 
-							if (data.result[0].colleges[i].collegeID == collegeCode) {
-								CollegeNameList.push(data.result[0].colleges[i].collegeName);
-
-								// alert(CollegeNameList[0]);
-
-								$(CollegeName[0]).html(CollegeNameList[0]);
-								// $("#univName2").html(CollegeNameList[1]);
-								// $("#univName3").html(CollegeNameList[2]);
-							}
+							if (data.result[0].colleges[i].collegeID === collegeCode[0]) $(CollegeName[0]).html(data.result[0].colleges[i].collegeName);
+							if (data.result[0].colleges[i].collegeID === collegeCode[1]) $(CollegeName[1]).html(data.result[0].colleges[i].collegeName);
+							if (data.result[0].colleges[i].collegeID === collegeCode[2]) $(CollegeName[2]).html(data.result[0].colleges[i].collegeName);
+							// if (data.result[0].colleges[i].collegeID === collegeCode[3]) $(CollegeName[3]).html(data.result[0].colleges[i].collegeName);
+							// if (data.result[0].colleges[i].collegeID === collegeCode[4]) $(CollegeName[4]).html(data.result[0].colleges[i].collegeName);
 
 						}
 
 					}, function(data) {
 						alert(JSON.stringify(data));
 					});
-					/*****************************************/
 
 				}
 
