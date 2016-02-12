@@ -411,7 +411,7 @@
 	.review_list .review_more_b {
 		font-size: 0.8rem;
 		text-align: right;
-		padding: 18px 10px 14px 0px;
+		padding: 18px 5px 14px 0px;
 		color: #1C75BA;
 	}
 
@@ -422,14 +422,9 @@
 	}
 	
 	.review_list .of_college {
-		width: 65%;
-		padding: 7px 10px 8px 0px;
+		width: 70%;
+		padding: 6px 0px 6px 0px;
 		text-align: left;
-	}
-
-	.review_list .of_college img {
-		display:  inline-block;
-		margin:  0px 10px 0px 7px;
 	}
 	
 	.review_list .of_college p {
@@ -440,10 +435,15 @@
 		font-size: 0.9rem;
 		color: #808083;
 	}
+
+	.review_list .of_college img {
+		display:  inline-block;
+		margin:  0px 10px 0px 7px;
+	}
 	
 	.review_list .of_diff {
-		width: 20%;
-		padding: 0px 10px 0px 0px;
+		width: 15%;
+		padding: 0px;
 		font-size: 1rem;
 		color: #58595B;
 	}
