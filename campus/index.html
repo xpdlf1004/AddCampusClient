@@ -31,7 +31,7 @@
 			</ul>
 			<ul class='header_right' id='header_right_in' style='display:none;'>
 				<li style='margin:0px 14px;'><a onclick="layer_open2('layer3');" style='text-decoration:none;color:#1C75BA;'>리뷰작성</a></li>
-				<li style='margin:0px 14px;'>마이페이지</li>
+				<!-- <li style='margin:0px 14px;'>마이페이지</li> -->
 				<li style='margin:0px 14px;'><a class='btn-example' id='tab_sign_out'>로그아웃</a></li>
 			</ul>
 			<ul class='header_right' id='header_right_out' style='display:none;'>
@@ -1138,9 +1138,10 @@
 							</tr>
 							<tr>
 								<td style='padding-left: 40px;width:120px;font-size:12.5pt;color:#58595B;height:60px;'>학과 한줄평<br/>
-									<span style='font-size:11pt;font-weight:300;color:#808083;'>최대 20자</span></td>
+									<span style='font-size:11pt;font-weight:300;color:#808083;'>최소 20자</span>
+								</td>
 								<td style='text-align:left;'>
-									<input type='text' id='oneLineComment' maxlength='20' placeholder='ex) 나 같으면 여기는 절대 안 온다.' style='font-size:11pt;width:80%;padding: 7px 12px;border:1px solid #BABCBE;'/>
+									<input type='text' id='oneLineComment' placeholder='ex) 나 같으면 여기는 절대 안 온다.' style='font-size:11pt;width:80%;padding: 7px 12px;border:1px solid #BABCBE;'/>
 								</td>
 							</tr>
 							<tr>
@@ -1159,7 +1160,7 @@
 							</tr>
 							<tr>
 								<td style='padding-left: 40px;width:120px;font-size:12.5pt;color:#58595B;height:80px;padding-top:20px;vertical-align:top;'>학과에 바라는 점<br/>
-									<span style='font-size:11pt;font-weight:300;color:#808083;'>최소 30자</span></td>
+									<span style='font-size:11pt;font-weight:300;color:#808083;'>최소 20자</span></td>
 								<td style='text-align:left;'>
 									<textarea name='' id='wishComment' placeholder='ex) 솔로인 학우들을 위해 학과차원에서 과팅을 주선해달라' style='font-size:11pt;width:80%;padding: 7px 12px;height:60px;border:1px solid #BABCBE;'/></textarea>
 								</td>

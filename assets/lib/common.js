@@ -294,18 +294,18 @@
 			// Option is not needed.
 		}, function(data) {
 
-				if (data.status == "ok") {
-					alert("성공적으로 로그인 되었습니다.");
+			if (data.status == "ok") {
+				alert("성공적으로 로그인 되었습니다.");
 
-					location.href = '/';
+				LocalStorage.put('sessionKey', data.result[0].sessionKey);
+				LocalStorage.put('accessKey', data.result[0].accessKey);
+				LocalStorage.put('accountSequence', data.result[0].accountSequence);
 
-					LocalStorage.put('sessionKey', data.result[0].sessionKey);
-					LocalStorage.put('accessKey', data.result[0].accessKey);
-					LocalStorage.put('accountSequence', data.result[0].accountSequence);
-				} else {
-					alert("로그인에 실패했습니다, 다시 시도해주세요.");
-					location.href = '/';
-				}
+				location.href = '/';
+			} else {
+				alert("로그인에 실패했습니다, 다시 시도해주세요.");
+				location.href = '/';
+			}
 				
 		}, function(data) {
 			alert(JSON.stringify(data));
@@ -518,23 +518,23 @@
 			return false;
 		}
 
-		if (String($('#oneLineComment').val()).length > 20) {
-			alert("학과 한줄평은 최대 20자까지 작성이 가능합니다.");
+		if ((String($('#oneLineComment').val()).length <= 20) || (String($('#oneLineComment').val()).length >= 50)) {
+			alert("학과 한줄평은 최소 30자, 최대 50자까지 작성해야합니다.");
 			return false;
 		}
 
-		if (String($('#advantageComment').val()).length < 30) {
-			alert("학과의 장점은 최소 30자이상 작성해야합니다.");
+		if ((String($('#advantageComment').val()).length <= 30) || (String($('#advantageComment').val()).length >= 500)) {
+			alert("학과의 장점은 최소 30자, 최대 500자까지 작성해야합니다.");
 			return false;
 		}
 
-		if (String($('#weaknessComment').val()).length < 30) {
-			alert("학과의 단점은 최소 30자이상 작성해야합니다.");
+		if ((String($('#weaknessComment').val()).length <= 30) || (String($('#weaknessComment').val()).length >= 500)) {
+			alert("학과의 단점은 최소 30자, 최대 500자까지 작성해야합니다.");
 			return false;
 		}
 
-		if (String($('#wishComment').val()).length < 30) {
-			alert("학과의 바라는점은 최소 30자이상 작성해야합니다.");
+		if ((String($('#wishComment').val()).length <= 20) || (String($('#wishComment').val()).length >= 500)) {
+			alert("학과의 바라는점은 최소 30자, 최대 500자까지 작성해야합니다.");
 			return false;
 		}
 
@@ -559,9 +559,13 @@
 			sessionKey: LocalStorage.get('sessionKey'),
 			accessKey: LocalStorage.get('accessKey')
 		}, function(data) {
-			// alert(JSON.stringify(data));
-			alert("성공적으로 리뷰가 작성되었습니다, 해당 대학 페이지로 이동됩니다!");
-			location.href = '/review/univ/?univ=' + collegeID;
+
+			if (data.status == 'ok') {
+				alert("성공적으로 리뷰가 작성되었습니다, 해당 대학 페이지로 이동됩니다!");
+				location.href = '/review/univ/?univ=' + collegeID;
+			} else {
+				alert("리뷰 작성에 실패했습니다, 다시 작성해주세요!");
+			}
 
 		}, function(data) {
 			alert(JSON.stringify(data));
@@ -640,44 +644,88 @@
 	}
 	/*****************************************/
 
-	function facebookSign() {
-		// FB.getLoginStatus(function(response) {
-		// 	statusChangeCallback(response);
-		// });
-
-		alert("준비 중 입니다.");
-	}
-
 	function statusChangeCallback(response) {
-
-		var responseCallback = response;
-
 		if (response.status === 'connected') {
 
-			FB.api('/me', function(response) {
-				RequestHelper.post('/account/loginWithFacebook', {
-					facebookUserKey: response.id,
-					facebookAccessToken: responseCallback.authResponse.accessToken
-				}, {
-					// Option is not needed.
-				}, function(data) {
-					alert("성공적으로 로그인 되었습니다.");
-					location.href = '/';
+			if ((response.authResponse.userID === '') || (response.authResponse.accessToken === '')) {
+				alert("로그인에 실패했습니다, 다시 시도해주세요!");
+				locaion.href = '/';
+			} else {
+				makeUserAccount(response.authResponse.userID, response.authResponse.accessToken);	
+			}
+			
+		} else if (response.status === 'not_authorized') {
+			alert("페이스북에 먼저 로그인 해주세요!");
+			window.open("http://facebook.com/", "_blank");
+		} else {
+			alert("페이스북에 먼저 로그인 해주세요!");
+			window.open("http://facebook.com/", "_blank");
+		}
+	}
 
-					LocalStorage.put('sessionKey', data.result[0].sessionKey);
-					LocalStorage.put('accessKey', data.result[0].accessKey);
-					LocalStorage.put('accountSequence', data.result[0].accountSequence);
+	function makeUserAccount(facebookUserKey, facebookAccessToken) {
+
+		RequestHelper.post('/account/loginWithFacebook', {
+			facebookUserKey: facebookUserKey,
+			facebookAccessToken: facebookAccessToken
+		}, {
+		// Option is not needed.
+		}, function(data) {
+
+			if (data.status == 'InvalidUserID') {
+
+				RequestHelper.post('/account/makeUserAccountWithFacebook', {
+					facebookUserKey: facebookUserKey,
+					facebookAccessToken: facebookAccessToken,
+					gender: 'man',
+					birthYear: 1991,
+					job: 'highSchoolStudent'
+				}, {
+				// Option is not needed.
 				}, function(data) {
-					alert("로그인에 실패했습니다, 다시 시도해주세요.");
+
+					if (data.status == 'ok') {
+						alert("성공적으로 회원가입되었습니다, 다시 로그인해주세요!");
+						location.href = '/';
+					} else {
+						alert("잘못된 접근입니다, 다시 시도해주세요!");
+						location.href = '/';
+					}
+
+				}, function(data) {
+					alert("잘못된 접근입니다, 다시 시도해주세요!");
 					location.href = '/';
 				});
-			});
 
-		} else {
-			alert("페이스북 로그인에 실패했습니다, 다시 시도해주세요.");
+			} else if (data.status == 'ok') {
+
+				alert("성공적으로 로그인 되었습니다.");
+
+				LocalStorage.put('sessionKey', data.result[0].sessionKey);
+				LocalStorage.put('accessKey', data.result[0].accessKey);
+				LocalStorage.put('accountSequence', data.result[0].accountSequence);
+
+				location.href = '/';
+
+			} else {
+
+				alert("잘못된 접근입니다, 다시 시도해주세요!");
+				location.href = '/';
+
+			}
+
+		}, function(data) {
+
+			alert("잘못된 접근입니다, 다시 시도해주세요!");
 			location.href = '/';
-		}
 
+		});
+	}
+
+	function facebookSign() {
+		FB.getLoginStatus(function(response) {
+			statusChangeCallback(response);
+		});
 	}
 
 	window.fbAsyncInit = function() {
@@ -696,8 +744,3 @@
 	js.src = "//connect.facebook.net/en_US/sdk.js";
 	fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
-
-	function testAPI() {
-		console.log('Welcome!  Fetching your information.... ');
-
-	}
