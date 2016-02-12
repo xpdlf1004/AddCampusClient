@@ -511,7 +511,7 @@
 				var CollegeNameList = new Array();
 				var collegeCode = new Array();
 
-				for (var i = 0; i < 3; i++) {
+				for (var i = 0; i < 5; i++) {
 
 					collegeCode[i] = data.result[0].collegeRankingByCountOfReviews[i].collegeID;
 
@@ -528,8 +528,8 @@
 							if (data.result[0].colleges[i].collegeID === collegeCode[0]) $(CollegeName[0]).html(data.result[0].colleges[i].collegeName);
 							if (data.result[0].colleges[i].collegeID === collegeCode[1]) $(CollegeName[1]).html(data.result[0].colleges[i].collegeName);
 							if (data.result[0].colleges[i].collegeID === collegeCode[2]) $(CollegeName[2]).html(data.result[0].colleges[i].collegeName);
-							// if (data.result[0].colleges[i].collegeID === collegeCode[3]) $(CollegeName[3]).html(data.result[0].colleges[i].collegeName);
-							// if (data.result[0].colleges[i].collegeID === collegeCode[4]) $(CollegeName[4]).html(data.result[0].colleges[i].collegeName);
+							if (data.result[0].colleges[i].collegeID === collegeCode[3]) $(CollegeName[3]).html(data.result[0].colleges[i].collegeName);
+							if (data.result[0].colleges[i].collegeID === collegeCode[4]) $(CollegeName[4]).html(data.result[0].colleges[i].collegeName);
 
 						}
 

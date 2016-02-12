@@ -316,7 +316,7 @@
 		event.preventDefault();
 		var accountSequence = LocalStorage.get('accountSequence');
 
-		RequestHelper.post('/account/logoutUserAccount', {
+		RequestHelper.post('/account/recommendReview', {
 			accountSequence: accountSequence
 		}, {
 			sessionKey: LocalStorage.get('sessionKey'),

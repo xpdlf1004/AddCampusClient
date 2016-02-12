@@ -100,6 +100,7 @@
 				<div class='find_campus'>
 					<div class="mypage_memo" style='display:inline-block;width:170px;height:25px;border-radius:5px;border:1px solid #808083;'>
 						<select id='collegeMajor1' name="selection">
+							<option value='All'>전체 보기</option>
 						</select>
 					</div>
 
@@ -191,7 +192,7 @@
 					</tr>
 				</table>
 
-        		<table class='univ_comment' style='background:#FFF;'>
+        		<table class='univ_comment' style='background:#FFF;width:100%;'>
 					<tr>
 						<td colspan='3' style='height:72px;text-align:left;'>
 							<img class='comment_profile_img' src='/assets/img/common/review_user.png'/>
@@ -269,13 +270,19 @@
 							<p class='commentFuture'></p>
 						</td>
 					</tr>
+					<tr>
+						<td colspan='3'>
+							<button class='recommandReview' style='width:160px;height:35px;background:#FFA321;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#58595B;margin-right:15px;'>좋은 정보에요!</button>
+							<button class='shareOnFb' style='width:160px;height:35px;background:#3765A3;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#FFFFFF;margin-left:15px;'>페북에 공유하기</button>
+						</td>
+					</tr>
 				</table>
 
         		<table class='univ_comment' style='background:#FFF;'>
 					<tr>
 						<td colspan='3' style='height:72px;text-align:left;'>
 							<img class='comment_profile_img' src='/assets/img/common/review_user.png'/>
-							<h3 class='comment_profile_h3'><span class='profileUniv' style='font-size: 1.3125rem;margin: 0px;color: #58595B;text-align: left;'></span><!-- <span>공업디자인 10학번</span> --><span class='profileDate'></span></h3>
+							<h3 class='comment_profile_h3'><span class='profileUniv' style='font-size: 1.3125rem;margin: 0px;color: #58595B;text-align: left;'></span><span class='profileDate'></span></h3>
 						</td>
 					</tr>
 					<tr>
@@ -349,13 +356,19 @@
 							<p class='commentFuture'></p>
 						</td>
 					</tr>
+					<tr>
+						<td colspan='3'>
+							<button class='recommandReview' style='width:160px;height:35px;background:#FFA321;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#58595B;margin-right:15px;'>좋은 정보에요!</button>
+							<button class='shareOnFb' style='width:160px;height:35px;background:#3765A3;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#FFFFFF;margin-left:15px;'>페북에 공유하기</button>
+						</td>
+					</tr>
 				</table>
 
         		<table class='univ_comment' style='background:#FFF;'>
 					<tr>
 						<td colspan='3' style='height:72px;text-align:left;'>
 							<img class='comment_profile_img' src='/assets/img/common/review_user.png'/>
-							<h3 class='comment_profile_h3'><span class='profileUniv' style='font-size: 1.3125rem;margin: 0px;color: #58595B;text-align: left;'></span><!-- <span>공업디자인 10학번</span> --><span class='profileDate'></span></h3>
+							<h3 class='comment_profile_h3'><span class='profileUniv' style='font-size: 1.3125rem;margin: 0px;color: #58595B;text-align: left;'></span><span class='profileDate'></span></h3>
 						</td>
 					</tr>
 					<tr>
@@ -427,6 +440,21 @@
 						<td colspan='3' class='comment_future'>
 							<h2>3년 후 학과의 미래</h2>
 							<p class='commentFuture'></p>
+						</td>
+					</tr>
+					<tr>
+						<td colspan='3'>
+							<button class='recommandReview' style='width:160px;height:35px;background:#FFA321;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#58595B;margin-right:15px;'>좋은 정보에요!</button>
+							<button class='shareOnFb' style='width:160px;height:35px;background:#3765A3;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#FFFFFF;margin-left:15px;'>페북에 공유하기</button>
+						</td>
+					</tr>
+				</table>
+
+				<table class='univ_comment_none' style='background:#FFF;width:100%;border:1px solid #BCBEC0;color:#BCBEC0;display:none;'>
+					<tr>
+						<td colspan='3' style='width:100%;height:300px;text-align:center;'>
+							<h2>작성된 리뷰가 없습니다! 지금 작성해주세요!</h2>
+							<a onclick="layer_open2('layer3');" style='text-decoration:none;color:#1C75BA;font-size: 1rem;font-weight: bold;color: #58595B;width: 215px;height: 40px;text-align: center;background: #FFD432;border-radius: 10px;line-height: 40px;display:inline-block;'>리뷰 작성하기</a>
 						</td>
 					</tr>
 				</table>
@@ -474,40 +502,40 @@
 						<td class='of_college'>
 							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
 							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
-							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</td>
+						<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 					</tr>
 					<tr>
 						<td class='of_rank'>2.</td>
 						<td class='of_college'>
 							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
 							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
-							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</td>
+						<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 					</tr>
 					<tr>
 						<td class='of_rank'>3.</td>
 						<td class='of_college'>
 							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
 							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
-							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</td>
+						<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 					</tr>
 					<tr>
 						<td class='of_rank'>4.</td>
 						<td class='of_college'>
 							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
 							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
-							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</td>
+						<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 					</tr>
 					<tr>
 						<td class='of_rank'>5.</td>
 						<td class='of_college'>
 							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
 							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
-							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</td>
+						<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 					</tr>
 					<tr>
 						<td colspan='3'>&nbsp;</td>
@@ -635,11 +663,19 @@
 						}
 					}
 
-					AverageGradeOfMajor($("#collegeMajor2").val());
-					CountOfMajorReviews($("#collegeMajor2").val());
-					BestMajorReviews($("#collegeMajor2").val());
-					getMoreInfoOfMajor($("#collegeMajor2").val());
-					CountOfCollegeReviews();
+					if ($('#collegeMajor1').val() == 'All') {
+
+						alert("리뷰 전체보기");
+
+					} else {
+
+						AverageGradeOfMajor($("#collegeMajor2").val());
+						CountOfMajorReviews($("#collegeMajor2").val());
+						BestMajorReviews($("#collegeMajor2").val());
+						getMoreInfoOfMajor($("#collegeMajor2").val());
+						CountOfCollegeReviews();
+
+					}
 
 				}, function(data) {
 					alert("잘못된 접근입니다, 뒤로가기 이동");
@@ -665,7 +701,7 @@
 				var CollegeNameList = new Array();
 				var collegeCode = new Array();
 
-				for (var i = 0; i < 3; i++) {
+				for (var i = 0; i < 5; i++) {
 
 					collegeCode[i] = data.result[0].collegeRankingByCountOfReviews[i].collegeID;
 
@@ -682,8 +718,8 @@
 							if (data.result[0].colleges[i].collegeID === collegeCode[0]) $(CollegeName[0]).html(data.result[0].colleges[i].collegeName);
 							if (data.result[0].colleges[i].collegeID === collegeCode[1]) $(CollegeName[1]).html(data.result[0].colleges[i].collegeName);
 							if (data.result[0].colleges[i].collegeID === collegeCode[2]) $(CollegeName[2]).html(data.result[0].colleges[i].collegeName);
-							// if (data.result[0].colleges[i].collegeID === collegeCode[3]) $(CollegeName[3]).html(data.result[0].colleges[i].collegeName);
-							// if (data.result[0].colleges[i].collegeID === collegeCode[4]) $(CollegeName[4]).html(data.result[0].colleges[i].collegeName);
+							if (data.result[0].colleges[i].collegeID === collegeCode[3]) $(CollegeName[3]).html(data.result[0].colleges[i].collegeName);
+							if (data.result[0].colleges[i].collegeID === collegeCode[4]) $(CollegeName[4]).html(data.result[0].colleges[i].collegeName);
 
 						}
 
@@ -703,17 +739,25 @@
 				// 계열 선택 후 학과 목록 초기화
 				$("#collegeMajor2").find("option").remove();
 
-				for (var i in majorsNameLists) {
-					if (majorsNameLists[i].indexOf($("#collegeMajor1 option:selected").val()) != -1) {
-						var className = majorsNameLists[i].split("/");
-						$('#collegeMajor2').append("<option value='" + className[2] + "'>" + className[1] + "</option>");
-					}
-				}
+				if ($('#collegeMajor1').val() == 'All') {
 
-				AverageGradeOfMajor($("#collegeMajor2").val());
-				CountOfMajorReviews($("#collegeMajor2").val());
-				BestMajorReviews($("#collegeMajor2").val());
-				getMoreInfoOfMajor($("#collegeMajor2").val());
+					alert("리뷰 전체보기");
+
+				} else {
+
+					for (var i in majorsNameLists) {
+						if (majorsNameLists[i].indexOf($("#collegeMajor1 option:selected").val()) != -1) {
+							var className = majorsNameLists[i].split("/");
+							$('#collegeMajor2').append("<option value='" + className[2] + "'>" + className[1] + "</option>");
+						}
+					}
+
+					AverageGradeOfMajor($("#collegeMajor2").val());
+					CountOfMajorReviews($("#collegeMajor2").val());
+					BestMajorReviews($("#collegeMajor2").val());
+					getMoreInfoOfMajor($("#collegeMajor2").val());
+
+				}
 
 			});
 
@@ -725,6 +769,31 @@
 				CountOfMajorReviews($("#collegeMajor2").val());
 				BestMajorReviews($("#collegeMajor2").val());
 				getMoreInfoOfMajor($("#collegeMajor2").val());
+
+			});
+
+			$(".recommandReview").click(function(){
+				// alert();
+				var accountSequence = LocalStorage.get('accountSequence');
+				var reviewID = $(this).val();
+
+				RequestHelper.post('/college/recommendReview', {
+					accountSequence: accountSequence,
+					reviewID: reviewID
+				}, {
+					sessionKey: LocalStorage.get('sessionKey'),
+					accessKey: LocalStorage.get('accessKey')
+				}, function(data) {
+
+					if (data.status == 'ok') {
+						alert("성공적으로 추천되었습니다.");
+					} else {
+						alert("추천에 실패했습니다, 다시 시도해주세요!");
+					}
+
+				}, function(data) {
+					alert(JSON.stringify(data));
+				});
 
 			});
 
@@ -795,23 +864,35 @@
 			// Option is not needed.
 			}, function(data) {
 
-				$("#averageGradePoint").html(data.result[0].averageGrade);
-				makeStar('averageGrade', data.result[0].averageGrade, '1');
+				var averageGrade = Math.round(data.result[0].averageGrade*100)/100;
 
-				$("#facilities").html(data.result[0].facilities);
-				makeStar('facilities', data.result[0].facilities, '1');
+				$("#averageGradePoint").html(averageGrade);
+				makeStar('averageGrade', averageGrade, '1');
 
-				$("#culture").html(data.result[0].culture);
-				makeStar('culture', data.result[0].culture, '1');
+				var facilities = Math.round(data.result[0].facilities*100)/100;
 
-				$("#town").html(data.result[0].town);
-				makeStar('town', data.result[0].town, '1');
+				$("#facilities").html(facilities);
+				makeStar('facilities', facilities, '1');
 
-				$("#tuition").html(data.result[0].tuition);
-				makeStar('tuition', data.result[0].tuition, '1');
+				var culture = Math.round(data.result[0].culture*100)/100;
 
-				$("#professor").html(data.result[0].professor);
-				makeStar('professor', data.result[0].professor, '1');
+				$("#culture").html(culture);
+				makeStar('culture', culture, '1');
+
+				var town = Math.round(data.result[0].town*100)/100;
+
+				$("#town").html(town);
+				makeStar('town', town, '1');
+
+				var tuition = Math.round(data.result[0].tuition*100)/100;
+
+				$("#tuition").html(tuition);
+				makeStar('tuition', tuition, '1');
+
+				var professor = Math.round(data.result[0].professor*100)/100;
+
+				$("#professor").html(professor);
+				makeStar('professor', professor, '1');
 
 			}, function(data) {
 				alert("잘못된 접근입니다, 뒤로가기 이동");
@@ -832,7 +913,10 @@
 			}, function(data) {
 
 				if (data.result[0].reviews[0] == undefined) {
-					alert("해당 학과에 아직 작성된 리뷰가 없습니다.");
+					
+					$(".univ_comment_none").css('display', '');
+					$(".univ_comment").css('display', 'none');
+
 				} else {
 					
 					var pointaverageGrade = $(".pointaverageGrade");
@@ -848,10 +932,14 @@
 					var commentFuture = $(".commentFuture");
 					var recommandComment = $(".recommandComment");
 					var profileDate = $(".profileDate");
+					
+					var recommandReview = $(".recommandReview");
 
-					for (var i = 0; i < 3; i++) {
+					for (var i = 0; i < 1; i++) {
 
 						var writeDate = data.result[0].reviews[i].time.substr(0, 10);
+
+						$(recommandReview[i]).val(data.result[0].reviews[i].reviewID);
 
 						$(comment_message[i]).html(data.result[0].reviews[i].oneLineComment);
 						$(commendPros[i]).html(data.result[0].reviews[i].advantageComment);
@@ -873,23 +961,29 @@
 							$(commentFuture[i]).html("도태된다"); 
 						}
 
-						// $(pointaverageGrade[i]).html(data.result[0].reviews[i].averageGrade);
-						makeStar('gradeaverageGrade', data.result[0]. reviews[i].averageGrade, '2');
+						var averageGrade = Math.round(data.result[0].reviews[i].averageGrade*100)/100;
+						$(pointaverageGrade[i]).html(averageGrade);
+						makeStar('gradeaverageGrade', averageGrade, '2');
 
-						$(pointfacilities[i]).html(data.result[0].reviews[i].facilitiesGrade);
-						makeStar('gradefacilities', data.result[0].reviews[i].facilitiesGrade, '2');
+						var facilitiesGrade = Math.round(data.result[0].reviews[i].facilitiesGrade*100)/100;
+						$(pointfacilities[i]).html(facilitiesGrade);
+						makeStar('gradefacilities', facilitiesGrade, '2');
 
-						$(pointculture[i]).html(data.result[0].reviews[i].cultureGrade);
-						makeStar('gradeculture', data.result[0].reviews[i].cultureGrade, '2');
+						var cultureGrade = Math.round(data.result[0].reviews[i].cultureGrade*100)/100;
+						$(pointculture[i]).html(cultureGrade);
+						makeStar('gradeculture', cultureGrade, '2');
 
-						$(pointtown[i]).html(data.result[0].reviews[i].townGrade);
-						makeStar('gradetown', data.result[0].reviews[i].townGrade, '2');
+						var townGrade = Math.round(data.result[0].reviews[i].townGrade*100)/100;
+						$(pointtown[i]).html(townGrade);
+						makeStar('gradetown', townGrade, '2');
 
-						$(pointtuition[i]).html(data.result[0].reviews[i].tuitionGrade);
-						makeStar('gradetuition', data.result[0].reviews[i].tuitionGrade, '2');
+						var tuitionGrade = Math.round(data.result[0].reviews[i].tuitionGrade*100)/100;
+						$(pointtuition[i]).html(tuitionGrade);
+						makeStar('gradetuition', tuitionGrade, '2');
 
-						$(pointprofessor[i]).html(data.result[0].reviews[i].professorGrade);
-						makeStar('gradeprofessor', data.result[0].reviews[i].professorGrade, '2');
+						var professorGrade = Math.round(data.result[0].reviews[i].professorGrade*100)/100;
+						$(pointprofessor[i]).html(professorGrade);
+						makeStar('gradeprofessor', professorGrade, '2');
 
 					}
 
@@ -905,7 +999,15 @@
 
 			if (type == '1') {
 
-				if (point <= 1.0000) {
+				if (point <= 1.00) {
+
+					$("#" + grade + "Star1").attr('src', '/assets/img/common/review_star_empty.png');
+					$("#" + grade + "Star2").attr('src', '/assets/img/common/review_star_empty.png');
+					$("#" + grade + "Star3").attr('src', '/assets/img/common/review_star_empty.png');
+					$("#" + grade + "Star4").attr('src', '/assets/img/common/review_star_empty.png');
+					$("#" + grade + "Star5").attr('src', '/assets/img/common/review_star_empty.png');
+
+				} else if ((point > 1.00) && (point <= 2.00)) {
 
 					$("#" + grade + "Star1").attr('src', '/assets/img/common/review_star_full.png');
 					$("#" + grade + "Star2").attr('src', '/assets/img/common/review_star_empty.png');
@@ -913,7 +1015,7 @@
 					$("#" + grade + "Star4").attr('src', '/assets/img/common/review_star_empty.png');
 					$("#" + grade + "Star5").attr('src', '/assets/img/common/review_star_empty.png');
 
-				} else if ((point > 1.0000) && (point <= 2.0000)) {
+				} else if ((point > 2.00) && (point <= 3.00)) {
 
 					$("#" + grade + "Star1").attr('src', '/assets/img/common/review_star_full.png');
 					$("#" + grade + "Star2").attr('src', '/assets/img/common/review_star_full.png');
@@ -921,7 +1023,7 @@
 					$("#" + grade + "Star4").attr('src', '/assets/img/common/review_star_empty.png');
 					$("#" + grade + "Star5").attr('src', '/assets/img/common/review_star_empty.png');
 
-				} else if ((point > 2.0000) && (point <= 3.0000)) {
+				} else if ((point > 3.00) && (point <= 4.00)) {
 
 					$("#" + grade + "Star1").attr('src', '/assets/img/common/review_star_full.png');
 					$("#" + grade + "Star2").attr('src', '/assets/img/common/review_star_full.png');
@@ -929,7 +1031,7 @@
 					$("#" + grade + "Star4").attr('src', '/assets/img/common/review_star_empty.png');
 					$("#" + grade + "Star5").attr('src', '/assets/img/common/review_star_empty.png');
 
-				} else if ((point > 3.0000) && (point <= 4.0000)) {
+				} else if ((point > 4.00) && (point <= 5.00)) {
 
 					$("#" + grade + "Star1").attr('src', '/assets/img/common/review_star_full.png');
 					$("#" + grade + "Star2").attr('src', '/assets/img/common/review_star_full.png');
@@ -937,7 +1039,7 @@
 					$("#" + grade + "Star4").attr('src', '/assets/img/common/review_star_full.png');
 					$("#" + grade + "Star5").attr('src', '/assets/img/common/review_star_empty.png');
 
-				} else if ((point > 4.0000) && (point <= 5.0000)) {
+				} else if (point >= 5.00) {
 
 					$("#" + grade + "Star1").attr('src', '/assets/img/common/review_star_full.png');
 					$("#" + grade + "Star2").attr('src', '/assets/img/common/review_star_full.png');
@@ -951,29 +1053,33 @@
 
 				for (var i = 0; i < 3; i++) {
 
-					if (point <= 1.0000) {
+					if (point <= 1.00) {
+
+						$("." + grade).eq(i).html("<img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/>");
+
+					} else if ((point > 1.00) && (point <= 2.00)) {
 
 						$("." + grade).eq(i).html("<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/>");
 
-					} else if ((point > 1.0000) && (point <= 2.0000)) {
+					} else if ((point > 2.00) && (point <= 3.00)) {
 
 						$("." + grade).eq(i).html("<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/>");
 
-					} else if ((point > 2.0000) && (point <= 3.0000)) {
+					} else if ((point > 3.00) && (point <= 4.00)) {
 
 						$("." + grade).eq(i).html("<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/>");
 
-					} else if ((point > 3.0000) && (point <= 4.0000)) {
+					} else if ((point > 4.00) && (point <= 5.00)) {
 
 						$("." + grade).eq(i).html("<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_empty.png'/>");
 
-					} else if ((point > 4.0000) && (point <= 5.0000)) {
+					} else if (point >= 5.00) {
 
 						$("." + grade).eq(i).html("<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>");
-
 					}
 
 				}
+
 			}
 
 		}
