@@ -568,7 +568,15 @@
 
 		function makeStar(grade, point) {
 
-			if (point <= 1.0000) {
+			if (point <= 1.00) {
+
+				$("#" + grade + "Star1").attr('src', '/assets/img/common/review_star_empty.png');
+				$("#" + grade + "Star2").attr('src', '/assets/img/common/review_star_empty.png');
+				$("#" + grade + "Star3").attr('src', '/assets/img/common/review_star_empty.png');
+				$("#" + grade + "Star4").attr('src', '/assets/img/common/review_star_empty.png');
+				$("#" + grade + "Star5").attr('src', '/assets/img/common/review_star_empty.png');
+
+			} else if ((point > 1.00) && (point <= 2.00)) {
 
 				$("#" + grade + "Star1").attr('src', '/assets/img/common/review_star_full.png');
 				$("#" + grade + "Star2").attr('src', '/assets/img/common/review_star_empty.png');
@@ -576,7 +584,7 @@
 				$("#" + grade + "Star4").attr('src', '/assets/img/common/review_star_empty.png');
 				$("#" + grade + "Star5").attr('src', '/assets/img/common/review_star_empty.png');
 
-			} else if ((point > 1.0000) && (point <= 2.0000)) {
+			} else if ((point > 2.00) && (point <= 3.00)) {
 
 				$("#" + grade + "Star1").attr('src', '/assets/img/common/review_star_full.png');
 				$("#" + grade + "Star2").attr('src', '/assets/img/common/review_star_full.png');
@@ -584,7 +592,7 @@
 				$("#" + grade + "Star4").attr('src', '/assets/img/common/review_star_empty.png');
 				$("#" + grade + "Star5").attr('src', '/assets/img/common/review_star_empty.png');
 
-			} else if ((point > 2.0000) && (point <= 3.0000)) {
+			} else if ((point > 3.00) && (point <= 4.00)) {
 
 				$("#" + grade + "Star1").attr('src', '/assets/img/common/review_star_full.png');
 				$("#" + grade + "Star2").attr('src', '/assets/img/common/review_star_full.png');
@@ -592,7 +600,7 @@
 				$("#" + grade + "Star4").attr('src', '/assets/img/common/review_star_empty.png');
 				$("#" + grade + "Star5").attr('src', '/assets/img/common/review_star_empty.png');
 
-			} else if ((point > 3.0000) && (point <= 4.0000)) {
+			} else if ((point > 4.00) && (point <= 5.00)) {
 
 				$("#" + grade + "Star1").attr('src', '/assets/img/common/review_star_full.png');
 				$("#" + grade + "Star2").attr('src', '/assets/img/common/review_star_full.png');
@@ -600,7 +608,7 @@
 				$("#" + grade + "Star4").attr('src', '/assets/img/common/review_star_full.png');
 				$("#" + grade + "Star5").attr('src', '/assets/img/common/review_star_empty.png');
 
-			} else if ((point > 4.0000) && (point <= 5.0000)) {
+			} else if (point >= 5.00)) {
 
 				$("#" + grade + "Star1").attr('src', '/assets/img/common/review_star_full.png');
 				$("#" + grade + "Star2").attr('src', '/assets/img/common/review_star_full.png');
