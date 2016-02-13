@@ -657,6 +657,22 @@
 		vertical-align: middle;
 	}
 
+	.review_more_left {
+		vertical-align: top;
+		margin: 40px 10px 10px 0px;
+		padding: 0px;
+		font-size: 1.05rem;
+		position: relative;
+		right: 0%;
+		text-align: right;
+		color: #808083;
+	}
+
+	.review_more_left img {
+		vertical-align: top;
+		margin-top: 0.5px;
+	}
+
 	.pros {
 		width: 85%;
 		margin: 0px auto;
@@ -741,7 +757,7 @@
 		border-collapse: collapse;
 		margin: 0px;
 		padding: 0px;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 		border: 1px solid #BCBEC0;
 	}
 
@@ -760,7 +776,7 @@
 		padding: 0px;
 		vertical-align: middle;
 		display: inline-block;
-		font-size: 1.2rem;
+		font-size: 1.1rem;
 	}
 	
 	.review_list .review_list_title {
@@ -774,16 +790,8 @@
 	.review_list .review_more_b {
 		font-size: 0.8rem;
 		text-align: right;
-		padding: 18px 10px 14px 0px;
+		padding: 18px 5px 14px 0px;
 		color: #1C75BA;
-	}
-
-	.review_more_left {
-		font-size: 0.9rem;
-		text-align: right;
-		padding: 18px 10px 14px 0px;
-		color: #1C75BA;
-		vertical-align: middle;
 	}
 
 	.review_list .of_rank {
@@ -793,14 +801,9 @@
 	}
 	
 	.review_list .of_college {
-		width: 65%;
-		padding: 7px 10px 8px 0px;
+		width: 75%;
+		padding: 6px 0px 6px 0px;
 		text-align: left;
-	}
-
-	.review_list .of_college img {
-		display:  inline-block;
-		margin:  0px 10px 0px 7px;
 	}
 	
 	.review_list .of_college p {
@@ -811,10 +814,15 @@
 		font-size: 0.9rem;
 		color: #808083;
 	}
+
+	.review_list .of_college img {
+		display:  inline-block;
+		margin:  0px 5px 0px 0px;
+	}
 	
 	.review_list .of_diff {
-		width: 20%;
-		padding: 0px 10px 0px 0px;
+		width: 15%;
+		padding: 0px;
 		font-size: 1rem;
 		color: #58595B;
 	}
