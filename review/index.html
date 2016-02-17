@@ -138,7 +138,7 @@
 					<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>
 						<div class='review_evaluation'>
 							<h6 class='h6_title'>작성자한줄평</h6>
-							<h6 class='h6_content' id='oneLineComment1' style='margin-left:23px;font-size:1rem;'></h6>
+							<h6 class='h6_content' id='oneLineComment1' style='margin-left:23px;font-size:1rem;width:76%;'></h6>
 						</div>
 					</a>
 					<div class='pros' style='width:85%;'>
@@ -169,7 +169,7 @@
 					<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>
 						<div class='review_evaluation'>
 							<h6 class='h6_title'>작성자한줄평</h6>
-							<h6 class='h6_content' id='oneLineComment2' style='margin-left:23px;font-size:1rem;'></h6>
+							<h6 class='h6_content' id='oneLineComment2' style='margin-left:23px;font-size:1rem;width:76%;'></h6>
 						</div>
 					</a>
 					<div class='pros' style='width:85%;'>
@@ -200,7 +200,7 @@
 					<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>
 						<div class='review_evaluation'>
 							<h6 class='h6_title'>작성자한줄평</h6>
-							<h6 class='h6_content' id='oneLineComment3' style='margin-left:23px;font-size:1rem;'></h6>
+							<h6 class='h6_content' id='oneLineComment3' style='margin-left:23px;font-size:1rem;width:76%;'></h6>
 						</div>
 					</a>
 					<div class='pros' style='width:85%;'>
@@ -516,6 +516,7 @@
 
 					collegeCode[i] = data.result[0].collegeRankingByCountOfReviews[i].collegeID;
 
+					$(CollegeName[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByCountOfReviews[i].collegeID);
 					$(CollegeLink[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByCountOfReviews[i].collegeID);
 					$(CollegeLogo[i]).attr("src", "/assets/img/logo/logo_" + data.result[0].collegeRankingByCountOfReviews[i].collegeID + ".jpg");
 
