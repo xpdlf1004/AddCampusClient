@@ -347,6 +347,8 @@
 			majorsNameLists = new Array();
 			collegeName = "";
 			majorName = "";
+			
+			scrollNumber = 0;
 
 			/******************************************
 			* 학교 정보 가져오기
@@ -539,6 +541,19 @@
 				}, function(data) {
 					alert(JSON.stringify(data));
 				});
+
+			});
+
+			$(window).scroll(function(){ 
+				
+				if($(window).scrollTop() == $(document).height() - $(window).height()){
+
+					console.log('스크롤 하단 도착 1 : ' + scrollNumber);
+
+					getMoreMajorReview($("#collegeMajor2").val(), scrollNumber);
+
+					console.log('스크롤 하단 도착 3 : ' + scrollNumber);
+				} 
 
 			});
 
@@ -757,6 +772,10 @@
 
 					for (var i = 0; i < data.result[0].reviews.length; i++) {
 						$('#AddOption').append(contents);
+
+						if (i == 2) {
+							break;
+						}
 					}
 					
 					var pointaverageGrade = $(".pointaverageGrade");
@@ -826,6 +845,213 @@
 						var professorGrade = Math.round(data.result[0].reviews[i].professorGrade*100)/100;
 						$(pointprofessor[i]).html(professorGrade);
 						makeStar('gradeprofessor', professorGrade, '2');
+
+						if (i == 2) {
+							break;
+						}
+
+					}
+
+				}
+
+			}, function(data) {
+				alert("잘못된 접근입니다, 뒤로가기 이동");
+			});
+		}
+		/*****************************************/
+
+		/******************************************
+		* 해당 학과 리뷰 베스트 3개 가져오기
+		/*****************************************/
+		function getMoreMajorReview(getMajorID, lastNumber) {
+			RequestHelper.post('/college/getMajorReviews', {
+				collegeID: collegeID,
+				majorID: getMajorID,
+				lastReviewID: lastNumber
+			},
+			{
+			// Option is not needed.
+			}, function(data) {
+
+				if (data.result[0].reviews[0] === undefined) {
+					
+					alert("이미 모든 리뷰를 조회했습니다.");
+
+				} else if (data.result[0].reviews.length === 0) {
+
+					alert("이미 모든 리뷰를 조회했습니다.");
+
+				} else {
+
+					scrollNumber = data.result[0].reviews[0].reviewID - data.result[0].reviews.length + 1
+
+					if ($(".M_profileUniv").length == '0') {
+
+						var makeCount = 0;
+						var MaxLength = data.result[0].reviews.length;
+
+					} else {
+
+						var makeCount = $(".M_profileUniv").length;
+						var MaxLength = $(".M_profileUniv").length + data.result[0].reviews.length;
+
+					}
+		            var contents = '';
+
+
+					contents += "<table class='M_univ_comment' style='background:#FFF;width:100%;'>";
+						contents += "<tr>";
+							contents += "<td colspan='3' style='height:72px;text-align:left;'>";
+								contents += "<img class='M_comment_profile_img' src='/assets/img/common/review_user.png'/>";
+								contents += "<h3 class='M_comment_profile_h3'><span class='M_profileUniv' style='font-size: 1.3125rem;margin: 0px;color: #58595B;text-align: left;'></span><span class='M_profileDate'></span></h3>";
+							contents += "</td>";
+						contents += "</tr>";
+						contents += "<tr>";
+							contents += "<td class='M_comment_title' style='border-top:1px solid #BCBEC0;'>캠퍼스시설만족도</td>";
+							contents += "<td class='M_comment_point' style='border-top:1px solid #BCBEC0;'>";
+								contents += "<span class='M_gradefacilities'></span>";
+								contents += "<span class='M_pointfacilities'></span>";
+							contents += "</td>";
+							contents += "<td rowspan='6' class='M_univ_table_about' style='width:45%;text-align:left;'>";
+								contents += "<h1 style='font-size:1.12rem;color:#58595B;margin-top:20px;margin-bottom:10px;'>전공학과 평점</h1>";
+								contents += "<span class='M_gradeaverageGrade'></span>";
+								contents += "<span style='font-size:1.12rem;color:#58595B;margin-left:10px;'>보통이에요</span>";
+								contents += "<p style='font-size:1.12rem;font-weight:400;color:#58595B;margin-top:40px;'>작성자는 이 학과를 <span class='M_recommandComment' style='color:#FF5555'></span> 합니다.</p>";
+							contents += "</td>";
+						contents += "</tr>";
+						contents += "<tr>";
+							contents += "<td class='M_comment_title'>캠퍼스문화만족도</td>";
+							contents += "<td class='M_comment_point'>";
+								contents += "<span class='M_gradeculture'></span>";
+								contents += "<span class='M_pointculture'></span>";
+							contents += "</td>";
+						contents += "</tr>";
+						contents += "<tr>";
+							contents += "<td class='M_comment_title'>대학가만족도</td>";
+							contents += "<td class='M_comment_point'>";
+								contents += "<span class='M_gradetown'></span>";
+								contents += "<span class='M_pointtown'></span>";
+							contents += "</td>";
+						contents += "</tr>";
+						contents += "<tr>";
+							contents += "<td class='M_comment_title'>등록금만족도</td>";
+							contents += "<td class='M_comment_point'>";
+								contents += "<span class='M_gradetuition'></span>";
+								contents += "<span class='M_pointtuition'></span>";
+							contents += "</td>";
+						contents += "</tr>";
+						contents += "<tr>";
+							contents += "<td class='M_comment_title'>교수만족도</td>";
+							contents += "<td class='M_comment_point'>";
+								contents += "<span class='M_gradeprofessor'></span>";
+								contents += "<span class='M_pointprofessor'></span>";
+							contents += "</td>";
+						contents += "</tr>";
+						contents += "<tr>";
+							contents += "<td colspan='3'><br/></td>";
+						contents += "</tr>";
+						contents += "<tr>";
+							contents += "<td colspan='3' class='M_comment_message' style='padding:20px;'></td>";
+						contents += "</tr>";
+						contents += "<tr>";
+							contents += "<td colspan='3' class='M_comment_pros'>";
+								contents += "<h2>장점</h2>";
+								contents += "<p class='M_commendPros'></p>";
+							contents += "</td>";
+						contents += "</tr>";
+						contents += "<tr>";
+							contents += "<td colspan='3' class='M_comment_cons'>";
+								contents += "<h2>단점</h2>";
+								contents += "<p class='M_commendCons'></p>";
+							contents += "</td>";
+						contents += "</tr>";
+						contents += "<tr>";
+							contents += "<td colspan='3' class='M_comment_need'>";
+								contents += "<h2>학과에 바라는 점</h2>";
+								contents += "<p class='M_commendNeed'></p>";
+							contents += "</td>";
+						contents += "</tr>";
+						contents += "<tr>";
+							contents += "<td colspan='3' class='M_comment_future'>";
+								contents += "<h2>3년 후 학과의 미래</h2>";
+								contents += "<p class='M_commentFuture'></p>";
+							contents += "</td>";
+						contents += "</tr>";
+						contents += "<tr>";
+							contents += "<td colspan='3'>";
+								contents += "<button class='M_recommandReview' style='width:160px;height:35px;background:#FFA321;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#58595B;margin-right:15px;'>좋은 정보에요!</button>";
+								contents += "<button class='M_shareOnFb' style='width:160px;height:35px;background:#3765A3;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#FFFFFF;margin-left:15px;'>페북에 공유하기</button>";
+							contents += "</td>";
+						contents += "</tr>";
+					contents += "</table>";
+
+					for (var i = makeCount; i < MaxLength; i++) {
+						$('#AddOption').append(contents);	
+					}
+
+					var pointaverageGrade = $(".M_pointaverageGrade");
+					var pointfacilities = $(".M_pointfacilities");
+					var pointculture = $(".M_pointculture");
+					var pointtown = $(".M_pointtown");
+					var pointtuition = $(".M_pointtuition");
+					var pointprofessor = $(".M_pointprofessor");
+					var comment_message = $(".M_comment_message");
+					var commendPros = $(".M_commendPros");
+					var commendCons = $(".M_commendCons");
+					var commendNeed = $(".M_commendNeed");
+					var commentFuture = $(".M_commentFuture");
+					var recommandComment = $(".M_recommandComment");
+					var profileDate = $(".M_profileDate");
+					var recommandReview = $(".M_recommandReview");
+
+					$(".M_profileUniv").html(collegeName);
+
+					var countReview = 0;
+
+					for (var i = makeCount; i < MaxLength; i++) {
+
+						var writeDate = data.result[0].reviews[countReview].time.substr(0, 10);
+
+						$(recommandReview[i]).val(data.result[0].reviews[countReview].reviewID);
+
+						$(comment_message[i]).html(data.result[0].reviews[countReview].oneLineComment);
+						$(commendPros[i]).html(data.result[0].reviews[countReview].advantageComment);
+						$(commendCons[i]).html(data.result[0].reviews[countReview].weaknessComment);
+						$(commendNeed[i]).html(data.result[0].reviews[countReview].wishComment);
+						$(profileDate[i]).html(writeDate);
+
+						if (data.result[0].reviews[countReview].isRecommended) $(recommandComment[i]).html("추천");
+						else $(recommandComment[i]).html("비추천");
+						
+						if (data.result[0].reviews[countReview].viewAfter3Years == 'up') $(commentFuture[i]).html("발전한다");
+						else if (data.result[0].reviews[countReview].viewAfter3Years == 'maintain') $(commentFuture[i]).html("유지된다"); 
+						else if (data.result[0].reviews[countReview].viewAfter3Years == 'down')  $(commentFuture[i]).html("도태된다"); 
+
+						var averageGrade = Math.round(data.result[0].reviews[countReview].averageGrade*100)/100;
+						$(pointaverageGrade[i]).html(averageGrade);
+						makeStar('gradeaverageGrade', averageGrade, '2');
+
+						var facilitiesGrade = Math.round(data.result[0].reviews[countReview].facilitiesGrade*100)/100;
+						$(pointfacilities[i]).html(facilitiesGrade);
+						makeStar('gradefacilities', facilitiesGrade, '2');
+
+						var cultureGrade = Math.round(data.result[0].reviews[countReview].cultureGrade*100)/100;
+						$(pointculture[i]).html(cultureGrade);
+						makeStar('gradeculture', cultureGrade, '2');
+
+						var townGrade = Math.round(data.result[0].reviews[countReview].townGrade*100)/100;
+						$(pointtown[i]).html(townGrade);
+						makeStar('gradetown', townGrade, '2');
+
+						var tuitionGrade = Math.round(data.result[0].reviews[countReview].tuitionGrade*100)/100;
+						$(pointtuition[i]).html(tuitionGrade);
+						makeStar('gradetuition', tuitionGrade, '2');
+
+						var professorGrade = Math.round(data.result[0].reviews[countReview].professorGrade*100)/100;
+						$(pointprofessor[i]).html(professorGrade);
+						makeStar('gradeprofessor', professorGrade, '2');
+
+						countReview = countReview + 1;
 
 					}
 

@@ -488,13 +488,13 @@
 			/******************************************
 			* 해당 학과 맛보기 리뷰 가져오기
 			/*****************************************/
-			RequestHelper.post('/college/getTotalBestMajorReviews', {
+			RequestHelper.post('/college/getMajorReviewsByCollege', {
 				collegeID: collegeID,
+				lastReviewID: '0'
 			},
 			{
-			// Option is not needed. d
+			// Option is not needed.
 			}, function(data) {
-				// alert("베스트 리뷰 조회 성공: " + JSON.stringify(data));
 
 				var CollegeLink = $(".CollegeLink");
 				var CollegeLink1 = $(".CollegeLink_A");
