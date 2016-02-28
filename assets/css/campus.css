@@ -384,6 +384,7 @@
 
 	.grade_table {
 		width: 215px;
+		height: 371px;
 		border-collapse: collapse;
 		border: 1px solid #CCCCCC;
 		display: inline-block;
@@ -421,12 +422,12 @@
 	}
 
 	.grade_class img {
-		width: 1.2rem;
-		height: 1.2rem;
+		width: 1.05rem;
+		height: 1.05rem;
 	}
 
 	.grade_class span {
-		font-size: 1.06rem;
+		font-size: 0.95rem;
 		color: #808083;
 		margin-left: 5px;
 	}
