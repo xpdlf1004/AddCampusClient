@@ -98,10 +98,10 @@
 					<tr>
 						<td rowspan='7' colspan='2' class='univ_table_about' style='width:50%;'>
 							<h1 class='univ_name' style='font-family:NanumBarunGothicBold;font-weight:bold;'></h1>
-							<h1 class='univ_star_'>종합 10위</h1>
+							<h1 class='univ_star_'></h1>
 							<img src='/assets/img/common/review_star_full.png' id='averageGradeStar1'/><img src='/assets/img/common/review_star_full.png' id='averageGradeStar2'/><img src='/assets/img/common/review_star_full.png' id='averageGradeStar3'/><img src='/assets/img/common/review_star_full.png' id='averageGradeStar4'/><img src='/assets/img/common/review_star_full.png' id='averageGradeStar5'/>
 							<span id='averageGradePoint'></span>
-							<p>재학생의 100%가 이 학교를 추천합니다.</p>
+							<!-- <p>재학생의 100%가 이 학교를 추천합니다.</p> -->
 						</td>
 					</tr>
 					<tr>
@@ -373,8 +373,9 @@
 			{
 			// Option is not needed.
 			}, function(data) {
-					
+				
 				$(".univ_logo").attr('src', '/assets/img/logo/logo_' + collegeID + '.jpg');
+				$(".univ_star_").html('종합 ' + data.result[0].collegeInfo.averageRank + '위');
 				$("#collegeName").html(data.result[0].collegeInfo.name);
 				$(".univ_name").html(data.result[0].collegeInfo.name);
 				$(".collegeWeb").html(data.result[0].collegeInfo.web);
