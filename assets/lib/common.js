@@ -263,7 +263,7 @@
 		}, function(data) {
 			alert("회원가입에 성공했습니다.");
 
-			// location.href='/';
+			location.href='/';
 		}, function(data) {
 			alert("회원가입에 실패했습니다, 다시 시도해주세요.");
 
@@ -372,6 +372,14 @@
 		//배경을 클릭하면 레이어를 사라지게 하는 이벤트 핸들러
 			$('.layer').fadeOut();
 			e.preventDefault();
+
+			$("#sign_in_table").show();
+			$("#sign_up_table_1").hide();
+			$("#sign_up_table_2").hide();
+			$("#sign_up_table_3").hide();
+			
+			$('#sign_back_2').css('display', '');
+			$('#sign_next_2').attr('onclick', 'submit');
 		});
 
 	}
@@ -657,9 +665,11 @@
 		} else if (response.status === 'not_authorized') {
 			alert("페이스북에 먼저 로그인 해주세요!");
 			window.open("http://facebook.com/", "_blank");
+			console.log(response);
 		} else {
 			alert("페이스북에 먼저 로그인 해주세요!");
 			window.open("http://facebook.com/", "_blank");
+			console.log(response);
 		}
 	}
 
@@ -674,28 +684,11 @@
 
 			if (data.status == 'InvalidUserID') {
 
-				RequestHelper.post('/account/makeUserAccountWithFacebook', {
-					facebookUserKey: facebookUserKey,
-					facebookAccessToken: facebookAccessToken,
-					gender: 'man',
-					birthYear: 1991,
-					job: 'highSchoolStudent'
-				}, {
-				// Option is not needed.
-				}, function(data) {
+				$('.sign_up_table_2').css('display', '');
+				$('.sign_in_table').css('display', 'none');
 
-					if (data.status == 'ok') {
-						alert("성공적으로 회원가입되었습니다, 다시 로그인해주세요!");
-						location.href = '/';
-					} else {
-						alert("잘못된 접근입니다, 다시 시도해주세요!");
-						location.href = '/';
-					}
-
-				}, function(data) {
-					alert("잘못된 접근입니다, 다시 시도해주세요!");
-					location.href = '/';
-				});
+				$('#sign_back_2').css('display', 'none');
+				$('#sign_next_2').attr('onclick', 'fbSignUp("' + facebookUserKey + '", "' + facebookAccessToken + '");return false;');
 
 			} else if (data.status == 'ok') {
 
@@ -720,6 +713,45 @@
 			location.href = '/';
 
 		});
+	}
+				
+	function fbSignUp(facebookUserKey, facebookAccessToken) {
+
+		var isGenderManChecked = $('#gender_man').is(':checked');
+		var gender = isGenderManChecked ? 'man' : 'woman';
+		var birthYear = $('#birthYear').val();
+		var job = $('#job').val();
+
+		$("#sign_up_email_").text('페이스북 회원가입');
+
+		if ((job == '') || (birthYear == '') || (gender == '')) {
+			alert("모든 정보를 빠짐없이 작성해주시길 바랍니다.");
+			// break;
+		}
+
+		RequestHelper.post('/account/makeUserAccountWithFacebook', {
+			facebookUserKey: facebookUserKey,
+			facebookAccessToken: facebookAccessToken,
+			gender: gender,
+			birthYear: birthYear,
+			job: job
+		}, {
+		// Option is not needed.
+		}, function(data) {
+
+			if (data.status == 'ok') {
+				alert("성공적으로 회원가입되었습니다, 다시 로그인해주세요!");
+				location.href = '/';
+			} else {
+				alert("잘못된 접근입니다, 다시 시도해주세요!");
+				location.href = '/';
+			}
+
+		}, function(data) {
+			alert("잘못된 접근입니다, 다시 시도해주세요!");
+			location.href = '/';
+		});
+
 	}
 
 	function facebookSign() {

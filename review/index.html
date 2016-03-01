@@ -113,7 +113,7 @@
 						<option>세종</option>
 					</select>
 				</div>
-				<button style='float:right;margin-right:15px;width:216px;height:40px;border-radius:10px;margin-top:10px;background:#FFD432;'>검색하기</button>
+				<button class='searchFiltered' style='float:right;margin-right:15px;width:216px;height:40px;border-radius:10px;margin-top:10px;background:#FFD432;'>검색하기</button>
 			</div>
 		</div>
 
@@ -250,47 +250,47 @@
 				<table class='review_list' style='background:#FFF;'>
 					<tr>
 						<td colspan='2' class='review_list_title' style='font-family:NanumBarunGothicBold;font-weight:bold;'>가장 활발한 대학</td>
-						<td class='review_more_b'><a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a></td>
+						<td class='review_more_b'><!-- <a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a> --></td>
 					</tr>
 					<tr>
 						<td class='of_rank'>1.</td>
 						<td class='of_college'>
 							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
 							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
-							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</td>
+						<td class='of_diff'></td>
 					</tr>
 					<tr>
 						<td class='of_rank'>2.</td>
 						<td class='of_college'>
 							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
 							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
-							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</td>
+						<td class='of_diff'></td>
 					</tr>
 					<tr>
 						<td class='of_rank'>3.</td>
 						<td class='of_college'>
 							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
 							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
-							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</td>
+						<td class='of_diff'></td>
 					</tr>
 					<tr>
 						<td class='of_rank'>4.</td>
 						<td class='of_college'>
 							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
 							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
-							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</td>
+						<td class='of_diff'></td>
 					</tr>
 					<tr>
 						<td class='of_rank'>5.</td>
 						<td class='of_college'>
 							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
 							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
-							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</td>
+						<td class='of_diff'></td>
 					</tr>
 					<tr>
 						<td colspan='3'>&nbsp;</td>
@@ -438,6 +438,10 @@
 				collegeCode2 = data.result[0].reviews[1].collegeID;
 				collegeCode3 = data.result[0].reviews[2].collegeID;
 
+				majorCode1 = data.result[0].reviews[0].majorID;
+				majorCode2 = data.result[0].reviews[1].majorID;
+				majorCode3 = data.result[0].reviews[2].majorID;
+
 				for (var cntReview = 1; cntReview <= 3; cntReview++) {
 
 					var cnti = cntReview - 1;
@@ -492,6 +496,40 @@
 					$(CollegeLogo[cnti]).attr("src", "/assets/img/logo/logo_" + data.result[0].reviews[cnti].collegeID + ".jpg");
 
 				}
+
+				/******************************************
+				* Get Name of the Major
+				/*****************************************/
+				RequestHelper.post('/college/getAllMajors', {},
+				{
+				// Option is not needed.
+				}, function(data) {
+					var lengthColleges = data.result[0].majors.length;
+
+					for (var i = 0; i<lengthColleges; i++) {
+
+						if (data.result[0].majors[i].majorID == majorCode1) {
+							majorNameList[0] = data.result[0].majors[i].majorName;
+						}
+
+						if (data.result[0].majors[i].majorID == majorCode2) {
+							majorNameList[1] = data.result[0].majors[i].majorName;
+						}
+
+						if (data.result[0].majors[i].majorID == majorCode3) {
+							majorNameList[2] = data.result[0].majors[i].majorName;
+						}
+
+					}
+
+					$("#univName1").html($("#univName1").html() + ' ' + majorNameList[0]);
+					$("#univName2").html($("#univName2").html() + ' ' + majorNameList[1]);
+					$("#univName3").html($("#univName3").html() + ' ' + majorNameList[2]);
+
+				}, function(data) {
+					alert(JSON.stringify(data));
+				});
+				/*****************************************/
 
 			}, function(data) {
 				alert(JSON.stringify(data));
@@ -610,6 +648,29 @@
 				$("#type_2").append("<option value='g034' class='g034'>기타</option>");
 
 			}
+
+		});
+
+		$('.searchFiltered').click(function(){
+
+			var searchClass = $('.type_1').val();
+			var searchGroup = $('.type_2').val();
+			var searchRegion = $('.type_3').val();
+
+			RequestHelper.post('/college/getFilteredTotalBestMajorReviews', {
+				majorClass:searchClass,
+				majorGroup:searchGroup,
+				majorRegion:searchRegion
+			},
+			{
+			// Option is not needed.
+			}, function(data) {
+
+				console.log(JSON.stringify(data));
+
+			}, function(data) {
+				alert(JSON.stringify(data));
+			});
 
 		});
 

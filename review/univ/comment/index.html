@@ -17,6 +17,16 @@
 	<link rel='stylesheet' href='../../../assets/css/univ.css'>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<!-- Assets -->
+
+	<!-- Facebook -->
+	<meta property="fb:app_id" content="1513892868907796" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="지금 재학생들이 직접 작성한 생생한 대학이야기를 직접 확인하세요!" />
+	<meta property="og:url" content="http://addcampus.com/review/" />
+	<meta property="og:description" content="지금 재학생들이 직접 작성한 생생한 대학이야기를 직접 확인하세요!" />
+	<meta property="og:image" content="http://addcampus.com/assets/img/fbShare.jpg" />
+	<!-- Facebook -->
+
 	<script>
 
 		/******************************************
@@ -241,7 +251,7 @@
 				<table class='review_list' style='background:#FFF;'>
 					<tr>
 						<td colspan='2' class='review_list_title' style='font-family:NanumBarunGothicBold;font-weight:bold;'>가장 활발한 대학</td>
-						<td class='review_more_b'><a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a></td>
+						<td class='review_more_b'><!-- <a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a> --></td>
 					</tr>
 					<tr>
 						<td class='of_rank'>1.</td>
@@ -495,7 +505,7 @@
 
 				// 계열 선택 후 학과 목록 초기화
 				$("#collegeMajor2").find("option").remove();
-					
+
 				$(".univ_comment_none").css('display', 'none');
 				$(".univ_comment").css('display', 'none');
 				$(".M_univ_comment").css('display', 'none');
@@ -506,11 +516,11 @@
 				scrollNumber = 0;
 				scrollCounting = 'N';
 
-				if ($('#collegeMajor1').val() == 'All') {
+				if ($('#collegeMajor1').val() === 'All') {
 
-					getAllMajorReview(scrollNumber);
 					CountOfMajorReviews('All');
 					CountOfCollegeReviews();
+					getAllMajorReview(scrollNumber);
 
 					$('.univ_star_').css('display','none');
 					$(".univ_name").html(collegeName + ' 전체보기');
@@ -528,7 +538,7 @@
 					BestMajorReviews($("#collegeMajor2").val());
 					AverageGradeOfMajor($("#collegeMajor2").val());
 					CountOfMajorReviews($("#collegeMajor2").val());
-					getMoreInfoOfMajor($("#collegeMajor2").val());
+					// getMoreInfoOfMajor($("#collegeMajor2").val());
 
 					$(".univ_name").html(collegeName + " " + $("#collegeMajor2 option:selected").text());
 
@@ -551,7 +561,7 @@
 				BestMajorReviews($("#collegeMajor2").val());
 				AverageGradeOfMajor($("#collegeMajor2").val());
 				CountOfMajorReviews($("#collegeMajor2").val());
-				getMoreInfoOfMajor($("#collegeMajor2").val());
+				// getMoreInfoOfMajor($("#collegeMajor2").val());
 
 				$(".univ_name").html(collegeName + " " + $("#collegeMajor2 option:selected").text());
 
@@ -729,7 +739,7 @@
 					
 					$(".univ_comment_none").css('display', 'none');
 					$(".univ_comment").css('display', '');
-					$(".M_univ_comment").css('display', '');
+					$(".M_univ_comment").css('display', 'none');
 
 					scrollCounting = 'Y';
 
@@ -741,6 +751,7 @@
 							contents += "<tr>";
 								contents += "<td colspan='3' style='height:72px;text-align:left;'>";
 									contents += "<img class='comment_profile_img' src='/assets/img/common/review_user.png'/>";
+									contents += "<img src='/assets/img/bestreview.png' style='width:72px;height:87px;position:absolute;margin-top: 69px;margin-left: 508px;'/>";
 									contents += "<h3 class='comment_profile_h3'><span class='profileUniv' style='font-size: 1.3125rem;margin: 0px;color: #58595B;text-align: left;'></span><span class='profileDate'></span></h3>";
 								contents += "</td>";
 							contents += "</tr>";
@@ -753,7 +764,7 @@
 								contents += "<td rowspan='6' class='univ_table_about' style='width:45%;text-align:left;'>";
 									contents += "<h1 style='font-size:1.12rem;color:#58595B;margin-top:20px;margin-bottom:10px;'>전공학과 평점</h1>";
 									contents += "<span class='gradeaverageGrade'></span>";
-									contents += "<span style='font-size:1.12rem;color:#58595B;margin-left:10px;'>보통이에요</span>";
+									contents += "<span class='averageMessage' style='font-size:1.12rem;color:#58595B;margin-left:10px;'>보통이에요</span>";
 									contents += "<p style='font-size:1.12rem;font-weight:400;color:#58595B;margin-top:40px;'>작성자는 이 학과를 <span class='recommandComment' style='color:#FF5555'></span> 합니다.</p>";
 								contents += "</td>";
 							contents += "</tr>";
@@ -817,8 +828,8 @@
 							contents += "</tr>";
 							contents += "<tr>";
 								contents += "<td colspan='3'>";
-									contents += "<button class='recommandReview' onclick='recommandReviews(this)' style='width:160px;height:35px;background:#FFA321;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#58595B;margin-right:15px;'>좋은 정보에요!</button>";
-									contents += "<button class='shareOnFb' style='width:160px;height:35px;background:#3765A3;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#FFFFFF;margin-left:15px;'>페북에 공유하기</button>";
+									contents += "<button class='recommandReview' onclick='recommandReviews(this)' style='width:160px;height:35px;background:#FFA321;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#FFFFFF;margin-right:15px;'>좋은 정보에요!<span class='recommendPoint' style='margin-left:12px;'></span></button>";
+									contents += "<button class='shareOnFb' onclick='shareOnFacebook(this)' style='width:160px;height:35px;background:#3765A3;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#FFFFFF;margin-left:15px;'>페북에 공유하기</button>";
 								contents += "</td>";
 							contents += "</tr>";
 						contents += "</table>";
@@ -832,6 +843,7 @@
 						}
 						
 						var pointaverageGrade = $(".pointaverageGrade");
+						var averageGradeMessage = $(".averageMessage");
 						var pointfacilities = $(".pointfacilities");
 						var pointculture = $(".pointculture");
 						var pointtown = $(".pointtown");
@@ -843,17 +855,19 @@
 						var commendNeed = $(".commendNeed");
 						var commentFuture = $(".commentFuture");
 						var recommandComment = $(".recommandComment");
+						var recommendPoint = $(".recommendPoint");
 						var profileDate = $(".profileDate");
 						
 						var recommandReview = $(".recommandReview");
-
-						$(".profileUniv").html(collegeName);
+						var shareOnFb = $(".shareOnFb");
 
 						for (var i = 0; i < data.result[0].reviews.length; i++) {
 
 							var writeDate = data.result[0].reviews[i].time.substr(0, 10);
 
 							$(recommandReview[i]).val(data.result[0].reviews[i].reviewID);
+							$(recommendPoint[i]).html(data.result[0].reviews[i].recommend);
+							$(shareOnFb[i]).val(data.result[0].reviews[i].reviewID);
 
 							$(comment_message[i]).html(data.result[0].reviews[i].oneLineComment);
 							$(commendPros[i]).html(data.result[0].reviews[i].advantageComment);
@@ -878,6 +892,14 @@
 							var averageGrade = Math.round(data.result[0].reviews[i].averageGrade*100)/100;
 							$(pointaverageGrade[i]).html(averageGrade);
 							makeStar('gradeaverageGrade', averageGrade, '2', i);
+
+							if ((averageGrade >= 0.00) && (averageGrade <= 2.49)) {
+								$(averageGradeMessage[i]).html('안좋아요');
+							} else if ((averageGrade >= 2.50) && (averageGrade <= 3.99)) {
+								$(averageGradeMessage[i]).html('보통이에요');
+							} else if ((averageGrade >= 4.00) && (averageGrade <= 5.00)) {
+								$(averageGradeMessage[i]).html('좋아요');
+							}
 
 							var facilitiesGrade = Math.round(data.result[0].reviews[i].facilitiesGrade*100)/100;
 							$(pointfacilities[i]).html(facilitiesGrade);
@@ -906,6 +928,8 @@
 						}
 
 					}
+
+					$(".profileUniv").html(collegeName + ' ' + $("#collegeMajor2 option:selected").html());
 
 				}
 
@@ -970,7 +994,7 @@
 							contents += "<td rowspan='6' class='M_univ_table_about' style='width:45%;text-align:left;'>";
 								contents += "<h1 style='font-size:1.12rem;color:#58595B;margin-top:20px;margin-bottom:10px;'>전공학과 평점</h1>";
 								contents += "<span class='M_gradeaverageGrade'></span>";
-								contents += "<span style='font-size:1.12rem;color:#58595B;margin-left:10px;'>보통이에요</span>";
+								contents += "<span class='M_averageMessage' style='font-size:1.12rem;color:#58595B;margin-left:10px;'>보통이에요</span>";
 								contents += "<p style='font-size:1.12rem;font-weight:400;color:#58595B;margin-top:40px;'>작성자는 이 학과를 <span class='M_recommandComment' style='color:#FF5555'></span> 합니다.</p>";
 							contents += "</td>";
 						contents += "</tr>";
@@ -1034,8 +1058,8 @@
 						contents += "</tr>";
 						contents += "<tr>";
 							contents += "<td colspan='3'>";
-								contents += "<button class='M_recommandReview' onclick='recommandReviews(this)' style='width:160px;height:35px;background:#FFA321;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#58595B;margin-right:15px;'>좋은 정보에요!</button>";
-								contents += "<button class='M_shareOnFb' style='width:160px;height:35px;background:#3765A3;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#FFFFFF;margin-left:15px;'>페북에 공유하기</button>";
+								contents += "<button class='M_recommandReview' onclick='recommandReviews(this)' style='width:160px;height:35px;background:#FFA321;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#FFFFFF;margin-right:15px;'>좋은 정보에요!<span class='M_recommendPoint' style='margin-left:12px;'></span></button>";
+								contents += "<button class='M_shareOnFb' onclick='shareOnFacebook(this)' style='width:160px;height:35px;background:#3765A3;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#FFFFFF;margin-left:15px;'>페북에 공유하기</button>";
 							contents += "</td>";
 						contents += "</tr>";
 					contents += "</table>";
@@ -1045,6 +1069,7 @@
 					}
 
 					var pointaverageGrade = $(".M_pointaverageGrade");
+					var averageGradeMessage = $(".M_averageMessage");
 					var pointfacilities = $(".M_pointfacilities");
 					var pointculture = $(".M_pointculture");
 					var pointtown = $(".M_pointtown");
@@ -1058,6 +1083,8 @@
 					var recommandComment = $(".M_recommandComment");
 					var profileDate = $(".M_profileDate");
 					var recommandReview = $(".M_recommandReview");
+					var recommendPoint = $(".M_recommendPoint");
+					var shareOnFb = $(".M_shareOnFb");
 
 					$(".M_profileUniv").html(collegeName);
 
@@ -1068,6 +1095,8 @@
 						var writeDate = data.result[0].reviews[countReview].time.substr(0, 10);
 
 						$(recommandReview[i]).val(data.result[0].reviews[countReview].reviewID);
+						$(recommendPoint[i]).html(data.result[0].reviews[countReview].recommend);
+						$(shareOnFb[i]).val(data.result[0].reviews[countReview].reviewID);
 
 						$(comment_message[i]).html(data.result[0].reviews[countReview].oneLineComment);
 						$(commendPros[i]).html(data.result[0].reviews[countReview].advantageComment);
@@ -1085,6 +1114,14 @@
 						var averageGrade = Math.round(data.result[0].reviews[countReview].averageGrade*100)/100;
 						$(pointaverageGrade[i]).html(averageGrade);
 						makeStar('gradeaverageGrade', averageGrade, '3', i);
+
+						if ((averageGrade >= 0.00) && (averageGrade <= 2.49)) {
+							$(averageGradeMessage[i]).html('안좋아요');
+						} else if ((averageGrade >= 2.50) && (averageGrade <= 3.99)) {
+							$(averageGradeMessage[i]).html('보통이에요');
+						} else if ((averageGrade >= 4.00) && (averageGrade <= 5.00)) {
+							$(averageGradeMessage[i]).html('좋아요');
+						}
 
 						var facilitiesGrade = Math.round(data.result[0].reviews[countReview].facilitiesGrade*100)/100;
 						$(pointfacilities[i]).html(facilitiesGrade);
@@ -1110,6 +1147,8 @@
 
 					}
 
+					$(".M_profileUniv").html(collegeName + ' ' + $("#collegeMajor2 option:selected").html());
+
 				}
 
 			}, function(data) {
@@ -1118,9 +1157,6 @@
 		}
 		/*****************************************/
 
-		/******************************************
-		* 해당 학과 리뷰 베스트 3개 가져오기
-		/*****************************************/
 		function getAllMajorReview(lastNumber) {
 			RequestHelper.post('/college/getMajorReviewsByCollege', {
 				collegeID: collegeID,
@@ -1132,7 +1168,11 @@
 
 				if (data.result[0].reviews[0] === undefined) {
 					
-					alert("이미 모든 리뷰를 조회했습니다.");
+					$(".univ_comment_none").css('display', '');
+					$(".univ_comment").css('display', 'none');
+					$(".M_univ_comment").css('display', 'none');
+
+					scrollCounting = 'N';
 
 				} else if (data.result[0].reviews.length === 0) {
 
@@ -1173,7 +1213,7 @@
 							contents += "<td rowspan='6' class='M_univ_table_about' style='width:45%;text-align:left;'>";
 								contents += "<h1 style='font-size:1.12rem;color:#58595B;margin-top:20px;margin-bottom:10px;'>전공학과 평점</h1>";
 								contents += "<span class='M_gradeaverageGrade'></span>";
-								contents += "<span style='font-size:1.12rem;color:#58595B;margin-left:10px;'>보통이에요</span>";
+								contents += "<span class='M_averageMessage' style='font-size:1.12rem;color:#58595B;margin-left:10px;'>보통이에요</span>";
 								contents += "<p style='font-size:1.12rem;font-weight:400;color:#58595B;margin-top:40px;'>작성자는 이 학과를 <span class='M_recommandComment' style='color:#FF5555'></span> 합니다.</p>";
 							contents += "</td>";
 						contents += "</tr>";
@@ -1237,8 +1277,8 @@
 						contents += "</tr>";
 						contents += "<tr>";
 							contents += "<td colspan='3'>";
-								contents += "<button class='M_recommandReview' onclick='recommandReviews(this)' style='width:160px;height:35px;background:#FFA321;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#58595B;margin-right:15px;'>좋은 정보에요!</button>";
-								contents += "<button class='M_shareOnFb' style='width:160px;height:35px;background:#3765A3;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#FFFFFF;margin-left:15px;'>페북에 공유하기</button>";
+								contents += "<button class='M_recommandReview' onclick='recommandReviews(this)' style='width:160px;height:35px;background:#FFA321;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#FFFFFF;margin-right:15px;'>좋은 정보에요!<span class='M_recommendPoint' style='margin-left:12px;'></span></button>";
+								contents += "<button class='M_shareOnFb' onclick='shareOnFacebook(this)' style='width:160px;height:35px;background:#3765A3;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#FFFFFF;margin-left:15px;'>페북에 공유하기</button>";
 							contents += "</td>";
 						contents += "</tr>";
 					contents += "</table>";
@@ -1248,6 +1288,7 @@
 					}
 
 					var pointaverageGrade = $(".M_pointaverageGrade");
+					var averageGradeMessage = $(".M_averageMessage");
 					var pointfacilities = $(".M_pointfacilities");
 					var pointculture = $(".M_pointculture");
 					var pointtown = $(".M_pointtown");
@@ -1261,16 +1302,21 @@
 					var recommandComment = $(".M_recommandComment");
 					var profileDate = $(".M_profileDate");
 					var recommandReview = $(".M_recommandReview");
-
+					var recommendPoint = $(".M_recommendPoint");
+					var shareOnFb = $(".M_shareOnFb");
+					var nameOfUniv = $(".M_profileUniv");
+					
 					$(".M_profileUniv").html(collegeName);
 
-					var countReview = 0;
+					countReview = 0;
 
 					for (var i = makeCount; i < MaxLength; i++) {
 
 						var writeDate = data.result[0].reviews[countReview].time.substr(0, 10);
 
 						$(recommandReview[i]).val(data.result[0].reviews[countReview].reviewID);
+						$(recommendPoint[i]).html(data.result[0].reviews[countReview].recommend);
+						$(shareOnFb[i]).val(data.result[0].reviews[countReview].reviewID);
 
 						$(comment_message[i]).html(data.result[0].reviews[countReview].oneLineComment);
 						$(commendPros[i]).html(data.result[0].reviews[countReview].advantageComment);
@@ -1288,6 +1334,14 @@
 						var averageGrade = Math.round(data.result[0].reviews[countReview].averageGrade*100)/100;
 						$(pointaverageGrade[i]).html(averageGrade);
 						makeStar('gradeaverageGrade', averageGrade, '3', i);
+
+						if ((averageGrade >= 0.00) && (averageGrade <= 2.49)) {
+							$(averageGradeMessage[i]).html('안좋아요');
+						} else if ((averageGrade >= 2.50) && (averageGrade <= 3.99)) {
+							$(averageGradeMessage[i]).html('보통이에요');
+						} else if ((averageGrade >= 4.00) && (averageGrade <= 5.00)) {
+							$(averageGradeMessage[i]).html('좋아요');
+						}
 
 						var facilitiesGrade = Math.round(data.result[0].reviews[countReview].facilitiesGrade*100)/100;
 						$(pointfacilities[i]).html(facilitiesGrade);
@@ -1423,6 +1477,10 @@
 			}, function(data) {
 				alert(JSON.stringify(data));
 			});
+		}
+
+		function shareOnFacebook(review) {
+			window.open('http://www.facebook.com/sharer.php?u=http://addcampus.com/review/univ/comment/?univ=c015&reviewid=' + review.value + '&t=지금 재학생들이 직접 작성한 생생한 대학이야기를 직접 확인하세요!', '_blank');
 		}
 
 	</script>

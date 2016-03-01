@@ -175,7 +175,7 @@
 					</tr>
 				</table>
 
-				<table class='univ_pic' style='background:#FFF;'>
+				<!-- <table class='univ_pic' style='background:#FFF;'>
 					<tr>
 						<td class='univ_pic_in'>대학 속 사진</td>
 						<td class='univ_pic_more'>사진 더 보기</td>
@@ -187,7 +187,7 @@
 							<img src='/assets/img/sample.png' style='width:225px;height:100px;border:1px solid #999;margin-top:5px;margin-left:10px;margin-right:15px;'/>
 						</td>
 					</tr>
-				</table>
+				</table> -->
 
 				<div class='univ' style='background:#FFF;word-break:break-all;'>
 					<h1>맛보기 대학리뷰</h1>
@@ -256,7 +256,7 @@
 				<table class='review_list' style='background:#FFF;'>
 					<tr>
 						<td colspan='2' class='review_list_title' style='font-family:NanumBarunGothicBold;font-weight:bold;'>가장 활발한 대학</td>
-						<td class='review_more_b'><a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a></td>
+						<td class='review_more_b'><!-- <a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a> --></td>
 					</tr>
 					<tr>
 						<td class='of_rank'>1.</td>
@@ -394,50 +394,6 @@
 			/*****************************************/
 
 			/******************************************
-			* 학교 전체 평점 가져오기
-			/*****************************************/
-			RequestHelper.post('/college/getAllAverageGradeOfCollege', {
-				collegeID: collegeID
-			},
-			{
-			// Option is not needed.
-			}, function(data) {
-
-				var averageGrade = Math.round(data.result[0].averageGrade*100)/100;
-
-				$("#averageGradePoint").html(averageGrade);
-				makeStar('averageGrade', averageGrade);
-
-				var facilities = Math.round(data.result[0].facilities*100)/100;
-
-				$("#facilities").html(facilities);
-				makeStar('facilities', facilities);
-
-				var culture = Math.round(data.result[0].culture*100)/100;
-
-				$("#culture").html(culture);
-				makeStar('culture', culture);
-
-				var town = Math.round(data.result[0].town*100)/100;
-
-				$("#town").html(town);
-				makeStar('town', town);
-
-				var tuition = Math.round(data.result[0].tuition*100)/100;
-
-				$("#tuition").html(tuition);
-				makeStar('tuition', tuition);
-
-				var professor = Math.round(data.result[0].professor*100)/100;
-
-				$("#professor").html(professor);
-				makeStar('professor', professor);
-
-			}, function(data) {
-				alert("잘못된 접근입니다, 뒤로가기 이동");
-			});
-
-			/******************************************
 			* Get Best College for SideBar
 			/*****************************************/
 			RequestHelper.post('/ranking/getCollegeActiveRanking', {},
@@ -486,70 +442,6 @@
 			/*****************************************/
 
 			/******************************************
-			* 해당 학과 맛보기 리뷰 가져오기
-			/*****************************************/
-			RequestHelper.post('/college/getMajorReviewsByCollege', {
-				collegeID: collegeID,
-				lastReviewID: '0'
-			},
-			{
-			// Option is not needed.
-			}, function(data) {
-
-				var CollegeLink = $(".CollegeLink");
-				var CollegeLink1 = $(".CollegeLink_A");
-				var CollegeLink2 = $(".CollegeLink_B");
-				var CollegeLink3 = $(".CollegeLink_C");
-				var CollegeLogo = $(".CollegeLink img");
-				var CollegeGrade = $(".CollegeGrade");
-				var CollegeNameList = new Array();
-
-				var collegeCode = data.result[0].reviews[0].collegeID;
-
-				/******************************************
-				* Get Name of the College
-				/*****************************************/
-				RequestHelper.post('/college/getAllColleges', {},
-				{
-				// Option is not needed.
-				}, function(data) {
-					var lengthColleges = data.result[0].colleges.length;
-
-					for (var i = 0; i<lengthColleges; i++) {
-
-						if (data.result[0].colleges[i].collegeID == collegeCode) {
-							$("#univName1").html(data.result[0].colleges[i].collegeName);
-							break;
-						}
-
-					}
-
-				}, function(data) {
-					alert(JSON.stringify(data));
-				});
-				/*****************************************/
-
-				$("#univName1").html(CollegeNameList[0]);
-
-				$("#oneLineComment1").html(data.result[0].reviews[0].oneLineComment);
-				$("#advantageComment1").html(data.result[0].reviews[0].advantageComment);
-				$("#weaknessComment1").html(data.result[0].reviews[0].weaknessComment);
-
-				$(CollegeGrade[0]).html(data.result[0].reviews[0].recommend);
-
-				$(CollegeLink[0]).attr("href", "/review/univ/?univ=" + data.result[0].reviews[0].collegeID);
-				$(CollegeLink1[0]).attr("href", "/review/univ/?univ=" + data.result[0].reviews[0].collegeID);
-				$(CollegeLink2[0]).attr("href", "/review/univ/?univ=" + data.result[0].reviews[0].collegeID);
-				$(CollegeLink3[0]).attr("href", "/review/univ/?univ=" + data.result[0].reviews[0].collegeID);
-
-				$(CollegeLogo[0]).attr("src", "/assets/img/logo/logo_" + data.result[0].reviews[0].collegeID + ".jpg");
-
-			}, function(data) {
-				alert("잘못된 접근입니다, 뒤로가기 이동");
-			});
-			/*****************************************/
-
-			/******************************************
 			* 해당 대학 리뷰 개수 가져오기
 			/*****************************************/
 			RequestHelper.post('/college/getAllCountOfCollegeReviews', {
@@ -559,6 +451,163 @@
 			// Option is not needed.
 			}, function(data) {
 				$(".collegeCountOfReviews").html(data.result[0].countOfReviews);
+
+				if (data.result[0].countOfReviews != 0) {
+
+					/******************************************
+					* 학교 전체 평점 가져오기
+					/*****************************************/
+					RequestHelper.post('/college/getAllAverageGradeOfCollege', {
+						collegeID: collegeID
+					},
+					{
+					// Option is not needed.
+					}, function(data) {
+
+						var averageGrade = Math.round(data.result[0].averageGrade*100)/100;
+
+						$("#averageGradePoint").html(averageGrade);
+						makeStar('averageGrade', averageGrade);
+
+						var facilities = Math.round(data.result[0].facilities*100)/100;
+
+						$("#facilities").html(facilities);
+						makeStar('facilities', facilities);
+
+						var culture = Math.round(data.result[0].culture*100)/100;
+
+						$("#culture").html(culture);
+						makeStar('culture', culture);
+
+						var town = Math.round(data.result[0].town*100)/100;
+
+						$("#town").html(town);
+						makeStar('town', town);
+
+						var tuition = Math.round(data.result[0].tuition*100)/100;
+
+						$("#tuition").html(tuition);
+						makeStar('tuition', tuition);
+
+						var professor = Math.round(data.result[0].professor*100)/100;
+
+						$("#professor").html(professor);
+						makeStar('professor', professor);
+
+					}, function(data) {
+						alert("잘못된 접근입니다, 뒤로가기 이동");
+					});
+					/*****************************************/
+
+					/******************************************
+					* 해당 학과 맛보기 리뷰 가져오기
+					/*****************************************/
+					RequestHelper.post('/college/getMajorReviewsByCollege', {
+						collegeID: collegeID,
+						lastReviewID: '0'
+					},
+					{
+					// Option is not needed.
+					}, function(data) {
+
+						var CollegeLink = $(".CollegeLink");
+						var CollegeLink1 = $(".CollegeLink_A");
+						var CollegeLink2 = $(".CollegeLink_B");
+						var CollegeLink3 = $(".CollegeLink_C");
+						var CollegeLogo = $(".CollegeLink img");
+						var CollegeGrade = $(".CollegeGrade");
+						var CollegeNameList = new Array();
+
+						var collegeCode = data.result[0].reviews[0].collegeID;
+						var majorCode = data.result[0].reviews[0].majorID;
+
+						/******************************************
+						* Get Name of the College
+						/*****************************************/
+						RequestHelper.post('/college/getAllColleges', {},
+						{
+						// Option is not needed.
+						}, function(collegeData) {
+							var lengthColleges = collegeData.result[0].colleges.length;
+
+							for (var i = 0; i<lengthColleges; i++) {
+
+								if (collegeData.result[0].colleges[i].collegeID == collegeCode) {
+									$("#univName1").html(collegeData.result[0].colleges[i].collegeName);
+									break;
+								}
+
+							}
+
+						}, function(collegeData) {
+							alert(JSON.stringify(collegeData));
+						});
+						/*****************************************/
+
+						/******************************************
+						* Get Name of the Major
+						/*****************************************/
+						RequestHelper.post('/college/getAllMajors', {},
+						{
+						// Option is not needed.
+						}, function(majorData) {
+							var lengthColleges = majorData.result[0].majors.length;
+
+							for (var i = 0; i<lengthColleges; i++) {
+
+								if (majorData.result[0].majors[i].majorID == majorCode) {
+									$("#univName1").html($("#univName1").html() + ' ' + majorData.result[0].majors[i].majorName);
+									break;
+								}
+
+							}
+
+						}, function(majorData) {
+							alert(JSON.stringify(majorData));
+						});
+						/*****************************************/
+
+						$("#oneLineComment1").html(data.result[0].reviews[0].oneLineComment);
+						$("#advantageComment1").html(data.result[0].reviews[0].advantageComment);
+						$("#weaknessComment1").html(data.result[0].reviews[0].weaknessComment);
+
+						$(CollegeGrade[0]).html(data.result[0].reviews[0].recommend);
+
+						$(CollegeLink[0]).attr("href", "/review/univ/?univ=" + data.result[0].reviews[0].collegeID);
+						$(CollegeLink1[0]).attr("href", "/review/univ/?univ=" + data.result[0].reviews[0].collegeID);
+						$(CollegeLink2[0]).attr("href", "/review/univ/?univ=" + data.result[0].reviews[0].collegeID);
+						$(CollegeLink3[0]).attr("href", "/review/univ/?univ=" + data.result[0].reviews[0].collegeID);
+
+						$(CollegeLogo[0]).attr("src", "/assets/img/logo/logo_" + data.result[0].reviews[0].collegeID + ".jpg");
+
+					}, function(data) {
+						alert("잘못된 접근입니다, 뒤로가기 이동");
+					});
+					/*****************************************/
+
+				} else {
+
+					$(".univ").css('display', 'none');
+
+					$("#averageGradePoint").html('0');
+					makeStar('averageGrade', 0);
+
+					$("#facilities").html('0');
+					makeStar('facilities', 0);
+
+					$("#culture").html('0');
+					makeStar('culture', 0);
+
+					$("#town").html('0');
+					makeStar('town', 0);
+
+					$("#tuition").html('0');
+					makeStar('tuition', 0);
+
+					$("#professor").html('0');
+					makeStar('professor', 0);
+				}
+
 			}, function(data) {
 				alert("잘못된 접근입니다, 뒤로가기 이동");
 			});
@@ -607,6 +656,14 @@
 				$("#" + grade + "Star3").attr('src', '/assets/img/common/review_star_full.png');
 				$("#" + grade + "Star4").attr('src', '/assets/img/common/review_star_full.png');
 				$("#" + grade + "Star5").attr('src', '/assets/img/common/review_star_full.png');
+
+			} else if (point <= 1.00) {
+
+				$("#" + grade + "Star1").attr('src', '/assets/img/common/review_star_empty.png');
+				$("#" + grade + "Star2").attr('src', '/assets/img/common/review_star_empty.png');
+				$("#" + grade + "Star3").attr('src', '/assets/img/common/review_star_empty.png');
+				$("#" + grade + "Star4").attr('src', '/assets/img/common/review_star_empty.png');
+				$("#" + grade + "Star5").attr('src', '/assets/img/common/review_star_empty.png');
 
 			}
 
