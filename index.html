@@ -492,10 +492,12 @@
 
 					$(CollegeGrade[cnti]).html(data.result[0].reviews[cnti].recommend);
 
-					$(CollegeLink[cnti]).attr("href", "/review/univ/?univ=" + data.result[0].reviews[cnti].collegeID);
-					$(CollegeLink1[cnti]).attr("href", "/review/univ/?univ=" + data.result[0].reviews[cnti].collegeID);
-					$(CollegeLink2[cnti]).attr("href", "/review/univ/?univ=" + data.result[0].reviews[cnti].collegeID);
-					$(CollegeLink3[cnti]).attr("href", "/review/univ/?univ=" + data.result[0].reviews[cnti].collegeID);
+					// alert(JSON.stringify(data));
+
+					$(CollegeLink[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cnti].collegeID + "&major=" + data.result[0].reviews[cnti].majorID + "&reviewid=" + data.result[0].reviews[cnti].reviewID);
+					$(CollegeLink1[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cnti].collegeID + "&major=" + data.result[0].reviews[cnti].majorID + "&reviewid=" + data.result[0].reviews[cnti].reviewID);
+					$(CollegeLink2[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cnti].collegeID + "&major=" + data.result[0].reviews[cnti].majorID + "&reviewid=" + data.result[0].reviews[cnti].reviewID);
+					$(CollegeLink3[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cnti].collegeID + "&major=" + data.result[0].reviews[cnti].majorID + "&reviewid=" + data.result[0].reviews[cnti].reviewID);
 
 					$(CollegeLogo[cnti]).attr("src", "/assets/img/logo/logo_" + data.result[0].reviews[cnti].collegeID + ".jpg");
 
@@ -625,10 +627,10 @@
 								<td>
 									<br/><br/>
 									<span style='font-size:1.2rem;color:#58595B;margin-bottom:5px;'>아직도 회원이 아니시라구요??</span>
-									<button class='sign_b_s' id='sign_b_s' onclick='return false;' style='margin: 10px 0px;'>이메일로 회원가입하기</button>
+									<button class='sign_b_s' id='sign_b_s' style='background:#ff9933;margin: 10px 0px;' onclick='return false;'>이메일로 시작하기</button>
 									<br/>
-									<button class='sign_b_s' id='sign_b_s' onclick='facebookSign();return false;'>페이스북으로 회원가입하기</button>
-									<div id="status"></div>
+									<button class='sign_b_s' id='sign_b_s' style='background:#ff9933;' onclick='facebookSign();return false;'>페이스북으로 시작하기</button>
+									<div id="status" style='display:none;'></div>
 								</td>
 							</tr>
 						</table>
@@ -976,7 +978,6 @@
 							</tr>
 						</table>
 						<!-- Second Page of Review Write Element. -->
-
 					</form>
 				</div>
 			</div> 

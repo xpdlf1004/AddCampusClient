@@ -374,6 +374,10 @@
 			// Option is not needed.
 			}, function(data) {
 				
+				if (data.result[0].collegeInfo.comment !== undefined) {
+					$(".edit_comment_p").html(' - ' + data.result[0].collegeInfo.comment);
+				}
+
 				$(".univ_logo").attr('src', '/assets/img/logo/logo_' + collegeID + '.jpg');
 				$(".univ_star_").html('종합 ' + data.result[0].collegeInfo.averageRank + '위');
 				$("#collegeName").html(data.result[0].collegeInfo.name);
@@ -705,10 +709,10 @@
 								<td>
 									<br/><br/>
 									<span style='font-size:1.2rem;color:#58595B;margin-bottom:5px;'>아직도 회원이 아니시라구요??</span>
-									<button class='sign_b_s' id='sign_b_s' onclick='return false;' style='margin: 10px 0px;'>이메일로 회원가입하기</button>
+									<button class='sign_b_s' id='sign_b_s' style='background:#ff9933;margin: 10px 0px;' onclick='return false;'>이메일로 시작하기</button>
 									<br/>
-									<button class='sign_b_s' id='sign_b_s' onclick='facebookSign();return false;'>페이스북으로 회원가입하기</button>
-									<div id="status"></div>
+									<button class='sign_b_s' id='sign_b_s' style='background:#ff9933;' onclick='facebookSign();return false;'>페이스북으로 시작하기</button>
+									<div id="status" style='display:none;'></div>
 								</td>
 							</tr>
 						</table>
