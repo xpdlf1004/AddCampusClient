@@ -295,7 +295,7 @@
 					<table class='review_list'>
 						<tr>
 							<td colspan='2' class='review_list_title' style='font-family:NanumBarunGothicBold;font-weight:bold;'>가장 활발한 대학</td>
-							<td class='review_more_b'><a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a></td>
+							<td class='review_more_b'><!-- <a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a> --></td>
 						</tr>
 						<tr>
 							<td class='of_rank'>1.</td>
@@ -457,6 +457,7 @@
 
 			function SearchUnivA (content) {
 				var univ = $("#search_school").val();
+				var searchURL = "";
 
 				RequestHelper.post('/college/getAllColleges', {},
 				{
@@ -465,14 +466,27 @@
 					var length = data.result[0].colleges.length;
 
 					for (var i = 0; i<length; i++) {
-						if (data.result[0].colleges[i].collegeName == univ) {
-							location.href = '/review/univ/?univ=' + data.result[0].colleges[i].collegeID;
+						
+						if (data.result[0].colleges[i].collegeName === univ) {
+							// location.href = '/review/univ/?univ=' + data.result[0].colleges[i].collegeID;
+							searchURL = data.result[0].colleges[i].collegeID;
 						}
+
+					}
+
+					if (searchURL != "") {
+						location.href = '/review/univ/?univ=' + searchURL;
+					} else if (searchURL === undefined) {
+						alert("학교 이름을 정확하게 입력해주세요.");
+					} else {
+						alert("학교 이름을 정확하게 입력해주세요.");
 					}
 
 				}, function(data) {
 					alert(JSON.stringify(data));
 				});
+
+				return false;
 			}
 
 			$("#searchBtn").click(function(){
@@ -481,6 +495,7 @@
 
 			$("#search_form").submit(function(){
 				SearchUnivA();
+				return false;
 			});
 			/*****************************************/
 

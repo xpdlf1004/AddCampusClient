@@ -578,10 +578,10 @@
 
 						$(CollegeGrade[0]).html(data.result[0].reviews[0].recommend);
 
-						$(CollegeLink[0]).attr("href", "/review/univ/?univ=" + data.result[0].reviews[0].collegeID);
-						$(CollegeLink1[0]).attr("href", "/review/univ/?univ=" + data.result[0].reviews[0].collegeID);
-						$(CollegeLink2[0]).attr("href", "/review/univ/?univ=" + data.result[0].reviews[0].collegeID);
-						$(CollegeLink3[0]).attr("href", "/review/univ/?univ=" + data.result[0].reviews[0].collegeID);
+						$(CollegeLink[0]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[0].collegeID + "&major=" + data.result[0].reviews[0].majorID + "&reviewid=" + data.result[0].reviews[0].reviewID);
+						$(CollegeLink1[0]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[0].collegeID + "&major=" + data.result[0].reviews[0].majorID + "&reviewid=" + data.result[0].reviews[0].reviewID);
+						$(CollegeLink2[0]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[0].collegeID + "&major=" + data.result[0].reviews[0].majorID + "&reviewid=" + data.result[0].reviews[0].reviewID);
+						$(CollegeLink3[0]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[0].collegeID + "&major=" + data.result[0].reviews[0].majorID + "&reviewid=" + data.result[0].reviews[0].reviewID);
 
 						$(CollegeLogo[0]).attr("src", "/assets/img/logo/logo_" + data.result[0].reviews[0].collegeID + ".jpg");
 

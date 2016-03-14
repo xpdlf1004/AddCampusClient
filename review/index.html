@@ -80,7 +80,7 @@
 			</div>
 		</div>
 
-		<div id='review_banner'>
+		<!-- <div id='review_banner'>
 			<div class='find_campus'>
 				<h2 class='title'>가고 싶은 대학이 어떤 곳인지는 한 번 찾아 봐야지?</h2>
 				<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:5px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
@@ -124,7 +124,7 @@
 				</div>
 				<button class='searchFiltered' style='float:right;margin-right:15px;width:216px;height:40px;border-radius:10px;margin-top:10px;background:#FFD432;'>검색하기</button>
 			</div>
-		</div>
+		</div> -->
 
 		<div id='review_content' style='width:1000px;margin:0px auto;'>
 			<!-- 캠퍼스 왼쪽 리뷰 -->
@@ -660,28 +660,28 @@
 
 		});
 
-		$('.searchFiltered').click(function(){
+		// $('.searchFiltered').click(function(){
 
-			var searchClass = $('.type_1').val();
-			var searchGroup = $('.type_2').val();
-			var searchRegion = $('.type_3').val();
+		// 	var searchClass = $('.type_1').val();
+		// 	var searchGroup = $('.type_2').val();
+		// 	var searchRegion = $('.type_3').val();
 
-			RequestHelper.post('/college/getFilteredTotalBestMajorReviews', {
-				majorClass:searchClass,
-				majorGroup:searchGroup,
-				majorRegion:searchRegion
-			},
-			{
-			// Option is not needed.
-			}, function(data) {
+		// 	RequestHelper.post('/college/getFilteredTotalBestMajorReviews', {
+		// 		majorClass:searchClass,
+		// 		majorGroup:searchGroup,
+		// 		majorRegion:searchRegion
+		// 	},
+		// 	{
+		// 	// Option is not needed.
+		// 	}, function(data) {
 
-				console.log(JSON.stringify(data));
+		// 		console.log(JSON.stringify(data));
 
-			}, function(data) {
-				alert(JSON.stringify(data));
-			});
+		// 	}, function(data) {
+		// 		alert(JSON.stringify(data));
+		// 	});
 
-		});
+		// });
 
 	</script>
 
