@@ -18,6 +18,28 @@
 
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<!-- Assets -->
+	<script>
+
+		/******************************************
+		* URL 학교 코드 가져오기
+		/*****************************************/
+		function getQueryVariable(variable) {
+			var query = window.location.search.substring(1);
+			var vars = query.split("&");
+
+			for (var i=0; i<vars.length; i++) {
+				var pair = vars[i].split("=");
+				
+				if (pair[0] == variable) {
+					return pair[1];
+				}
+			}
+		}
+
+		// 학교 코드 저장
+		orderBy = getQueryVariable("type");
+
+	</script>
 </head>
 <body>
 
@@ -66,193 +88,203 @@
 				<div class='campus_left'>
 
 					<div class="mypage_memo" style='margin-top:10px;margin-bottom:25px;width:240px;height:25px;border-radius:5px;border:1px solid #808083;font-size:1rem;color:#58595B;'>
-						<select name=''>
-							<option>캠퍼스 시설 만족도 순</option>
-							<option>캠퍼스 문화 만족도 순</option>
-							<option>대학가 만족도 순</option>
-							<option>등록금 만족도 순</option>
-							<option>교수 만족도 순</option>
+						<select name='changeCollegeList'>
+							<option value='facilities'>캠퍼스 시설 만족도 순</option>
+							<option value='culture'>캠퍼스 문화 만족도 순</option>
+							<option value='town'>대학가 만족도 순</option>
+							<option value='tuition'>등록금 만족도 순</option>
+							<option value='professor'>교수 만족도 순</option>
 						</select>
 					</div>
 
 					<ul class='campus_univ_list'>
-						<li class='univ_class'>1.</li>
+						<li class='univ_class'></li>
 						<li class='univ_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='univ_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
-								<span style='font-size:1rem;color:#808083;'>00개의 리뷰</span>
+							<a class='univ_img_link' href='/review/univ/' style='text-decoration:none;color:inherit;'><img class='univ_img'/></a>
+							<p><a class='univ_name' style='text-decoration:none;color:inherit;'>연세대학교</a> <!-- <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span> --><br/>
+								<span class='countOfReview' style='font-size:1rem;color:#808083;'></span>
 							</p>
 						</li>
 						<li class='univ_comment'>
 							<p style='font-size:1rem;color:#808083;'>캠퍼스 시설 만족도</span><br/>
+							<span class='gradeStar'></span>
+							<!-- <img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<p style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:40px;'>9.98</span>
+							<img src='/assets/img/common/review_star_full.png' class='rank_star'/> -->
+							<p class='pointOfReview' style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:40px;'></span>
 						</li>
 					</ul>
 					<ul class='campus_univ_list'>
-						<li class='univ_class'>1.</li>
+						<li class='univ_class'></li>
 						<li class='univ_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='univ_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
-								<span style='font-size:1rem;color:#808083;'>00개의 리뷰</span>
+							<a class='univ_img_link' href='/review/univ/' style='text-decoration:none;color:inherit;'><img class='univ_img'/></a>
+							<p><a class='univ_name' style='text-decoration:none;color:inherit;'>연세대학교</a> <!-- <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span> --><br/>
+								<span class='countOfReview' style='font-size:1rem;color:#808083;'></span>
 							</p>
 						</li>
 						<li class='univ_comment'>
 							<p style='font-size:1rem;color:#808083;'>캠퍼스 시설 만족도</span><br/>
+							<span class='gradeStar'></span>
+							<!-- <img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<p style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:40px;'>9.98</span>
+							<img src='/assets/img/common/review_star_full.png' class='rank_star'/> -->
+							<p class='pointOfReview' style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:40px;'></span>
 						</li>
 					</ul>
 					<ul class='campus_univ_list'>
-						<li class='univ_class'>1.</li>
+						<li class='univ_class'></li>
 						<li class='univ_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='univ_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
-								<span style='font-size:1rem;color:#808083;'>00개의 리뷰</span>
+							<a class='univ_img_link' href='/review/univ/' style='text-decoration:none;color:inherit;'><img class='univ_img'/></a>
+							<p><a class='univ_name' style='text-decoration:none;color:inherit;'>연세대학교</a> <!-- <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span> --><br/>
+								<span class='countOfReview' style='font-size:1rem;color:#808083;'></span>
 							</p>
 						</li>
 						<li class='univ_comment'>
 							<p style='font-size:1rem;color:#808083;'>캠퍼스 시설 만족도</span><br/>
+							<span class='gradeStar'></span>
+							<!-- <img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<p style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:40px;'>9.98</span>
+							<img src='/assets/img/common/review_star_full.png' class='rank_star'/> -->
+							<p class='pointOfReview' style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:40px;'></span>
 						</li>
 					</ul>
 					<ul class='campus_univ_list'>
-						<li class='univ_class'>1.</li>
+						<li class='univ_class'></li>
 						<li class='univ_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='univ_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
-								<span style='font-size:1rem;color:#808083;'>00개의 리뷰</span>
+							<a class='univ_img_link' href='/review/univ/' style='text-decoration:none;color:inherit;'><img class='univ_img'/></a>
+							<p><a class='univ_name' style='text-decoration:none;color:inherit;'>연세대학교</a> <!-- <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span> --><br/>
+								<span class='countOfReview' style='font-size:1rem;color:#808083;'></span>
 							</p>
 						</li>
 						<li class='univ_comment'>
 							<p style='font-size:1rem;color:#808083;'>캠퍼스 시설 만족도</span><br/>
+							<span class='gradeStar'></span>
+							<!-- <img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<p style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:40px;'>9.98</span>
+							<img src='/assets/img/common/review_star_full.png' class='rank_star'/> -->
+							<p class='pointOfReview' style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:40px;'></span>
 						</li>
 					</ul>
 					<ul class='campus_univ_list'>
-						<li class='univ_class'>1.</li>
+						<li class='univ_class'></li>
 						<li class='univ_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='univ_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
-								<span style='font-size:1rem;color:#808083;'>00개의 리뷰</span>
+							<a class='univ_img_link' href='/review/univ/' style='text-decoration:none;color:inherit;'><img class='univ_img'/></a>
+							<p><a class='univ_name' style='text-decoration:none;color:inherit;'>연세대학교</a> <!-- <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span> --><br/>
+								<span class='countOfReview' style='font-size:1rem;color:#808083;'></span>
 							</p>
 						</li>
 						<li class='univ_comment'>
 							<p style='font-size:1rem;color:#808083;'>캠퍼스 시설 만족도</span><br/>
+							<span class='gradeStar'></span>
+							<!-- <img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<p style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:40px;'>9.98</span>
+							<img src='/assets/img/common/review_star_full.png' class='rank_star'/> -->
+							<p class='pointOfReview' style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:40px;'></span>
 						</li>
 					</ul>
 					<ul class='campus_univ_list'>
-						<li class='univ_class'>1.</li>
+						<li class='univ_class'></li>
 						<li class='univ_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='univ_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
-								<span style='font-size:1rem;color:#808083;'>00개의 리뷰</span>
+							<a class='univ_img_link' href='/review/univ/' style='text-decoration:none;color:inherit;'><img class='univ_img'/></a>
+							<p><a class='univ_name' style='text-decoration:none;color:inherit;'>연세대학교</a> <!-- <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span> --><br/>
+								<span class='countOfReview' style='font-size:1rem;color:#808083;'></span>
 							</p>
 						</li>
 						<li class='univ_comment'>
 							<p style='font-size:1rem;color:#808083;'>캠퍼스 시설 만족도</span><br/>
+							<span class='gradeStar'></span>
+							<!-- <img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<p style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:40px;'>9.98</span>
+							<img src='/assets/img/common/review_star_full.png' class='rank_star'/> -->
+							<p class='pointOfReview' style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:40px;'></span>
 						</li>
 					</ul>
 					<ul class='campus_univ_list'>
-						<li class='univ_class'>1.</li>
+						<li class='univ_class'></li>
 						<li class='univ_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='univ_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
-								<span style='font-size:1rem;color:#808083;'>00개의 리뷰</span>
+							<a class='univ_img_link' href='/review/univ/' style='text-decoration:none;color:inherit;'><img class='univ_img'/></a>
+							<p><a class='univ_name' style='text-decoration:none;color:inherit;'>연세대학교</a> <!-- <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span> --><br/>
+								<span class='countOfReview' style='font-size:1rem;color:#808083;'></span>
 							</p>
 						</li>
 						<li class='univ_comment'>
 							<p style='font-size:1rem;color:#808083;'>캠퍼스 시설 만족도</span><br/>
+							<span class='gradeStar'></span>
+							<!-- <img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<p style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:40px;'>9.98</span>
+							<img src='/assets/img/common/review_star_full.png' class='rank_star'/> -->
+							<p class='pointOfReview' style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:40px;'></span>
 						</li>
 					</ul>
 					<ul class='campus_univ_list'>
-						<li class='univ_class'>1.</li>
+						<li class='univ_class'></li>
 						<li class='univ_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='univ_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
-								<span style='font-size:1rem;color:#808083;'>00개의 리뷰</span>
+							<a class='univ_img_link' href='/review/univ/' style='text-decoration:none;color:inherit;'><img class='univ_img'/></a>
+							<p><a class='univ_name' style='text-decoration:none;color:inherit;'>연세대학교</a> <!-- <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span> --><br/>
+								<span class='countOfReview' style='font-size:1rem;color:#808083;'></span>
 							</p>
 						</li>
 						<li class='univ_comment'>
 							<p style='font-size:1rem;color:#808083;'>캠퍼스 시설 만족도</span><br/>
+							<span class='gradeStar'></span>
+							<!-- <img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<p style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:40px;'>9.98</span>
+							<img src='/assets/img/common/review_star_full.png' class='rank_star'/> -->
+							<p class='pointOfReview' style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:40px;'></span>
 						</li>
 					</ul>
 					<ul class='campus_univ_list'>
-						<li class='univ_class'>1.</li>
+						<li class='univ_class'></li>
 						<li class='univ_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='univ_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
-								<span style='font-size:1rem;color:#808083;'>00개의 리뷰</span>
+							<a class='univ_img_link' href='/review/univ/' style='text-decoration:none;color:inherit;'><img class='univ_img'/></a>
+							<p><a class='univ_name' style='text-decoration:none;color:inherit;'>연세대학교</a> <!-- <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span> --><br/>
+								<span class='countOfReview' style='font-size:1rem;color:#808083;'></span>
 							</p>
 						</li>
 						<li class='univ_comment'>
 							<p style='font-size:1rem;color:#808083;'>캠퍼스 시설 만족도</span><br/>
+							<span class='gradeStar'></span>
+							<!-- <img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<p style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:40px;'>9.98</span>
+							<img src='/assets/img/common/review_star_full.png' class='rank_star'/> -->
+							<p class='pointOfReview' style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:40px;'></span>
 						</li>
 					</ul>
 					<ul class='campus_univ_list' style='border-bottom: 1px solid #BABCBE;'>
-						<li class='univ_class'>1.</li>
+						<li class='univ_class'></li>
 						<li class='univ_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='univ_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
-								<span style='font-size:1rem;color:#808083;'>00개의 리뷰</span>
+							<a class='univ_img_link' href='/review/univ/' style='text-decoration:none;color:inherit;'><img class='univ_img'/></a>
+							<p><a class='univ_name' style='text-decoration:none;color:inherit;'>연세대학교</a> <!-- <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span> --><br/>
+								<span class='countOfReview' style='font-size:1rem;color:#808083;'></span>
 							</p>
 						</li>
 						<li class='univ_comment'>
 							<p style='font-size:1rem;color:#808083;'>캠퍼스 시설 만족도</span><br/>
+							<span class='gradeStar'></span>
+							<!-- <img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
 							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<p style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:40px;'>9.98</span>
+							<img src='/assets/img/common/review_star_full.png' class='rank_star'/> -->
+							<p class='pointOfReview' style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:40px;'></span>
 						</li>
 					</ul>
 
@@ -341,42 +373,6 @@
 							<td colspan='3'>&nbsp;</td>
 						</tr>
 					</table>
-
-					<!-- <table class='review_list'>
-						<tr>
-							<td colspan='2' class='review_list_title' style='font-family:NanumBarunGothicBold;font-weight:bold;'>대학종합순위</td>
-							<td class='review_more_b'><a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a></td>
-						</tr>
-						<tr>
-							<td class='of_rank'>1.</td>
-							<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
-							<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
-						</tr>
-						<tr>
-							<td class='of_rank'>1.</td>
-							<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
-							<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
-						</tr>
-						<tr>
-							<td class='of_rank'>1.</td>
-							<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
-							<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
-						</tr>
-						<tr>
-							<td class='of_rank'>1.</td>
-							<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
-							<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
-						</tr>
-						<tr>
-							<td class='of_rank'>1.</td>
-							<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
-							<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
-						</tr>
-						<tr>
-							<td colspan='3'>&nbsp;</td>
-						</tr>
-					</table> -->
-
 				</div>
 			</div>
 
@@ -547,8 +543,132 @@
 			});
 			/*****************************************/
 
+			$('select[name=changeCollegeList]').change(function(){
+				location.href = '/campus/univ/?type=' + $('select[name=changeCollegeList]').val();
+			});
+
+			$('select[name=changeCollegeList]').val(orderBy).prop("selected", true);
+
 		});
 		/*****************************************/
+
+		collegeNameLists = '';
+		collegeNameLists = new Array();
+
+		RequestHelper.post('/college/getAllColleges', {},
+		{
+		// Option is not needed.
+		}, function(data) {
+			// alert(JSON.stringify(data));
+
+			for (var i=0; i<data.result[0].colleges.length; i++) {
+				collegeNameLists[i] = data.result[0].colleges[i].collegeName + "/" + data.result[0].colleges[i].collegeID;
+			}
+
+			// alert(JSON.stringify(collegeNameLists));
+
+		}, function(data) {
+			alert(JSON.stringify(data));
+		});
+
+		pageList = 0;
+
+		if (pageList === 0) {
+			firstList = 0;
+			lastList = 10;
+		} else {
+			firstList = pageList*10;
+			lastList = pageList + 10;
+		}
+
+		RequestHelper.post('/ranking/getAllCollegeRanking', {
+			orderBy: orderBy
+		},
+		{
+		// Option is not needed.
+		}, function(data) {
+
+			console.log(JSON.stringify(data));
+			console.log(data.result[0].collegeRankingInfos.length);
+
+			var univList = $('.univ_class');
+			var univName = $('.univ_name');
+			var univImage = $('.univ_img');
+			var univ_img_link = $('.univ_img_link');
+			var univCountOfReview = $('.countOfReview');
+			var univPointOfReview = $('.pointOfReview');
+			
+
+			for (var i=firstList; i<=lastList; i++) {
+
+				$(univList[i]).html((i + 1));
+				$(univCountOfReview[i]).html(data.result[0].collegeRankingInfos[i].countOfReviews + '개의 리뷰');
+
+				if (orderBy === 'facilities') {
+					
+					var point = Math.round(data.result[0].collegeRankingInfos[i].facilities*100)/100;
+					$(univPointOfReview[i]).html(point);
+					makeStar(point, i);
+
+				} else if (orderBy === 'town') {
+					
+					var point = Math.round(data.result[0].collegeRankingInfos[i].town*100)/100;
+					$(univPointOfReview[i]).html(point);
+					makeStar(point, i);
+
+				} else if (orderBy === 'professor') {
+					
+					var point = Math.round(data.result[0].collegeRankingInfos[i].professor*100)/100;
+					$(univPointOfReview[i]).html(point);
+					makeStar(point, i);
+
+				} else if (orderBy === 'tuition') {
+					
+					var point = Math.round(data.result[0].collegeRankingInfos[i].tuition*100)/100;
+					$(univPointOfReview[i]).html(point);
+					makeStar(point, i);
+
+				} else if (orderBy === 'culture') {
+					
+					var point = Math.round(data.result[0].collegeRankingInfos[i].culture*100)/100;
+					$(univPointOfReview[i]).html(point);
+					makeStar(point, i);
+
+				} else if (orderBy === 'average') {
+					
+					var point = Math.round(data.result[0].collegeRankingInfos[i].average*100)/100;
+					$(univPointOfReview[i]).html(point);
+					makeStar(point, i);
+
+				}
+
+				for (var b in collegeNameLists) {
+					if (collegeNameLists[b].indexOf(data.result[0].collegeRankingInfos[i].collegeID) != -1) {
+						var className = collegeNameLists[b].split("/");
+						$(univName[i]).html(className[0]);
+						$(univName[i]).attr('href', '/review/univ/comment/?univ=' + className[1]);
+						$(univ_img_link[i]).attr('href', '/review/univ/comment/?univ=' + className[1]);
+						$(univImage[i]).attr('src', '/assets/img/logo/logo_' + className[1] + '.jpg');
+					}
+				}
+
+			}
+
+		}, function(data) {
+			alert(JSON.stringify(data));
+		});
+
+		function makeStar(point, count) {
+
+			var gradeStar = $('.gradeStar');
+
+			if ((point >= 1.00) && (point < 2.00)) $(gradeStar).eq(count).html("<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/>");
+			else if ((point >= 2.00) && (point < 3.00)) $(gradeStar).eq(count).html("<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/>");
+			else if ((point >= 3.00) && (point < 4.00)) $(gradeStar).eq(count).html("<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/>");
+			else if ((point >= 4.00) && (point < 5.00)) $(gradeStar).eq(count).html("<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_empty.png'/>");
+			else if (point >= 5.00) $(gradeStar).eq(count).html("<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>");
+
+		}
 
 	</script>
 
