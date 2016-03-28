@@ -101,6 +101,13 @@
 		width: 65px;
 	}
 
+	@media (max-width:1024px) {
+		.search_box img {
+			margin-top:-45px;
+			float:right;
+		}
+	}
+
 	.campus_menu {
 		margin: 0px;
 		padding: 0px;

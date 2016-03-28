@@ -100,6 +100,14 @@
 		width: 65px;
 	}
 
+	@media (max-width:1024px) {
+		.search_box img {
+			margin-top:-45px;
+			float:right;
+		}
+	}
+
+
 	#campus_content {
 		text-align: center;
 		padding-top: 55px;
@@ -240,7 +248,7 @@
 
 	.campus_list_subtitle {
 		width: 48%;
-		margin-top: -10px;
+		margin-top: -17px;
 		float: right;
 	}
 
@@ -262,7 +270,16 @@
 		font-size: 1.5rem;
 	}
 
-	.campus_list_title .li_message {
+	/*.campus_list_title .li_message {
+		font-size: 1.5rem;
+		color: #58595B;
+		text-align: center;
+		font-family: 'NanumPen';
+	}*/
+
+	.campus_list_title #messageEditor {
+		display: block;
+		margin
 		font-size: 1.5rem;
 		color: #58595B;
 		text-align: center;

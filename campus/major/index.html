@@ -18,6 +18,28 @@
 
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<!-- Assets -->
+	<script>
+
+		/******************************************
+		* URL 학교 코드 가져오기
+		/*****************************************/
+		function getQueryVariable(variable) {
+			var query = window.location.search.substring(1);
+			var vars = query.split("&");
+
+			for (var i=0; i<vars.length; i++) {
+				var pair = vars[i].split("=");
+				
+				if (pair[0] == variable) {
+					return pair[1];
+				}
+			}
+		}
+
+		// 학교 코드 저장
+		type = getQueryVariable("type");
+
+	</script>
 </head>
 <body>
 
@@ -62,193 +84,54 @@
 			</div>
 
 			<div class='campus_content_' style='width:1000px;margin:0px auto;'>
+
+			<div id='review_banner' style='margin-bottom:30px;'>
+				<div class='find_campus'>
+					<!-- <h2 class='title'>가고 싶은 대학이 어떤 곳인지는 한 번 찾아 봐야지?</h2> -->
+					<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:5px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
+						<select id='type_1' class='type_1' name='type_1'>
+							<option value='c000' class='c000'>계열</option>
+							<option value='c001' class='c001'>자연과학계열</option>
+							<option value='c002' class='c002'>인문사회계열</option>
+							<option value='c004' class='c004'>의학계열</option>
+							<option value='c005' class='c005'>공학계열</option>
+							<option value='c006' class='c006'>예체능계열</option>
+							<option value='c007' class='c007'>기타</option>
+						</select>
+					</div>
+					<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:5px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
+						<select id='type_2' class='type_2' name='type_2'>
+							<option value='g000' class='g000'>2차 학과군</option>
+						</select>
+					</div>
+					<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:5px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
+						<select id='type_3' class='type_3' name=''>
+							<option>서울</option>
+							<option>경기</option>
+							<option>인천</option>
+							<option>부산</option>
+							<option>대구</option>
+							<option>대전</option>
+							<option>광주</option>
+							<option>울산</option>
+							<option>강원</option>
+							<option>경상도</option>
+							<option>경북</option>
+							<option>전남</option>
+							<option>전북</option>
+							<option>충남</option>
+							<option>충북</option>
+							<option>제주</option>
+							<option>세종</option>
+						</select>
+					</div>
+					<button id='searchFiltered' style='float:right;margin-right:15px;width:216px;height:40px;border-radius:10px;margin-top:10px;background:#FFD432;cursor:pointer;'>검색하기</button>
+				</div>
+			</div>
+
 				<div class='campus_left'>
 
-				<div class="mypage_memo" style='margin-top:10px;margin-bottom:25px;width:240px;height:25px;border-radius:5px;border:1px solid #808083;font-size:1rem;color:#58595B;'>
-					<select name=''>
-						<option>자연계열</option>
-						<option>인문사회계열</option>
-						<option>교육계열</option>
-						<option>의학계열</option>
-						<option>공학계열</option>
-						<option>예체능계열</option>
-						<option>기타</option>
-					</select>
-				</div>
-
-					<ul class='campus_univ_list'>
-						<li class='univ_class'>1.</li>
-						<li class='univ_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='univ_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
-								<span style='font-size:1rem;color:#808083;padding-top:2px;padding-right:7px;border-right:2px solid #BABCBE;'>국제통상학과</span><span style='font-size:1rem;color:#808083;padding-top:2px;padding-left:7px;'>00개의 리뷰</span>
-							</p>
-						</li>
-						<li class='univ_comment'>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<p style='font-size:1.3125rem;color:#80803;margin-left:5px;margin-top:17px;'>9.98</span>
-						</li>
-					</ul>
-					<ul class='campus_univ_list'>
-						<li class='univ_class'>1.</li>
-						<li class='univ_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='univ_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
-								<span style='font-size:1rem;color:#808083;padding-top:2px;padding-right:7px;border-right:2px solid #BABCBE;'>국제통상학과</span><span style='font-size:1rem;color:#808083;padding-top:2px;padding-left:7px;'>00개의 리뷰</span>
-							</p>
-						</li>
-						<li class='univ_comment'>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<p style='font-size:1.3125rem;color:#80803;margin-left:5px;margin-top:17px;'>9.98</span>
-						</li>
-					</ul>
-					<ul class='campus_univ_list'>
-						<li class='univ_class'>1.</li>
-						<li class='univ_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='univ_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
-								<span style='font-size:1rem;color:#808083;padding-top:2px;padding-right:7px;border-right:2px solid #BABCBE;'>국제통상학과</span><span style='font-size:1rem;color:#808083;padding-top:2px;padding-left:7px;'>00개의 리뷰</span>
-							</p>
-						</li>
-						<li class='univ_comment'>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<p style='font-size:1.3125rem;color:#80803;margin-left:5px;margin-top:17px;'>9.98</span>
-						</li>
-					</ul>
-					<ul class='campus_univ_list'>
-						<li class='univ_class'>1.</li>
-						<li class='univ_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='univ_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
-								<span style='font-size:1rem;color:#808083;padding-top:2px;padding-right:7px;border-right:2px solid #BABCBE;'>국제통상학과</span><span style='font-size:1rem;color:#808083;padding-top:2px;padding-left:7px;'>00개의 리뷰</span>
-							</p>
-						</li>
-						<li class='univ_comment'>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<p style='font-size:1.3125rem;color:#80803;margin-left:5px;margin-top:17px;'>9.98</span>
-						</li>
-					</ul>
-					<ul class='campus_univ_list'>
-						<li class='univ_class'>1.</li>
-						<li class='univ_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='univ_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
-								<span style='font-size:1rem;color:#808083;padding-top:2px;padding-right:7px;border-right:2px solid #BABCBE;'>국제통상학과</span><span style='font-size:1rem;color:#808083;padding-top:2px;padding-left:7px;'>00개의 리뷰</span>
-							</p>
-						</li>
-						<li class='univ_comment'>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<p style='font-size:1.3125rem;color:#80803;margin-left:5px;margin-top:17px;'>9.98</span>
-						</li>
-					</ul>
-					<ul class='campus_univ_list'>
-						<li class='univ_class'>1.</li>
-						<li class='univ_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='univ_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
-								<span style='font-size:1rem;color:#808083;padding-top:2px;padding-right:7px;border-right:2px solid #BABCBE;'>국제통상학과</span><span style='font-size:1rem;color:#808083;padding-top:2px;padding-left:7px;'>00개의 리뷰</span>
-							</p>
-						</li>
-						<li class='univ_comment'>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<p style='font-size:1.3125rem;color:#80803;margin-left:5px;margin-top:17px;'>9.98</span>
-						</li>
-					</ul>
-					<ul class='campus_univ_list'>
-						<li class='univ_class'>1.</li>
-						<li class='univ_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='univ_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
-								<span style='font-size:1rem;color:#808083;padding-top:2px;padding-right:7px;border-right:2px solid #BABCBE;'>국제통상학과</span><span style='font-size:1rem;color:#808083;padding-top:2px;padding-left:7px;'>00개의 리뷰</span>
-							</p>
-						</li>
-						<li class='univ_comment'>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<p style='font-size:1.3125rem;color:#80803;margin-left:5px;margin-top:17px;'>9.98</span>
-						</li>
-					</ul>
-					<ul class='campus_univ_list'>
-						<li class='univ_class'>1.</li>
-						<li class='univ_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='univ_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
-								<span style='font-size:1rem;color:#808083;padding-top:2px;padding-right:7px;border-right:2px solid #BABCBE;'>국제통상학과</span><span style='font-size:1rem;color:#808083;padding-top:2px;padding-left:7px;'>00개의 리뷰</span>
-							</p>
-						</li>
-						<li class='univ_comment'>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<p style='font-size:1.3125rem;color:#80803;margin-left:5px;margin-top:17px;'>9.98</span>
-						</li>
-					</ul>
-					<ul class='campus_univ_list'>
-						<li class='univ_class'>1.</li>
-						<li class='univ_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='univ_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
-								<span style='font-size:1rem;color:#808083;padding-top:2px;padding-right:7px;border-right:2px solid #BABCBE;'>국제통상학과</span><span style='font-size:1rem;color:#808083;padding-top:2px;padding-left:7px;'>00개의 리뷰</span>
-							</p>
-						</li>
-						<li class='univ_comment'>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<p style='font-size:1.3125rem;color:#80803;margin-left:5px;margin-top:17px;'>9.98</span>
-						</li>
-					</ul>
-					<ul class='campus_univ_list' style='border-bottom: 1px solid #BABCBE;'>
-						<li class='univ_class'>1.</li>
-						<li class='univ_about'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png' class='univ_img'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a> <span style='font-size:1.15rem;color:#58595B;'>(신촌캠퍼스)</span><br/>
-								<span style='font-size:1rem;color:#808083;padding-top:2px;padding-right:7px;border-right:2px solid #BABCBE;'>국제통상학과</span><span style='font-size:1rem;color:#808083;padding-top:2px;padding-left:7px;'>00개의 리뷰</span>
-							</p>
-						</li>
-						<li class='univ_comment'>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<img src='/assets/img/common/review_star_full.png' class='rank_star'/>
-							<p style='font-size:1.3125rem;color:#80803;margin-left:5px;margin-top:17px;'>9.98</span>
-						</li>
-					</ul>
-
-					<div class='univ_list' style='width:100%;padding:22px 0px;font-size:0.93rem;color:#808083;margin:0px auto;text-align:center;border: 1px solid #BABCBE;margin-top:10px;'>
-						<span style='margin-right:18px;'>첫 페이지</span><span style='margin-right:18px;'>이전</span> <span>|</span> <span style='margin:0px 8px;'>1</span> <span>|</span> <span style='margin:0px 8px;'>2</span> <span>|</span> <span style='margin:0px 8px;'>3</span> <span>|</span> <span style='margin:0px 8px;'>4</span> <span>|</span> <span style='margin:0px 8px;'>5</span> <span>|</span></span> <span style='margin-left:18px;'>다음</span> <span style='margin-left:18px;'>막 페이지</span>
+					<div id='AddOption' style='width:100%;'>
 					</div>
 
 				</div>
@@ -261,22 +144,19 @@
 							<td style='font-size:1.3125rem;font-family:NanumBarunGothicBold;font-weight:bold;color:#58595B;'>학과군</td>
 						</tr>
 						<tr>
-							<td><a href='/campus/major/' style='text-decoration:none;color:inherit;'>자연계열</a></td>
+							<td><a href='/campus/major/?type=c001' style='text-decoration:none;color:inherit;'>자연과학계열</a></td>
 						</tr>
 						<tr>
-							<td><a href='/campus/major/' style='text-decoration:none;color:inherit;'>인문사회계열</a></td>
+							<td><a href='/campus/major/?type=c002' style='text-decoration:none;color:inherit;'>인문사회계열</a></td>
 						</tr>
 						<tr>
-							<td><a href='/campus/major/' style='text-decoration:none;color:inherit;'>교육계열</a></td>
+							<td><a href='/campus/major/?type=c004' style='text-decoration:none;color:inherit;'>의학계열</a></td>
 						</tr>
 						<tr>
-							<td><a href='/campus/major/' style='text-decoration:none;color:inherit;'>의학계열</a></td>
+							<td><a href='/campus/major/?type=c005' style='text-decoration:none;color:inherit;'>공학계열</a></td>
 						</tr>
 						<tr>
-							<td><a href='/campus/major/' style='text-decoration:none;color:inherit;'>공학계열</a></td>
-						</tr>
-						<tr>
-							<td><a href='/campus/major/' style='text-decoration:none;color:inherit;'>예체능계열</a></td>
+							<td><a href='/campus/major/?type=c006' style='text-decoration:none;color:inherit;'>예체능계열</a></td>
 						</tr>
 						<tr>
 							<td></td>
@@ -332,41 +212,6 @@
 							<td colspan='3'>&nbsp;</td>
 						</tr>
 					</table>
-
-					<!-- <table class='review_list'>
-						<tr>
-							<td colspan='2' class='review_list_title' style='font-family:NanumBarunGothicBold;font-weight:bold;'>대학종합순위</td>
-							<td class='review_more_b'><a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a></td>
-						</tr>
-						<tr>
-							<td class='of_rank'>1.</td>
-							<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
-							<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
-						</tr>
-						<tr>
-							<td class='of_rank'>1.</td>
-							<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
-							<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
-						</tr>
-						<tr>
-							<td class='of_rank'>1.</td>
-							<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
-							<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
-						</tr>
-						<tr>
-							<td class='of_rank'>1.</td>
-							<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
-							<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
-						</tr>
-						<tr>
-							<td class='of_rank'>1.</td>
-							<td class='of_college'><a href='/review/univ/' style='text-decoration:none;color:inherit;'><img src='/assets/img/common/rank_logo.png'/></a> <p><a href='/review/univ/' style='text-decoration:none;color:inherit;'>연세대학교</a><br/><span>인문사회 - 정치</span></p></td>
-							<td class='of_diff'><img src='/assets/img/common/rank_up.png'/> 21</td>
-						</tr>
-						<tr>
-							<td colspan='3'>&nbsp;</td>
-						</tr>
-					</table> -->
 
 				</div>
 			</div>
@@ -490,9 +335,6 @@
 			});
 			/*****************************************/
 
-			/******************************************
-			* Get Best College for SideBar
-			/*****************************************/
 			RequestHelper.post('/ranking/getCollegeActiveRanking', {},
 			{
 			// Option is not needed.
@@ -537,30 +379,211 @@
 				alert(JSON.stringify(data));
 			});
 			/*****************************************/
-			
-			RequestHelper.post('/ranking/getCollegeRankings', {},
+
+			pageList = 0;
+			collegeNameLists = new Array();
+			majorsNameLists = new Array();
+			changeList = 'Y';
+
+			RequestHelper.post('/college/getAllColleges', {},
 			{
+			// Option is not needed.
 			}, function(data) {
-
-				console.log(JSON.stringify(data));
-
-				var rankLength = data.result[0].collegeRankingByAverageGrade.length;
-
-				if (data.status === 'ok') {
-
-					for (var count = 0; count < rankLength; count++) {
-
-						
-					}
-
+				for (var i=0; i<data.result[0].colleges.length; i++) {
+					collegeNameLists[i] = data.result[0].colleges[i].collegeName + "/" + data.result[0].colleges[i].collegeID;
 				}
-
 			}, function(data) {
 				alert(JSON.stringify(data));
 			});
 
+			$("#searchFiltered").click(function(){
+
+				if (changeList == 'Y') {
+
+					$('.campus_univ_list').css('display', 'none');
+
+					RequestHelper.post('/ranking/getFilteredMajorRanking', {
+						majorClass:$("#type_1 option:selected").text(),
+						majorGroup:$("#type_2 option:selected").text(),
+						majorRegion:$("#type_3 option:selected").text()
+					},
+					{
+					// Option is not needed.
+					}, function(data) {
+
+						var contents = '';
+						var tempList = $('.campus_univ_list').length;
+
+						contents += "<ul class='campus_univ_list'>";
+							contents += "<li class='univ_class'></li>";
+							contents += "<li class='univ_about'>";
+								contents += "<a class='univ_img_link' href='/review/univ/' style='text-decoration:none;color:inherit;'><img class='univ_img' style='margin-right:15px;'/></a>";
+								contents += "<p><a class='univ_name' style='text-decoration:none;color:inherit;'></a><br/>";
+									contents += "<span class='countOfReview' style='font-size:1rem;color:#808083;'></span>";
+								contents += "</p>";
+							contents += "</li>";
+							contents += "<li class='univ_comment'>";
+									contents += "<span class='gradeStar'></span>";
+								contents += "<p class='pointOfReview' style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:18px;'></span>";
+							contents += "</li>";
+						contents += "</ul>";
+
+						var infoLength = data.result[0].majorRankingInfos.length;
+
+						for (var i = 0 + tempList; i < infoLength + tempList; i++) {
+							$('#AddOption').append(contents);
+
+							changeList = 'N';
+						}
+
+						$('#AddOption > ul:last-child').css('border-bottom', '1px solid #BABCBE');
+
+						// 리스트 만들기
+						var univList = $('.univ_class');
+						var univName = $('.univ_name');
+						var univImage = $('.univ_img');
+						var univ_img_link = $('.univ_img_link');
+						var univCountOfReview = $('.countOfReview');
+						var univPointOfReview = $('.pointOfReview');
+						
+						var cnti = 0;
+
+						for (var i = 0 + tempList; i < infoLength + tempList; i++) {
+
+							var point = Math.round(data.result[0].majorRankingInfos[cnti].averageGrade*100)/100;
+
+							$(univList[i]).html(cnti + 1);
+							$(univPointOfReview[i]).html(point);
+
+							makeStar(point, i);
+							makeMajorName(data.result[0].majorRankingInfos[cnti].collegeID, data.result[0].majorRankingInfos[cnti].majorID, i);
+
+							for (var b in collegeNameLists) {
+								if (collegeNameLists[b].indexOf(data.result[0].majorRankingInfos[cnti].collegeID) != -1) {
+									var className = collegeNameLists[b].split("/");
+									$(univName[i]).html(className[0]);
+									$(univName[i]).attr('href', '/review/univ/?univ=' + className[1]);
+									$(univ_img_link[i]).attr('href', '/review/univ/?univ=' + className[1]);
+									$(univImage[i]).attr('src', '/assets/img/logo/logo_' + className[1] + '.jpg');
+								}
+							}
+
+							cnti = cnti + 1;
+
+						}
+
+					}, function(data) {
+						console.log(JSON.stringify(data));
+					});
+
+				}
+
+			});
+			
+			function makeStar(point, count) {
+
+				var gradeStar = $('.gradeStar');
+
+				if ((point >= 1.00) && (point < 2.00)) $(gradeStar).eq(count).html("<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/>");
+				else if ((point >= 2.00) && (point < 3.00)) $(gradeStar).eq(count).html("<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/>");
+				else if ((point >= 3.00) && (point < 4.00)) $(gradeStar).eq(count).html("<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/>");
+				else if ((point >= 4.00) && (point < 5.00)) $(gradeStar).eq(count).html("<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_empty.png'/>");
+				else if (point >= 5.00) $(gradeStar).eq(count).html("<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>");
+
+			}
+
+			function makeMajorName(collegeID, majorsID, count) {
+
+				RequestHelper.post('/college/getAllMajorsInCollege', {
+					collegeID: collegeID
+				},
+				{
+				// Option is not needed.
+				}, function(majorNameData) {
+					
+					var univCountOfReview = $('.countOfReview');
+
+					for (var b = 0; b < majorNameData.result[0].majors.length; b++) {
+
+						if (majorNameData.result[0].majors[b].majorID.indexOf(majorsID) != -1) {
+							$(univCountOfReview[count]).html(majorNameData.result[0].majors[b].majorName);
+						}
+
+					}
+
+				}, function(data) {
+					alert("잘못된 접근입니다, 뒤로가기 이동");
+				});
+
+			}
+
 		});
 		/*****************************************/
+		$('.type_1').change(function(){
+
+			$("#type_2").find("option").remove();
+
+			// 자연계열
+			if ($('select[name=type_1]').val() == 'c001') {
+
+				$("#type_2").append("<option value='g001' class='g001'>농림·수산</option>");
+				$("#type_2").append("<option value='g002' class='g002'>생물·화학·환경</option>");
+				$("#type_2").append("<option value='g003' class='g003'>생활과학</option>");
+				$("#type_2").append("<option value='g004' class='g004'>수학·물리·천문·지리</option>");
+				$("#type_2").append("<option value='g004' class='g004'>간호</option>");
+				$("#type_2").append("<option value='g004' class='g004'>보건</option>");
+				$("#type_2").append("<option value='g004' class='g004'>약학</option>");
+				$("#type_2").append("<option value='g004' class='g004'>의료예과</option>");
+				$("#type_2").append("<option value='g004' class='g004'>교육</option>");
+
+			// 인문사회계열 
+			} else if ($('select[name=type_1]').val() == 'c002') {
+
+				$("#type_2").append("<option value='g005' class='g005'>언어·문학</option>");
+				$("#type_2").append("<option value='g006' class='g006'>인문학</option>");
+				$("#type_2").append("<option value='g007' class='g007'>경영·경제</option>");
+				$("#type_2").append("<option value='g008' class='g008'>법학</option>");
+				$("#type_2").append("<option value='g009' class='g009'>사회과학</option>");
+				$("#type_2").append("<option value='g009' class='g009'>교육</option>");
+				$("#type_2").append("<option value='g034' class='g034'>기타</option>");
+
+			// 의학계열
+			} else if ($('select[name=type_1]').val() == 'c004') {
+
+				$("#type_2").append("<option value='g014' class='g014'>의료</option>");
+
+			// 공학계열
+			} else if ($('select[name=type_1]').val() == 'c005') {
+
+				$("#type_2").append("<option value='g024' class='g024'>전기·전자·컴퓨터</option>");
+				$("#type_2").append("<option value='g017' class='g017'>건설</option>");
+				$("#type_2").append("<option value='g018' class='g018'>산업·안전</option>");
+				$("#type_2").append("<option value='g020' class='g020'>기계</option>");
+				$("#type_2").append("<option value='g023' class='g023'>재료</option>");
+				$("#type_2").append("<option value='g019' class='g019'>화학·고분자·에너지</option>");
+				$("#type_2").append("<option value='g026' class='g026'>교육</option>");
+
+			// 에체능 계열
+			} else if ($('select[name=type_1]').val() == 'c006') {
+
+				$("#type_2").append("<option value='g030' class='g030'>무용·체육</option>");
+				$("#type_2").append("<option value='g032' class='g032'>연극·영화</option>");
+				$("#type_2").append("<option value='g029' class='g029'>응용예술</option>");
+				$("#type_2").append("<option value='g031' class='g031'>미술</option>");
+				$("#type_2").append("<option value='g033' class='g033'>음악·국악</option>");
+				$("#type_2").append("<option value='g033' class='g033'>교육</option>");
+
+			}
+
+		});
+
+		$('#type_1, #type_2, #type_3').change(function(){
+			console.log('a');
+			changeList = 'Y';
+		});
+
+		$('select[name=type_1]').val(type).prop("selected", true);
+		$('select[name=type_1]').change();
 
 	</script>
 
