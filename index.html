@@ -55,6 +55,7 @@
 		<div id='box_1_main_image'>
 			<h1 class='head_title'>캠퍼스는 [ <span>더하기</span> ]다!</h1>
 			<h3 class='head_subtitle'>캠퍼스에 이야기를 더하다. 애드캠퍼스가 함께합니다</h3>
+			<h3 class='mobile_head_subtitle'>대학생활의 더하기! 애드캠퍼스!!</h3>
 			<div class='search_box'>
 				<form action='/review/univ/' id='search_form' method='get' onsubmit="return SearchUnivA(this);">
 					<input type='text' id='search_school' name='search_school' placeholder='합격하고 싶은 대학을 검색해보세요!' style='margin-top: 12px;'/>
@@ -89,10 +90,10 @@
 			</ul>
 		</div>
 
-		<div id='box_2_main_banner'>
+		<!-- <div id='box_2_main_banner'>
 			<h1 style='font-size:2.5rem;margin:0px;padding:0px;'>산은 산이오, 물은 물이고, 과제는 죽음이다.</h1>
 			<h4>국민대학교 공업디자인, 24세</h4>
-			<!-- <h2 class='title'>진짜 대학생의 캠퍼스 라이프는 어떨까?</h2>
+			<h2 class='title'>진짜 대학생의 캠퍼스 라이프는 어떨까?</h2>
 			<h3 class='subtitle'>니들 선배가 될 사람들이 직접 작성한 리뷰를 봐라</h3>
 			<div style='width:1000px;margin:0px auto;'>
 				<img src='/assets/img/common/campus_backward.png' style='padding-bottom:45px;'/>
@@ -112,8 +113,10 @@
 					<h5>내가 고3 때로 돌아갈 수 있다면 여기는 안온다 왜냐하면...</h5>
 				</div>
 				<img src='/assets/img/common/campus_foward.png' style='padding-bottom:45px;'/>
-			</div> -->
-		</div>
+			</div>
+		</div> -->
+
+		<button class='mobile_review_write' style='font-size:1.2rem;text-align:center;width:100%;border:none;height:8%;position:fixed;bottom:0px;background:#FFA321;color:#FFF;z-index:99999999;'>리뷰 작성하기</button>
 
 		<div id='box_2_main_review'>
 			<h2 class='title' style='font-family:Chosun;'>재학생이 알려주는 생생한 캠퍼스 리뷰</h2>
@@ -122,8 +125,10 @@
 				<!-- 캠퍼스 왼쪽 리뷰 -->
 				<div class='review_left'>
 
+					<h4 class='mobile_review_header' style='font-size:1.5rem;font-weight:bold;text-align:left;padding-left:5%;margin-bottom:10px;'>맛보기 리뷰<span style='font-size:0.9rem;font-weight:normal;padding-left:15px;color:#999999;'>재학생이 직접 작성한 생생한 리뷰!</span></h4>
+
 					<div class='review'>
-						<img src='/assets/img/bestreview.png' style='width:72px;height:87px;position:absolute;margin-top: -18px;margin-left: 550px;'/>
+						<img src='/assets/img/bestreview.png' class='bestreviewMark'/>
 						<a class='CollegeLink' style='text-decoration:none;color:inherit;'><img class='about_img'/></a>
 						<div class='review_about_'>
 							<h3><a class='CollegeLink_A' style='text-decoration:none;color:inherit;' id='univName1'></a></h3>
@@ -140,7 +145,7 @@
 						<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>
 							<div class='review_evaluation'>
 								<h6 class='h6_title'>작성자한줄평</h6>
-								<h6 class='h6_content' id='oneLineComment1' style='margin-left:23px;font-size:1rem;width:76%;'></h6>
+								<h6 class='h6_content' id='oneLineComment1'></h6>
 							</div>
 						</a>
 						<div class='pros' style='width:89%;'>
@@ -155,7 +160,7 @@
 					</div>
 
 					<div class='review'>
-						<img src='/assets/img/bestreview.png' style='width:72px;height:87px;position:absolute;margin-top: -18px;margin-left: 550px;'/>
+						<img src='/assets/img/bestreview.png' class='bestreviewMark'/>
 						<a class='CollegeLink' style='text-decoration:none;color:inherit;'><img class='about_img'/></a>
 						<div class='review_about_'>
 							<h3><a class='CollegeLink_A' style='text-decoration:none;color:inherit;' id='univName2'></a></h3>
@@ -172,7 +177,7 @@
 						<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>
 							<div class='review_evaluation'>
 								<h6 class='h6_title'>작성자한줄평</h6>
-								<h6 class='h6_content' id='oneLineComment2' style='margin-left:23px;font-size:1rem;width:76%;'></h6>
+								<h6 class='h6_content' id='oneLineComment2'></h6>
 							</div>
 						</a>
 						<div class='pros' style='width:89%;'>
@@ -187,7 +192,7 @@
 					</div>
 
 					<div class='review'>
-						<img src='/assets/img/bestreview.png' style='width:72px;height:87px;position:absolute;margin-top: -18px;margin-left: 550px;'/>
+						<img src='/assets/img/bestreview.png' class='bestreviewMark'/>
 						<a class='CollegeLink' style='text-decoration:none;color:inherit;'><img class='about_img'/></a>
 						<div class='review_about_'>
 							<h3><a class='CollegeLink_A' style='text-decoration:none;color:inherit;' id='univName3'></a></h3>
@@ -204,7 +209,7 @@
 						<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>
 							<div class='review_evaluation'>
 								<h6 class='h6_title'>작성자한줄평</h6>
-								<h6 class='h6_content' id='oneLineComment3' style='margin-left:23px;font-size:1rem;width:76%;'></h6>
+								<h6 class='h6_content' id='oneLineComment3'></h6>
 							</div>
 						</a>
 						<div class='pros' style='width:89%;'>
@@ -306,8 +311,9 @@
 
 	<footer id='footer'>
 		<ul>
-			<li>이용약관</li>
-			<li>개인정보취급방침</li>
+			<a href='/about/terms/' style='text-decoration:none;color:inherit;'><li>이용약관</li></a>
+			<a href='/about/policy/' style='text-decoration:none;color:inherit;'><li>개인정보취급방침</li></a>
+			<a href='/about/guide/' style='text-decoration:none;color:inherit;'><li>커뮤니티 가이드라인</li></a>
 			<li>공지사항</li>
 			<li class='f_sign'>로그인</li>
 			<li class='f_sign'>회원가입</li>
@@ -315,9 +321,9 @@
 			<li>About US</li>
 		</ul>
 		<div class='footer_content'>
-			텐덤스페이스 (대표: 유원일) | 사업자등록번호: 209-16-86931 | 개인정보책임관리자: 유원일<br/>
-			서울시 성북구 동소문로63 드림트리빌딩 6층 20호실<br/>
-			Copyright(C)TENDOMSPACE. All rights reserved.
+			(주)TENDOM (대표: 유원일) | 사업자등록번호: 286-88-00335 | 개인정보책임관리자: 유원일<br/>
+			서울시 마포구 월드컵로10길 13, B1<br/>
+			Copyright©ADDCAMPUS. All rights reserved.
 		</div>
 	</footer>
 

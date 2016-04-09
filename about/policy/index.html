@@ -9,13 +9,11 @@
 	<!-- <meta name="description" content="소개글"/> -->
 	<meta name="robots" content="ALL"/>
 	<!-- <meta name="reply-to" content="이메일"/> -->
-	<!-- <meta name="viewport" content="width=device-width, user-scalable=no"> -->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<!-- Meta tag for Cross Browsing -->
 
 	<!-- Assets -->
-	<link rel='stylesheet' href='../assets/css/style.css'>
-	<link rel='stylesheet' href='../assets/css/review.css'>
-	
+	<link rel='stylesheet' href='../../assets/css/style.css'>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<!-- Assets -->
 
@@ -27,20 +25,15 @@
 	<meta property="og:description" content="지금 재학생들이 직접 작성한 생생한 대학이야기를 직접 확인하세요!" />
 	<meta property="og:image" content="http://addcampus.com/assets/img/fbShare.jpg" />
 	<!-- Facebook -->
-
-	<style>
-		body { background: #F7F7F7; }
-		#review_banner { background: #FFFFFF; }
-	</style>
 </head>
-<body>
+<body style='background:#F5F6F7;'>
 
 	<header id='header' style='background-color:#FFD432;'>
 		<div class='header_menu'>
 			<ul class='header_left'>
 				<li style='margin:0px 28px 0px 14px;'><a href='/' style='text-decoration:none;color:#FFFFFF;'><img src='/assets/img/header/logo.png'/></a></li>
 				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/campus/' style='text-decoration:none;color:#666666;'>캠퍼스 랭킹</a></li>
-				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/review/' style='text-decoration:none;color:#000000;'>캠퍼스 리뷰</a></li>
+				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/review/' style='text-decoration:none;color:#666666;'>캠퍼스 리뷰</a></li>
 				<li style='width:70px;margin:0px 8px 0px 0px;'><a onclick='layer_open3();' style='text-decoration:none;color:#999999;'>대외활동</a></li>
 				<li style='width:70px;margin:0px 23px 0px 0px;'><a onclick='layer_open3();' style='text-decoration:none;color:#999999;'>합격꿀팁</a></li>
 			</ul>
@@ -56,249 +49,164 @@
 		</div>
 	</header>
 
-	<div id='wrapper'>
+	<div id='wrapper' style='width:1024px;margin:0px auto;'>
+		<ul style='width:100%;margin:0px auto;padding:0px;list-style:none;margin:40px 0px;'>
+			<a href='/about/terms/' style='text-decoration:none;color:inherit;'><li style='list-style:none;display:inline-block;font-size:1.1rem;font-weight:normal;color:#808083;'>이용약관</li></a>
+			<a href='/about/policy/' style='text-decoration:none;color:inherit;'><li style='list-style:none;display:inline-block;font-size:1.5rem;font-weight:bold;color:#58595B;padding:0px 30px;'>개인정보취급방침</li></a>
+			<a href='/about/guide/' style='text-decoration:none;color:inherit;'><li style='list-style:none;display:inline-block;font-size:1.1rem;font-weight:normal;color:#808083;'>커뮤니티 가이드라인</li></a>
+		</ul>
 
-		<div id='review_main_image'>
-			<h1 class='head_title'>캠퍼스는 [ <span>더하기</span> ]다!</h1>
-			<h3 class='head_subtitle'>캠퍼스에 이야기를 더하다. 애드캠퍼스가 함께합니다</h3>
-			<div class='search_box'>
-				<form action='/review/univ/' id='search_form' method='get' onsubmit="return SearchUnivA(this);">
-					<input type='text' id='search_school' name='search_school' placeholder='합격하고 싶은 대학을 검색해보세요!' style='margin-top: 12px;'/>
-					<img src='/assets/img/common/search_button.png' id='searchBtn' style='cursor:pointer;'/>
-				</form>
-			</div>
-			<div style='width: 280px;height: 60px;position: relative;bottom: -100px;left: 100px;background: rgba(0,0,0,0.5);padding:20px;'>
-				<p style='text-align:left;margin:0px;padding:0px;font-size:1.2rem;'>국민대학교&nbsp;&nbsp;&nbsp;<span style='font-size:0.8rem;'>서울특별시 성북구 정릉로 77</span></p>
-				<p style='text-align:left;margin:0px;padding:0px;margin-top:15px;'><a href='http://kookmin.ac.kr/' target='_blank' style='text-decoration:none;color:#FFF;'>http://kookmin.ac.kr/</a></p>
-			</div>
-		</div>
+		<div class='' style='width:100%;'>
+<pre style='width: 100%;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;line-height: 24px;margin: 0px;padding: 0px;text-align: left;height:1500px;overflow:scroll;'>
+<b>애드캠퍼스 개인정보 취급방침</b>
 
-		<div id='review_banner'>
-			<div class='find_campus'>
-				<h2 class='title'>가고 싶은 대학이 어떤 곳인지는 한 번 찾아 봐야지?</h2>
-				<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:5px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
-					<select id='type_1' class='type_1' name='type_1'>
-						<option value='c000' class='c000'>계열</option>
-						<option value='c001' class='c001'>자연과학계열</option>
-						<option value='c002' class='c002'>인문사회계열</option>
-						<option value='c004' class='c004'>의학계열</option>
-						<option value='c005' class='c005'>공학계열</option>
-						<option value='c006' class='c006'>예체능계열</option>
-						<option value='c007' class='c007'>기타</option>
-					</select>
-				</div>
-				<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:5px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
-					<select id='type_2' class='type_2' name='type_2'>
-						<option value='g000' class='g000'>2차 학과군</option>
-					</select>
-				</div>
-				<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:5px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
-					<select id='type_3' class='type_3' name='type_3'>
-						<option>서울</option>
-						<option>경기</option>
-						<option>인천</option>
-						<option>부산</option>
-						<option>대구</option>
-						<option>대전</option>
-						<option>광주</option>
-						<option>울산</option>
-						<option>강원</option>
-						<option>경상도</option>
-						<option>경북</option>
-						<option>전남</option>
-						<option>전북</option>
-						<option>충남</option>
-						<option>충북</option>
-						<option>제주</option>
-						<option>세종</option>
-					</select>
-				</div>
-				<button id='searchFiltered' style='float:right;margin-right:15px;width:216px;height:40px;border-radius:10px;margin-top:10px;background:#FFD432;'>검색하기</button>
-			</div>
-		</div>
+애드캠퍼스 관련 제반 서비스의 이용과 관련하여 필요한 사항을 규정합니다.
+회사는 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 개인정보 보호법, 통신비밀보호법, 전기통신사업법 등 정보통신서비스제공자가 준수하여야 할 관련 법규상의 개인정보보호 규정을 준수하며, 관련 법령에 의거한 개인정보취급/처리방침을 정하여 이용자의 권익 보호에 최선을 다하고 있습니다.
 
-		<div id='review_content' style='width:1000px;margin:0px auto;'>
-			<!-- 캠퍼스 왼쪽 리뷰 -->
-			<div class='review_left' style='width: 675px;margin: 0px auto;margin-top: 20px;float: left;'>
+1.개인정보의 수집 및 이용목적
+2.수집하는 개인정보 항목 및 수집방법
+3.개인정보의 제공 및 취급위탁
+4.개인정보의 보유 및 이용기간
+5.개인정보 파기절차 및 파기방법
+6.개인정보 자동 수집 장치의 설치, 운영 및 거부에 관한 사항
+7.개인정보의 기술적, 관리적 보호대책
+8.링크
+9.아동의 개인정보 보호
+10.비회원의 개인정보 보호
+11.이용자의 권리와 그 행사방법
+12.개인정보 관리 책임자 및 민원서비스
+13.부칙
 
-				<div id='AddOption' style='width:100%;'></div>
+1. 개인정보의 수집 및 이용목적
+대학정보 공유 사이트인 애드캠퍼스(이하 “사이트”라 한다)은 효과적인 정보 공유에 적합한 서비스를 제공하기 위하여 개인정보를 수집하고 있으며 수집된 정보를 아래와 같이 이용하고 있습니다. 이용자가 제공한 모든 정보는 하기 목적에 필요한 용도 이외로는 사용되지 않으며 이용 목적이 변경될 시에는 사전 동의를 구할 것입니다.
 
-				<div class='review' style='background:#FFF;'>
-					<img src='/assets/img/bestreview.png' style='width:72px;height:87px;position:absolute;margin-top: -18px;margin-left: 550px;'/>
-					<a class='CollegeLink' style='text-decoration:none;color:inherit;'><img class='about_img'/></a>
-					<div class='review_about_'>
-						<h3><a class='CollegeLink_A' style='text-decoration:none;color:inherit;' id='univName1'></a></h3>
-						<p style='margin-bottom:10px;'>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<span style='margin:0px 5px;' id='averageGrade1'></span> <span class='CollegeGrade'></span>명의 평가
-						</p>
-					</div>
-					<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>
-						<div class='review_evaluation'>
-							<h6 class='h6_title'>작성자한줄평</h6>
-							<h6 class='h6_content' id='oneLineComment1' style='margin-left:23px;font-size:1rem;width:76%;'></h6>
-						</div>
-					</a>
-					<div class='pros' style='width:85%;'>
-						<h3>장점</h3>
-						<h4 id='advantageComment1'></h4>
-					</div>
-					<div class='cons' style='width:85%;'>
-						<h3>단점</h3>
-						<h4 id='weaknessComment1'></h4>
-					</div>
-					<a class='CollegeLink_C' style='text-decoration:none;color:inherit;'><p class='review_more_left'>대학리뷰 자세히 보기 <img src='/assets/img/common/review_more.png'/></p></a>
-				</div>
+1) 회원관리- 회원제 서비스 이용에 따른 본인확인, 본인의 의사확인, 고객문의에 대한 응답, 새로운 정보의 소개 및 고지사항 전달
 
-				<div class='review' style='background:#FFF;'>
-					<img src='/assets/img/bestreview.png' style='width:72px;height:87px;position:absolute;margin-top: -18px;margin-left: 550px;'/>
-					<a class='CollegeLink' style='text-decoration:none;color:inherit;'><img class='about_img'/></a>
-					<div class='review_about_'>
-						<h3><a class='CollegeLink_A' style='text-decoration:none;color:inherit;' id='univName2'></a></h3>
-						<p style='margin-bottom:10px;'>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<span style='margin:0px 5px;' id='averageGrade2'></span> <span class='CollegeGrade'></span>명의 평가
-						</p>
-					</div>
-					<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>
-						<div class='review_evaluation'>
-							<h6 class='h6_title'>작성자한줄평</h6>
-							<h6 class='h6_content' id='oneLineComment2' style='margin-left:23px;font-size:1rem;width:76%;'></h6>
-						</div>
-					</a>
-					<div class='pros' style='width:85%;'>
-						<h3>장점</h3>
-						<h4 id='advantageComment2'></h4>
-					</div>
-					<div class='cons' style='width:85%;'>
-						<h3>단점</h3>
-						<h4 id='weaknessComment2'></h4>
-					</div>
-					<a class='CollegeLink_C' style='text-decoration:none;color:inherit;'><p class='review_more_left'>대학리뷰 자세히 보기 <img src='/assets/img/common/review_more.png'/></p></a>
-				</div>
+2) 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산- 본인인증, 학원 중개 및 컨텐츠 제공을 위한 개인식별, 회원간의 상호 연락, 구매 및 요금 결제, 물품 및 증빙발송, 부정 이용방지와 비인가 사용방지
 
-				<div class='review' style='background:#FFF;'>
-					<img src='/assets/img/bestreview.png' style='width:72px;height:87px;position:absolute;margin-top: -18px;margin-left: 550px;'/>
-					<a class='CollegeLink' style='text-decoration:none;color:inherit;'><img class='about_img'/></a>
-					<div class='review_about_'>
-						<h3><a class='CollegeLink_A' style='text-decoration:none;color:inherit;' id='univName3'></a></h3>
-						<p style='margin-bottom:10px;'>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<span style='margin:0px 5px;' id='averageGrade3'></span> <span class='CollegeGrade'></span>명의 평가
-						</p>
-					</div>
-					<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>
-						<div class='review_evaluation'>
-							<h6 class='h6_title'>작성자한줄평</h6>
-							<h6 class='h6_content' id='oneLineComment3' style='margin-left:23px;font-size:1rem;width:76%;'></h6>
-						</div>
-					</a>
-					<div class='pros' style='width:85%;'>
-						<h3>장점</h3>
-						<h4 id='advantageComment3'></h4>
-					</div>
-					<div class='cons' style='width:85%;'>
-						<h3>단점</h3>
-						<h4 id='weaknessComment3'></h4>
-					</div>
-					<a class='CollegeLink_C' style='text-decoration:none;color:inherit;'><p class='review_more_left'>대학리뷰 자세히 보기 <img src='/assets/img/common/review_more.png'/></p></a>
-				</div>
+3) 서비스 개발 및 마케팅ᆞ광고에의 활용- 맞춤 서비스 제공, 서비스 안내 및 이용권유, 서비스 개선 및 신규 서비스 개발을 위한 통계 및 접속빈도 파악, 통계학적 특성에 따른 광고 게재, 이벤트 정보 및 참여기회 제공
 
-			</div>
-			<!-- 캠퍼스 왼쪽 리뷰 -->
+4) 입시 결과 및 대학 생활 동향 파악을 위한 통계학적 분석
 
-			<!-- 캠퍼스 오른쪽 리뷰 -->
-			<div class='review_right' style='width: 310px;margin: 0px auto;margin-top: 20px;float: right;'>
+2. 수집하는 개인정보 항목 및 수집방법
+"사이트"에서는 회원 가입 절차를 거쳐야 대부분의 컨텐츠에 자유롭게 접근할 수 있으며, 일부 개인정보 항목을 입력하지 않은 경우 서비스 이용에 제한이 있을 수 있습니다. 아래 중 일부 개인정보 항목은 현재에는 수집되고 있지 않으나 서비스 확장 과정에서 편의성 증대를 위해 수집될 예정입니다.
 
-				<table class='campus_category' style='background:#FFF;'>
-					<tr>
-						<td style='font-size:1.3125rem;font-family:NanumBarunGothicBold;font-weight:bold;color:#58595B;'>학과군</td>
-					</tr>
-					<tr>
-						<td><a href='/campus/major/?type=c001' style='text-decoration:none;color:inherit;'>자연과학계열</a></td>
-					</tr>
-					<tr>
-						<td><a href='/campus/major/?type=c002' style='text-decoration:none;color:inherit;'>인문사회계열</a></td>
-					</tr>
-					<tr>
-						<td><a href='/campus/major/?type=c004' style='text-decoration:none;color:inherit;'>의학계열</a></td>
-					</tr>
-					<tr>
-						<td><a href='/campus/major/?type=c005' style='text-decoration:none;color:inherit;'>공학계열</a></td>
-					</tr>
-					<tr>
-						<td><a href='/campus/major/?type=c006' style='text-decoration:none;color:inherit;'>예체능계열</a></td>
-					</tr>
-					<tr>
-						<td></td>
-					</tr>
-				</table>
-				
-				<table class='review_list' style='background:#FFF;'>
-					<tr>
-						<td colspan='2' class='review_list_title' style='font-family:NanumBarunGothicBold;font-weight:bold;'>가장 활발한 대학</td>
-						<td class='review_more_b'><!-- <a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a> --></td>
-					</tr>
-					<tr>
-						<td class='of_rank'>1.</td>
-						<td class='of_college'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
-						</td>
-						<td class='of_diff'></td>
-					</tr>
-					<tr>
-						<td class='of_rank'>2.</td>
-						<td class='of_college'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
-						</td>
-						<td class='of_diff'></td>
-					</tr>
-					<tr>
-						<td class='of_rank'>3.</td>
-						<td class='of_college'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
-						</td>
-						<td class='of_diff'></td>
-					</tr>
-					<tr>
-						<td class='of_rank'>4.</td>
-						<td class='of_college'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
-						</td>
-						<td class='of_diff'></td>
-					</tr>
-					<tr>
-						<td class='of_rank'>5.</td>
-						<td class='of_college'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
-						</td>
-						<td class='of_diff'></td>
-					</tr>
-					<tr>
-						<td colspan='3'>&nbsp;</td>
-					</tr>
-				</table>
+가. 수집하는 개인정보의 항목
 
-			</div>
-			<!-- 캠퍼스 오른쪽 리뷰 -->
+1) 회원가입 시 수집하는 항목
+- 필수항목: 비밀번호, 생년월일, 성별, 신분, e-메일 / 페이스북 회원가입시 회원이 공개하기로 설정한 정보(선택가능)
+- 선택항목: 메일링 서비스 설정, 학번, 학교 학과 명
 
+2) 유료 정보 이용 시 수집하는 항목
+- 신용카드 결제: 거래자명, 카드사명, 카드번호, 카드유효기간
+- 은행계좌 이체: 은행명, 계좌번호, 계좌비밀번호 등
+- 휴대전화 결제: 가입자명, 이동전화번호, 결제승인번호 등
+
+3) 모바일 서비스 이용 시 수집되는 항목
+모바일 서비스의 특성상 단말기 모델 정보가 수집될 수 있으나, 이는 개인을 식별할 수 없는 형태입니다.
+
+4) 서비스 이용과정이나 사업처리 과정에서 아래와 같은 정보들이 자동으로 생성되어 수집될 수 있습니다.
+- IP Address, 쿠키, 방문 일시, 서비스 이용 기록, 불량 이용 기록
+
+나. 개인정보 수집방법
+- 홈페이지, 서비스 이용, 이벤트 응모, 팩스, 우편, 전화, 고객센터 문의하기
+
+3. 개인정보의 제공 및 취급위탁
+"회사"는 개인정보를 1. 개인정보의 수집 및 이용목적에서 고지한 범위 내에서 사용하며, 이용자의 사전 동의 없이 동 범위를 초과하여 제공하지 않습니다.
+
+가. 취급위탁
+- "회사"는 서비스 향상을 위해서 개인정보를 위탁할 수 있으며, 관계 법령에 따라 위탁계약 시 개인정보가 안전하게 관리될 수 있도록 필요한 사항을 규정하고 있습니다.
+- 변동사항 발생 시 공지사항 또는 개인정보취급방침을 통해 고지하도록 하겠습니다.
+
+나. 다음의 경우에는 합당한 절차를 통한 이용자의 동의를 얻어 개인정보를 제공 또는 이용할 수 있습니다.
+1) 제휴관계: 본 개인정보취급방침 시행일 현재에는 개인회원의 개인정보를 제공하는 제휴관계가 없으며, 제휴를 통한 변동사항 발생 시 사전공지 합니다. 거치며, 동의가 없는 경우에는 제공하지 않습니다.
+
+2) 매각, 인수합병: 서비스 제공자의 권리, 의무가 승계 또는 이전되는 경우 이를 반드시 사전에 고지하며 이용자의 개인정보에 대한 동의철회의 선택권을 부여합니다.
+
+3) 다만, 아래의 경우에는 예외로 합니다.
+- 관계법령에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우
+
+다. 한편 페이스북으로 회원가입을 하는 경우, 사이트 이용 및 사이트 이용에 따라 페이스북에 게재되는 정보는 회사가 아닌 페이스북 또는 페이스북을 이용하는 회원 본인의 선택에 의하여 제공∙공개되는 것으로서 회사는 페이스북에 직접 정보를 제공하지는 않습니다.
+
+4. 개인정보의 보유 및 이용기간
+"사이트"는 회원가입일로부터 서비스를 제공하는 기간 동안에 한하여 이용자의 개인정보를 보유 및 이용하게 됩니다. 회원탈퇴를 요청하거나 개인정보의 수집 및 이용에 대한 동의를 철회하는 경우, 수집 및 이용목적이 달성되거나 이용기간이 종료한 경우 개인정보를 지체 없이 파기합니다. 단, 다음의 경우에 대해서는 각각 명시한 이유와 기간 동안 보존합니다.
+
+1) 상법 등 관계법령의 규정에 의하여 보존할 필요가 있는 경우 법령에서 규정한 보존기간 동안 거래내역과 최소한의 기본정보를 보유합니다.이 경우 회사는 보관하는 정보를 그 보관의 목적으로만 이용합니다.
+① 계약 또는 청약철회 등에 관한 기록: 5년
+② 대금결제 및 재화 등의 공급에 관한 기록: 5년
+③ 소비자의 불만 또는 분쟁처리에 관한 기록: 3년
+④ 부정이용 등에 관한 기록: 5년
+
+2) 보유기간을 미리 공지하고 그 보유기간이 경과하지 아니한 경우와 개별적으로 동의를 받은 경우에는 약정한 기간 동안 보유합니다.
+
+5. 개인정보 파기절차 및 파기방법
+이용자의 개인정보는 원칙적으로 개인정보의 수집 및 이용목적이 달성되면 지체 없이 파기합니다. "회사"의 개인정보 파기절차 및 방법은 다음과 같습니다.
+
+1) 파기절차
+- 이용자가 회원가입 등을 위해 입력한 정보는 목적이 달성된 후 별도의 DB로 옮겨져(종이의 경우 별도의 서류함) 내부 방침 및 기타 관련법령에 의해 정보보호 사유에 따라 일정 기간 저장된 후 파기됩니다
+.- 별도 DB로 옮겨진 개인정보는 법률에 의한 경우가 아니고서는 다른 목적으로 이용되지 않습니다.
+
+2) 파기방법
+- 종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통해 파기합니다.
+전자적 파일형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제합니다.
+
+6. 개인정보 자동 수집 장치의 설치, 운영 및 거부에 관한 사항
+1) 쿠키란웹사이트를 운영하는데 이용되는 서버가 이용자의 브라우저에 보내는 작은 텍스트 파일로 이용자의 하드디스크에 저장됩니다.
+
+2) 쿠키의 사용 목적"사이트"가 쿠키를 통해 수집하는 정보는 '2. 수집하는 개인정보 항목 및 수집방법'과 같으며 '1. 개인정보의 수집 및 이용목적'외의 용도로는 이용되지 않습니다.
+
+3) 쿠키 설치, 운영 및 거부이용자는 쿠키 설치에 대한 선택권을 가지고 있습니다. 웹브라우저에서 옵션을 설정함으로써 모든 쿠키를 허용하거나, 쿠키가 저장될 때마다 확인을 거치거나, 아니면 모든 쿠키의 저장을 거부할 수도 있습니다.
+쿠키 설치 허용 여부를 지정하는 방법(Internet Explorer의 경우)은 다음과 같습니다.
+예)웹 브라우저 상단의 도구 > 인터넷 옵션 > 개인정보
+단, 쿠키의 저장을 거부할 경우에는 로그인이 필요한 일부 서비스 이용에 어려움이 있을 수 있습니다.
+
+7. 개인정보의 기술적, 관리적 보호대책
+1) 개인정보 암호화이용자의 개인정보는 비밀번호에 의해 보호되며, 파일 및 각종 데이터는 암호화하거나 파일 잠금 기능을 통해 별도의 보안기능을 통해 보호하고 있습니다.
+
+2) 해킹 등에 대비한 대책해킹이나 컴퓨터 바이러스 등에 의한 피해를 방지하기 위하여 백신 프로그램을 주기적으로 업데이트하며 새로운 바이러스가 출현할 경우 백신이 나오는 즉시 적용하여 개인정보가 훼손되지 않도록 방지하고 있습니다.
+
+외부 침입에 대비하여 접근이 통제된 구역에 시스템을 설치하고, 침입탐지 시스템 및 취약점 분석 시스템을 설치하여 24시간 감시하고 있습니다.
+3) 개인정보 취급 직원의 교육개인정보관련 취급 직원은 최소한의 인원으로 구성되며, 새로운 보안기술 습득 및 개인정보보호 의무에 관해 정기적인 교육을 실시하며 내부 감사 절차를 통해 보안이 유지되도록 시행하고 있습니다.
+
+4) 개인 아이디와 비밀번호 관리"회사"는 이용자의 개인정보를 보호하기 위하여 최선의 노력을 다하고 있습니다. 단, 이용자의 개인적인 부주의로 ID, 비밀번호등 개인정보가 유출되어 발생한 문제와 기본적인 인테넷의 위험성 때문에 일어나는 일들에 대해 책임을 지지 않습니다.
+- "사이트"는 다양한 배너와 링크를 포함하고 있습니다. 많은 경우 타 사이트의 페이지와 연결되어 있으며 이는 광고주와의 계약관계에 의하거나 제공받은 컨텐츠의 출처를 밝히기 위한 조치입니다.
+- "사이트"가 포함하고 있는 링크를 클릭하여 타 사이트의 페이지로 옮겨갈 경우 해당 사이트의 개인정보취급방침은 애드캠퍼스와 무관하므로 새로 방문한 사이트의 정책을 검토해 보시기 바랍니다.
+
+8. 링크
+
+- "사이트와 앱"은 다양한 배너와 링크를 포함하고 있습니다. 많은 경우 타 사이트의 페이지와 연결되어 있으며 이는 광고주와의 계약관계에 의하거나 제공받은 컨텐츠의 출처를 밝히기 위한 조치입니다.
+
+- "사이트와 앱"이 포함하고 있는 링크를 클릭하여 타 사이트의 페이지로 옮겨갈 경우 해당 사이트의 개인정보취급방침은 잡플래닛과 무관하므로 새로 방문한 사이트의 정책을 검토해 보시기 바랍니다.
+
+9. 비회원의 개인정보 보호
+"사이트"에서는 회원 가입을 하지 않아도 공개를 희망하지 않는 개인정보와 이력서 주요 정보를 제외한 대부분의 컨텐츠를 열람할 수 있습니다
+
+10. 이용자의 권리와 그 행사방법
+
+- 이용자 및 법정대리인은 개인정보 조회/수정을 위해서는 '회원정보관리'를 통하여 가능하며, 가입해지(동의철회)를 위해서는 '회원탈퇴'를 클릭하여 본인 확인 절차를 거친 후 직접 열람, 정정 또는 탈퇴가 가능합니다.
+또는 개인정보 관리책임자에게 서면, 전화 또는 이메일로 연락하시면 지체 없이 조치하겠습니다.
+- 이용자가 개인정보의 오류에 대한 정정을 요청하신 경우에는 정정을 완료하기 전까지 당해 개인정보를 이용 또는 제공하지 않습니다.
+또한 잘못된 개인정보를 제3자에게 이미 제공한 경우에는 정정 처리결과를 제3자에게 지체 없이 지하여 정정이 이루어지도록 하겠습니다.
+- "회사"는 이용자 요청에 의해 해지 또는 삭제된 개인정보는 '4. 개인정보의 보유 및 이용기간'에 명시된 바에 따라 처리하고 그 외의 용도로 열람 또는 이용할 수 없도록 처리하고 있습니다.
+
+11. 개인정보 관리책임자 및 민원서비스
+"회사"는 이용자의 개인정보를 보호하고 개인정보와 관련한 고충처리를 위하여 아래와 같이 개인정보 관리책임자를 지정하고 있습니다.
+개인정보 관리책임자
+이름: 유원일
+소속/직위: (주)TENDOM/대표이사
+e-메일 : yuwonill@gmail.com
+
+기타 개인정보에 관한 상담이 필요한 경우에는 아래 기관에 문의하실 수 있습니다.
+개인정보침해신고센터 전화: 118/http://www.118.or.kr
+정보보호마크 인증위원회 전화: 02-580-0533/http://www.eprivacy.or.kr
+대검찰청 첨단범죄수사과 전화: 02-3480-2000/http://www.spo.go.kr
+경찰청 사이버테러대응센터 전화: 1566-0112/http://www.netan.go.kr
+
+12. 부칙
+현 개인정보취급방침은 법령, 정책 또는 보안기술의 변경 등에 따라 내용 추가, 삭제 및 수정이 있을 시에는 시행일의 7일 전부터 홈페이지의 공지사항을 통하여 고지할 것입니다.
+개인정보 취급방침 버전번호: 2.0
+시행일자 : 2016년 2월 5일
+</pre>
 		</div>
 	</div>
 
@@ -339,23 +247,21 @@
     <script src="/bower_components/crypto-js/crypto-js.js"></script>
     <script src="/assets/lib/common.js"></script>
 
-    <script src="../assets/lib/request_helper.js"></script>
-    <script src="../assets/lib/local_storage.js"></script>
-    <script src="../assets/lib/analytics.js"></script>
+    <script src="/assets/lib/request_helper.js"></script>
+    <script src="/assets/lib/local_storage.js"></script>
+    <script src="/assets/lib/analytics.js"></script>
 
-    <script src="../assets/lib/rate/jquery.raty.js"></script>
-    <script src="../assets/lib/rate/labs.js"></script>
+    <script src="/assets/lib/rate/jquery.raty.js"></script>
+    <script src="/assets/lib/rate/labs.js"></script>
 
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    
+
 	<script>
 
 		/******************************************
 		* Search Univ.
 		/*****************************************/
 		$(document).ready(function(){
-			scrollNumber = 0;
-			scrollCounting = 'N';
 
 			availableTags = [];
 
@@ -378,7 +284,7 @@
 			});
 
 			function SearchUnivA (content) {
-				var content = $("#search_school").val();
+				var univ = $("#search_school").val();
 				var searchURL = "";
 
 				RequestHelper.post('/college/getAllColleges', {},
@@ -388,8 +294,8 @@
 					var length = data.result[0].colleges.length;
 
 					for (var i = 0; i<length; i++) {
-
-						if (data.result[0].colleges[i].collegeName === content) {
+						
+						if (data.result[0].colleges[i].collegeName === univ) {
 							// location.href = '/review/univ/?univ=' + data.result[0].colleges[i].collegeID;
 							searchURL = data.result[0].colleges[i].collegeID;
 						}
@@ -490,6 +396,8 @@
 
 					$(CollegeGrade[cnti]).html(data.result[0].reviews[cnti].recommend);
 
+					// alert(JSON.stringify(data));
+
 					$(CollegeLink[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cnti].collegeID + "&major=" + data.result[0].reviews[cnti].majorID + "&reviewid=" + data.result[0].reviews[cnti].reviewID);
 					$(CollegeLink1[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cnti].collegeID + "&major=" + data.result[0].reviews[cnti].majorID + "&reviewid=" + data.result[0].reviews[cnti].reviewID);
 					$(CollegeLink2[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cnti].collegeID + "&major=" + data.result[0].reviews[cnti].majorID + "&reviewid=" + data.result[0].reviews[cnti].reviewID);
@@ -586,435 +494,9 @@
 			});
 			/*****************************************/
 
-			$("#searchFiltered").click(function(){
-
-				// var tempList = $('.campus_univ_list').length;
-				// $('.review').css('display', 'none');
-				// $('.M_review').css('display', 'none');
-				
-				scrollNumber = 0;
-				scrollCounting = 'N';
-
-				// console.log($("#type_1 option:selected").text());
-				// console.log($("#type_2 option:selected").text());
-				// console.log($("#type_3 option:selected").text());
-
-				getFilteredBest();
-
-			});
-
-			$('#type_1, #type_2, #type_3').change(function(){
-				scrollCounting = 'N';
-				scrollNumber = 0;
-			});
-
 		});
 		/*****************************************/
-
-		$('.type_1').change(function(){
-
-			$("#type_2").find("option").remove();
-
-			// 자연계열
-			if ($('select[name=type_1]').val() == 'c001') {
-
-				$("#type_2").append("<option value='g001' class='g001'>농림·수산</option>");
-				$("#type_2").append("<option value='g002' class='g002'>생물·화학·환경</option>");
-				$("#type_2").append("<option value='g003' class='g003'>생활과학</option>");
-				$("#type_2").append("<option value='g004' class='g004'>수학·물리·천문·지리</option>");
-				$("#type_2").append("<option value='g004' class='g004'>간호</option>");
-				$("#type_2").append("<option value='g004' class='g004'>보건</option>");
-				$("#type_2").append("<option value='g004' class='g004'>약학</option>");
-				$("#type_2").append("<option value='g004' class='g004'>의료예과</option>");
-				$("#type_2").append("<option value='g004' class='g004'>교육</option>");
-
-			// 인문사회계열 
-			} else if ($('select[name=type_1]').val() == 'c002') {
-
-				$("#type_2").append("<option value='g005' class='g005'>언어·문학</option>");
-				$("#type_2").append("<option value='g006' class='g006'>인문학</option>");
-				$("#type_2").append("<option value='g007' class='g007'>경영·경제</option>");
-				$("#type_2").append("<option value='g008' class='g008'>법학</option>");
-				$("#type_2").append("<option value='g009' class='g009'>사회과학</option>");
-				$("#type_2").append("<option value='g009' class='g009'>교육</option>");
-				$("#type_2").append("<option value='g034' class='g034'>기타</option>");
-
-			// 의학계열
-			} else if ($('select[name=type_1]').val() == 'c004') {
-
-				$("#type_2").append("<option value='g014' class='g014'>의료</option>");
-
-			// 공학계열
-			} else if ($('select[name=type_1]').val() == 'c005') {
-
-				$("#type_2").append("<option value='g024' class='g024'>전기·전자·컴퓨터</option>");
-				$("#type_2").append("<option value='g017' class='g017'>건설</option>");
-				$("#type_2").append("<option value='g018' class='g018'>산업·안전</option>");
-				$("#type_2").append("<option value='g020' class='g020'>기계</option>");
-				$("#type_2").append("<option value='g023' class='g023'>재료</option>");
-				$("#type_2").append("<option value='g019' class='g019'>화학·고분자·에너지</option>");
-				$("#type_2").append("<option value='g026' class='g026'>교육</option>");
-
-			// 에체능 계열
-			} else if ($('select[name=type_1]').val() == 'c006') {
-
-				$("#type_2").append("<option value='g030' class='g030'>무용·체육</option>");
-				$("#type_2").append("<option value='g032' class='g032'>연극·영화</option>");
-				$("#type_2").append("<option value='g029' class='g029'>응용예술</option>");
-				$("#type_2").append("<option value='g031' class='g031'>미술</option>");
-				$("#type_2").append("<option value='g033' class='g033'>음악·국악</option>");
-				$("#type_2").append("<option value='g033' class='g033'>교육</option>");
-
-			}
-
-		});
-
-		/******************************************
-		* Get Name of the College
-		/*****************************************/
-		collegeNameLists = new Array();
-
-		RequestHelper.post('/college/getAllColleges', {},
-		{
-		// Option is not needed.
-		}, function(data) {
-			for (var i = 0; i < data.result[0].colleges.length; i++) {
-				collegeNameLists[i] = data.result[0].colleges[i].collegeName + "/" + data.result[0].colleges[i].collegeID;
-			}
-		}, function(data) {
-			alert(JSON.stringify(data));
-		});
-		/*****************************************/
-
-		function getFilteredBest() {
-			RequestHelper.post('/college/getFilteredTotalBestMajorReviews', {
-				majorClass:$("#type_1 option:selected").text(),
-				majorGroup:$("#type_2 option:selected").text(),
-				majorRegion:$("#type_3 option:selected").text()
-			},
-			{
-			// Option is not needed.
-			}, function(data) {
-
-				// console.log(JSON.stringify(data));
-
-				if (data.result[0].reviews[0] == undefined) {
-
-					scrollCounting = 'N';
-					scrollNumber = 0;
-
-					alert('해당하는 정보를 가진 학교가 없습니다.');
-
-				} else if (data.result[0].reviews.length == 0) {
-
-					scrollCounting = 'N';
-					scrollNumber = 0;
-
-					alert('해당하는 정보를 가진 학교가 없습니다.');
-
-				} else {
-					
-					$('.review').css('display', 'none');
-					$('.M_review').css('display', 'none');
-
-					scrollCounting = 'Y';
-
-					var temp = $('.review').length - 3;
-					$(".review").css('display', 'none');
-
-		            var contents = '';
-
-		            contents += "<div class='review' style='background:#FFF;'>";
-						contents += "<img src='/assets/img/bestreview.png' style='width:72px;height:87px;position:absolute;margin-top: -18px;margin-left: 550px;'/>";
-						contents += "<a class='CollegeLink' style='text-decoration:none;color:inherit;'><img class='about_img'/></a>";
-						contents += "<div class='review_about_'>";
-							contents += "<h3><a class='CollegeLink_A' style='text-decoration:none;color:inherit;'></a></h3>";
-							contents += "<p style='margin-bottom:10px;'>";
-								contents += "<img src='/assets/img/common/review_star_full.png'/>";
-								contents += "<img src='/assets/img/common/review_star_full.png'/>";
-								contents += "<img src='/assets/img/common/review_star_full.png'/>";
-								contents += "<img src='/assets/img/common/review_star_full.png'/>";
-								contents += "<img src='/assets/img/common/review_star_full.png'/>";
-								contents += "<span style='margin:0px 5px;' id='averageGrade3'></span> <span class='CollegeGrade'></span>명의 평가";
-							contents += "</p>";
-						contents += "</div>";
-						contents += "<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>";
-							contents += "<div class='review_evaluation'>";
-								contents += "<h6 class='h6_title'>작성자한줄평</h6>";
-								contents += "<h6 class='h6_content' style='margin-left:23px;font-size:1rem;width:76%;'></h6>";
-							contents += "</div>";
-						contents += "</a>";
-						contents += "<div class='pros' style='width:85%;'>";
-							contents += "<h3>장점</h3>";
-							contents += "<h4 class='advantageComment'></h4>";
-						contents += "</div>";
-						contents += "<div class='cons' style='width:85%;'>";
-							contents += "<h3>단점</h3>";
-							contents += "<h4 class='weaknessComment'></h4>";
-						contents += "</div>";
-						contents += "<a class='CollegeLink_C' style='text-decoration:none;color:inherit;'><p class='review_more_left'>대학리뷰 자세히 보기 <img src='/assets/img/common/review_more.png'/></p></a>";
-					contents += "</div>";
-
-					for (var i = 0; i < data.result[0].reviews.length; i++) {
-						$('#AddOption').append(contents);
-					}
-
-					var CollegeLink = $(".CollegeLink");
-					var CollegeLink1 = $(".CollegeLink_A");
-					var CollegeLink2 = $(".CollegeLink_B");
-					var CollegeLink3 = $(".CollegeLink_C");
-					var CollegeLogo = $(".CollegeLink img");
-					var CollegeGrade = $(".CollegeGrade");
-
-					var h6_content = $(".h6_content");
-					var advantageComment = $(".advantageComment");
-					var weaknessComment = $(".weaknessComment");
-
-					var CollegeNameList = new Array();
-					var majorsNameLists = new Array();
-
-					collegeCode1 = data.result[0].reviews[0].collegeID;
-					collegeCode2 = data.result[0].reviews[1].collegeID;
-					collegeCode3 = data.result[0].reviews[2].collegeID;
-
-					majorCode1 = data.result[0].reviews[0].majorID;
-					majorCode2 = data.result[0].reviews[1].majorID;
-					majorCode3 = data.result[0].reviews[2].majorID;
-
-					var cnti = 0;
-					var cntiValue = 0;
-
-					for (var cntReview = 1 + temp; cntReview <= 3 + temp; cntReview++) {
-
-						var cnti = cntReview - 1;
-						// console.log(temp + ' / ' + cnti + ' / ' + cntReview + ' / ' + cntiValue);
-
-						$(h6_content[cnti]).html(data.result[0].reviews[cntiValue].oneLineComment);
-						$(advantageComment[cnti]).html(data.result[0].reviews[cntiValue].advantageComment);
-						$(weaknessComment[cnti]).html(data.result[0].reviews[cntiValue].weaknessComment);
-
-						$(CollegeGrade[cnti]).html(data.result[0].reviews[cntiValue].recommend);
-
-						$(CollegeLink[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cntiValue].collegeID + "&major=" + data.result[0].reviews[cntiValue].majorID + "&reviewid=" + data.result[0].reviews[cntiValue].reviewID);
-						$(CollegeLink1[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cntiValue].collegeID + "&major=" + data.result[0].reviews[cntiValue].majorID + "&reviewid=" + data.result[0].reviews[cntiValue].reviewID);
-						$(CollegeLink2[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cntiValue].collegeID + "&major=" + data.result[0].reviews[cntiValue].majorID + "&reviewid=" + data.result[0].reviews[cntiValue].reviewID);
-						$(CollegeLink3[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cntiValue].collegeID + "&major=" + data.result[0].reviews[cntiValue].majorID + "&reviewid=" + data.result[0].reviews[cntiValue].reviewID);
-
-						$(CollegeLogo[cnti]).attr("src", "/assets/img/logo/logo_" + data.result[0].reviews[cntiValue].collegeID + ".jpg");
-
-						var b = 0;
-
-						for (var b in collegeNameLists) {
-							if (collegeNameLists[b].indexOf(data.result[0].reviews[cntiValue].collegeID) != -1) {
-								var className = collegeNameLists[b].split("/");
-								$(CollegeLink1[cnti]).html(className[0]);
-							}
-						}
-
-						makeMajorName(data.result[0].reviews[cntiValue].collegeID, data.result[0].reviews[cntiValue].majorID, cnti, '');
-
-						cntiValue = cntiValue + 1;
-
-					}
-
-				}
-
-			}, function(data) {
-				alert("잘못된 접근입니다, 뒤로가기 이동");
-			});
-		}
 		
-		$(window).scroll(function(){ 
-			if ($(window).scrollTop() == $(document).height() - $(window).height()){
-				if (scrollCounting == 'Y') getFiltered(scrollNumber);
-			}
-		});
-
-		function getFiltered(lastReadNumber) {
-			RequestHelper.post('/college/getFilteredTotalMajorReviews', {
-				majorClass:$("#type_1 option:selected").text(),
-				majorGroup:$("#type_2 option:selected").text(),
-				majorRegion:$("#type_3 option:selected").text(),
-				lastReviewID:lastReadNumber
-			},
-			{
-			// Option is not needed.
-			}, function(data) {
-
-				// console.log(JSON.stringify(data));
-
-				if ((data.result[0].reviews[0].collegeID == undefined) || (data.result[0].reviews[1].collegeID == undefined) || (data.result[0].reviews[2].collegeID == undefined) || (data.result[0].reviews[3].collegeID == undefined) || (data.result[0].reviews[4].collegeID == undefined)) {
-
-					scrollCounting = 'N';
-					scrollNumber = 0;
-
-					alert('이미 모든 리뷰를 조회했습니다.');
-
-				} else if (data.result[0].reviews.length == 0) {
-
-					scrollCounting = 'N';
-					scrollNumber = 0;
-
-					alert('이미 모든 리뷰를 조회했습니다.');
-
-				} else if (data.result[0].reviews == undefined) {
-
-					scrollCounting = 'N';
-					scrollNumber = 0;
-
-					alert('이미 모든 리뷰를 조회했습니다.');
-
-				} else {
-
-					if ($(".M_review").length == '0') {
-
-						var makeCount = 0;
-						var MaxLength = data.result[0].reviews.length;
-
-					} else {
-
-						var makeCount = $(".M_review").length;
-						var MaxLength = $(".M_review").length + data.result[0].reviews.length;
-
-					}
-
-		            var contents = '';
-
-		            contents += "<div class='M_review' style='background:#FFF;'>";
-						contents += "<a class='M_CollegeLink' style='text-decoration:none;color:inherit;'><img class='about_img'/></a>";
-						contents += "<div class='review_about_'>";
-							contents += "<h3><a class='M_CollegeLink_A' style='text-decoration:none;color:inherit;'></a></h3>";
-							contents += "<p style='margin-bottom:10px;'>";
-								contents += "<img src='/assets/img/common/review_star_full.png'/>";
-								contents += "<img src='/assets/img/common/review_star_full.png'/>";
-								contents += "<img src='/assets/img/common/review_star_full.png'/>";
-								contents += "<img src='/assets/img/common/review_star_full.png'/>";
-								contents += "<img src='/assets/img/common/review_star_full.png'/>";
-								contents += "<span style='margin:0px 5px;' id='averageGrade3'></span> <span class='M_CollegeGrade'></span>명의 평가";
-							contents += "</p>";
-						contents += "</div>";
-						contents += "<a class='M_CollegeLink_B' style='text-decoration:none;color:inherit;'>";
-							contents += "<div class='review_evaluation'>";
-								contents += "<h6 class='h6_title'>작성자한줄평</h6>";
-								contents += "<h6 class='M_h6_content' style='margin-left:23px;font-size:1rem;width:76%;'></h6>";
-							contents += "</div>";
-						contents += "</a>";
-						contents += "<div class='pros' style='width:85%;'>";
-							contents += "<h3>장점</h3>";
-							contents += "<h4 class='M_advantageComment'></h4>";
-						contents += "</div>";
-						contents += "<div class='cons' style='width:85%;'>";
-							contents += "<h3>단점</h3>";
-							contents += "<h4 class='M_weaknessComment'></h4>";
-						contents += "</div>";
-						contents += "<a class='M_CollegeLink_C' style='text-decoration:none;color:inherit;'><p class='review_more_left'>대학리뷰 자세히 보기 <img src='/assets/img/common/review_more.png'/></p></a>";
-					contents += "</div>";
-
-					// for (var i = 0; i < data.result[0].reviews.length; i++) {
-					// 	$('#AddOption').append(contents);
-					// }
-
-					for (var i = makeCount; i < MaxLength; i++) {
-						$('#AddOption').append(contents);	
-					}
-
-					var CollegeLink = $(".M_CollegeLink");
-					var CollegeLink1 = $(".M_CollegeLink_A");
-					var CollegeLink2 = $(".M_CollegeLink_B");
-					var CollegeLink3 = $(".M_CollegeLink_C");
-					var CollegeLogo = $(".M_CollegeLink img");
-					var CollegeGrade = $(".M_CollegeGrade");
-
-					var h6_content = $(".M_h6_content");
-					var advantageComment = $(".M_advantageComment");
-					var weaknessComment = $(".M_weaknessComment");
-
-					var CollegeNameList = new Array();
-					var majorsNameLists = new Array();
-
-					collegeCode1 = data.result[0].reviews[0].collegeID;
-					collegeCode2 = data.result[0].reviews[1].collegeID;
-					collegeCode3 = data.result[0].reviews[2].collegeID;
-
-					majorCode1 = data.result[0].reviews[0].majorID;
-					majorCode2 = data.result[0].reviews[1].majorID;
-					majorCode3 = data.result[0].reviews[2].majorID;
-
-					var countReview = 0;
-
-					for (var i = makeCount; i < MaxLength; i++) {
-
-						if (data.result[0].reviews[countReview].oneLineComment == undefined) {
-							break;
-						}
-
-						$(h6_content[i]).html(data.result[0].reviews[countReview].oneLineComment);
-						$(advantageComment[i]).html(data.result[0].reviews[countReview].advantageComment);
-						$(weaknessComment[i]).html(data.result[0].reviews[countReview].weaknessComment);
-
-						$(CollegeGrade[i]).html(data.result[0].reviews[countReview].recommend);
-
-						$(CollegeLink[i]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[countReview].collegeID + "&major=" + data.result[0].reviews[countReview].majorID + "&reviewid=" + data.result[0].reviews[countReview].reviewID);
-						$(CollegeLink1[i]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[countReview].collegeID + "&major=" + data.result[0].reviews[countReview].majorID + "&reviewid=" + data.result[0].reviews[countReview].reviewID);
-						$(CollegeLink2[i]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[countReview].collegeID + "&major=" + data.result[0].reviews[countReview].majorID + "&reviewid=" + data.result[0].reviews[countReview].reviewID);
-						$(CollegeLink3[i]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[countReview].collegeID + "&major=" + data.result[0].reviews[countReview].majorID + "&reviewid=" + data.result[0].reviews[countReview].reviewID);
-
-						$(CollegeLogo[i]).attr("src", "/assets/img/logo/logo_" + data.result[0].reviews[countReview].collegeID + ".jpg");
-
-						var b = 0;
-
-						for (var b in collegeNameLists) {
-							if (collegeNameLists[b].indexOf(data.result[0].reviews[countReview].collegeID) != -1) {
-								var className = collegeNameLists[b].split("/");
-								$(CollegeLink1[i]).html(className[0]);
-							}
-						}
-
-						makeMajorName(data.result[0].reviews[countReview].collegeID, data.result[0].reviews[countReview].majorID, i, 'M');
-						scrollNumber = data.result[0].reviews[countReview].reviewID;
-
-						countReview = countReview + 1;
-					}
-
-					// scrollNumber = data.result[0].reviews[0].reviewID - data.result[0].reviews.length + 1;
-					scrollCounting = 'Y';
-
-				}
-
-			}, function(data) {
-				alert("잘못된 접근입니다, 뒤로가기 이동");
-			});
-		}
-
-		function makeMajorName(collegeID, majorsID, count, type) {
-
-			RequestHelper.post('/college/getAllMajorsInCollege', {
-				collegeID: collegeID
-			},
-			{
-			// Option is not needed.
-			}, function(majorNameData) {
-
-				if (type == 'M') {
-					var CollegeLink1 = $(".M_CollegeLink_A");
-				} else {
-					var CollegeLink1 = $(".CollegeLink_A");
-				}
-
-				for (var b = 0; b < majorNameData.result[0].majors.length; b++) {
-
-					if (majorNameData.result[0].majors[b].majorID.indexOf(majorsID) != -1) {
-						$(CollegeLink1[count]).html($(CollegeLink1[count]).html() + ' ' + majorNameData.result[0].majors[b].majorName);
-					}
-
-				}
-
-			}, function(data) {
-				alert("잘못된 접근입니다, 뒤로가기 이동");
-			});
-
-		}
-
 	</script>
 
 	<div class="layer">
@@ -1400,7 +882,6 @@
 							</tr>
 						</table>
 						<!-- Second Page of Review Write Element. -->
-
 					</form>
 				</div>
 			</div> 

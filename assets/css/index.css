@@ -300,8 +300,10 @@
 		padding: 0px;
 		display: inline-block;
 		color: #3366CC;
-		font-size: 1.3rem;
 		vertical-align: middle;
+		margin-left: 23px;
+		font-size: 1rem;
+		width: 76%;
 	}
 
 	.pros {
@@ -478,3 +480,188 @@
 		color: #808083;
 		font-size:1.125rem;
 	}
+
+	.mobile_review_header, .mobile_review_write, .mobile_head_subtitle {
+		display: none;
+	}
+
+	.bestreviewMark {
+		width:72px;height:87px;position:absolute;margin-top: -18px;margin-left: 550px;
+	}
+/*
+	@media (max-width: 1000px) {
+
+		#header {
+			display: none;
+		}
+		
+		#box_1_main_image {
+			width: 100%;
+			height: 220px;
+			background-image: url("/assets/img/slide/background_1440_550.jpg");	
+		}
+
+		.head_title { display: none; }
+		.head_subtitle { display: none; }
+		.search_box { display: none; }
+
+		.mobile_head_subtitle {
+			font-size: 2rem;
+			font-family: 'NanumPen';
+			font-weight: normal;
+			vertical-align: middle;
+			color: #FFF;
+			margin-top: 36px;
+			padding-top: 10%;
+		}
+
+		.campus_menu {
+			width: 100%;
+		}
+
+		.campus_menu li p {
+			display: none;
+		}
+
+		#campus_button_img1, #campus_button_img2, #campus_button_img3, #campus_button_img4 {
+			width: 50px;
+			height: 50px;
+			padding-right: 7px;
+			padding-left: 7px;
+		}
+
+		#campus_button_img1 {
+			padding-left: 0px;
+		}
+
+		#campus_button_img4 {
+			padding-right: 0px;
+		}
+
+		.campus_menu li h4 {
+			font-size: 0.8rem;
+			margin-top: 5px;
+		}
+
+		#campus_s_button_img1, #campus_s_button_img2, #campus_s_button_img3, #campus_s_button_img4 {
+			display: none;
+		}
+
+		#box_2_main_review {
+			width: 100%;
+			padding: 25px 0px 30px 0px;
+		}
+
+		#box_2_main_review .title {
+			font-size: 1.3rem;
+		}
+
+		#box_2_main_review .subtitle {
+			font-size: 0.95rem;
+		}
+
+		.mobile_review_header {
+			display: block;
+		}
+
+		.review_right {
+			display: none;
+		}
+
+		.review_left {
+			width: 100%;
+			background: #F5F6F7;
+		}
+
+		.review {
+			width: 95%;
+			background: #FFF;
+		}
+
+		.about_img {
+			width: 50px;
+			height: 50px;
+			margin-top: 10px;
+			margin-right: -8px;
+		}
+
+		.review_about_ {
+			width: 70%;
+		}
+
+		.review_about_ img {
+			width: 21px;
+			height: 21px;
+		}
+
+		.review_about_ p {
+			font-size: 0.85rem;
+			margin-bottom: 20px;
+		}
+
+		.review_about_ h3 {
+			font-size: 1.25rem;
+		}
+
+		.review_evaluation .h6_content {
+			font-size: 0.9rem;
+			width: 62%;
+			padding: 10px 0px 10px 0px;
+			line-height: 1.25rem;
+		}
+
+		.bestreviewMark {
+			width: 52px;
+			height: 67px;
+			position: absolute;
+			margin-top: -18px;
+			margin-left: 275px;
+		}
+
+		.pros h3 {
+			margin-left: 4px;
+		    font-size: 0.75rem;
+		    display: block;	
+		}
+
+		.pros h4 {
+			font-size: 0.85rem;
+			margin-top: 8px;
+			width: 100%;
+		}
+
+		.cons h3 {
+			margin-left: 4px;
+		    font-size: 0.75rem;
+		    display: block;	
+		}
+
+		.cons h4 {
+			font-size: 0.85rem;
+			margin-top: 8px;
+			width: 100%;
+		}
+
+		.review_more_left {
+			font-size: 0.85rem;
+		}
+
+		#footer ul {
+			display: none;
+		}
+
+		#footer .footer_content {
+			font-size: 0.8rem;
+			margin: 0px 10px;
+		}
+
+		.pop-layer, .layer2 {
+			width: 90%;
+		}
+
+		.div#popup_soon {
+		    margin-top: -45%;
+		    margin-left: -45%;
+		}
+
+	}*/

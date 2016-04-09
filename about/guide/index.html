@@ -9,13 +9,11 @@
 	<!-- <meta name="description" content="소개글"/> -->
 	<meta name="robots" content="ALL"/>
 	<!-- <meta name="reply-to" content="이메일"/> -->
-	<!-- <meta name="viewport" content="width=device-width, user-scalable=no"> -->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<!-- Meta tag for Cross Browsing -->
 
 	<!-- Assets -->
-	<link rel='stylesheet' href='../assets/css/style.css'>
-	<link rel='stylesheet' href='../assets/css/review.css'>
-	
+	<link rel='stylesheet' href='../../assets/css/style.css'>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<!-- Assets -->
 
@@ -27,20 +25,15 @@
 	<meta property="og:description" content="지금 재학생들이 직접 작성한 생생한 대학이야기를 직접 확인하세요!" />
 	<meta property="og:image" content="http://addcampus.com/assets/img/fbShare.jpg" />
 	<!-- Facebook -->
-
-	<style>
-		body { background: #F7F7F7; }
-		#review_banner { background: #FFFFFF; }
-	</style>
 </head>
-<body>
+<body style='background:#F5F6F7;'>
 
 	<header id='header' style='background-color:#FFD432;'>
 		<div class='header_menu'>
 			<ul class='header_left'>
 				<li style='margin:0px 28px 0px 14px;'><a href='/' style='text-decoration:none;color:#FFFFFF;'><img src='/assets/img/header/logo.png'/></a></li>
 				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/campus/' style='text-decoration:none;color:#666666;'>캠퍼스 랭킹</a></li>
-				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/review/' style='text-decoration:none;color:#000000;'>캠퍼스 리뷰</a></li>
+				<li style='width:70px;margin:0px 23px 0px 0px;'><a href='/review/' style='text-decoration:none;color:#666666;'>캠퍼스 리뷰</a></li>
 				<li style='width:70px;margin:0px 8px 0px 0px;'><a onclick='layer_open3();' style='text-decoration:none;color:#999999;'>대외활동</a></li>
 				<li style='width:70px;margin:0px 23px 0px 0px;'><a onclick='layer_open3();' style='text-decoration:none;color:#999999;'>합격꿀팁</a></li>
 			</ul>
@@ -56,249 +49,56 @@
 		</div>
 	</header>
 
-	<div id='wrapper'>
+	<div id='wrapper' style='width:1024px;margin:0px auto;'>
+		<ul style='width:100%;margin:0px auto;padding:0px;list-style:none;margin:40px 0px;'>
+			<a href='/about/terms/' style='text-decoration:none;color:inherit;'><li style='list-style:none;display:inline-block;font-size:1.1rem;font-weight:normal;color:#808083;'>이용약관</li></a>
+			<a href='/about/policy/' style='text-decoration:none;color:inherit;'><li style='list-style:none;display:inline-block;font-size:1.1rem;font-weight:normal;color:#808083;padding:0px 30px;'>개인정보취급방침</li></a>
+			<a href='/about/guide/' style='text-decoration:none;color:inherit;'><li style='list-style:none;display:inline-block;font-size:1.5rem;font-weight:bold;color:#58595B;'>커뮤니티 가이드라인</li></a>
+		</ul>
 
-		<div id='review_main_image'>
-			<h1 class='head_title'>캠퍼스는 [ <span>더하기</span> ]다!</h1>
-			<h3 class='head_subtitle'>캠퍼스에 이야기를 더하다. 애드캠퍼스가 함께합니다</h3>
-			<div class='search_box'>
-				<form action='/review/univ/' id='search_form' method='get' onsubmit="return SearchUnivA(this);">
-					<input type='text' id='search_school' name='search_school' placeholder='합격하고 싶은 대학을 검색해보세요!' style='margin-top: 12px;'/>
-					<img src='/assets/img/common/search_button.png' id='searchBtn' style='cursor:pointer;'/>
-				</form>
-			</div>
-			<div style='width: 280px;height: 60px;position: relative;bottom: -100px;left: 100px;background: rgba(0,0,0,0.5);padding:20px;'>
-				<p style='text-align:left;margin:0px;padding:0px;font-size:1.2rem;'>국민대학교&nbsp;&nbsp;&nbsp;<span style='font-size:0.8rem;'>서울특별시 성북구 정릉로 77</span></p>
-				<p style='text-align:left;margin:0px;padding:0px;margin-top:15px;'><a href='http://kookmin.ac.kr/' target='_blank' style='text-decoration:none;color:#FFF;'>http://kookmin.ac.kr/</a></p>
-			</div>
-		</div>
+		<div class='' style='width:100%;'>
+<pre style='width: 100%;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;line-height: 24px;margin: 0px;padding: 0px;text-align: left;height:1500px;overflow:scroll;'>
+<b>애드캠퍼스 커뮤니티가이드 라인</b>
 
-		<div id='review_banner'>
-			<div class='find_campus'>
-				<h2 class='title'>가고 싶은 대학이 어떤 곳인지는 한 번 찾아 봐야지?</h2>
-				<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:5px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
-					<select id='type_1' class='type_1' name='type_1'>
-						<option value='c000' class='c000'>계열</option>
-						<option value='c001' class='c001'>자연과학계열</option>
-						<option value='c002' class='c002'>인문사회계열</option>
-						<option value='c004' class='c004'>의학계열</option>
-						<option value='c005' class='c005'>공학계열</option>
-						<option value='c006' class='c006'>예체능계열</option>
-						<option value='c007' class='c007'>기타</option>
-					</select>
-				</div>
-				<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:5px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
-					<select id='type_2' class='type_2' name='type_2'>
-						<option value='g000' class='g000'>2차 학과군</option>
-					</select>
-				</div>
-				<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:5px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
-					<select id='type_3' class='type_3' name='type_3'>
-						<option>서울</option>
-						<option>경기</option>
-						<option>인천</option>
-						<option>부산</option>
-						<option>대구</option>
-						<option>대전</option>
-						<option>광주</option>
-						<option>울산</option>
-						<option>강원</option>
-						<option>경상도</option>
-						<option>경북</option>
-						<option>전남</option>
-						<option>전북</option>
-						<option>충남</option>
-						<option>충북</option>
-						<option>제주</option>
-						<option>세종</option>
-					</select>
-				</div>
-				<button id='searchFiltered' style='float:right;margin-right:15px;width:216px;height:40px;border-radius:10px;margin-top:10px;background:#FFD432;'>검색하기</button>
-			</div>
-		</div>
+애드캠퍼스는 자신이 진심으로 원하는 대학생활을 고민하는 모든 사람들에게 유익하고 도움이 되는 정보를 제공하고자 합니다. 따라서 다음과 같은 내용이 포함된 리뷰는 승인되지 않을 수 있습니다.
 
-		<div id='review_content' style='width:1000px;margin:0px auto;'>
-			<!-- 캠퍼스 왼쪽 리뷰 -->
-			<div class='review_left' style='width: 675px;margin: 0px auto;margin-top: 20px;float: left;'>
+1. 지나치게 편파적이거나 편견이 담긴 리뷰
+2. 정보공유 목적보다 비방 목적이 앞서는 리뷰
+3. 비속어, 욕설, 모욕적 표현 등이 포함된 리뷰
+4. 특정인을 향한 악의적 인신공격 표현이 포함된 리뷰
+5. 개인의 신상 정보가 드러나는 리뷰
+6. 공개하기 어려운 기업 비밀이 드러나는 리뷰
+7. 확정되지 않은 범죄사실을 미리 공개하는 리뷰
+8. 거짓된 사실로 작성된 리뷰
+9. 모욕죄나 명예훼손죄가 문제될 수 있는 리뷰
 
-				<div id='AddOption' style='width:100%;'></div>
+애드캠퍼스는 작성된 모든 정보를 게시물 등록 정책에 따라 면밀히 검토하여 등록 여부를 결정하고 있습니다. 이는 향후 법적 분쟁 등 정보 작성자에게 일어 날 수 있는 불이익이나 위험을 미리 방지하고, 표현의 자유가 인정되는 범위 안에서 자유로운 정보와 의견이 공유되도록 하기 위함입니다. 만약 작성하신 글이 수정되는 일이 발생하거나 승인되지 않더라도 양해 부탁드립니다.
 
-				<div class='review' style='background:#FFF;'>
-					<img src='/assets/img/bestreview.png' style='width:72px;height:87px;position:absolute;margin-top: -18px;margin-left: 550px;'/>
-					<a class='CollegeLink' style='text-decoration:none;color:inherit;'><img class='about_img'/></a>
-					<div class='review_about_'>
-						<h3><a class='CollegeLink_A' style='text-decoration:none;color:inherit;' id='univName1'></a></h3>
-						<p style='margin-bottom:10px;'>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<span style='margin:0px 5px;' id='averageGrade1'></span> <span class='CollegeGrade'></span>명의 평가
-						</p>
-					</div>
-					<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>
-						<div class='review_evaluation'>
-							<h6 class='h6_title'>작성자한줄평</h6>
-							<h6 class='h6_content' id='oneLineComment1' style='margin-left:23px;font-size:1rem;width:76%;'></h6>
-						</div>
-					</a>
-					<div class='pros' style='width:85%;'>
-						<h3>장점</h3>
-						<h4 id='advantageComment1'></h4>
-					</div>
-					<div class='cons' style='width:85%;'>
-						<h3>단점</h3>
-						<h4 id='weaknessComment1'></h4>
-					</div>
-					<a class='CollegeLink_C' style='text-decoration:none;color:inherit;'><p class='review_more_left'>대학리뷰 자세히 보기 <img src='/assets/img/common/review_more.png'/></p></a>
-				</div>
 
-				<div class='review' style='background:#FFF;'>
-					<img src='/assets/img/bestreview.png' style='width:72px;height:87px;position:absolute;margin-top: -18px;margin-left: 550px;'/>
-					<a class='CollegeLink' style='text-decoration:none;color:inherit;'><img class='about_img'/></a>
-					<div class='review_about_'>
-						<h3><a class='CollegeLink_A' style='text-decoration:none;color:inherit;' id='univName2'></a></h3>
-						<p style='margin-bottom:10px;'>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<span style='margin:0px 5px;' id='averageGrade2'></span> <span class='CollegeGrade'></span>명의 평가
-						</p>
-					</div>
-					<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>
-						<div class='review_evaluation'>
-							<h6 class='h6_title'>작성자한줄평</h6>
-							<h6 class='h6_content' id='oneLineComment2' style='margin-left:23px;font-size:1rem;width:76%;'></h6>
-						</div>
-					</a>
-					<div class='pros' style='width:85%;'>
-						<h3>장점</h3>
-						<h4 id='advantageComment2'></h4>
-					</div>
-					<div class='cons' style='width:85%;'>
-						<h3>단점</h3>
-						<h4 id='weaknessComment2'></h4>
-					</div>
-					<a class='CollegeLink_C' style='text-decoration:none;color:inherit;'><p class='review_more_left'>대학리뷰 자세히 보기 <img src='/assets/img/common/review_more.png'/></p></a>
-				</div>
+좋은 정보를 작성하기 위한 Tips
 
-				<div class='review' style='background:#FFF;'>
-					<img src='/assets/img/bestreview.png' style='width:72px;height:87px;position:absolute;margin-top: -18px;margin-left: 550px;'/>
-					<a class='CollegeLink' style='text-decoration:none;color:inherit;'><img class='about_img'/></a>
-					<div class='review_about_'>
-						<h3><a class='CollegeLink_A' style='text-decoration:none;color:inherit;' id='univName3'></a></h3>
-						<p style='margin-bottom:10px;'>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<img src='/assets/img/common/review_star_full.png'/>
-							<span style='margin:0px 5px;' id='averageGrade3'></span> <span class='CollegeGrade'></span>명의 평가
-						</p>
-					</div>
-					<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>
-						<div class='review_evaluation'>
-							<h6 class='h6_title'>작성자한줄평</h6>
-							<h6 class='h6_content' id='oneLineComment3' style='margin-left:23px;font-size:1rem;width:76%;'></h6>
-						</div>
-					</a>
-					<div class='pros' style='width:85%;'>
-						<h3>장점</h3>
-						<h4 id='advantageComment3'></h4>
-					</div>
-					<div class='cons' style='width:85%;'>
-						<h3>단점</h3>
-						<h4 id='weaknessComment3'></h4>
-					</div>
-					<a class='CollegeLink_C' style='text-decoration:none;color:inherit;'><p class='review_more_left'>대학리뷰 자세히 보기 <img src='/assets/img/common/review_more.png'/></p></a>
-				</div>
+애드캠퍼스는 정보작성 가이드라인을 준수하면서 자신의 경험을 솔직하게 공유할 것을 권장합니다. 작성해주신 여러분의 경험은 장차 우리와 함께할 후배들에게 큰 도움이 될 소중한 정보입니다.
 
-			</div>
-			<!-- 캠퍼스 왼쪽 리뷰 -->
+1. 솔직하게 말해주세요
+우리 학과에 다녀보니 좋은 점도 있는 만큼, 나쁜 점도 분명히 있을거에요. 우리학과라는 생각에 좋은 점만 이야기를 하는 것도 좋지만 나쁜 점이 있다면 솔직하게 이야기 하는것도 좋습니다. 그래야 문제점을 알고 함께 고쳐나갈 수 있으며 장차 우리들의 후배들의 선택에도 좋은 지표가 될 수 있을거에요. 긍정적인 이야기와 부정적인 이야기 모두 도움이 되는 소중한 정보입니다. 여러분들의 솔직한 이야기를 들려주세요.
 
-			<!-- 캠퍼스 오른쪽 리뷰 -->
-			<div class='review_right' style='width: 310px;margin: 0px auto;margin-top: 20px;float: right;'>
+2. ‘이유’를 이야기해 주세요.
+좋은 정보는 ‘ 우리학과가 좋다, 안 좋다’ 뿐만 아니라 왜 좋은지를 포함한 정보입니다. 여러분들이 직접 느꼈던 점 들과 그렇게 느꼈던 이유와 근거를 이야기해 주세요.
 
-				<table class='campus_category' style='background:#FFF;'>
-					<tr>
-						<td style='font-size:1.3125rem;font-family:NanumBarunGothicBold;font-weight:bold;color:#58595B;'>학과군</td>
-					</tr>
-					<tr>
-						<td><a href='/campus/major/?type=c001' style='text-decoration:none;color:inherit;'>자연과학계열</a></td>
-					</tr>
-					<tr>
-						<td><a href='/campus/major/?type=c002' style='text-decoration:none;color:inherit;'>인문사회계열</a></td>
-					</tr>
-					<tr>
-						<td><a href='/campus/major/?type=c004' style='text-decoration:none;color:inherit;'>의학계열</a></td>
-					</tr>
-					<tr>
-						<td><a href='/campus/major/?type=c005' style='text-decoration:none;color:inherit;'>공학계열</a></td>
-					</tr>
-					<tr>
-						<td><a href='/campus/major/?type=c006' style='text-decoration:none;color:inherit;'>예체능계열</a></td>
-					</tr>
-					<tr>
-						<td></td>
-					</tr>
-				</table>
-				
-				<table class='review_list' style='background:#FFF;'>
-					<tr>
-						<td colspan='2' class='review_list_title' style='font-family:NanumBarunGothicBold;font-weight:bold;'>가장 활발한 대학</td>
-						<td class='review_more_b'><!-- <a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a> --></td>
-					</tr>
-					<tr>
-						<td class='of_rank'>1.</td>
-						<td class='of_college'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
-						</td>
-						<td class='of_diff'></td>
-					</tr>
-					<tr>
-						<td class='of_rank'>2.</td>
-						<td class='of_college'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
-						</td>
-						<td class='of_diff'></td>
-					</tr>
-					<tr>
-						<td class='of_rank'>3.</td>
-						<td class='of_college'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
-						</td>
-						<td class='of_diff'></td>
-					</tr>
-					<tr>
-						<td class='of_rank'>4.</td>
-						<td class='of_college'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
-						</td>
-						<td class='of_diff'></td>
-					</tr>
-					<tr>
-						<td class='of_rank'>5.</td>
-						<td class='of_college'>
-							<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-							<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
-						</td>
-						<td class='of_diff'></td>
-					</tr>
-					<tr>
-						<td colspan='3'>&nbsp;</td>
-					</tr>
-				</table>
+2. ‘구체적’으로 작성해 주세요
+원하는 대학의 정보를 찾을 때, 선배들에게 궁금했던 것들에 대하여 자세하고 구체적으로 작성해 주세요.
+학과에 내부 부족리들은 없나요?
+교수님들이 해주시는 강의는 어때요?
+학과 행사는 어떤가요?
+선후배들간의 관계는 어떠한가요?
+입시는 어떻게 진행되었고 어떻게 준비하면 되나요?
 
-			</div>
-			<!-- 캠퍼스 오른쪽 리뷰 -->
+4. ‘정확한 사실’을 작성해 주세요.
+작성된 정보는 정확한 사실 또는 본인의 경험이어야 합니다. 간접 정보, 허위사실 또는 소문(확인되지 않은 정보, 루머 또는 다른 출처에서 인용 또는 보고된 다른 사람의 의견/경험)은 애드캠퍼스의 원칙에 따라 게시할 수 없습니다.
 
+5. ‘쉽게’ 작성해 주세요.
+우리가 흔히 쓰는 은어정도는 사용하셔도 좋아요ㅋㅋ좋자나욬ㅋㅋㅋ 그러나 적당히...ㅋㅋ문법이과 맞춤법을 지켜주시면 좋겠습니다. 문법, 실수, 의미없는 단어나 과도한 반복적인 단어 등은 업로드가 되지 않거나 관리자에 의해 수정될 수 있어요. 확인해주세요.
+</pre>
 		</div>
 	</div>
 
@@ -339,23 +139,21 @@
     <script src="/bower_components/crypto-js/crypto-js.js"></script>
     <script src="/assets/lib/common.js"></script>
 
-    <script src="../assets/lib/request_helper.js"></script>
-    <script src="../assets/lib/local_storage.js"></script>
-    <script src="../assets/lib/analytics.js"></script>
+    <script src="/assets/lib/request_helper.js"></script>
+    <script src="/assets/lib/local_storage.js"></script>
+    <script src="/assets/lib/analytics.js"></script>
 
-    <script src="../assets/lib/rate/jquery.raty.js"></script>
-    <script src="../assets/lib/rate/labs.js"></script>
+    <script src="/assets/lib/rate/jquery.raty.js"></script>
+    <script src="/assets/lib/rate/labs.js"></script>
 
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    
+
 	<script>
 
 		/******************************************
 		* Search Univ.
 		/*****************************************/
 		$(document).ready(function(){
-			scrollNumber = 0;
-			scrollCounting = 'N';
 
 			availableTags = [];
 
@@ -378,7 +176,7 @@
 			});
 
 			function SearchUnivA (content) {
-				var content = $("#search_school").val();
+				var univ = $("#search_school").val();
 				var searchURL = "";
 
 				RequestHelper.post('/college/getAllColleges', {},
@@ -388,8 +186,8 @@
 					var length = data.result[0].colleges.length;
 
 					for (var i = 0; i<length; i++) {
-
-						if (data.result[0].colleges[i].collegeName === content) {
+						
+						if (data.result[0].colleges[i].collegeName === univ) {
 							// location.href = '/review/univ/?univ=' + data.result[0].colleges[i].collegeID;
 							searchURL = data.result[0].colleges[i].collegeID;
 						}
@@ -490,6 +288,8 @@
 
 					$(CollegeGrade[cnti]).html(data.result[0].reviews[cnti].recommend);
 
+					// alert(JSON.stringify(data));
+
 					$(CollegeLink[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cnti].collegeID + "&major=" + data.result[0].reviews[cnti].majorID + "&reviewid=" + data.result[0].reviews[cnti].reviewID);
 					$(CollegeLink1[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cnti].collegeID + "&major=" + data.result[0].reviews[cnti].majorID + "&reviewid=" + data.result[0].reviews[cnti].reviewID);
 					$(CollegeLink2[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cnti].collegeID + "&major=" + data.result[0].reviews[cnti].majorID + "&reviewid=" + data.result[0].reviews[cnti].reviewID);
@@ -586,435 +386,9 @@
 			});
 			/*****************************************/
 
-			$("#searchFiltered").click(function(){
-
-				// var tempList = $('.campus_univ_list').length;
-				// $('.review').css('display', 'none');
-				// $('.M_review').css('display', 'none');
-				
-				scrollNumber = 0;
-				scrollCounting = 'N';
-
-				// console.log($("#type_1 option:selected").text());
-				// console.log($("#type_2 option:selected").text());
-				// console.log($("#type_3 option:selected").text());
-
-				getFilteredBest();
-
-			});
-
-			$('#type_1, #type_2, #type_3').change(function(){
-				scrollCounting = 'N';
-				scrollNumber = 0;
-			});
-
 		});
 		/*****************************************/
-
-		$('.type_1').change(function(){
-
-			$("#type_2").find("option").remove();
-
-			// 자연계열
-			if ($('select[name=type_1]').val() == 'c001') {
-
-				$("#type_2").append("<option value='g001' class='g001'>농림·수산</option>");
-				$("#type_2").append("<option value='g002' class='g002'>생물·화학·환경</option>");
-				$("#type_2").append("<option value='g003' class='g003'>생활과학</option>");
-				$("#type_2").append("<option value='g004' class='g004'>수학·물리·천문·지리</option>");
-				$("#type_2").append("<option value='g004' class='g004'>간호</option>");
-				$("#type_2").append("<option value='g004' class='g004'>보건</option>");
-				$("#type_2").append("<option value='g004' class='g004'>약학</option>");
-				$("#type_2").append("<option value='g004' class='g004'>의료예과</option>");
-				$("#type_2").append("<option value='g004' class='g004'>교육</option>");
-
-			// 인문사회계열 
-			} else if ($('select[name=type_1]').val() == 'c002') {
-
-				$("#type_2").append("<option value='g005' class='g005'>언어·문학</option>");
-				$("#type_2").append("<option value='g006' class='g006'>인문학</option>");
-				$("#type_2").append("<option value='g007' class='g007'>경영·경제</option>");
-				$("#type_2").append("<option value='g008' class='g008'>법학</option>");
-				$("#type_2").append("<option value='g009' class='g009'>사회과학</option>");
-				$("#type_2").append("<option value='g009' class='g009'>교육</option>");
-				$("#type_2").append("<option value='g034' class='g034'>기타</option>");
-
-			// 의학계열
-			} else if ($('select[name=type_1]').val() == 'c004') {
-
-				$("#type_2").append("<option value='g014' class='g014'>의료</option>");
-
-			// 공학계열
-			} else if ($('select[name=type_1]').val() == 'c005') {
-
-				$("#type_2").append("<option value='g024' class='g024'>전기·전자·컴퓨터</option>");
-				$("#type_2").append("<option value='g017' class='g017'>건설</option>");
-				$("#type_2").append("<option value='g018' class='g018'>산업·안전</option>");
-				$("#type_2").append("<option value='g020' class='g020'>기계</option>");
-				$("#type_2").append("<option value='g023' class='g023'>재료</option>");
-				$("#type_2").append("<option value='g019' class='g019'>화학·고분자·에너지</option>");
-				$("#type_2").append("<option value='g026' class='g026'>교육</option>");
-
-			// 에체능 계열
-			} else if ($('select[name=type_1]').val() == 'c006') {
-
-				$("#type_2").append("<option value='g030' class='g030'>무용·체육</option>");
-				$("#type_2").append("<option value='g032' class='g032'>연극·영화</option>");
-				$("#type_2").append("<option value='g029' class='g029'>응용예술</option>");
-				$("#type_2").append("<option value='g031' class='g031'>미술</option>");
-				$("#type_2").append("<option value='g033' class='g033'>음악·국악</option>");
-				$("#type_2").append("<option value='g033' class='g033'>교육</option>");
-
-			}
-
-		});
-
-		/******************************************
-		* Get Name of the College
-		/*****************************************/
-		collegeNameLists = new Array();
-
-		RequestHelper.post('/college/getAllColleges', {},
-		{
-		// Option is not needed.
-		}, function(data) {
-			for (var i = 0; i < data.result[0].colleges.length; i++) {
-				collegeNameLists[i] = data.result[0].colleges[i].collegeName + "/" + data.result[0].colleges[i].collegeID;
-			}
-		}, function(data) {
-			alert(JSON.stringify(data));
-		});
-		/*****************************************/
-
-		function getFilteredBest() {
-			RequestHelper.post('/college/getFilteredTotalBestMajorReviews', {
-				majorClass:$("#type_1 option:selected").text(),
-				majorGroup:$("#type_2 option:selected").text(),
-				majorRegion:$("#type_3 option:selected").text()
-			},
-			{
-			// Option is not needed.
-			}, function(data) {
-
-				// console.log(JSON.stringify(data));
-
-				if (data.result[0].reviews[0] == undefined) {
-
-					scrollCounting = 'N';
-					scrollNumber = 0;
-
-					alert('해당하는 정보를 가진 학교가 없습니다.');
-
-				} else if (data.result[0].reviews.length == 0) {
-
-					scrollCounting = 'N';
-					scrollNumber = 0;
-
-					alert('해당하는 정보를 가진 학교가 없습니다.');
-
-				} else {
-					
-					$('.review').css('display', 'none');
-					$('.M_review').css('display', 'none');
-
-					scrollCounting = 'Y';
-
-					var temp = $('.review').length - 3;
-					$(".review").css('display', 'none');
-
-		            var contents = '';
-
-		            contents += "<div class='review' style='background:#FFF;'>";
-						contents += "<img src='/assets/img/bestreview.png' style='width:72px;height:87px;position:absolute;margin-top: -18px;margin-left: 550px;'/>";
-						contents += "<a class='CollegeLink' style='text-decoration:none;color:inherit;'><img class='about_img'/></a>";
-						contents += "<div class='review_about_'>";
-							contents += "<h3><a class='CollegeLink_A' style='text-decoration:none;color:inherit;'></a></h3>";
-							contents += "<p style='margin-bottom:10px;'>";
-								contents += "<img src='/assets/img/common/review_star_full.png'/>";
-								contents += "<img src='/assets/img/common/review_star_full.png'/>";
-								contents += "<img src='/assets/img/common/review_star_full.png'/>";
-								contents += "<img src='/assets/img/common/review_star_full.png'/>";
-								contents += "<img src='/assets/img/common/review_star_full.png'/>";
-								contents += "<span style='margin:0px 5px;' id='averageGrade3'></span> <span class='CollegeGrade'></span>명의 평가";
-							contents += "</p>";
-						contents += "</div>";
-						contents += "<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>";
-							contents += "<div class='review_evaluation'>";
-								contents += "<h6 class='h6_title'>작성자한줄평</h6>";
-								contents += "<h6 class='h6_content' style='margin-left:23px;font-size:1rem;width:76%;'></h6>";
-							contents += "</div>";
-						contents += "</a>";
-						contents += "<div class='pros' style='width:85%;'>";
-							contents += "<h3>장점</h3>";
-							contents += "<h4 class='advantageComment'></h4>";
-						contents += "</div>";
-						contents += "<div class='cons' style='width:85%;'>";
-							contents += "<h3>단점</h3>";
-							contents += "<h4 class='weaknessComment'></h4>";
-						contents += "</div>";
-						contents += "<a class='CollegeLink_C' style='text-decoration:none;color:inherit;'><p class='review_more_left'>대학리뷰 자세히 보기 <img src='/assets/img/common/review_more.png'/></p></a>";
-					contents += "</div>";
-
-					for (var i = 0; i < data.result[0].reviews.length; i++) {
-						$('#AddOption').append(contents);
-					}
-
-					var CollegeLink = $(".CollegeLink");
-					var CollegeLink1 = $(".CollegeLink_A");
-					var CollegeLink2 = $(".CollegeLink_B");
-					var CollegeLink3 = $(".CollegeLink_C");
-					var CollegeLogo = $(".CollegeLink img");
-					var CollegeGrade = $(".CollegeGrade");
-
-					var h6_content = $(".h6_content");
-					var advantageComment = $(".advantageComment");
-					var weaknessComment = $(".weaknessComment");
-
-					var CollegeNameList = new Array();
-					var majorsNameLists = new Array();
-
-					collegeCode1 = data.result[0].reviews[0].collegeID;
-					collegeCode2 = data.result[0].reviews[1].collegeID;
-					collegeCode3 = data.result[0].reviews[2].collegeID;
-
-					majorCode1 = data.result[0].reviews[0].majorID;
-					majorCode2 = data.result[0].reviews[1].majorID;
-					majorCode3 = data.result[0].reviews[2].majorID;
-
-					var cnti = 0;
-					var cntiValue = 0;
-
-					for (var cntReview = 1 + temp; cntReview <= 3 + temp; cntReview++) {
-
-						var cnti = cntReview - 1;
-						// console.log(temp + ' / ' + cnti + ' / ' + cntReview + ' / ' + cntiValue);
-
-						$(h6_content[cnti]).html(data.result[0].reviews[cntiValue].oneLineComment);
-						$(advantageComment[cnti]).html(data.result[0].reviews[cntiValue].advantageComment);
-						$(weaknessComment[cnti]).html(data.result[0].reviews[cntiValue].weaknessComment);
-
-						$(CollegeGrade[cnti]).html(data.result[0].reviews[cntiValue].recommend);
-
-						$(CollegeLink[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cntiValue].collegeID + "&major=" + data.result[0].reviews[cntiValue].majorID + "&reviewid=" + data.result[0].reviews[cntiValue].reviewID);
-						$(CollegeLink1[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cntiValue].collegeID + "&major=" + data.result[0].reviews[cntiValue].majorID + "&reviewid=" + data.result[0].reviews[cntiValue].reviewID);
-						$(CollegeLink2[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cntiValue].collegeID + "&major=" + data.result[0].reviews[cntiValue].majorID + "&reviewid=" + data.result[0].reviews[cntiValue].reviewID);
-						$(CollegeLink3[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cntiValue].collegeID + "&major=" + data.result[0].reviews[cntiValue].majorID + "&reviewid=" + data.result[0].reviews[cntiValue].reviewID);
-
-						$(CollegeLogo[cnti]).attr("src", "/assets/img/logo/logo_" + data.result[0].reviews[cntiValue].collegeID + ".jpg");
-
-						var b = 0;
-
-						for (var b in collegeNameLists) {
-							if (collegeNameLists[b].indexOf(data.result[0].reviews[cntiValue].collegeID) != -1) {
-								var className = collegeNameLists[b].split("/");
-								$(CollegeLink1[cnti]).html(className[0]);
-							}
-						}
-
-						makeMajorName(data.result[0].reviews[cntiValue].collegeID, data.result[0].reviews[cntiValue].majorID, cnti, '');
-
-						cntiValue = cntiValue + 1;
-
-					}
-
-				}
-
-			}, function(data) {
-				alert("잘못된 접근입니다, 뒤로가기 이동");
-			});
-		}
 		
-		$(window).scroll(function(){ 
-			if ($(window).scrollTop() == $(document).height() - $(window).height()){
-				if (scrollCounting == 'Y') getFiltered(scrollNumber);
-			}
-		});
-
-		function getFiltered(lastReadNumber) {
-			RequestHelper.post('/college/getFilteredTotalMajorReviews', {
-				majorClass:$("#type_1 option:selected").text(),
-				majorGroup:$("#type_2 option:selected").text(),
-				majorRegion:$("#type_3 option:selected").text(),
-				lastReviewID:lastReadNumber
-			},
-			{
-			// Option is not needed.
-			}, function(data) {
-
-				// console.log(JSON.stringify(data));
-
-				if ((data.result[0].reviews[0].collegeID == undefined) || (data.result[0].reviews[1].collegeID == undefined) || (data.result[0].reviews[2].collegeID == undefined) || (data.result[0].reviews[3].collegeID == undefined) || (data.result[0].reviews[4].collegeID == undefined)) {
-
-					scrollCounting = 'N';
-					scrollNumber = 0;
-
-					alert('이미 모든 리뷰를 조회했습니다.');
-
-				} else if (data.result[0].reviews.length == 0) {
-
-					scrollCounting = 'N';
-					scrollNumber = 0;
-
-					alert('이미 모든 리뷰를 조회했습니다.');
-
-				} else if (data.result[0].reviews == undefined) {
-
-					scrollCounting = 'N';
-					scrollNumber = 0;
-
-					alert('이미 모든 리뷰를 조회했습니다.');
-
-				} else {
-
-					if ($(".M_review").length == '0') {
-
-						var makeCount = 0;
-						var MaxLength = data.result[0].reviews.length;
-
-					} else {
-
-						var makeCount = $(".M_review").length;
-						var MaxLength = $(".M_review").length + data.result[0].reviews.length;
-
-					}
-
-		            var contents = '';
-
-		            contents += "<div class='M_review' style='background:#FFF;'>";
-						contents += "<a class='M_CollegeLink' style='text-decoration:none;color:inherit;'><img class='about_img'/></a>";
-						contents += "<div class='review_about_'>";
-							contents += "<h3><a class='M_CollegeLink_A' style='text-decoration:none;color:inherit;'></a></h3>";
-							contents += "<p style='margin-bottom:10px;'>";
-								contents += "<img src='/assets/img/common/review_star_full.png'/>";
-								contents += "<img src='/assets/img/common/review_star_full.png'/>";
-								contents += "<img src='/assets/img/common/review_star_full.png'/>";
-								contents += "<img src='/assets/img/common/review_star_full.png'/>";
-								contents += "<img src='/assets/img/common/review_star_full.png'/>";
-								contents += "<span style='margin:0px 5px;' id='averageGrade3'></span> <span class='M_CollegeGrade'></span>명의 평가";
-							contents += "</p>";
-						contents += "</div>";
-						contents += "<a class='M_CollegeLink_B' style='text-decoration:none;color:inherit;'>";
-							contents += "<div class='review_evaluation'>";
-								contents += "<h6 class='h6_title'>작성자한줄평</h6>";
-								contents += "<h6 class='M_h6_content' style='margin-left:23px;font-size:1rem;width:76%;'></h6>";
-							contents += "</div>";
-						contents += "</a>";
-						contents += "<div class='pros' style='width:85%;'>";
-							contents += "<h3>장점</h3>";
-							contents += "<h4 class='M_advantageComment'></h4>";
-						contents += "</div>";
-						contents += "<div class='cons' style='width:85%;'>";
-							contents += "<h3>단점</h3>";
-							contents += "<h4 class='M_weaknessComment'></h4>";
-						contents += "</div>";
-						contents += "<a class='M_CollegeLink_C' style='text-decoration:none;color:inherit;'><p class='review_more_left'>대학리뷰 자세히 보기 <img src='/assets/img/common/review_more.png'/></p></a>";
-					contents += "</div>";
-
-					// for (var i = 0; i < data.result[0].reviews.length; i++) {
-					// 	$('#AddOption').append(contents);
-					// }
-
-					for (var i = makeCount; i < MaxLength; i++) {
-						$('#AddOption').append(contents);	
-					}
-
-					var CollegeLink = $(".M_CollegeLink");
-					var CollegeLink1 = $(".M_CollegeLink_A");
-					var CollegeLink2 = $(".M_CollegeLink_B");
-					var CollegeLink3 = $(".M_CollegeLink_C");
-					var CollegeLogo = $(".M_CollegeLink img");
-					var CollegeGrade = $(".M_CollegeGrade");
-
-					var h6_content = $(".M_h6_content");
-					var advantageComment = $(".M_advantageComment");
-					var weaknessComment = $(".M_weaknessComment");
-
-					var CollegeNameList = new Array();
-					var majorsNameLists = new Array();
-
-					collegeCode1 = data.result[0].reviews[0].collegeID;
-					collegeCode2 = data.result[0].reviews[1].collegeID;
-					collegeCode3 = data.result[0].reviews[2].collegeID;
-
-					majorCode1 = data.result[0].reviews[0].majorID;
-					majorCode2 = data.result[0].reviews[1].majorID;
-					majorCode3 = data.result[0].reviews[2].majorID;
-
-					var countReview = 0;
-
-					for (var i = makeCount; i < MaxLength; i++) {
-
-						if (data.result[0].reviews[countReview].oneLineComment == undefined) {
-							break;
-						}
-
-						$(h6_content[i]).html(data.result[0].reviews[countReview].oneLineComment);
-						$(advantageComment[i]).html(data.result[0].reviews[countReview].advantageComment);
-						$(weaknessComment[i]).html(data.result[0].reviews[countReview].weaknessComment);
-
-						$(CollegeGrade[i]).html(data.result[0].reviews[countReview].recommend);
-
-						$(CollegeLink[i]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[countReview].collegeID + "&major=" + data.result[0].reviews[countReview].majorID + "&reviewid=" + data.result[0].reviews[countReview].reviewID);
-						$(CollegeLink1[i]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[countReview].collegeID + "&major=" + data.result[0].reviews[countReview].majorID + "&reviewid=" + data.result[0].reviews[countReview].reviewID);
-						$(CollegeLink2[i]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[countReview].collegeID + "&major=" + data.result[0].reviews[countReview].majorID + "&reviewid=" + data.result[0].reviews[countReview].reviewID);
-						$(CollegeLink3[i]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[countReview].collegeID + "&major=" + data.result[0].reviews[countReview].majorID + "&reviewid=" + data.result[0].reviews[countReview].reviewID);
-
-						$(CollegeLogo[i]).attr("src", "/assets/img/logo/logo_" + data.result[0].reviews[countReview].collegeID + ".jpg");
-
-						var b = 0;
-
-						for (var b in collegeNameLists) {
-							if (collegeNameLists[b].indexOf(data.result[0].reviews[countReview].collegeID) != -1) {
-								var className = collegeNameLists[b].split("/");
-								$(CollegeLink1[i]).html(className[0]);
-							}
-						}
-
-						makeMajorName(data.result[0].reviews[countReview].collegeID, data.result[0].reviews[countReview].majorID, i, 'M');
-						scrollNumber = data.result[0].reviews[countReview].reviewID;
-
-						countReview = countReview + 1;
-					}
-
-					// scrollNumber = data.result[0].reviews[0].reviewID - data.result[0].reviews.length + 1;
-					scrollCounting = 'Y';
-
-				}
-
-			}, function(data) {
-				alert("잘못된 접근입니다, 뒤로가기 이동");
-			});
-		}
-
-		function makeMajorName(collegeID, majorsID, count, type) {
-
-			RequestHelper.post('/college/getAllMajorsInCollege', {
-				collegeID: collegeID
-			},
-			{
-			// Option is not needed.
-			}, function(majorNameData) {
-
-				if (type == 'M') {
-					var CollegeLink1 = $(".M_CollegeLink_A");
-				} else {
-					var CollegeLink1 = $(".CollegeLink_A");
-				}
-
-				for (var b = 0; b < majorNameData.result[0].majors.length; b++) {
-
-					if (majorNameData.result[0].majors[b].majorID.indexOf(majorsID) != -1) {
-						$(CollegeLink1[count]).html($(CollegeLink1[count]).html() + ' ' + majorNameData.result[0].majors[b].majorName);
-					}
-
-				}
-
-			}, function(data) {
-				alert("잘못된 접근입니다, 뒤로가기 이동");
-			});
-
-		}
-
 	</script>
 
 	<div class="layer">
@@ -1400,7 +774,6 @@
 							</tr>
 						</table>
 						<!-- Second Page of Review Write Element. -->
-
 					</form>
 				</div>
 			</div> 
