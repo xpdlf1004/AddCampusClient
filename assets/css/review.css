@@ -5,7 +5,7 @@
 		text-align: center;
 		color: #FFFFFF;
 
-		background-image: url("/assets/img/slide/kookmin_2480_550.jpg");
+		/*background-image: url("/assets/img/slide/kookmin_2480_550.jpg");*/
 	    background-size: 100% 100%;
 		-webkit-background-size: 100% 100%;
 	    -moz-background-size: 100% 100%;
@@ -15,7 +15,7 @@
 	@media (max-width: 2500px) {
 	
 		#review_main_image {
-			background-image: url("/assets/img/slide/kookmin_2480_550.jpg");	
+			/*background-image: url("/assets/img/slide/kookmin_2480_550.jpg");	*/
 		}
 
 	}
@@ -23,7 +23,7 @@
 	@media (max-width: 2000px) {
 	
 		#review_main_image {
-			background-image: url("/assets/img/slide/kookmin_1960_550.jpg");	
+			/*background-image: url("/assets/img/slide/kookmin_1960_550.jpg");	*/
 		}
 
 	}
@@ -31,7 +31,7 @@
 	@media (max-width: 1700px) {
 	
 		#review_main_image {
-			background-image: url("/assets/img/slide/kookmin_1680_550.jpg");	
+			/*background-image: url("/assets/img/slide/kookmin_1680_550.jpg");	*/
 		}
 
 	}
@@ -39,7 +39,7 @@
 	@media (max-width: 1500px) {
 	
 		#review_main_image {
-			background-image: url("/assets/img/slide/kookmin_1440_550.jpg");	
+			/*background-image: url("/assets/img/slide/kookmin_1440_550.jpg");	*/
 		}
 
 	}

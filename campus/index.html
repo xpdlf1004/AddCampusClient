@@ -17,7 +17,6 @@
 	<link rel='stylesheet' href='../assets/css/campus.css'>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<!-- Assets -->
-
 </head>
 <body>
 
@@ -53,9 +52,9 @@
 					<img src='/assets/img/common/search_button.png' id='searchBtn' style='cursor:pointer;'/>
 				</form>
 			</div>
-			<div style='width: 280px;height: 60px;position: relative;bottom: -100px;left: 100px;background: rgba(0,0,0,0.5);padding:20px;'>
-				<p style='text-align:left;margin:0px;padding:0px;font-size:1.2rem;'>국민대학교&nbsp;&nbsp;&nbsp;<span style='font-size:0.8rem;'>서울특별시 성북구 정릉로 77</span></p>
-				<p style='text-align:left;margin:0px;padding:0px;margin-top:15px;'><a href='http://kookmin.ac.kr/' target='_blank' style='text-decoration:none;color:#FFF;'>http://kookmin.ac.kr/</a></p>
+			<div id='univCard' style='width: 280px;height: 60px;position: relative;bottom: -100px;left: 20%;background: rgba(0,0,0,0.5);padding:20px;text-align:left;'>
+				<p id='randUnivName' style='text-align:left;margin:0px;padding:0px;font-size:1.2rem;display:inline-block;margin-right:15px;text-align:left;'></p><span id='randUnivAddr' style='font-size:0.8rem;'></span>
+				<p style='text-align:left;margin:0px;padding:0px;margin-top:15px;'><a id='randUnivLink' href='' target='_blank' style='text-decoration:none;color:#FFF;margin-bottom:8px;'></a></p>
 			</div>
 		</div>
 
@@ -87,8 +86,8 @@
 
 					<!-- 대학종합순위 > 2위, 3위, 4위 -->
 					<ul class='campus_list_subtitle'>
-						<li class='li_class'>2위</li>
-						<li class='li_about'>
+						<li class='li_class' style='position: absolute;margin-top: 26px;z-index: 999;margin-left: -46px;'>2위</li>
+						<li class='li_about' style='text-align:left;'>
 							<a class='AverageGradeLogo' style='text-decoration:none;color:inherit;'><img class='rank_img'/></a>
 							<p><a class='AverageGradeName' style='text-decoration:none;color:inherit;'></a> <!-- <span style='font-size:0.9rem;color:#808083;'>(신촌캠퍼스)</span> --><br/>
 								<img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/>
@@ -96,8 +95,8 @@
 							</p>
 						</li>
 						<br/>
-						<li class='li_class'>3위</li>
-						<li class='li_about'>
+						<li class='li_class' style='position: absolute;margin-top: 26px;z-index: 999;margin-left: -46px;'>3위</li>
+						<li class='li_about' style='text-align:left;'>
 							<a class='AverageGradeLogo' style='text-decoration:none;color:inherit;'><img class='rank_img'/></a>
 							<p><a class='AverageGradeName' style='text-decoration:none;color:inherit;'></a> <!-- <span style='font-size:0.9rem;color:#808083;'>(신촌캠퍼스)</span> --><br/>
 								<img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/>
@@ -105,8 +104,8 @@
 							</p>
 						</li>
 						<br/>
-						<li class='li_class'>4위</li>
-						<li class='li_about' style='margin-bottom:0px;'>
+						<li class='li_class' style='position: absolute;margin-top: 26px;z-index: 999;margin-left: -46px;'>4위</li>
+						<li class='li_about' style='margin-bottom:0px;text-align:left;'>
 							<a class='AverageGradeLogo' style='text-decoration:none;color:inherit;'><img class='rank_img'/></a>
 							<p><a class='AverageGradeName' style='text-decoration:none;color:inherit;'></a><!--  <span style='font-size:0.9rem;color:#808083;'>(신촌캠퍼스)</span> --><br/>
 								<img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/><img src='/assets/img/common/review_star_full.png' class='rank_star'/>
@@ -488,7 +487,7 @@
 			<li class='f_sign'>로그인</li>
 			<li class='f_sign'>회원가입</li>
 			<li>문의 및 신고</li>
-			<li>About US</li>
+			<a href='http://www.tendom.co.kr/' target='_blank' style='text-decoration:none;color:inherit;'><li>About US</li></a>
 		</ul>
 		<div class='footer_content'>
 			(주)TENDOM (대표: 유원일) | 사업자등록번호: 286-88-00335 | 개인정보책임관리자: 유원일<br/>
@@ -533,6 +532,7 @@
 		$(document).ready(function(){
 
 			availableTags = [];
+			backgroundTags = [];
 
 			RequestHelper.post('/college/getAllColleges', {},
 			{
@@ -542,7 +542,29 @@
 
 				for (var i = 0; i<length; i++) {
 					availableTags[i] = data.result[0].colleges[i].collegeName;
+					backgroundTags[i] = data.result[0].colleges[i].collegeID;
 				}
+
+				var randNum = Math.floor(Math.random()*(backgroundTags.length-1));
+
+				$("#campus_image").css("background-image", "url(/assets/img/cover/cover_" + backgroundTags[randNum] + "@2048.jpg)");
+				
+				RequestHelper.post('/college/getCollegeInfo', {
+					collegeID: backgroundTags[randNum],
+				},
+				{
+				// Option is not needed.
+				}, function(data) {
+					// alert(JSON.stringify(data));
+					$("#univCard").click(function(){
+						window.open('http://' + data.result[0].collegeInfo.web, 'new');
+					});
+					$("#randUnivName").html(data.result[0].collegeInfo.name);
+					$("#randUnivAddr").html(data.result[0].collegeInfo.address);
+					$("#randUnivLink").html(data.result[0].collegeInfo.comment);
+				}, function(data) {
+					alert("잘못된 접근입니다, 뒤로가기 이동");
+				});
 
 			}, function(data) {
 				alert(JSON.stringify(data));
@@ -585,6 +607,7 @@
 				SearchUnivA();
 				return false;
 			});
+			/*****************************************/
 
 			/******************************************
 			* Get Best College for SideBar
