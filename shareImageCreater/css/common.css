@@ -6,15 +6,31 @@
 body {
   width: 1200px;
   height: 630px;
-  background: white;
+  background: url('../img/background.jpg') no-repeat;
+}
+
+#question_div {
+  margin: 0 auto;
+  margin-top : 60px;
+  width: 1050px;
+  height: 130px;
+}
+
+#question_div #question_label {
+  font-size: 36pt;
+}
+
+#comment_div {
+  margin: 0 auto;
   text-align: center;
+  margin-top : 60px;
+  width: 1050px;
+  display: table;
+  height: 185px;
 }
 
-#majorName {
-}
-
-#className {
-}
-
-#comment {
+#comment_div #comment_label {
+  font-size: 42pt;
+  display: table-cell;
+  vertical-align: middle;
 }

@@ -4,6 +4,15 @@
     <link rel="stylesheet" type="text/css" href="./css/common.css">
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script>
+      String.prototype.format = function() {
+          var formatted = this;
+          for (var i = 0; i < arguments.length; i++) {
+              var regexp = new RegExp('\\{'+i+'\\}', 'gi');
+              formatted = formatted.replace(regexp, arguments[i]);
+          }
+          return formatted;
+      };
+
       $.urlParam = function(name) {
         var decodedURL = decodeURIComponent(window.location.href);
         var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(decodedURL);
@@ -21,15 +30,19 @@
         var majorName = $.urlParam('majorName');
         var comment = $.urlParam('comment');
 
-        $('#collegeName').text(collegeName);
-        $('#majorName').text(majorName);
-        $('#comment').text(comment);
+        var question = "Q. {0} {1} 학생이 말하는 자기과는?";
+        var formattedQuestion = question.format(collegeName, majorName);
+        $('#question_label').text(formattedQuestion);
+        $('#comment_label').text(comment);
       });
     </script>
   </head>
   <body>
-    <h1 id="collegeName"></h1>
-    <h2 id="majorName"></h2>
-    <h3 id="comment"></h3>
+    <div id="question_div">
+      <span id="question_label"></span>
+    </div>
+    <div id="comment_div">
+      <span id="comment_label"></span>
+    </div>
   </body>
 </html>
