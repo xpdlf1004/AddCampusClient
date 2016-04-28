@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
+      $.urlParam = function(name) {
+        var decodedURL = decodeURIComponent(window.location.href);
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(decodedURL);
+
+        if (results !== null) {
+          return results[1] || 0;
+        }
+        else {
+          return null;
+        }
+      }
+
+      $(document).ready(function() {
+        var collegeName = $.urlParam('collegeName');
+        var majorName = $.urlParam('majorName');
+        var comment = $.urlParam('comment');
+
+        $('#collegeName').text(collegeName);
+        $('#majorName').text(majorName);
+        $('#comment').text(comment);
+      });
+    </script>
+  </head>
+  <body>
+    <h1 id="collegeName"></h1>
+    <h2 id="majorName"></h2>
+    <h3 id="comment"></h3>
+  </body>
+</html>
