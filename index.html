@@ -28,6 +28,10 @@
 	<meta property="og:description" content="지금 재학생들이 직접 작성한 생생한 대학이야기를 직접 확인하세요!" />
 	<meta property="og:image" content="http://addcampus.com/assets/img/fbShare.jpg" />
 	<!-- Facebook -->
+
+	<!-- Naver -->
+	<meta name="naver-site-verification" content="057c692fefbd8f4fdc10860f5a91ad2a71038782"/>
+	<!-- Naver -->
 </head>
 <body>
 
@@ -256,48 +260,42 @@
 
 					<table class='review_list'>
 						<tr>
-							<td colspan='2' class='review_list_title' style='font-family:NanumBarunGothicBold;font-weight:bold;'>가장 활발한 대학</td>
-							<td class='review_more_b'><!-- <a href='/campus/' style='text-decoration:none;color:inherit;'>더보기</a> --></td>
+							<td colspan='2' class='review_list_title' style='font-family:NanumBarunGothicBold;border-right: 1px solid #BCBEC0;font-weight:bold;'>가장 활발한 대학</td>
 						</tr>
 						<tr>
 							<td class='of_rank'>1.</td>
-							<td class='of_college'>
+							<td class='of_college' style='border-right: 1px solid #BCBEC0;width:100%;'>
 								<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-								<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
+								<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a></p>
 							</td>
-							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</tr>
 						<tr>
 							<td class='of_rank'>2.</td>
-							<td class='of_college'>
+							<td class='of_college' style='border-right: 1px solid #BCBEC0;width:100%;'>
 								<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-								<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
+								<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a></p>
 							</td>
-							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</tr>
 						<tr>
 							<td class='of_rank'>3.</td>
-							<td class='of_college'>
+							<td class='of_college' style='border-right: 1px solid #BCBEC0;width:100%;'>
 								<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-								<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
+								<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a></p>
 							</td>
-							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</tr>
 						<tr>
 							<td class='of_rank'>4.</td>
-							<td class='of_college'>
+							<td class='of_college' style='border-right: 1px solid #BCBEC0;width:100%;'>
 								<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-								<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
+								<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a></p>
 							</td>
-							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</tr>
 						<tr>
 							<td class='of_rank'>5.</td>
-							<td class='of_college'>
+							<td class='of_college' style='border-right: 1px solid #BCBEC0;width:100%;'>
 								<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-								<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a><br/><!-- <span>인문사회 - 정치</span> --></p>
+								<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a></p>
 							</td>
-							<td class='of_diff'><!-- <img src='/assets/img/common/rank_up.png'/> 21 --></td>
 						</tr>
 						<tr>
 							<td colspan='3'>&nbsp;</td>
@@ -496,8 +494,6 @@
 
 					$(CollegeGrade[cnti]).html(data.result[0].reviews[cnti].recommend);
 
-					// alert(JSON.stringify(data));
-
 					$(CollegeLink[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cnti].collegeID + "&major=" + data.result[0].reviews[cnti].majorID + "&reviewid=" + data.result[0].reviews[cnti].reviewID);
 					$(CollegeLink1[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cnti].collegeID + "&major=" + data.result[0].reviews[cnti].majorID + "&reviewid=" + data.result[0].reviews[cnti].reviewID);
 					$(CollegeLink2[cnti]).attr("href", "/review/univ/comment/?univ=" + data.result[0].reviews[cnti].collegeID + "&major=" + data.result[0].reviews[cnti].majorID + "&reviewid=" + data.result[0].reviews[cnti].reviewID);
@@ -575,11 +571,18 @@
 
 						for (var i = 0; i < lengthColleges; i++) {
 
-							if (data.result[0].colleges[i].collegeID === collegeCode[0]) $(CollegeName[0]).html(data.result[0].colleges[i].collegeName);
-							if (data.result[0].colleges[i].collegeID === collegeCode[1]) $(CollegeName[1]).html(data.result[0].colleges[i].collegeName);
-							if (data.result[0].colleges[i].collegeID === collegeCode[2]) $(CollegeName[2]).html(data.result[0].colleges[i].collegeName);
-							if (data.result[0].colleges[i].collegeID === collegeCode[3]) $(CollegeName[3]).html(data.result[0].colleges[i].collegeName);
-							if (data.result[0].colleges[i].collegeID === collegeCode[4]) $(CollegeName[4]).html(data.result[0].colleges[i].collegeName);
+							var nameString = data.result[0].colleges[i].collegeName;
+
+							//if (nameString.length > 10) {
+							//	nameString = nameString.substr(0, 10);
+							//	nameString = nameString + '...';
+							//}
+
+							if (data.result[0].colleges[i].collegeID === collegeCode[0]) $(CollegeName[0]).html(nameString);
+							if (data.result[0].colleges[i].collegeID === collegeCode[1]) $(CollegeName[1]).html(nameString);
+							if (data.result[0].colleges[i].collegeID === collegeCode[2]) $(CollegeName[2]).html(nameString);
+							if (data.result[0].colleges[i].collegeID === collegeCode[3]) $(CollegeName[3]).html(nameString);
+							if (data.result[0].colleges[i].collegeID === collegeCode[4]) $(CollegeName[4]).html(nameString);
 
 						}
 
