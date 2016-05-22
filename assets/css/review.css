@@ -5,43 +5,10 @@
 		text-align: center;
 		color: #FFFFFF;
 
-		/*background-image: url("/assets/img/slide/kookmin_2480_550.jpg");*/
 	    background-size: 100% 100%;
 		-webkit-background-size: 100% 100%;
 	    -moz-background-size: 100% 100%;
 	    -o-background-size: 100% 100%;
-	}
-
-	@media (max-width: 2500px) {
-	
-		#review_main_image {
-			/*background-image: url("/assets/img/slide/kookmin_2480_550.jpg");	*/
-		}
-
-	}
-
-	@media (max-width: 2000px) {
-	
-		#review_main_image {
-			/*background-image: url("/assets/img/slide/kookmin_1960_550.jpg");	*/
-		}
-
-	}
-
-	@media (max-width: 1700px) {
-	
-		#review_main_image {
-			/*background-image: url("/assets/img/slide/kookmin_1680_550.jpg");	*/
-		}
-
-	}
-
-	@media (max-width: 1500px) {
-	
-		#review_main_image {
-			/*background-image: url("/assets/img/slide/kookmin_1440_550.jpg");	*/
-		}
-
 	}
 
 	.head_title {
@@ -197,6 +164,14 @@
 		margin-top: 0.5px;
 	}
 
+	#review_content {
+		width:1000px;margin:0px auto;
+	}
+
+	.review_left {
+		width: 675px;margin: 0px auto;margin-top: 20px;float: left;
+	}
+
 	.review { 
 		margin: 0px auto;
 		display: inline-block;
@@ -262,25 +237,16 @@
 		color: #808083;
 	}
 
-	.review_evaluation .M_h6_title {
-		height: 100%;
-		margin: 0px;
-		padding: 0px;
-		display: inline-block;
-		font-size: 0.9rem;
-		margin-left: 8px;
-		vertical-align: middle;
-		color: #808083;
-	}
-
 	.review_evaluation .h6_content  { 
 		height: 100%;
 		margin: 0px;
 		padding: 0px;
 		display: inline-block;
 		color: #3366CC;
-		font-size: 1.3rem;
 		vertical-align: middle;
+		margin-left: 23px;
+		font-size: 1rem;
+		width: 76%;
 	}
 
 	.review_evaluation .M_h6_content { 
@@ -289,8 +255,10 @@
 		padding: 0px;
 		display: inline-block;
 		color: #3366CC;
-		font-size: 1.3rem;
 		vertical-align: middle;
+		margin-left: 23px;
+		font-size: 1rem;
+		width:76%;
 	}
 
 	.pros {
@@ -460,4 +428,216 @@
 
 	.review_list .of_diff img {
 		vertical-align: middle;
+	}
+
+	.mobile_review_header, .mobile_review_write, .mobile_head_subtitle, #mobileWriteReivew {
+		display: none;
+	}
+
+	.bestreviewMark {
+		width:72px;height:87px;position:absolute;margin-top: -18px;margin-left: 550px;
+	}
+
+	.mypage_memo {
+		display:inline-block;width:175px;border-radius:5px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;
+	}
+
+	#searchFiltered {
+		float:right;margin-right:15px;width:216px;height:40px;border-radius:10px;margin-top:10px;background:#FFD432;
+	}
+
+	@media (max-width: 1000px) {
+
+		#header {
+			display: none;
+		}
+
+		#mobileWriteReivew {
+			display: block;
+		}
+		
+		#review_main_image {
+			width: 100%;
+			height: 150px;
+			background-image: url("/assets/img/slide/background_1440_550.jpg");	
+			padding-top: 20%;
+		}
+
+		#review_banner {
+			padding-bottom: 15px;
+			height: auto;
+		}
+
+		.head_title { display: none; }
+		.head_subtitle { display: none; }
+		#univCard { display: none; }
+
+		.search_box {
+			width: 80%;
+			height: 40px;
+			border-radius: 10px;
+		}
+
+		#search_school {
+			font-size: 0.85rem;
+		}
+
+		.search_box img {
+			width: 52px;
+			margin-top: -30.5px;
+		}
+
+		.mobile_head_subtitle {
+			display: block;
+			font-size: 2rem;
+			font-family: 'NanumPen';
+			font-weight: normal;
+			vertical-align: middle;
+			color: #FFF;
+			margin-top: 36px;
+			padding-top: 10%;
+		}
+
+		.find_campus {
+			width: 100%;
+			padding: 0px;
+			margin: 0px;
+			text-align: center;
+		}
+
+		.find_campus .title {
+			display: none;
+			width: 100%;
+		}
+
+		.mypage_memo {
+			width:24%;
+			font-size: 0.8rem;
+			background-size: 30px;
+		}
+
+		.mypage_memo select {
+			font-size: 0.8rem;
+		}
+
+		#searchFiltered {
+			float: none;
+			width: 85%;
+			margin: 10px 0px 5px 0px;
+		}
+
+		.review_right {
+			display: none;
+		}
+
+		#review_content {
+			width: 100%;
+			padding: 15px 0px;
+		}
+
+		.review_left {
+			width: 100%;
+		}
+
+		.review {
+			width: 95%;
+			background: #FFF;
+		}
+
+		.about_img {
+			width: 50px;
+			height: 50px;
+			margin-top: 10px;
+			margin-right: -8px;
+		}
+
+		.review_about_ {
+			width: 70%;
+		}
+
+		.review_about_ img {
+			width: 21px;
+			height: 21px;
+		}
+
+		.review_about_ p {
+			font-size: 0.85rem;
+			margin-bottom: 20px;
+		}
+
+		.review_about_ h3 {
+			font-size: 1.25rem;
+		}
+
+		.review_evaluation {
+			padding-left: 0px;
+		}
+
+		.review_evaluation .h6_title {
+			padding: 15px 0px 0px 22px;
+		}
+
+		.review_evaluation .h6_content {
+			display: block;
+			font-size: 0.9rem;
+			width: 90%;
+			padding: 10px 0px 10px 0px;
+			margin-left: 26px;
+			line-height: 1.25rem;
+		}
+
+		.bestreviewMark {
+			width: 42px;
+			height: 58px;
+			position: absolute;
+			margin-top: -18px;
+			margin-left: 72%;
+		}
+
+		.pros h3 {
+			margin-left: 4px;
+		    font-size: 0.75rem;
+		    display: block;	
+		}
+
+		.pros h4 {
+			font-size: 0.85rem;
+			margin-top: 8px;
+			width: 100%;
+		}
+
+		.cons h3 {
+			margin-left: 4px;
+		    font-size: 0.75rem;
+		    display: block;	
+		}
+
+		.cons h4 {
+			font-size: 0.85rem;
+			margin-top: 8px;
+			width: 100%;
+		}
+
+		.review_more_left {
+			font-size: 0.85rem;
+		}
+
+		#footer ul {
+			display: none;
+		}
+
+		#footer .footer_content {
+			font-size: 0.8rem;
+			margin: 0px 10px;
+		}
+
+		.pop-layer, .layer2 {
+			width: 90%;
+		}
+
+		.div#popup_soon {
+		    margin-top: -45%;
+		    margin-left: -45%;
+		}
+
 	}

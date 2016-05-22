@@ -5,11 +5,8 @@
 	<title>AddCampus</title>
 	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
 	<meta http-equiv='X-UA-Compatible' content='IE=edge, chrome=1'>
-	<!-- <meta name="keywords" content="키워드"/> -->
-	<!-- <meta name="description" content="소개글"/> -->
 	<meta name="robots" content="ALL"/>
-	<!-- <meta name="reply-to" content="이메일"/> -->
-	<!-- <meta name="viewport" content="width=device-width, user-scalable=no"> -->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<link rel="shortcut icon" href="/assets/img/common/favicon.png">
 	<!-- Meta tag for Cross Browsing -->
 
@@ -31,6 +28,11 @@
 	<meta id='m_image_src' property="image_src" content=""/>
 	<meta id='m_share_og_URL' property="share_og_URL" content=""/>
 	<!-- Facebook -->
+
+	<!-- Analytics -->
+	<meta name="naver-site-verification" content="057c692fefbd8f4fdc10860f5a91ad2a71038782"/>
+	<meta name="google-site-verification" content="r7C8wtExYMPPpehI9ki1brULYdBwnKPFJodgSZCR2yU" />
+	<!-- Analytics -->
 
 	<script>
 
@@ -62,9 +64,28 @@
 		body {
 			background: rgba(239, 240, 240, 0.5);
 		}
+
 	</style>
 </head>
 <body>
+
+	<div class="container">
+		<nav>
+			<div class="navigation">
+				<ul>
+					<li><a href="/">홈</a></li>
+					<li><a href="/campus/m/">캠퍼스 랭킹</a></li>
+					<li><a href="/review/">캠퍼스 리뷰</a></li>
+					<li><a href="#"></a></li>
+					<!-- <li><a href="">로그인</a></li> -->
+				</ul>
+			</div>
+			<div class="nav_bg">
+				<div class="nav_bar"> <span></span> <span></span> <span></span> </div>
+				<span id='nav_title'>애드캠퍼스</span>
+			</div>
+		</nav>
+	</div>
 
 	<header style='background-color:#FFD432;' id='header'>
 		<div class='header_menu'>
@@ -113,21 +134,21 @@
 
 		<div id='univ_content'>
 			<!-- 캠퍼스 왼쪽 리뷰 -->
-			<div class='univ_left' style='width: 675px;margin: 0px auto;margin-top: 20px;float: left;'>
+			<div class='univ_left'>
 
 				<div class='find_campus'>
-					<div class="mypage_memo" style='display:inline-block;width:170px;height:25px;border-radius:5px;border:1px solid #808083;'>
+					<div class="mypage_memo" style=''>
 						<select id='collegeMajor1' name="selection">
 							<option value='All'>전체 보기</option>
 						</select>
 					</div>
 
-					<div class="mypage_memo" style='display:inline-block;width:170px;height:25px;border-radius:5px;border:1px solid #808083;margin-left:15px;'>
+					<div class="mypage_memo" style='margin-left:15px;'>
 						<select id='collegeMajor2' name="selection">
 						</select>
 					</div>
 
-					<h1 style='vertical-align: top;margin-top: 13px;'>총 <span id='CountofReview'></span>개의 학과리뷰가 있습니다</h1>
+					<h1 class='countOfReviewM' style='vertical-align: top;margin-top: 13px;'>총 <span id='CountofReview'></span>개의 학과리뷰가 있습니다</h1>
 				</div>
 
 				<table class='univ_table' style='background:#FFF;'>
@@ -320,7 +341,7 @@
 	</footer>
 
 	<!-- Support for HTML5, CSS3 -->
-	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 	<!--[if lt IE 9]>
 	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
 	<![endif]-->

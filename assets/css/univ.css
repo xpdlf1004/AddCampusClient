@@ -1163,3 +1163,137 @@
 		line-height: 50px;
 	}
 	/* 맛보기 대학리뷰 */
+
+	#mobileWriteReivew {
+		display: none;
+	}
+
+	.mypage_memo {
+		display:inline-block;width:170px;height:25px;border-radius:5px;border:1px solid #808083;
+	}
+
+	@media (max-width: 1000px) {
+
+		/* Basic Setting in Univ Page */
+		#header,
+		.univ_right,
+		#univ_main_image .univ_about button {
+			display: none;
+		}
+
+		.univ {
+			display: none;
+		}
+
+		#mobileWriteReivew {
+			display: block;
+		}
+
+		#univ_main_image {
+			width: 100%;
+		}
+
+		#univ_category {
+			width: 100%;
+		}
+
+		#univ_category .category {
+			width: 100%;
+			text-align: center;
+		}
+
+		.category li {
+			width: 40%;
+			margin:0px auto !important;
+			text-align: center;
+		}
+
+		#univ_content {
+			width: 95%;
+			padding: 8px 0px;
+		}
+
+		.univ_about {
+			width: 100%;
+		}
+
+		.univ_left {
+			width: 100%;
+		}
+
+		.collegeWeb {
+			display: none;
+		}
+
+		#univ_main_image .univ_about span {
+			font-size: 1.5rem;
+			position: absolute;
+			left: 40%;
+		}
+
+		#footer ul {
+			display: none;
+		}
+
+		#footer .footer_content {
+			font-size: 0.8rem;
+			margin: 0px 10px;
+		}
+
+		.pop-layer, .layer2 {
+			width: 90%;
+		}
+
+		.div#popup_soon {
+		    margin-top: -45%;
+		    margin-left: -45%;
+		}
+		/* Basic Setting in Univ Page */
+
+		/* Univ info Page */
+		.univ_type_title {
+			padding-left: 10px;
+			padding-top: 15px;
+			text-align: left;
+			font-size: 0.7rem;
+			color: #000;
+			font-weight: bold;
+			vertical-align: top;
+		}
+
+		.univ_type_content {
+			font-size: 0.725rem;
+			padding-top: 15px;
+			color: #808080;
+			vertical-align: top;
+		}
+
+		.univ_content_content {
+			font-size: 0.8rem;
+		}
+		/* Univ info Page */
+
+		/* Univ review Page */
+		.find_campus {
+			margin: 0px;
+			text-align: center;
+		}
+
+		.mypage_memo {
+			width: 40%;
+			background-size: 25px;
+		}
+
+		.mypage_memo select {
+			font-size: 0.85rem;
+		}
+
+		.find_campus h1 {
+			margin: 10px 0px 15px 0px;
+			text-align: left;
+			padding: 0px;
+			font-size: 0.95rem;
+		}
+		/* Univ review Page */
+
+	}

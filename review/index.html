@@ -5,11 +5,8 @@
 	<title>AddCampus</title>
 	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
 	<meta http-equiv='X-UA-Compatible' content='IE=edge, chrome=1'>
-	<!-- <meta name="keywords" content="키워드"/> -->
-	<!-- <meta name="description" content="소개글"/> -->
 	<meta name="robots" content="ALL"/>
-	<!-- <meta name="reply-to" content="이메일"/> -->
-	<!-- <meta name="viewport" content="width=device-width, user-scalable=no"> -->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<link rel="shortcut icon" href="/assets/img/common/favicon.png">
 	<!-- Meta tag for Cross Browsing -->
 
@@ -35,6 +32,24 @@
 	</style>
 </head>
 <body>
+
+	<div id='header_M' class="container">
+		<nav>
+			<div class="navigation">
+				<ul>
+					<li><a href="/">홈</a></li>
+					<li><a href="/campus/m/">캠퍼스 랭킹</a></li>
+					<li><a href="/review/">캠퍼스 리뷰</a></li>
+					<li><a href="#"></a></li>
+					<!-- <li><a href="">로그인</a></li> -->
+				</ul>
+			</div>
+			<div class="nav_bg">
+				<div class="nav_bar"> <span></span> <span></span> <span></span> </div>
+				<span id='nav_title'>캠퍼스리뷰</span>
+			</div>
+		</nav>
+	</div>
 
 	<header id='header' style='background-color:#FFD432;'>
 		<div class='header_menu'>
@@ -77,7 +92,7 @@
 		<div id='review_banner'>
 			<div class='find_campus'>
 				<h2 class='title'>가고 싶은 대학이 어떤 곳인지는 한 번 찾아 봐야지?</h2>
-				<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:5px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
+				<div class="mypage_memo">
 					<select id='type_1' class='type_1' name='type_1'>
 						<option value='c000' class='c000'>계열</option>
 						<option value='c001' class='c001'>자연과학계열</option>
@@ -88,12 +103,12 @@
 						<option value='c007' class='c007'>기타</option>
 					</select>
 				</div>
-				<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:5px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
+				<div class="mypage_memo">
 					<select id='type_2' class='type_2' name='type_2'>
 						<option value='g000' class='g000'>2차 학과군</option>
 					</select>
 				</div>
-				<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:5px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
+				<div class="mypage_memo">
 					<select id='type_3' class='type_3' name='type_3'>
 						<option>서울</option>
 						<option>경기</option>
@@ -114,18 +129,18 @@
 						<option>세종</option>
 					</select>
 				</div>
-				<button id='searchFiltered' style='float:right;margin-right:15px;width:216px;height:40px;border-radius:10px;margin-top:10px;background:#FFD432;'>검색하기</button>
+				<button id='searchFiltered' style=''>검색하기</button>
 			</div>
 		</div>
 
-		<div id='review_content' style='width:1000px;margin:0px auto;'>
+		<div id='review_content' style=''>
 			<!-- 캠퍼스 왼쪽 리뷰 -->
-			<div class='review_left' style='width: 675px;margin: 0px auto;margin-top: 20px;float: left;'>
+			<div class='review_left' style=''>
 
 				<div id='AddOption' style='width:100%;'></div>
 
 				<div class='review' style='background:#FFF;'>
-					<img src='/assets/img/bestreview.png' style='width:72px;height:87px;position:absolute;margin-top: -18px;margin-left: 550px;'/>
+					<img src='/assets/img/bestreview.png' class='bestreviewMark'/>
 					<a class='CollegeLink' style='text-decoration:none;color:inherit;'><img class='about_img'/></a>
 					<div class='review_about_'>
 						<h3><a class='CollegeLink_A' style='text-decoration:none;color:inherit;' id='univName1'></a></h3>
@@ -141,7 +156,7 @@
 					<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>
 						<div class='review_evaluation'>
 							<h6 class='h6_title'>작성자한줄평</h6>
-							<h6 class='h6_content' id='oneLineComment1' style='margin-left:23px;font-size:1rem;width:76%;'></h6>
+							<h6 class='h6_content' id='oneLineComment1'></h6>
 						</div>
 					</a>
 					<div class='pros' style='width:85%;'>
@@ -156,7 +171,7 @@
 				</div>
 
 				<div class='review' style='background:#FFF;'>
-					<img src='/assets/img/bestreview.png' style='width:72px;height:87px;position:absolute;margin-top: -18px;margin-left: 550px;'/>
+					<img src='/assets/img/bestreview.png' class='bestreviewMark'/>
 					<a class='CollegeLink' style='text-decoration:none;color:inherit;'><img class='about_img'/></a>
 					<div class='review_about_'>
 						<h3><a class='CollegeLink_A' style='text-decoration:none;color:inherit;' id='univName2'></a></h3>
@@ -172,7 +187,7 @@
 					<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>
 						<div class='review_evaluation'>
 							<h6 class='h6_title'>작성자한줄평</h6>
-							<h6 class='h6_content' id='oneLineComment2' style='margin-left:23px;font-size:1rem;width:76%;'></h6>
+							<h6 class='h6_content' id='oneLineComment2'></h6>
 						</div>
 					</a>
 					<div class='pros' style='width:85%;'>
@@ -187,7 +202,7 @@
 				</div>
 
 				<div class='review' style='background:#FFF;'>
-					<img src='/assets/img/bestreview.png' style='width:72px;height:87px;position:absolute;margin-top: -18px;margin-left: 550px;'/>
+					<img src='/assets/img/bestreview.png' class='bestreviewMark'/>
 					<a class='CollegeLink' style='text-decoration:none;color:inherit;'><img class='about_img'/></a>
 					<div class='review_about_'>
 						<h3><a class='CollegeLink_A' style='text-decoration:none;color:inherit;' id='univName3'></a></h3>
@@ -203,7 +218,7 @@
 					<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>
 						<div class='review_evaluation'>
 							<h6 class='h6_title'>작성자한줄평</h6>
-							<h6 class='h6_content' id='oneLineComment3' style='margin-left:23px;font-size:1rem;width:76%;'></h6>
+							<h6 class='h6_content' id='oneLineComment3'></h6>
 						</div>
 					</a>
 					<div class='pros' style='width:85%;'>
@@ -314,7 +329,7 @@
 	</footer>
 
 	<!-- Support for HTML5, CSS3 -->
-	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 	<!--[if lt IE 9]>
 	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
 	<![endif]-->
@@ -713,8 +728,6 @@
 			// Option is not needed.
 			}, function(data) {
 
-				// console.log(JSON.stringify(data));
-
 				if (data.result[0].reviews[0] == undefined) {
 
 					scrollCounting = 'N';
@@ -742,7 +755,7 @@
 		            var contents = '';
 
 		            contents += "<div class='review' style='background:#FFF;'>";
-						contents += "<img src='/assets/img/bestreview.png' style='width:72px;height:87px;position:absolute;margin-top: -18px;margin-left: 550px;'/>";
+						contents += "<img src='/assets/img/bestreview.png' class='bestreviewMark'/>";
 						contents += "<a class='CollegeLink' style='text-decoration:none;color:inherit;'><img class='about_img'/></a>";
 						contents += "<div class='review_about_'>";
 							contents += "<h3><a class='CollegeLink_A' style='text-decoration:none;color:inherit;'></a></h3>";
@@ -758,7 +771,7 @@
 						contents += "<a class='CollegeLink_B' style='text-decoration:none;color:inherit;'>";
 							contents += "<div class='review_evaluation'>";
 								contents += "<h6 class='h6_title'>작성자한줄평</h6>";
-								contents += "<h6 class='h6_content' style='margin-left:23px;font-size:1rem;width:76%;'></h6>";
+								contents += "<h6 class='h6_content'></h6>";
 							contents += "</div>";
 						contents += "</a>";
 						contents += "<div class='pros' style='width:85%;'>";
@@ -925,7 +938,7 @@
 						contents += "<a class='M_CollegeLink_B' style='text-decoration:none;color:inherit;'>";
 							contents += "<div class='review_evaluation'>";
 								contents += "<h6 class='h6_title'>작성자한줄평</h6>";
-								contents += "<h6 class='M_h6_content' style='margin-left:23px;font-size:1rem;width:76%;'></h6>";
+								contents += "<h6 class='M_h6_content'></h6>";
 							contents += "</div>";
 						contents += "</a>";
 						contents += "<div class='pros' style='width:85%;'>";
@@ -1448,6 +1461,8 @@
 			</div> 
 		</div>
 	</div>
+
+	<button id='mobileWriteReivew' style='width:100%;height:8%;position:fixed;background:#FFA321;color:#FFF;text-align:center;font-size:1.25rem;bottom:0%;display:none;'>리뷰 작성하기</button>
 
 </body>
 </html>

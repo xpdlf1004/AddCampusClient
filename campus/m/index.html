@@ -5,17 +5,14 @@
 	<title>AddCampus</title>
 	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
 	<meta http-equiv='X-UA-Compatible' content='IE=edge, chrome=1'>
-	<!-- <meta name="keywords" content="키워드"/> -->
-	<!-- <meta name="description" content="소개글"/> -->
 	<meta name="robots" content="ALL"/>
-	<!-- <meta name="reply-to" content="이메일"/> -->
-	<!-- <meta name="viewport" content="width=device-width, user-scalable=no"> -->
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<link rel="shortcut icon" href="/assets/img/common/favicon.png">
 	<!-- Meta tag for Cross Browsing -->
 
 	<!-- Assets -->
 	<link rel='stylesheet' href='../../assets/css/style.css'>
-	<link rel='stylesheet' href='../../assets/css/campus.css'>
+	<link rel='stylesheet' href='../../assets/css/campus_m.css'>
 
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<!-- Assets -->
@@ -44,14 +41,29 @@
 		}
 
 		// 학교 코드 저장
-		type = getQueryVariable("type");
+		orderBy = getQueryVariable("type");
 
 	</script>
-	<style>
-		#campus_image { background-image: url("/assets/img/slide/kookmin_2480_550.jpg"); }
-	</style>
 </head>
 <body>
+
+	<div id='header_M' class="container">
+		<nav>
+			<div class="navigation">
+				<ul>
+					<li><a href="/">홈</a></li>
+					<li><a href="/campus/m/">캠퍼스 랭킹</a></li>
+					<li><a href="/review/">캠퍼스 리뷰</a></li>
+					<li><a href="#"></a></li>
+					<li><a href="">로그인</a></li>
+				</ul>
+			</div>
+			<div class="nav_bg">
+				<div class="nav_bar"> <span></span> <span></span> <span></span> </div>
+				<span id='nav_title'>캠퍼스랭킹</span>
+			</div>
+		</nav>
+	</div>
 
 	<header id='header' style='background-color:#FFD432;'>
 		<div class='header_menu'>
@@ -74,152 +86,83 @@
 		</div>
 	</header>
 
+	<style>
+		#majorMenu .mypage_memo { display:inline-block;width:24%;border-radius:3px;border:1px solid #BCBEC0;font-size:0.8rem;color:#58595B;margin-right:7px;background-size:20px;height:18px;margin-bottom:10px; }
+		#majorMenu .mypage_memo select { font-size: 0.8rem; }
+	</style>
+
 	<div id='wrapper'>
-
-		<div id='campus_image'>
-			<h1 class='head_title'>캠퍼스는 [ <span>더하기</span> ]다!</h1>
-			<h3 class='head_subtitle'>캠퍼스에 이야기를 더하다. 애드캠퍼스가 함께합니다</h3>
-			<div class='search_box'>
-				<form action='/review/univ/' id='search_form' method='get' onsubmit="return SearchUnivA(this);">
-					<input type='text' id='search_school' name='search_school' placeholder='합격하고 싶은 대학을 검색해보세요!' style='margin-top: 12px;'/>
-					<img src='/assets/img/common/search_button.png' id='searchBtn' style='cursor:pointer;'/>
-				</form>
-			</div>
-		</div>
-
-		<div id='campus_content' style='width:100%;padding-top:0px;'>
-			<div class='campus_title' style='background: rgba(239, 240, 240, 0.5);padding-top:55px;height:95px;margin-bottom:30px;'>
-				<h2 class='title' style='margin:0px;padding:0px;'>재학생이 알려주는 생생한 캠퍼스 리뷰</h2>
-				<h3 class='subtitle' style='margin:0px;padding:0px;'>니들 선배가 될 사람들이 직접 작성한 리뷰를 봐라</h3>
-			</div>
-
-			<div class='campus_content_' style='width:1000px;margin:0px auto;'>
-
-			<div id='review_banner' style='margin-bottom:30px;'>
-				<div class='find_campus'>
-					<!-- <h2 class='title'>가고 싶은 대학이 어떤 곳인지는 한 번 찾아 봐야지?</h2> -->
-					<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:5px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
-						<select id='type_1' class='type_1' name='type_1'>
-							<option value='c000' class='c000'>계열</option>
-							<option value='c001' class='c001'>자연과학계열</option>
-							<option value='c002' class='c002'>인문사회계열</option>
-							<option value='c004' class='c004'>의학계열</option>
-							<option value='c005' class='c005'>공학계열</option>
-							<option value='c006' class='c006'>예체능계열</option>
-							<option value='c007' class='c007'>기타</option>
-						</select>
-					</div>
-					<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:5px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
-						<select id='type_2' class='type_2' name='type_2'>
-							<option value='g000' class='g000'>2차 학과군</option>
-						</select>
-					</div>
-					<div class="mypage_memo" style='display:inline-block;width:175px;border-radius:5px;border:2px solid #BCBEC0;font-size:1rem;color:#58595B;margin-right:10px;margin-top:10px;'>
-						<select id='type_3' class='type_3' name=''>
-							<option>서울</option>
-							<option>경기</option>
-							<option>인천</option>
-							<option>부산</option>
-							<option>대구</option>
-							<option>대전</option>
-							<option>광주</option>
-							<option>울산</option>
-							<option>강원</option>
-							<option>경상도</option>
-							<option>경북</option>
-							<option>전남</option>
-							<option>전북</option>
-							<option>충남</option>
-							<option>충북</option>
-							<option>제주</option>
-							<option>세종</option>
-						</select>
-					</div>
-					<button id='searchFiltered' style='float:right;margin-right:15px;width:216px;height:40px;border-radius:10px;margin-top:10px;background:#FFD432;cursor:pointer;'>검색하기</button>
-				</div>
-			</div>
-
+		<div id='campus_content'>
+			<div class='campus_content_'>
 				<div class='campus_left'>
+				
+					<ul id='pageMenu' style='width:100%;height:10%;list-style:none;text-align:center;margin:0px 0px 25px 0px;padding:0px;padding-bottom: 8.3px;border-bottom: 2px solid rgba(0, 0, 0, 0.3);'>
+						<li style='display:inline-block;width:48%;'>
+							<a id='pageUniv' href='/campus/m/?type=facilities' style='font-size:0.9rem;text-decoration:none;padding-bottom:6px;'>학교랭킹</a>
+						</li>
+						<li style='display:inline-block;width:48%;'>
+							<a id='pageMajor' href='/campus/m/?type=major' style='font-size:0.9rem;text-decoration:none;padding-bottom:6px;'>학과랭킹</a>
+						</li>
+					</ul>
+					
+					<div id='majorMenu' style='width:100%;text-align:center;'>
+						<!-- <h2 class='title'>가고 싶은 대학이 어떤 곳인지는 한 번 찾아 봐야지?</h2> -->
+						<div class="mypage_memo">
+							<select id='type_1' class='type_1' name='type_1'>
+								<option value='c000' class='c000'>계열</option>
+								<option value='c001' class='c001'>자연과학계열</option>
+								<option value='c002' class='c002'>인문사회계열</option>
+								<option value='c004' class='c004'>의학계열</option>
+								<option value='c005' class='c005'>공학계열</option>
+								<option value='c006' class='c006'>예체능계열</option>
+								<option value='c007' class='c007'>기타</option>
+							</select>
+						</div>
+						<div class="mypage_memo">
+							<select id='type_2' class='type_2' name='type_2'>
+								<option value='g000' class='g000'>2차 학과군</option>
+							</select>
+						</div>
+						<div class="mypage_memo" style='margin-right:0px;'>
+							<select id='type_3' class='type_3' name=''>
+								<option>서울</option>
+								<option>경기</option>
+								<option>인천</option>
+								<option>부산</option>
+								<option>대구</option>
+								<option>대전</option>
+								<option>광주</option>
+								<option>울산</option>
+								<option>강원</option>
+								<option>경상도</option>
+								<option>경북</option>
+								<option>전남</option>
+								<option>전북</option>
+								<option>충남</option>
+								<option>충북</option>
+								<option>제주</option>
+								<option>세종</option>
+							</select>
+						</div>
+						<button id='searchFiltered' style='width:88%;height:35px;border-radius:7px;margin:0px auto;background:#FFD432;cursor:pointer;'>검색하기</button>
+					</div>
+
+					<div class="mypage_memo" id='univMenu' style='width:85%;height:20px;'>
+						<select name='changeCollegeList' style='font-size:0.8rem;'>
+							<option value='facilities'>캠퍼스 시설 만족도 순</option>
+							<option value='culture'>캠퍼스 문화 만족도 순</option>
+							<option value='town'>대학가 만족도 순</option>
+							<option value='tuition'>등록금 만족도 순</option>
+							<option value='professor'>교수 만족도 순</option>
+						</select>
+					</div>
 
 					<div id='AddOption' style='width:100%;'>
 					</div>
 
 				</div>
 
-				<!-- 캠퍼스 오른쪽 리뷰 -->
-				<div class='campus_right' style='width: 310px;margin: 0px auto;float: right;'>
-
-					<table class='campus_category'>
-						<tr>
-							<td style='font-size:1.3125rem;font-family:NanumBarunGothicBold;font-weight:bold;color:#58595B;'>학과군</td>
-						</tr>
-						<tr>
-							<td><a href='/campus/major/?type=c001' style='text-decoration:none;color:inherit;'>자연과학계열</a></td>
-						</tr>
-						<tr>
-							<td><a href='/campus/major/?type=c002' style='text-decoration:none;color:inherit;'>인문사회계열</a></td>
-						</tr>
-						<tr>
-							<td><a href='/campus/major/?type=c004' style='text-decoration:none;color:inherit;'>의학계열</a></td>
-						</tr>
-						<tr>
-							<td><a href='/campus/major/?type=c005' style='text-decoration:none;color:inherit;'>공학계열</a></td>
-						</tr>
-						<tr>
-							<td><a href='/campus/major/?type=c006' style='text-decoration:none;color:inherit;'>예체능계열</a></td>
-						</tr>
-						<tr>
-							<td></td>
-						</tr>
-					</table>
-
-					<table class='review_list'>
-						<tr>
-							<td colspan='2' class='review_list_title' style='font-family:NanumBarunGothicBold;border-right: 1px solid #BCBEC0;font-weight:bold;'>가장 활발한 대학</td>
-						</tr>
-						<tr>
-							<td class='of_rank'>1.</td>
-							<td class='of_college' style='border-right: 1px solid #BCBEC0;width:100%;'>
-								<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-								<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a></p>
-							</td>
-						</tr>
-						<tr>
-							<td class='of_rank'>2.</td>
-							<td class='of_college' style='border-right: 1px solid #BCBEC0;width:100%;'>
-								<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-								<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a></p>
-							</td>
-						</tr>
-						<tr>
-							<td class='of_rank'>3.</td>
-							<td class='of_college' style='border-right: 1px solid #BCBEC0;width:100%;'>
-								<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-								<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a></p>
-							</td>
-						</tr>
-						<tr>
-							<td class='of_rank'>4.</td>
-							<td class='of_college' style='border-right: 1px solid #BCBEC0;width:100%;'>
-								<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-								<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a></p>
-							</td>
-						</tr>
-						<tr>
-							<td class='of_rank'>5.</td>
-							<td class='of_college' style='border-right: 1px solid #BCBEC0;width:100%;'>
-								<a href='/review/univ/' style='text-decoration:none;color:inherit;' target='_blank' class='SideCollegeLink'><img class='SideCollegeLogo' style='width:55px;height:55px;'/></a>
-								<p><a href='/review/univ/' style='text-decoration:none;color:inherit;' class='SideCollegeName'></a></p>
-							</td>
-						</tr>
-						<tr>
-							<td colspan='3'>&nbsp;</td>
-						</tr>
-					</table>
-
-				</div>
 			</div>
-
 		</div>
 	</div>
 
@@ -271,123 +214,22 @@
 
 	<script>
 
-		/******************************************
-		* Search Univ.
-		/*****************************************/
 		$(document).ready(function(){
 
-			availableTags = [];
-
-			RequestHelper.post('/college/getAllColleges', {},
-			{
-			// Option is not needed.
-			}, function(data) {
-				var length = data.result[0].colleges.length;
-
-				for (var i = 0; i<length; i++) {
-					availableTags[i] = data.result[0].colleges[i].collegeName;
-				}
-
-			}, function(data) {
-				alert(JSON.stringify(data));
+			$('select[name=changeCollegeList]').change(function(){
+				location.href = '/campus/m/?type=' + $('select[name=changeCollegeList]').val();
 			});
 
-			$("#search_school").autocomplete({
-				source: availableTags
-			});
-
-			function SearchUnivA (content) {
-				var univ = $("#search_school").val();
-				var searchURL = "";
-
-				RequestHelper.post('/college/getAllColleges', {},
-				{
-				// Option is not needed.
-				}, function(data) {
-					var length = data.result[0].colleges.length;
-
-					for (var i = 0; i<length; i++) {
-						
-						if (data.result[0].colleges[i].collegeName === univ) {
-							// location.href = '/review/univ/?univ=' + data.result[0].colleges[i].collegeID;
-							searchURL = data.result[0].colleges[i].collegeID;
-						}
-
-					}
-
-					if (searchURL != "") {
-						location.href = '/review/univ/?univ=' + searchURL;
-					} else if (searchURL === undefined) {
-						alert("학교 이름을 정확하게 입력해주세요.");
-					} else {
-						alert("학교 이름을 정확하게 입력해주세요.");
-					}
-
-				}, function(data) {
-					alert(JSON.stringify(data));
-				});
-
-				return false;
+			if (!orderBy) {
+				location.href = '/campus/m/?type=facilities';
 			}
 
-			$("#searchBtn").click(function(){
-				$("#search_form").submit();
-			});
+			$('select[name=changeCollegeList]').val(orderBy).prop("selected", true);
+			$('.univTypeName').html($('select[name=changeCollegeList] option:selected').html());
 
-			$("#search_form").submit(function(){
-				SearchUnivA();
-				return false;
-			});
-			/*****************************************/
-
-			RequestHelper.post('/ranking/getCollegeActiveRanking', {},
-			{
-			// Option is not needed.
-			}, function(data) {
-
-				var CollegeLink = $(".SideCollegeLink");
-				var CollegeLogo = $(".SideCollegeLogo");
-				var CollegeName = $(".SideCollegeName");
-				var CollegeNameList = new Array();
-				var collegeCode = new Array();
-
-				for (var i = 0; i < 5; i++) {
-
-					collegeCode[i] = data.result[0].collegeRankingByCountOfReviews[i].collegeID;
-
-					$(CollegeName[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByCountOfReviews[i].collegeID);
-					$(CollegeLink[i]).attr("href", "/review/univ/?univ=" + data.result[0].collegeRankingByCountOfReviews[i].collegeID);
-					$(CollegeLogo[i]).attr("src", "/assets/img/logo/logo_" + data.result[0].collegeRankingByCountOfReviews[i].collegeID + ".jpg");
-
-					RequestHelper.post('/college/getAllColleges', {},
-					{
-					}, function(data) {
-						var lengthColleges = data.result[0].colleges.length;
-
-						for (var i = 0; i < lengthColleges; i++) {
-
-							if (data.result[0].colleges[i].collegeID === collegeCode[0]) $(CollegeName[0]).html(data.result[0].colleges[i].collegeName);
-							if (data.result[0].colleges[i].collegeID === collegeCode[1]) $(CollegeName[1]).html(data.result[0].colleges[i].collegeName);
-							if (data.result[0].colleges[i].collegeID === collegeCode[2]) $(CollegeName[2]).html(data.result[0].colleges[i].collegeName);
-							if (data.result[0].colleges[i].collegeID === collegeCode[3]) $(CollegeName[3]).html(data.result[0].colleges[i].collegeName);
-							if (data.result[0].colleges[i].collegeID === collegeCode[4]) $(CollegeName[4]).html(data.result[0].colleges[i].collegeName);
-
-						}
-
-					}, function(data) {
-						alert(JSON.stringify(data));
-					});
-
-				}
-
-			}, function(data) {
-				alert(JSON.stringify(data));
-			});
-			/*****************************************/
-
-			pageList = 0;
+			collegeNameLists = '';
 			collegeNameLists = new Array();
-			majorsNameLists = new Array();
+
 			changeList = 'Y';
 
 			RequestHelper.post('/college/getAllColleges', {},
@@ -401,99 +243,247 @@
 				alert(JSON.stringify(data));
 			});
 
-			$("#searchFiltered").click(function(){
+			if (orderBy === 'major') {
 
-				if (changeList == 'Y') {
+				$("#univMenu").css('display', 'none');
 
-					$('.campus_univ_list').css('display', 'none');
+				// $("#pageUniv").css({"border-bottom":"3px solid #000", "color":"#999999"});
+				
+				$("#pageUniv").css({"border-bottom":"none", "color":"#999999"});
+				$("#pageMajor").css({"border-bottom":"5px solid #FFD432", "color":"#000"});
 
-					RequestHelper.post('/ranking/getFilteredMajorRanking', {
-						majorClass:$("#type_1 option:selected").text(),
-						majorGroup:$("#type_2 option:selected").text(),
-						majorRegion:$("#type_3 option:selected").text()
-					},
-					{
-					// Option is not needed.
-					}, function(data) {
+				$("#searchFiltered").click(function(){
 
-						var contents = '';
-						var tempList = $('.campus_univ_list').length;
+					if (changeList == 'Y') {
 
-						contents += "<ul class='campus_univ_list'>";
-							contents += "<li class='univ_class'></li>";
-							contents += "<li class='univ_about'>";
-								contents += "<a class='univ_img_link' href='/review/univ/' style='text-decoration:none;color:inherit;'><img class='univ_img' style='margin-right:15px;'/></a>";
-								contents += "<p><a class='univ_name' style='text-decoration:none;color:inherit;'></a><br/>";
-									contents += "<span class='countOfReview' style='font-size:1rem;color:#808083;'></span>";
-								contents += "</p>";
-							contents += "</li>";
-							contents += "<li class='univ_comment'>";
-									contents += "<span class='gradeStar'></span>";
-								contents += "<p class='pointOfReview' style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:18px;'></span>";
-							contents += "</li>";
-						contents += "</ul>";
+						RequestHelper.post('/ranking/getFilteredMajorRanking', {
+							majorClass:$("#type_1 option:selected").text(),
+							majorGroup:$("#type_2 option:selected").text(),
+							majorRegion:$("#type_3 option:selected").text()
+						},
+						{
+						// Option is not needed.
+						}, function(data) {
+							// alert(JSON.stringify(data));
 
-						var infoLength = data.result[0].majorRankingInfos.length;
+							var contents = '';
+							var tempList = $('.campus_univ_list').length;
 
-						for (var i = 0 + tempList; i < infoLength + tempList; i++) {
-							$('#AddOption').append(contents);
+							contents += "<ul class='campus_univ_list'>";
+								contents += "<li class='univ_class'></li>";
+								contents += "<li class='univ_about'>";
+									contents += "<a class='univ_img_link' href='/review/univ/' style='text-decoration:none;color:inherit;font-size: 0.9rem;'><img class='univ_img' style='margin-right:15px;'/></a>";
+									contents += "<p><a class='univ_name' style='text-decoration:none;color:inherit;'></a><br/>";
+										contents += "<span class='countOfReview' style='font-size:0.7rem;color:#808083;'></span>";
+									contents += "</p>";
+								contents += "</li>";
+								contents += "<li class='univ_comment'>";
+									contents += "<br/><span class='pointOfReview' style='font-size:0.9rem;color:#808083;margin-left:10px;font-weight: bold;'></span><br/>";
+									contents += "<span class='gradeStar' style='margin:0px auto;font-size:0.85rem;color:#808083;'></span>";
+									// contents += "<p class='pointOfReview' style='font-size:1.3125rem;color:#808083;margin-left:10px;margin-top:18px;font-weight:bold;'></span>";
+									// contents += "<p class='gradeStar' style='margin:0px auto;font-size:0.85rem;color:#808083;'><br/>";
+								contents += "</li>";
+							contents += "</ul>";
 
-							changeList = 'N';
-						}
+							var infoLength = data.result[0].majorRankingInfos.length;
 
-						$('#AddOption > ul:last-child').css('border-bottom', '1px solid #BABCBE');
+							for (var i = 0 + tempList; i < infoLength + tempList; i++) {
+								$('#AddOption').append(contents);
 
-						// 리스트 만들기
-						var univList = $('.univ_class');
-						var univName = $('.univ_name');
-						var univImage = $('.univ_img');
-						var univ_img_link = $('.univ_img_link');
-						var univCountOfReview = $('.countOfReview');
-						var univPointOfReview = $('.pointOfReview');
-						
-						var cnti = 0;
-
-						for (var i = 0 + tempList; i < infoLength + tempList; i++) {
-
-							var point = Math.round(data.result[0].majorRankingInfos[cnti].averageGrade*100)/100;
-
-							$(univList[i]).html(cnti + 1);
-							$(univPointOfReview[i]).html(point);
-
-							makeStar(point, i);
-							makeMajorName(data.result[0].majorRankingInfos[cnti].collegeID, data.result[0].majorRankingInfos[cnti].majorID, i);
-
-							for (var b in collegeNameLists) {
-								if (collegeNameLists[b].indexOf(data.result[0].majorRankingInfos[cnti].collegeID) != -1) {
-									var className = collegeNameLists[b].split("/");
-									$(univName[i]).html(className[0]);
-									$(univName[i]).attr('href', '/review/univ/?univ=' + className[1]);
-									$(univ_img_link[i]).attr('href', '/review/univ/?univ=' + className[1]);
-									$(univImage[i]).attr('src', '/assets/img/logo/logo_' + className[1] + '.jpg');
-								}
+								changeList = 'N';
 							}
 
-							cnti = cnti + 1;
+							$('#AddOption > ul:last-child').css('border-bottom', '1px solid #BABCBE');
 
+							// 리스트 만들기
+							var univList = $('.univ_class');
+							var univName = $('.univ_name');
+							var univImage = $('.univ_img');
+							var univ_img_link = $('.univ_img_link');
+							var univCountOfReview = $('.countOfReview');
+							var univPointOfReview = $('.pointOfReview');
+							
+							var cnti = 0;
+
+							for (var i = 0 + tempList; i < infoLength + tempList; i++) {
+
+								var point = Math.round(data.result[0].majorRankingInfos[cnti].averageGrade*100)/100;
+
+								$(univList[i]).html(cnti + 1);
+								$(univPointOfReview[i]).html(point);
+
+								makeStar(point, i);
+								makeMajorName(data.result[0].majorRankingInfos[cnti].collegeID, data.result[0].majorRankingInfos[cnti].majorID, i);
+
+								for (var b in collegeNameLists) {
+									if (collegeNameLists[b].indexOf(data.result[0].majorRankingInfos[cnti].collegeID) != -1) {
+										var className = collegeNameLists[b].split("/");
+										$(univName[i]).html(className[0]);
+										$(univName[i]).attr('href', '/review/univ/?univ=' + className[1]);
+										$(univ_img_link[i]).attr('href', '/review/univ/?univ=' + className[1]);
+										$(univImage[i]).attr('src', '/assets/img/logo/logo_' + className[1] + '.jpg');
+									}
+								}
+
+								cnti = cnti + 1;
+
+							}
+
+						}, function(data) {
+							console.log(JSON.stringify(data));
+						});
+
+					}
+
+				});
+				
+				$('.type_1').change(function(){
+
+					$("#type_2").find("option").remove();
+
+					if ($('select[name=type_1]').val() == 'c001') {
+						// 자연계열
+						$("#type_2").append("<option value='g001' class='g001'>농림·수산</option>");
+						$("#type_2").append("<option value='g002' class='g002'>생물·화학·환경</option>");
+						$("#type_2").append("<option value='g003' class='g003'>생활과학</option>");
+						$("#type_2").append("<option value='g004' class='g004'>수학·물리·천문·지리</option>");
+						$("#type_2").append("<option value='g004' class='g004'>간호</option>");
+						$("#type_2").append("<option value='g004' class='g004'>보건</option>");
+						$("#type_2").append("<option value='g004' class='g004'>약학</option>");
+						$("#type_2").append("<option value='g004' class='g004'>의료예과</option>");
+						$("#type_2").append("<option value='g004' class='g004'>교육</option>");
+					} else if ($('select[name=type_1]').val() == 'c002') {
+						// 인문사회계열
+						$("#type_2").append("<option value='g005' class='g005'>언어·문학</option>");
+						$("#type_2").append("<option value='g006' class='g006'>인문학</option>");
+						$("#type_2").append("<option value='g007' class='g007'>경영·경제</option>");
+						$("#type_2").append("<option value='g008' class='g008'>법학</option>");
+						$("#type_2").append("<option value='g009' class='g009'>사회과학</option>");
+						$("#type_2").append("<option value='g009' class='g009'>교육</option>");
+						$("#type_2").append("<option value='g034' class='g034'>기타</option>");
+					} else if ($('select[name=type_1]').val() == 'c004') {
+						// 의학계열
+						$("#type_2").append("<option value='g014' class='g014'>의료</option>");
+					} else if ($('select[name=type_1]').val() == 'c005') {
+						// 공학계열
+						$("#type_2").append("<option value='g024' class='g024'>전기·전자·컴퓨터</option>");
+						$("#type_2").append("<option value='g017' class='g017'>건설</option>");
+						$("#type_2").append("<option value='g018' class='g018'>산업·안전</option>");
+						$("#type_2").append("<option value='g020' class='g020'>기계</option>");
+						$("#type_2").append("<option value='g023' class='g023'>재료</option>");
+						$("#type_2").append("<option value='g019' class='g019'>화학·고분자·에너지</option>");
+						$("#type_2").append("<option value='g026' class='g026'>교육</option>");
+					} else if ($('select[name=type_1]').val() == 'c006') {
+						// 에체능 계열
+						$("#type_2").append("<option value='g030' class='g030'>무용·체육</option>");
+						$("#type_2").append("<option value='g032' class='g032'>연극·영화</option>");
+						$("#type_2").append("<option value='g029' class='g029'>응용예술</option>");
+						$("#type_2").append("<option value='g031' class='g031'>미술</option>");
+						$("#type_2").append("<option value='g033' class='g033'>음악·국악</option>");
+						$("#type_2").append("<option value='g033' class='g033'>교육</option>");
+					}
+
+				});
+
+				$('#type_1, #type_2, #type_3').change(function(){
+					changeList = 'Y';
+				});
+
+			} else {
+
+				$("#majorMenu").css('display', 'none');
+
+				$("#pageUniv").css({"border-bottom":"5px solid #FFD432", "color":"#000"});
+				$("#pageMajor").css({"border-bottom":"none", "color":"#999999"});
+
+				RequestHelper.post('/ranking/getAllCollegeRanking', {
+					orderBy: orderBy
+				},
+				{
+				// Option is not needed.
+				}, function(data) {
+
+					var contents = '';
+					var tempList = $('.campus_univ_list').length;
+					
+					contents += "<ul class='campus_univ_list'>";
+						contents += "<li class='univ_class'></li>";
+						contents += "<li class='univ_about'>";
+							contents += "<a class='univ_img_link' href='/review/univ/' style='text-decoration:none;color:inherit;font-size: 0.9rem;'><img class='univ_img'/></a>";
+							contents += "<p><a class='univ_name' style='text-decoration:none;color:inherit;'></a><br/>";
+								contents += "<span class='countOfReview' style='font-size:0.7rem;color:#808083;'></span>";
+							contents += "</p>";
+						contents += "</li>";
+						contents += "<li class='univ_comment'>";
+							contents += "<p style='margin:0px auto;font-size:0.85rem;color:#808083;'><br/>";
+								contents += "<span class='pointOfReview' style='font-size:0.9rem;color:#808083;margin-left:10px;font-weight: bold;'></span><br/>";
+								contents += "<span class='gradeStar'></span>";
+							contents += "</p>";
+						contents += "</li>";
+					contents += "</ul>";
+
+					var infoLength = data.result[0].collegeRankingInfos.length;
+
+					for (var i = 0 + tempList; i < infoLength + tempList; i++) {
+						$('#AddOption').append(contents);
+
+						changeList = 'N';
+					}
+
+					$('#AddOption > ul:last-child').css('border-bottom', '1px solid #BABCBE');
+
+					// 리스트 만들기
+					var univList = $('.univ_class');
+					var univName = $('.univ_name');
+					var univImage = $('.univ_img');
+					var univ_img_link = $('.univ_img_link');
+					var univCountOfReview = $('.countOfReview');
+					var univPointOfReview = $('.pointOfReview');
+
+					var cnti = 0;
+
+					for (var i = 0 + tempList; i < infoLength + tempList; i++) {
+
+						var point = Math.round(data.result[0].collegeRankingInfos[cnti].averageGrade*100)/100;
+
+						$(univList[i]).html(cnti + 1);
+						$(univPointOfReview[i]).html(point);
+
+						makeStar(point, i);
+						makeMajorName(data.result[0].collegeRankingInfos[cnti].collegeID, data.result[0].collegeRankingInfos[cnti].majorID, i);
+
+						for (var b in collegeNameLists) {
+							if (collegeNameLists[b].indexOf(data.result[0].collegeRankingInfos[cnti].collegeID) != -1) {
+								var className = collegeNameLists[b].split("/");
+								$(univName[i]).html(className[0]);
+								$(univName[i]).attr('href', '/review/univ/?univ=' + className[1]);
+								$(univ_img_link[i]).attr('href', '/review/univ/?univ=' + className[1]);
+								$(univImage[i]).attr('src', '/assets/img/logo/logo_' + className[1] + '.jpg');
+							}
 						}
 
-					}, function(data) {
-						console.log(JSON.stringify(data));
-					});
+						cnti = cnti + 1;
 
-				}
+					}
 
-			});
-			
+				}, function(data) {
+					alert(JSON.stringify(data));
+				});
+
+				$('select[name=type_1]').val(type).prop("selected", true);
+				$('select[name=type_1]').change();
+
+			}
+
 			function makeStar(point, count) {
 
 				var gradeStar = $('.gradeStar');
 
-				if ((point >= 1.00) && (point < 2.00)) $(gradeStar).eq(count).html("<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/>");
-				else if ((point >= 2.00) && (point < 3.00)) $(gradeStar).eq(count).html("<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/>");
-				else if ((point >= 3.00) && (point < 4.00)) $(gradeStar).eq(count).html("<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_empty.png'/><img src='/assets/img/common/review_star_empty.png'/>");
-				else if ((point >= 4.00) && (point < 5.00)) $(gradeStar).eq(count).html("<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_empty.png'/>");
-				else if (point >= 5.00) $(gradeStar).eq(count).html("<img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/><img src='/assets/img/common/review_star_full.png'/>");
+				if ((point >= 1.00) && (point < 2.00)) $(gradeStar).eq(count).html("<img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_empty.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_empty.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_empty.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_empty.png'/>");
+				else if ((point >= 2.00) && (point < 3.00)) $(gradeStar).eq(count).html("<img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_empty.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_empty.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_empty.png'/>");
+				else if ((point >= 3.00) && (point < 4.00)) $(gradeStar).eq(count).html("<img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_empty.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_empty.png'/>");
+				else if ((point >= 4.00) && (point < 5.00)) $(gradeStar).eq(count).html("<img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_empty.png'/>");
+				else if (point >= 5.00) $(gradeStar).eq(count).html("<img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/>");
 
 			}
 
@@ -523,72 +513,6 @@
 			}
 
 		});
-		/*****************************************/
-		$('.type_1').change(function(){
-
-			$("#type_2").find("option").remove();
-
-			// 자연계열
-			if ($('select[name=type_1]').val() == 'c001') {
-
-				$("#type_2").append("<option value='g001' class='g001'>농림·수산</option>");
-				$("#type_2").append("<option value='g002' class='g002'>생물·화학·환경</option>");
-				$("#type_2").append("<option value='g003' class='g003'>생활과학</option>");
-				$("#type_2").append("<option value='g004' class='g004'>수학·물리·천문·지리</option>");
-				$("#type_2").append("<option value='g004' class='g004'>간호</option>");
-				$("#type_2").append("<option value='g004' class='g004'>보건</option>");
-				$("#type_2").append("<option value='g004' class='g004'>약학</option>");
-				$("#type_2").append("<option value='g004' class='g004'>의료예과</option>");
-				$("#type_2").append("<option value='g004' class='g004'>교육</option>");
-
-			// 인문사회계열 
-			} else if ($('select[name=type_1]').val() == 'c002') {
-
-				$("#type_2").append("<option value='g005' class='g005'>언어·문학</option>");
-				$("#type_2").append("<option value='g006' class='g006'>인문학</option>");
-				$("#type_2").append("<option value='g007' class='g007'>경영·경제</option>");
-				$("#type_2").append("<option value='g008' class='g008'>법학</option>");
-				$("#type_2").append("<option value='g009' class='g009'>사회과학</option>");
-				$("#type_2").append("<option value='g009' class='g009'>교육</option>");
-				$("#type_2").append("<option value='g034' class='g034'>기타</option>");
-
-			// 의학계열
-			} else if ($('select[name=type_1]').val() == 'c004') {
-
-				$("#type_2").append("<option value='g014' class='g014'>의료</option>");
-
-			// 공학계열
-			} else if ($('select[name=type_1]').val() == 'c005') {
-
-				$("#type_2").append("<option value='g024' class='g024'>전기·전자·컴퓨터</option>");
-				$("#type_2").append("<option value='g017' class='g017'>건설</option>");
-				$("#type_2").append("<option value='g018' class='g018'>산업·안전</option>");
-				$("#type_2").append("<option value='g020' class='g020'>기계</option>");
-				$("#type_2").append("<option value='g023' class='g023'>재료</option>");
-				$("#type_2").append("<option value='g019' class='g019'>화학·고분자·에너지</option>");
-				$("#type_2").append("<option value='g026' class='g026'>교육</option>");
-
-			// 에체능 계열
-			} else if ($('select[name=type_1]').val() == 'c006') {
-
-				$("#type_2").append("<option value='g030' class='g030'>무용·체육</option>");
-				$("#type_2").append("<option value='g032' class='g032'>연극·영화</option>");
-				$("#type_2").append("<option value='g029' class='g029'>응용예술</option>");
-				$("#type_2").append("<option value='g031' class='g031'>미술</option>");
-				$("#type_2").append("<option value='g033' class='g033'>음악·국악</option>");
-				$("#type_2").append("<option value='g033' class='g033'>교육</option>");
-
-			}
-
-		});
-
-		$('#type_1, #type_2, #type_3').change(function(){
-			// console.log('a');
-			changeList = 'Y';
-		});
-
-		$('select[name=type_1]').val(type).prop("selected", true);
-		$('select[name=type_1]').change();
 
 	</script>
 

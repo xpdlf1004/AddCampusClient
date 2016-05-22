@@ -111,7 +111,7 @@
 	.campus_menu {
 		margin: 0px;
 		padding: 0px;
-		margin-top: 40px;
+		margin-top: 20px;
 	}
 
 	.campus_menu li {
@@ -481,15 +481,19 @@
 		font-size:1.125rem;
 	}
 
-	.mobile_review_header, .mobile_review_write, .mobile_head_subtitle {
+	.mobile_review_header, .mobile_review_write, .mobile_head_subtitle, #mobileWriteReivew {
 		display: none;
 	}
 
 	.bestreviewMark {
 		width:72px;height:87px;position:absolute;margin-top: -18px;margin-left: 550px;
 	}
-/*
+
 	@media (max-width: 1000px) {
+
+		#mobileWriteReivew {
+			display: block;
+		}
 
 		#header {
 			display: none;
@@ -506,13 +510,14 @@
 		.search_box { display: none; }
 
 		.mobile_head_subtitle {
+			display: block;
 			font-size: 2rem;
 			font-family: 'NanumPen';
 			font-weight: normal;
 			vertical-align: middle;
 			color: #FFF;
-			margin-top: 36px;
-			padding-top: 10%;
+			/*margin-top: 36px;*/
+			padding-top: 14%;
 		}
 
 		.campus_menu {
@@ -603,19 +608,29 @@
 			font-size: 1.25rem;
 		}
 
+		.review_evaluation {
+			padding-left: 0px;
+		}
+
+		.review_evaluation .h6_title {
+			padding: 15px 0px 0px 15px;
+		}
+
 		.review_evaluation .h6_content {
+			display: block;
 			font-size: 0.9rem;
-			width: 62%;
+			width: 90%;
 			padding: 10px 0px 10px 0px;
+			margin-left: 20px;
 			line-height: 1.25rem;
 		}
 
 		.bestreviewMark {
-			width: 52px;
-			height: 67px;
+			width: 42px;
+			height: 58px;
 			position: absolute;
 			margin-top: -18px;
-			margin-left: 275px;
+			margin-left: 72%;
 		}
 
 		.pros h3 {
@@ -664,4 +679,4 @@
 		    margin-left: -45%;
 		}
 
-	}*/
+	}

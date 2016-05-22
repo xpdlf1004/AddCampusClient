@@ -1,0 +1,291 @@
+
+	#header {
+		display: none;
+	}
+
+	#mobileWriteReivew {
+		display: block;
+	}
+
+	.mypage_memo {
+		margin: 0px auto;
+		margin-bottom: 20px;
+		width: 85%;
+		height: 25px;
+		border-radius: 5px;
+		border: 1px solid #808083;
+		color: #58595B;
+	}
+
+	#campus_content {
+		margin: 0px auto;
+		padding: 0px;
+		padding-top: 15px;
+	}
+
+	#campus_content .title {
+		font-size: 2.5rem;
+		margin: 0px;
+		color: #58595B;
+	}
+
+	#campus_content .subtitle {
+		font-size: 1.22rem;
+		margin: 0px;
+		margin-bottom: 42px;
+		color: #58595B;
+	}
+
+	.campus_category {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 0px;
+		padding: 0px;
+		margin-bottom: 20px;
+		border: 1px solid #BCBEC0;
+		text-align: left;
+	}
+	
+	.campus_category td {
+		margin: 0px;
+		padding: 0px;
+		vertical-align: middle;
+		padding: 18px 0px 0px 18px;
+		border-right: 1px solid #BCBEC0;
+		color: #808083;
+		font-size:1.125rem;
+	}
+
+	.campus_left { width: 100%;margin: 0px auto;float: left;text-align:left; }
+	.campus_grade { width: 99.8%;height:240px;border: 1px solid #BCBEC0;margin-bottom:10px;text-align:center; }
+	
+	.campus_list_title,
+	.campus_list_title li,
+	.campus_list_subtitle,
+	.campus_list_subtitle li {
+		margin: 0px;
+		padding: 0px;
+		list-style: none;
+		display: inline-block;
+	}
+
+	.campus_list_title {
+		width: 52%;
+		padding-top: 20px;
+		float: left;
+	}
+
+	.campus_list_subtitle {
+		width: 48%;
+		margin-top: -17px;
+		float: right;
+	}
+
+	.campus_left h1 { 
+		margin: 15px 0px 0px 18px;
+		text-align: left;
+		font-size: 1.5rem;
+		color: #1C75BA;
+		font-weight: bold;
+	}
+
+	.campus_list_title .li_class {
+		margin: 0px 10px 0px 0px;
+		font-size: 1.2125rem;
+	}
+
+	.campus_list_title .li_about {
+		font-size: 1.5rem;
+	}
+
+	.campus_list_title #messageEditor {
+		display: block;
+		margin
+		font-size: 1.5rem;
+		color: #58595B;
+		text-align: center;
+		font-family: 'NanumPen';
+	}
+
+	.campus_list_title .li_about .rank_img {
+		width: 60px;
+		height: 60px;
+		margin: 0px 6px 0px 0px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.campus_list_title .li_about .rank_star {
+		height: 1.3rem;
+	}
+
+	.campus_list_title .li_about p {
+		color: #58595B;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	.campus_list_subtitle .li_class {
+		font-size: 1.1125rem;
+		margin: 0px 15px 0px 0px;
+	}
+
+	.campus_list_subtitle .li_about {
+		font-size: 1rem;
+		margin-bottom: -12px;
+	}
+
+	.campus_list_subtitle .li_about .rank_img {
+		width: 55px;
+		height: 55px;
+		margin: 0px 13px 0px 0px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.campus_list_subtitle .li_about .rank_star {
+		height: 1.22rem;
+	}
+
+	.campus_list_subtitle .li_about p {
+		color: #58595B;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.campus_univ_list {
+		border-bottom: 1px solid #BABCBE;
+		width: 100%;
+		margin: 0px auto;
+		padding: 10px 0px;
+	}
+
+	.campus_univ_list,
+	.campus_univ_list li {
+		margin: 0px;
+		list-style: none;
+		display: inline-block;
+	}
+
+	.campus_univ_list .univ_class {
+		padding-left: 10px;
+		width: 3%;
+		padding-right: 6px;
+		font-size: 0.825rem;
+		color: #58595B;
+		text-align: center;
+	}
+
+	.campus_univ_list .univ_about {
+		font-size: 1rem;
+		width: 55%;
+	}
+
+	.campus_univ_list .univ_comment {
+		float: right;
+		font-size: 0.8rem;
+		color: #58595B;
+		text-align: center;
+		padding-right: 10px;
+	}
+
+	.campus_univ_list .univ_about .univ_img {
+	    width: 50px;
+	    height: 50px;
+	    border: 1px solid rgba(0, 0, 0, 0.2);
+		margin: 0px 10px 0px 8px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.campus_univ_list .univ_about .rank_star {
+		height: 35px;
+		vertical-align: middle;
+	}
+
+	.campus_univ_list .univ_about p {
+		color: #58595B;
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 0.95rem;
+	}
+
+	.grade_table {
+		width: 215px;
+		height: 371px;
+		border-collapse: collapse;
+		border: 1px solid #CCCCCC;
+		display: inline-block;
+		margin-right: 5px;
+	}
+
+	.grade_title {
+		font-size: 1rem;
+		color: #1C75BA;
+		width: 100%;
+		height: 45px;
+		text-align: center;
+		background: #F4F4F4;
+		padding: 0px 46.5px;
+		border-bottom: 1px solid #E6E7E8;
+	}
+
+	.grade_about {
+		font-size: 1.06rem;
+		color: #58595B;
+		font-weight: bold;
+		padding-left: 20px;
+		margin-top: 15px;
+	}
+
+	.grade_about span {
+		font-size: 0.8125rem;
+		color: #808083;
+	}
+
+	.grade_class {
+		padding-left: 35px;
+		margin-top: -15px;
+		margin-bottom: -5px;
+	}
+
+	.grade_class img {
+		width: 1.05rem;
+		height: 1.05rem;
+	}
+
+	.grade_class span {
+		font-size: 0.95rem;
+		color: #808083;
+		margin-left: 5px;
+	}
+
+	.grade_more {
+		border-top: 1px solid #E6E7E8;
+		font-size: 0.93rem;
+		color: #808083;
+		text-align: right;
+		height: 35px;
+		vertical-align: middle;
+		padding-right: 18px;
+	}
+
+	#footer ul {
+		display: none;
+	}
+
+	#footer .footer_content {
+		font-size: 0.8rem;
+		margin: 0px 10px;
+	}
+
+	.pop-layer, .layer2 {
+		width: 90%;
+	}
+
+	.div#popup_soon {
+	    margin-top: -45%;
+	    margin-left: -45%;
+	}
+
+}
