@@ -558,15 +558,20 @@
 		}
 
 		#box_2_main_review .title {
-			font-size: 1.3rem;
+			font-size: 1.2rem;
 		}
 
 		#box_2_main_review .subtitle {
-			font-size: 0.95rem;
+			font-size: 0.8rem;
 		}
 
 		.mobile_review_header {
 			display: block;
+			font-size:1.25rem;font-weight:bold;text-align:left;padding-left:5%;margin-bottom:10px;
+		}
+
+		.mobile_review_header span {
+			font-size:0.75rem;font-weight:normal;padding-left:15px;color:#999999;
 		}
 
 		.review_right {
@@ -605,7 +610,8 @@
 		}
 
 		.review_about_ h3 {
-			font-size: 1.25rem;
+			font-size: 1.1rem;
+			width: 78%;
 		}
 
 		.review_evaluation {

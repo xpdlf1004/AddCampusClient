@@ -185,7 +185,7 @@
 	</footer>
 
 	<!-- Support for HTML5, CSS3 -->
-	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 	<!--[if lt IE 9]>
 	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
 	<![endif]-->
@@ -246,8 +246,6 @@
 			if (orderBy === 'major') {
 
 				$("#univMenu").css('display', 'none');
-
-				// $("#pageUniv").css({"border-bottom":"3px solid #000", "color":"#999999"});
 				
 				$("#pageUniv").css({"border-bottom":"none", "color":"#999999"});
 				$("#pageMajor").css({"border-bottom":"5px solid #FFD432", "color":"#000"});
@@ -328,6 +326,8 @@
 								cnti = cnti + 1;
 
 							}
+
+							$(".campus_univ_list .univ_about p").css({"margin-left":"-3%"});
 
 						}, function(data) {
 							console.log(JSON.stringify(data));
@@ -470,7 +470,7 @@
 					alert(JSON.stringify(data));
 				});
 
-				$('select[name=type_1]').val(type).prop("selected", true);
+				$('select[name=type_1]').val(orderBy).prop("selected", true);
 				$('select[name=type_1]').change();
 
 			}
@@ -479,11 +479,11 @@
 
 				var gradeStar = $('.gradeStar');
 
-				if ((point >= 1.00) && (point < 2.00)) $(gradeStar).eq(count).html("<img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_empty.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_empty.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_empty.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_empty.png'/>");
-				else if ((point >= 2.00) && (point < 3.00)) $(gradeStar).eq(count).html("<img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_empty.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_empty.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_empty.png'/>");
-				else if ((point >= 3.00) && (point < 4.00)) $(gradeStar).eq(count).html("<img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_empty.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_empty.png'/>");
-				else if ((point >= 4.00) && (point < 5.00)) $(gradeStar).eq(count).html("<img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_empty.png'/>");
-				else if (point >= 5.00) $(gradeStar).eq(count).html("<img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/><img style='width:18px;height:18px;' src='/assets/img/common/review_star_full.png'/>");
+				if ((point >= 1.00) && (point < 2.00)) $(gradeStar).eq(count).html("<img style='width:15px;height:15px;' src='/assets/img/common/review_star_full.png'/><img style='width:15px;height:15px;' src='/assets/img/common/review_star_empty.png'/><img style='width:15px;height:15px;' src='/assets/img/common/review_star_empty.png'/><img style='width:15px;height:15px;' src='/assets/img/common/review_star_empty.png'/><img style='width:15px;height:15px;' src='/assets/img/common/review_star_empty.png'/>");
+				else if ((point >= 2.00) && (point < 3.00)) $(gradeStar).eq(count).html("<img style='width:15px;height:15px;' src='/assets/img/common/review_star_full.png'/><img style='width:15px;height:15px;' src='/assets/img/common/review_star_full.png'/><img style='width:15px;height:15px;' src='/assets/img/common/review_star_empty.png'/><img style='width:15px;height:15px;' src='/assets/img/common/review_star_empty.png'/><img style='width:15px;height:15px;' src='/assets/img/common/review_star_empty.png'/>");
+				else if ((point >= 3.00) && (point < 4.00)) $(gradeStar).eq(count).html("<img style='width:15px;height:15px;' src='/assets/img/common/review_star_full.png'/><img style='width:15px;height:15px;' src='/assets/img/common/review_star_full.png'/><img style='width:15px;height:15px;' src='/assets/img/common/review_star_full.png'/><img style='width:15px;height:15px;' src='/assets/img/common/review_star_empty.png'/><img style='width:15px;height:15px;' src='/assets/img/common/review_star_empty.png'/>");
+				else if ((point >= 4.00) && (point < 5.00)) $(gradeStar).eq(count).html("<img style='width:15px;height:15px;' src='/assets/img/common/review_star_full.png'/><img style='width:15px;height:15px;' src='/assets/img/common/review_star_full.png'/><img style='width:15px;height:15px;' src='/assets/img/common/review_star_full.png'/><img style='width:15px;height:15px;' src='/assets/img/common/review_star_full.png'/><img style='width:15px;height:15px;' src='/assets/img/common/review_star_empty.png'/>");
+				else if (point >= 5.00) $(gradeStar).eq(count).html("<img style='width:15px;height:15px;' src='/assets/img/common/review_star_full.png'/><img style='width:15px;height:15px;' src='/assets/img/common/review_star_full.png'/><img style='width:15px;height:15px;' src='/assets/img/common/review_star_full.png'/><img style='width:15px;height:15px;' src='/assets/img/common/review_star_full.png'/><img style='width:15px;height:15px;' src='/assets/img/common/review_star_full.png'/>");
 
 			}
 
