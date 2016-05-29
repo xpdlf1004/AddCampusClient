@@ -3,16 +3,22 @@
 		if (LocalStorage.get('sessionKey') == undefined) {
 			$("#header_right_out").css("display", "inline-block");
 			$("#header_right_in").css("display", "none");
+
+			$(".m_header_sign").css("display", "");
+			$(".m_header_sign_in").css("display", "none");
 		} else {
 			$("#header_right_out").css("display", "none");
 			$("#header_right_in").css("display", "inline-block");
+
+			$(".m_header_sign").css("display", "none");
+			$(".m_header_sign_in").css("display", "");
 		}
 		
 		$("#sign_in").submit(submitLoginForm);
 		
-		$("#tab_sign_out").click(logout);
+		$("#tab_sign_out, #m_tab_sign_out").click(logout);
 		
-		$("#tab_sign_in, .f_sign").click(function(){
+		$("#tab_sign_in, #m_tab_sign_in, .f_sign").click(function(){
 			layer_open('layer2');
 			return false;
 		});

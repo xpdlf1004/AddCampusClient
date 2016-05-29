@@ -481,7 +481,7 @@
 		font-size:1.125rem;
 	}
 
-	.mobile_review_header, .mobile_review_write, .mobile_head_subtitle, #mobileWriteReivew {
+	.mobile_review_header, .mobile_review_write, .mobile_head_subtitle {
 		display: none;
 	}
 
@@ -490,10 +490,6 @@
 	}
 
 	@media (max-width: 1000px) {
-
-		#mobileWriteReivew {
-			display: block;
-		}
 
 		#header {
 			display: none;
@@ -636,7 +632,7 @@
 			height: 58px;
 			position: absolute;
 			margin-top: -18px;
-			margin-left: 72%;
+			margin-left: 74%;
 		}
 
 		.pros h3 {

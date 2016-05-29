@@ -3,11 +3,7 @@
 		display: none;
 	}
 
-	#mobileWriteReivew {
-		display: block;
-	}
-
-	.mypage_memo {
+	.campus_content_ .mypage_memo {
 		margin: 0px auto;
 		margin-bottom: 20px;
 		width: 85%;

@@ -1164,12 +1164,46 @@
 	}
 	/* 맛보기 대학리뷰 */
 
-	#mobileWriteReivew {
-		display: none;
-	}
-
 	.mypage_memo {
 		display:inline-block;width:170px;height:25px;border-radius:5px;border:1px solid #808083;
+	}
+
+	.profileUniv,
+	.M_profileUniv {
+		font-size: 1.3125rem;margin: 0px;color: #58595B;text-align: left;
+	}
+
+	.recommandReview,
+	.M_recommandReview {
+		width:160px;height:35px;background:#FFA321;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#FFFFFF;margin-right:15px;
+	}
+
+	.shareOnFb,
+	.M_shareOnFb {
+		width:160px;height:35px;background:#3765A3;border:none;border-radius:5px;margin:20px auto;font-size:10pt;color:#FFFFFF;margin-left:15px;
+	}
+
+	.univ_table_about,
+	.M_univ_table_about {
+		width:45%; text-align:center;
+	}
+
+	.averageMessage,
+	.M_averageMessage {
+		font-size:1.12rem;color:#58595B;margin-left:10px;
+	}
+
+	.univ_h1 {
+		font-size:1.12rem;color:#58595B;margin-top:20px;margin-bottom:10px;
+	}
+
+	.bestreview {
+		width:72px;height:87px;position:absolute;margin-top: -4px;margin-left: 508px;
+	}
+
+	.univ_table_about p,
+	.M_univ_table_about p {
+		font-size:1.12rem;font-weight:400;color:#58595B;margin-top:40px;
 	}
 
 	@media (max-width: 1000px) {
@@ -1185,16 +1219,13 @@
 			display: none;
 		}
 
-		#mobileWriteReivew {
-			display: block;
-		}
-
 		#univ_main_image {
 			width: 100%;
 		}
 
 		#univ_category {
 			width: 100%;
+			height: 82px;
 		}
 
 		#univ_category .category {
@@ -1223,6 +1254,196 @@
 
 		.collegeWeb {
 			display: none;
+		}
+
+		.univ_table_star {
+			text-align: center;
+		}
+
+		.univ_table_star img {
+			width: 12px;
+			height: 12px;
+			margin-right: 3px;
+		}
+
+		#facilities,
+		#culture,
+		#town,
+		#tuition,
+		#professor {
+			/*font-size: 0.8rem;
+			text-align: center;
+			margin: 0px auto;
+			display: block;*/
+			display: none;
+		}
+
+		.univ_table_title {
+			padding-left: 0px;
+			padding-top: 15px;
+			width: 31%;
+			font-size: 0.8rem;			
+		}
+
+		.univ_table_about img {
+			width: 15px;
+			height: 15px;
+		}
+
+		#averageGradePoint {
+			display: block;
+			font-size: 1rem;
+			margin: 0px auto;
+			margin-top: 10px;
+		}
+
+		.comment_profile_img {
+			display: none;
+		}
+
+		.comment_profile_h3 .profileUniv,
+		.M_comment_profile_h3 .profileUniv,
+		.comment_profile_h3 .M_profileUniv,
+		.M_comment_profile_h3 .M_profileUniv {
+			font-size: 1rem;
+			display: block;
+			width: 100%;
+		}
+
+		.comment_profile_h3 .profileDate,
+		.M_comment_profile_h3 .profileDate,
+		.comment_profile_h3 .M_profileDate,
+		.M_comment_profile_h3 .M_profileDate {
+			font-size: 0.8rem;
+			margin-top: 5px;
+			display: block;
+		}
+
+		.comment_profile_h3 .M_averageMessage,
+		.M_comment_profile_h3 .M_averageMessage {
+			font-size: 0.75rem;
+			display: block;
+			margin-top: 5px;
+		}
+
+		.comment_title,
+		.M_comment_title {
+			padding-top: 17px;
+			padding-left: 10px;
+			width: auto;
+			font-size: 0.7rem;
+			vertical-align: middle;
+		}
+
+		.comment_point img,
+		.M_comment_point img {
+			width: 12px;
+			height: 12px;
+			vertical-align: middle;
+		}
+
+		.comment_point {
+
+		}
+
+		.M_comment_profile_img {
+			display: none;
+		}
+
+		.pointfacilities,
+		.M_pointfacilities,
+		.pointculture,
+		.M_pointculture,
+		.pointtown,
+		.M_pointtown,
+		.pointtuition,
+		.M_pointtuition,
+		.pointprofessor,
+		.M_pointprofessor {
+			display: none;
+		}
+
+		.comment_point span
+		.M_comment_point span {
+			padding: 0px;
+			margin: 0px auto;
+			vertical-align: middle;
+		}
+		
+		.comment_pros h2,
+		.M_comment_pros h2,
+		.comment_cons h2,
+		.M_comment_cons h2,
+		.comment_need h2,
+		.M_comment_need h2,
+		.comment_future h2,
+		.M_comment_future h2 {
+			font-size: 1.2rem;
+		}
+
+		.comment_pros p,
+		.M_comment_pros p,
+		.comment_cons p,
+		.M_comment_cons p,
+		.comment_need p,
+		.M_comment_need p,
+		.comment_future p,
+		.M_comment_future p {
+			font-size: 0.8rem;
+		}
+
+		.recommandReview,
+		.M_recommandReview {
+			width:160px;height:35px;background:#FFA321;border:none;border-radius:5px;margin:5px auto;font-size:10pt;color:#FFFFFF;
+		}
+
+		.shareOnFb,
+		.M_shareOnFb {
+			width:160px;height:35px;background:#3765A3;border:none;border-radius:5px;margin:5px auto;font-size:10pt;color:#FFFFFF;margin-bottom: 20px;
+		}
+
+		.univ_table_about,
+		.M_univ_table_about {
+			width: 43% !important;
+			text-align:center;
+			font-size: 0.8rem;
+		}
+
+		.univ_table_about span,
+		.M_univ_table_about span {
+			font-size: 1rem;
+			margin:0px auto;
+			margin-top: 10px;
+		}
+
+		.univ_table_about h1,
+		.M_univ_table_about h1 {
+			font-size: 0.9rem;color:#58595B;margin-top:20px;margin-bottom:10px;
+		}
+
+		.averageMessage,
+		.M_averageMessage {
+			display: block;
+			font-size:0.85rem;
+			color:#58595B;
+			margin-top: 5px;
+		}
+
+		.M_gradeaverageGrade img {
+			width: 16px;
+			height: 16px;
+		}
+
+		.univ_table_about p,
+		.M_univ_table_about p {
+			display: none;
+		}
+
+		.bestreview {
+			width: 52px;
+			height: 67px;
+			margin-top: -4%;
+			margin-left: 74%;
 		}
 
 		#univ_main_image .univ_about span {

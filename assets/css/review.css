@@ -430,7 +430,7 @@
 		vertical-align: middle;
 	}
 
-	.mobile_review_header, .mobile_review_write, .mobile_head_subtitle, #mobileWriteReivew {
+	.mobile_review_header, .mobile_review_write, .mobile_head_subtitle {
 		display: none;
 	}
 
@@ -450,10 +450,6 @@
 
 		#header {
 			display: none;
-		}
-
-		#mobileWriteReivew {
-			display: block;
 		}
 		
 		#review_main_image {
