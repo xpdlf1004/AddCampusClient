@@ -1399,7 +1399,7 @@
 
 		.shareOnFb,
 		.M_shareOnFb {
-			width:160px;height:35px;background:#3765A3;border:none;border-radius:5px;margin:5px auto;font-size:10pt;color:#FFFFFF;margin-bottom: 20px;
+			width:160px;height:35px;background:#3765A3;border:none;border-radius:5px;margin:5px auto;font-size:10pt;color:#FFFFFF;margin-bottom: 20px;display: block;
 		}
 
 		.univ_table_about,
