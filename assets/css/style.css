@@ -459,7 +459,7 @@
 	}
 
 	#review_write_back_2 {
-		width:170px;height:45px;border-radius:10px;font-size:14pt;color:#58595B;float:left;margin-left:30px;
+		background:#BABCBE;width:170px;height:45px;border-radius:10px;font-size:14pt;color:#58595B;float:left;margin-left:30px;
 	}
 
 	#review_write_next_2 {
@@ -945,11 +945,11 @@
 		}
 
 		#review_write_back_2 {
-			width:60%;height:40px;border-radius:10px;font-size:1rem;margin:0px auto;margin-top:10px;display: block;float:none;
+			background:#BABCBE;width:60%;height:40px;border-radius:10px;font-size:1rem;margin:0px auto;margin-top:10px;display: block;float:none;
 		}
 		
 		#review_write_next_2 {
-			width:60%;height:40px;border-radius:10px;font-size:1rem;margin:0px auto;margin-top:10px;margin-bottom:10px;display: block;float:none;
+			background:#FFD432;width:60%;height:40px;border-radius:10px;font-size:1rem;margin:0px auto;margin-top:10px;margin-bottom:10px;display: block;float:none;
 		}
 
 		#footer .footer_content {
