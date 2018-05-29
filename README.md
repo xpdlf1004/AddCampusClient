@@ -4,3 +4,4 @@ This is addcampus client.
     - install npm (node package manager).
 	# npm install -g bower
 	# bower install
+test
